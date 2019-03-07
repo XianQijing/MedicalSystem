@@ -7,7 +7,8 @@ import UserCenter from '@/user/userCenter/userCenter'
 Vue.use(Router)
 
 const router = new Router({
-  // mode: 'history',
+  mode: 'history',
+  base: '/user',
   routes: [
     {
       path: '/',

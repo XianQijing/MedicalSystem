@@ -42,7 +42,7 @@ export default {
             {
               name: '用户中心',
               icon: 'center',
-              path: '/'
+              path: '/UserCenter'
             },
             {
               name: '通知公告',

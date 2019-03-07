@@ -3,17 +3,17 @@
     <c-title>修改密码</c-title>
     <div class="password">
       <p class="account">登录账号：陈阿斌</p>
-      <div class="cell">
+      <div class="cell border-1px">
         <span class="label">旧密码:</span>
-        <j-input placeholder="填写内容" v-model="test"/>
+        <j-input placeholder="填写内容" v-model="oldPassword"/>
       </div>
-      <div class="cell">
+      <div class="cell border-1px">
         <span class="label">新密码:</span>
-        <j-input placeholder="填写内容" v-model="test"/>
+        <j-input placeholder="填写内容" v-model="newPassword"/>
       </div>
-      <div class="cell">
+      <div class="cell border-1px">
         <span class="label">确认密码:</span>
-        <j-input placeholder="填写内容" v-model="test"/>
+        <j-input placeholder="填写内容" v-model="confirmPassword"/>
       </div>
     </div>
   </div>
@@ -26,7 +26,9 @@ export default {
   name: 'editPassword',
   data () {
     return {
-      test: ''
+      oldPassword: '',
+      newPassword: '',
+      confirmPassword: ''
     }
   },
   components: {
@@ -42,7 +44,7 @@ export default {
   .password
     margin 0 6px
     background white
-    padding 10px
+    padding 15px 10px
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
     .account
       margin 0 10px 0 0
@@ -55,7 +57,7 @@ export default {
       border-1px(#D3D3D3)
       align-items center
       color red
-      padding 10px 0
+      padding 15px 0
       &:last-child
         border-none()
       .J-input

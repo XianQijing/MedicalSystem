@@ -9,6 +9,28 @@ border-1px($color)
     border-top: 1px solid $color
     content: ' '
 
+border-1pxTop($color)
+  position: relative
+  &:before
+    display: block
+    position: absolute
+    left 0
+    top: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+
+border-1pxLeft($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left 0
+    top 0
+    height: 100%
+    border-left: 1px solid $color
+    content: ' '
+
 border-none()
   &:after
     display none

@@ -18,7 +18,8 @@ export default {
 
 <style lang="stylus" scoped>
 .comTitle
-  margin 9px 6px
+  margin 0 6px
+  padding 15px 0
   height 13px
   .green
     border-radius 4px

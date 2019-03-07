@@ -1,9 +1,9 @@
 <template>
   <div class="iconList">
-    <div class="iconWrapper" v-for="item in icons" :key="item.title">
+    <div class="iconWrapper border-1px" v-for="item in icons" :key="item.title">
       <common-title>{{item.title}}</common-title>
       <div class="menu">
-        <router-link tag="div" :to="icon.path" class="icon" v-for="(icon, index) in item.children" :key="index">
+        <router-link tag="div" :to="icon.path" class="icon border-1pxLeft" v-for="(icon, index) in item.children" :key="index">
           <span class="spot">{{index}}</span>
           <div :class="icon.icon" class="iconName"></div>
           <p class="name">
@@ -26,9 +26,6 @@ export default {
   },
   components: {
     CommonTitle
-  },
-  created () {
-    console.log(this.icons)
   }
 }
 </script>

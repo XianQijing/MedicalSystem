@@ -14,35 +14,35 @@
           <span>学位：学士</span>
         </div>
         <div class="form">
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">身份证号:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">出生年月:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">性别:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">民族:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">手机号:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">邮箱:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">毕业院校:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">专业:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
@@ -52,47 +52,47 @@
       <div v-show="!whichPage">
         <p class="personal">职业信息</p>
         <div class="form">
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">工号:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">IC卡号:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">人员编号:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">医生资格证号:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">职业医生注册号:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">职务:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">职业类别:</span>
             <j-input placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">工作年限:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">博导:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">政治面貌:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
-          <div class="cell">
+          <div class="cell border-1px">
             <span class="label">社会任职:</span>
             <j-input type="select" placeholder="填写内容" v-model="test"/>
           </div>
@@ -154,13 +154,13 @@ export default {
 .canEdit
   .formWapper
     margin 0 6px
-    padding 10px 10px
+    padding 15px 10px
     background white
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
     .personal
       font-size: 14px;
       color: #333333;
-      margin-bottom 10px
+      margin-bottom 15px
     .form
       .cell
         width 100%
@@ -183,7 +183,7 @@ export default {
   .btn
     width 100%
     text-align center
-    padding 10px 0
+    padding 15px 0
     &.ba
       padding-bottom 40px
     .next, .back
@@ -215,4 +215,10 @@ export default {
       font-size: 14px;
       color: #FFFFFF;
       text-align center
+.doctor
+  font-size: 12px;
+  color: #555555;
+  display flex
+  justify-content space-between
+  margin-bottom 5px
 </style>

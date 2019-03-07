@@ -10,14 +10,14 @@
 .baseMessage
   margin 0 6px
   background white
-  padding 10px
+  padding 15px 10px
   .name
     font-size: 16px;
     color: #333333;
     font-weight 700
-    margin-bottom 12px
+    margin-bottom 15px
   .address
-    margin-bottom 12px
+    margin-bottom 15px
     font-size 14px
     line-height 18px
 </style>

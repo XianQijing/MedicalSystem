@@ -7,6 +7,7 @@ import { Picker } from 'vant'
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import '@/common/style/index.styl'
 
 Vue.config.productionTip = false
 Vue.use(Picker)

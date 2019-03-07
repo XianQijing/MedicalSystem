@@ -7,7 +7,7 @@
       <p class="num">320682199209063777</p>
       <p class="name">1992-08-09、男、汉族</p>
       <p class="address">15221135677、17263@163.com</p>
-      <p class="border">学历、学位、毕业院校、专业</p>
+      <p class="border border-1px">学历、学位、毕业院校、专业</p>
       <div class="doctor">
         <span class="docNum">医师资格号:2837362</span>
         <span class="registerNum">执业医师注册证号:8732927372</span>
@@ -57,7 +57,7 @@ export default {
   .canEdit, .systemMessage
     margin 0 6px
     background white
-    padding 10px
+    padding 15px 10px
     .name
       font-size: 16px;
       color: #333333;
@@ -71,18 +71,18 @@ export default {
       font-size 14px
       color: #333333
     .border
-      padding-bottom 10px
+      padding-bottom 15px
       border-1px(#D3D3D3)
     .num
       font-size: 12px;
       color: #555555;
-      margin-bottom 10px
+      margin-bottom 15px
     .doctor
       display flex
       justify-content space-between
       font-size: 12px;
       color: #555555;
-      margin 10px 0
+      margin 15px 0
   .systemMessage
     .num
       margin-bottom 0
@@ -97,7 +97,7 @@ export default {
         height 48px
         border 1px solid black
         border-radius: 4px;
-        margin-top 10px
+        margin-top 15px
         display flex
         align-items center
         .number
