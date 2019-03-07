@@ -1,0 +1,39 @@
+@font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot?t=1551845352993'); /* IE9 */
+  src: url('../iconfont/iconfont.eot?t=1551845352993#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAM4AAsAAAAAB3QAAALpAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDGgqCMIIIATYCJAMUCwwABCAFhG0HQht2BhEVlIlkX2HcwiNRYblAPS3BQrNLuvxxUxRf3QP9ggpIAAAAAIB4+H6//6195HG5D5PET4glj+7JG57EvUSoJEKBZNZEE0Nk0JP9jolNVVrThCoBAuSW1vQKLEeUoURwTPopuV6f71NyY+HWGlNhZufshF4CVlTq5BQPpAc5XSyS5q9A+5/DpU2gnu/ftlzmWFw0AOOAsmysTZGV0InxLbKLuBMXcZpAq8dEMff48lGUAk0KxC4lTVGFgKIY6UboNKws4qaqSZfSU9yIfh8/TYqGpGZo5sotR46Yr3978p8NHEE433lQkTERhVjXmFhLwsBlbcKNZV+Dgq/3z9dwk9jrP7wkK0QHKu0DZsrJwtdQNsHXYZP4unr5RoWy6GeUVtAWU0vBFhU7UhlYNhgN2EOdu8LJ0BE9HpLdU814vd+f51Xpvx+k4tQw8h3Z0rms5d+rdK8Ml6hyZVmrWanTKrK7vXh1M7r3/1mbJ73XZcVHOYwnPxavcu+Tfjc/7hHPlTb+dO4i+tE143Ovp7f58xzqkuLx2JfSbX5zkdsyffZL0Txycx+ng9CI3KZ/kF5E+Hw8/fIXgeBP+9fm/vt/m24Bb7Ttm2QoxiUbCbDwpwuBdcUXI2MtbjUVuK5qMHBiQqvFf8gzyKd5VEPBlYTG0BGuXkZkkDVGIgt2IlRdU6CjMQNaEyxY3zXYbhKlN8Y7J0EY4CEk/TyBbIBnyIL9CNUwv6FjQGRoKZ7r27FiIVU+0GgyOmC1QdlhQMTM5bj8HmXdM3VeHBGeUScqDCuLy+X0CQao55iTNOQqMwHp0Idj6Tz0vBAiHdbQ5sUqc7S7tERNH1q0Q1+UHdCQiSEHsLQBxRYKEG/NypXv30NSncekO2p6nM+QllCdgxWLlgHIE0UAqrmXdxIN0irGCCBayAeOJRvycCIEouZhNcjGFlVHxCK7lpRmBFUsrq/yv3EbtNDjNaPoDCZyK1nlrIfE6XqUdcJmIAQAAAA=') format('woff2'),
+  url('../iconfont/iconfont.woff?t=1551845352993') format('woff'),
+  url('../iconfont/iconfont.ttf?t=1551845352993') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('../iconfont/iconfont.svg?t=1551845352993#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right:before {
+  content: "\e7eb";
+}
+
+.icon-left:before {
+  content: "\e7ec";
+}
+
+.icon-up:before {
+  content: "\e7ed";
+}
+
+.icon-down:before {
+  content: "\e7ee";
+}
+
+.doctor {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #555;
+}
