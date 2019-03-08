@@ -16,35 +16,44 @@
         <div class="form">
           <div class="cell border-1px">
             <span class="label">身份证号:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">出生年月:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">性别:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <div class="radio">
+              <van-radio v-model="radio" name="男">
+                <img :src="radio==='男' ? icon.active : icon.normal" width=14>
+                男
+              </van-radio>
+              <van-radio v-model="radio" name="女">
+                <img :src="radio==='女' ? icon.active : icon.normal" width=14>
+                女
+              </van-radio>
+            </div>
           </div>
           <div class="cell border-1px">
             <span class="label">民族:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">手机号:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">邮箱:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">毕业院校:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">专业:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
         </div>
       </div>
@@ -54,47 +63,60 @@
         <div class="form">
           <div class="cell border-1px">
             <span class="label">工号:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">IC卡号:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">人员编号:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">医生资格证号:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">职业医生注册号:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">职务:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">职业类别:</span>
-            <j-input placeholder="填写内容" v-model="test"/>
+            <j-input placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">工作年限:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">博导:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <div class="radio">
+              <van-radio v-model="radio" name="硕导">
+                <img :src="radio=='硕导' ? icon.active : icon.normal" width=14>
+                硕导
+              </van-radio>
+              <van-radio v-model="radio" name="博导">
+                <img :src="radio=='博导' ? icon.active : icon.normal" width=14>
+                博导
+              </van-radio>
+              <van-radio v-model="radio" name="否">
+                <img :src="radio=='否' ? icon.active : icon.normal" width=14>
+                否
+              </van-radio>
+            </div>
           </div>
           <div class="cell border-1px">
             <span class="label">政治面貌:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">社会任职:</span>
-            <j-input type="select" placeholder="填写内容" v-model="test"/>
+            <j-input type="select" placeholder="填写内容"/>
           </div>
         </div>
       </div>
@@ -121,7 +143,13 @@ export default {
   data () {
     return {
       whichPage: true,
-      test: ''
+      radio: '男',
+      checked: 'e',
+      test: '',
+      icon: {
+        normal: require('./image/normal.png'),
+        active: require('./image/active.png')
+      }
     }
   },
   computed: {
@@ -142,6 +170,11 @@ export default {
     BaseMessage,
     CTitle,
     JInput
+  },
+  watch: {
+    radio (val) {
+      console.log(val)
+    }
   }
 }
 </script>
@@ -151,6 +184,8 @@ export default {
 .canEdit >>> .float
   font-size: 13px;
   color: #555555;
+.canEdit >>> .van-radio__input
+  display none
 .canEdit
   .formWapper
     margin 0 6px
@@ -221,4 +256,9 @@ export default {
   display flex
   justify-content space-between
   margin-bottom 5px
+.radio
+  color black
+  display flex
+  justify-content space-between
+  width 183px
 </style>

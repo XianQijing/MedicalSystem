@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '@/admin/homePage/homePage'
 import UserCenter from '@/admin/userCenter/userCenter'
+import EditPersonalMessage from '@/admin/userCenter/editPersonalMessage'
 
 Vue.use(Router)
 
@@ -20,6 +21,12 @@ const router = new Router({
       name: 'UserCenter',
       component: UserCenter,
       meta: '用户中心'
+    },
+    {
+      path: '/editPersonalMessage',
+      name: 'EditPersonalMessage',
+      component: EditPersonalMessage,
+      meta: '信息修改'
     }
   ]
 })

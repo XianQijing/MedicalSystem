@@ -1,0 +1,86 @@
+<template>
+  <div class="popup" :class="{overlay: overlay}" v-show="toShow" @touchmove.prevent @click="show($event)" :close-on-click-overlay="clickOverlay">
+    <div class="rightPop" v-if="position==='right'" @click="cancel($event)">
+      <slot></slot>
+    </div>
+
+    <div class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
+      <slot></slot>
+    </div>
+
+    <div class="centerPop" v-if="position==='center'" @click="cancel($event)">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'popup',
+  data () {
+    return {
+    }
+  },
+  props: {
+    position: {
+      type: String,
+      default: 'right'
+    },
+    clickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    toShow: {
+      type: Boolean,
+      default: true
+    },
+    overlay: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    show (e) {
+      this.$emit('close', false)
+    },
+    cancel (e) {
+      e.stopPropagation()
+      e.cancelBubble = this.clickOverlay
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+.overlay
+  background rgba(51,51,51,0.20)
+.popup
+  width 100%
+  height 100vh
+  position fixed
+  top 0
+  left 0
+  display flex
+  align-items center
+  overflow hidden
+  z-index 50
+  .rightPop
+    width 80%
+    max-width 300px
+    height 100%
+    background white
+    position absolute
+    right 0
+    box-shadow: -1px 0 2px 0 rgba(0,0,0,0.50)
+  .bottomPop
+    width 100%
+    height 220px
+    background white
+    box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.50);
+    position absolute
+    bottom 0
+    left 0
+  .centerPop
+    width 100%
+    // box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.50);
+</style>

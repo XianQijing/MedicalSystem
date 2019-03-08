@@ -107,12 +107,12 @@ export default {
           font-size: 20px;
           color: #333333;
           text-align: center;
-          flex 2 0 44px
+          flex 2 1 44px
           border-right 1px solid #D3D3D3;
         .title
           vertical-align top
           display inline-block
-          flex 1 1 34px
+          flex 1 0 34px
           p
             text-align center
             font-size: 12px

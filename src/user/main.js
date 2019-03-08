@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './index'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import { Picker } from 'vant'
+import { Picker, RadioGroup, Radio } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
@@ -11,6 +11,8 @@ import '@/common/style/index.styl'
 
 Vue.config.productionTip = false
 Vue.use(Picker)
+Vue.use(RadioGroup)
+Vue.use(Radio)
 Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */

@@ -12,7 +12,10 @@
         <span>15221135677、硕士研究生</span>
         <span>登录次数：362</span>
         <span class="resTime">注册时间：2018.09.23 13:51</span>
-        <button>修改</button>
+        <div class="button">
+          <slot name="button"></slot>
+        </div>
+        <!-- <button>修改</button> -->
         </div>
     </div>
   </div>
@@ -114,15 +117,15 @@ export default {
       .resTime
         font-size: 12px;
         color: #999999;
-      button
-        background: #2873FF;
-        border-radius: 6px;
-        font-size: 14px;
-        color: #FFFFFF;
-        width 100px
+      .button
+        // background: #2873FF;
+        // border-radius: 6px;
+        // font-size: 14px;
+        // color: #FFFFFF;
+        // width 100px
         height 30px
-        display block
-        margin 0 auto
+        // display block
+        // margin 0 auto
   .normal
     background #45C186
   .stop

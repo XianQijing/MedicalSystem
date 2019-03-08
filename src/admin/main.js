@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './index'
-import { Checkbox, CheckboxGroup } from 'vant'
+import { Picker, Dialog } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
 import '@/common/style/index.styl'
 
-Vue.use(Checkbox).use(CheckboxGroup)
+Vue.use(Picker).use(Dialog)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -33,3 +33,28 @@
     &::after
       -webkit-transform: scaleX(0.5)
       transform: scaleX(0.5)
+
+.van-picker__cancel, .van-ellipsis, .van-picker__confirm
+  color: #2873FF;
+
+.van-ellipsis
+  font-size: 16px;
+
+.van-hairline--top-bottom:after
+  border-image: linear-gradient(to right,#FFFFFF, #2873FF, #FFFFFF) 2 2 2
+
+.van-picker__toolbar:after
+  display none
+
+.button-cell
+  height 30px
+  width 100%
+  display flex
+  .reset
+    background: #C6DAFF
+    color #2873FF
+    flex 1
+  .complete
+    color white
+    background: #2873FF;
+    flex 1
