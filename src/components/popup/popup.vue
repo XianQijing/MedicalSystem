@@ -1,17 +1,23 @@
 <template>
-  <div class="popup" :class="{overlay: overlay}" v-show="toShow" @touchmove.prevent @click="show($event)" :close-on-click-overlay="clickOverlay">
-    <div class="rightPop" v-if="position==='right'" @click="cancel($event)">
-      <slot></slot>
+  <transition name="fade">
+    <div class="popup" :class="{overlay: overlay}" v-show="toShow" @touchmove.prevent @click="show($event)" :close-on-click-overlay="clickOverlay">
+      <transition name="slide-fade">
+        <div v-show="toShow" class="rightPop" v-if="position==='right'" @click="cancel($event)">
+          <slot></slot>
+        </div>
+      </transition>
+      <transition name="up">
+        <div v-show="toShow" class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
+          <slot></slot>
+        </div>
+      </transition>
+      <transition>
+        <div v-show="toShow" class="centerPop" v-if="position==='center'" @click="cancel($event)">
+          <slot></slot>
+        </div>
+      </transition>
     </div>
-
-    <div class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
-      <slot></slot>
-    </div>
-
-    <div class="centerPop" v-if="position==='center'" @click="cancel($event)">
-      <slot></slot>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -82,5 +88,45 @@ export default {
     left 0
   .centerPop
     width 100%
-    // box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.50);
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.up-enter-active
+  height 200px
+  animation up .2s
+.up-leave-active
+  height 0px
+  animation down 1s
+.up-enter, .up-leave-to
+  opacity 1
+@keyframes up {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height 220px
+  }
+}
+@keyframes down {
+  0% {
+    height 220px
+  }
+  100% {
+    height: 0px;
+  }
+}
 </style>

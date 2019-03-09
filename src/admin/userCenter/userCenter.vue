@@ -8,6 +8,13 @@
       </div>
     </c-title>
 
+    <div class="drop">
+      <button class="drop-down" @click="dropDown">
+        <span class="iconfont" v-show="!drop">&#xe7ee;</span>
+        <span class="iconfont" v-show="drop">&#xe7ed;</span>
+      </button>
+    </div>
+
     <div class="card-wapper">
       <card
         v-for="(item, index) in messageList"
@@ -27,43 +34,6 @@
     </div>
     <!--  -->
     <popup :toShow="popShow" @close="screen">
-      <!-- <div class="formData">
-        <p class="title">基本信息</p>
-        <div class="form-cell">
-          <p class="label">时间范围</p>
-          <j-input :overlay="false" type="select"></j-input>
-        </div>
-        <div class="form-cell">
-          <p class="label">所属科室</p>
-          <j-input :overlay="false" @click="open" placeholder="眼科" type="select">
-          </j-input>
-        </div>
-        <div class="form-cell">
-          <p class="label">学历选择</p>
-          <j-input :overlay="false" type="select"></j-input>
-        </div>
-        <div class="form-cell">
-          <p class="label">学位选择</p>
-          <j-input :overlay="false" type="select"></j-input>
-        </div>
-        <div class="form-cell">
-          <p class="label">职称选择</p>
-          <j-input :overlay="false" type="select"></j-input>
-        </div>
-        <div class="form-cell">
-          <p class="label">职称级别</p>
-          <j-input :overlay="false" type="select"></j-input>
-        </div>
-        <p class="title">搜索项目</p>
-        <div class="form-cell">
-          <p class="label">查询字段</p>
-          <j-input :overlay="false" type="select"></j-input>
-        </div>
-        <div class="form-cell">
-          <p class="label">模糊查询</p>
-          <j-input></j-input>
-        </div>
-      </div> -->
       <popup-data :selectList="selectList"></popup-data>
     </popup>
     <popup position="center" :toShow="warning" @close="open">
@@ -78,6 +48,14 @@
         <button class="reset" @click="open">确认</button>
       </div>
       </div>
+    </popup>
+    <popup position="bottom" :toShow="drop" @close="dropDown">
+      <van-picker
+        :columns="dropList"
+        @cancel="dropDown"
+        @confirm="dropConfirm"
+        :item-height=30
+        :show-toolbar="true"/>
     </popup>
   </div>
 </template>
@@ -97,6 +75,7 @@ export default {
       popShow: false,
       overlay: false,
       warning: false,
+      drop: false,
       keshi: 'sf',
       toDo: '删除',
       messageList: [
@@ -138,7 +117,8 @@ export default {
         titles: [8],
         levels: [0],
         search: [1]
-      }
+      },
+      dropList: ['用户信息', '用户业绩', '学术简历', '科研对标']
     }
   },
   methods: {
@@ -164,6 +144,13 @@ export default {
     },
     open () {
       this.warning = !this.warning
+    },
+    dropDown () {
+      this.drop = !this.drop
+    },
+    dropConfirm (value, index) {
+      this.$toast(value)
+      this.dropDown()
     }
   },
   components: {
@@ -285,5 +272,19 @@ export default {
     .text
       font-weight 700
       font-size: 16px
-
+.drop
+  position absolute
+  width 100%
+  top -20px
+  text-align center
+  .drop-down
+    width 40px
+    height 40px
+    font-size 20px
+    background rgb(221, 221, 221)
+    color #999999
+    border-radius 50%
+    span
+      position relative
+      top 7px
 </style>
