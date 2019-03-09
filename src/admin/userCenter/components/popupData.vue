@@ -3,37 +3,37 @@
       <p class="title">基本信息</p>
       <div class="form-cell">
         <p class="label">时间范围</p>
-        <j-input @click="open('time')" v-model="form.time" type="select"></j-input>
+        <j-input placeholder="选择时间" @click="open('time')" v-model="form.time" type="select"></j-input>
       </div>
       <div class="form-cell">
         <p class="label">所属科室</p>
-        <j-input @click="open('belong')" v-model="form.belong" type="select">
+        <j-input placeholder="科室" @click="open('belong')" v-model="form.belong" type="select">
         </j-input>
       </div>
       <div class="form-cell">
         <p class="label">学历选择</p>
-        <j-input @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
+        <j-input placeholder="学历" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
       </div>
       <div class="form-cell">
         <p class="label">学位选择</p>
-        <j-input @click="open('degree')" v-model="form.degree" type="select"></j-input>
+        <j-input placeholder="学位" @click="open('degree')" v-model="form.degree" type="select"></j-input>
       </div>
       <div class="form-cell">
         <p class="label">职称选择</p>
-        <j-input @click="open('titles')" v-model="form.titles" type="select"></j-input>
+        <j-input placeholder="职称选择" @click="open('titles')" v-model="form.titles" type="select"></j-input>
       </div>
       <div class="form-cell">
         <p class="label">职称级别</p>
-        <j-input @click="open('levels')" v-model="form.levels" type="select"></j-input>
+        <j-input placeholder="职称级别" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
       <p class="title">搜索项目</p>
       <div class="form-cell">
         <p class="label">查询字段</p>
-        <j-input @click="open('search')" v-model="form.search" type="select"></j-input>
+        <j-input placeholder="查询字段" @click="open('search')" v-model="form.search" type="select"></j-input>
       </div>
       <div class="form-cell">
         <p class="label">模糊查询</p>
-        <j-input></j-input>
+        <j-input placeholder="按查询字段模糊查询"></j-input>
       </div>
       <div class="btn">
         <button class="reset" @click="reset">重置</button>
@@ -63,7 +63,7 @@ export default {
       cellData: null,
       columns: [],
       form: {
-        time: '55',
+        time: '',
         belong: '',
         education: '',
         degree: '',
@@ -105,6 +105,7 @@ export default {
   width 100%
   height 100%
   box-sizing border-box
+  margin-bottom 220px
   // padding 15px 10px
   .title
     font-size: 13px;

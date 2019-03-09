@@ -4,19 +4,19 @@
     <div class="form">
       <div class="formCell">
         <p class="form-label">登录账号：</p>
-        <j-input></j-input>
+        <j-input placeholder="ABC1234"></j-input>
       </div>
       <div class="formCell">
         <p class="form-label">真实姓名：</p>
         <j-input></j-input>
       </div>
-      <div class="formCell">
+      <div class="formCell" @click="close('sex')">
         <p class="form-label">性别：</p>
-        <j-input></j-input>
+        <j-input type="select" v-model="sex"></j-input>
       </div>
-      <div class="formCell">
+      <div class="formCell" @click="close('time')">
         <p class="form-label">出生年月：</p>
-        <j-input></j-input>
+        <j-input v-model="age" type="select"></j-input>
       </div>
       <div class="formCell">
         <p class="form-label">单位名称：</p>
@@ -42,9 +42,9 @@
         <p class="form-label">学历：</p>
         <j-input></j-input>
       </div>
-      <div class="formCell">
+      <div class="formCell" @click="close('major')">
         <p class="form-label">专业：</p>
-        <j-input></j-input>
+        <j-input type="select" v-model="major"></j-input>
       </div>
     </div>
     <div class="btn">
@@ -66,8 +66,37 @@
         <j-input v-model="confirmPassword"></j-input>
       </div>
     </div>
+
+    <popup :toShow="towCell" position="bottom" @close="close">
+      <div class="pop-btn">
+        <button @click="close">取消</button>
+        <button @click="close">完成</button>
+      </div>
+      <div class="pop-title" v-show="open === 'major'">
+        <span>二级学科</span>
+        <span>三级学科</span>
+      </div>
+      <van-picker
+        v-show="open === 'major'"
+        :columns="columns"
+        :item-height=30
+        @change="onChange" />
+
+      <van-datetime-picker
+        type="date"
+        v-show="open === 'time'"
+        :item-height=30
+        :show-toolbar="false"
+        :min-date="minDate"
+        :max-date="maxDate"
+        @change="getAge"
+      />
+
+      <van-picker :item-height=30 :columns="sexList" v-show="open === 'sex'" @change="selectSex" />
+    </popup>
+
     <div class="button-cell">
-      <button class="reset">取消</button>
+      <button class="reset" @click="$router.go(-1)">取消</button>
       <button class="complete">保存</button>
     </div>
   </div>
@@ -76,17 +105,45 @@
 <script>
 import CTitle from '@/components/title/title'
 import JInput from '@/components/input/j-input'
+import Popup from '@/components/popup/popup'
+import GetAge from '@/common/js/getAge'
+
+const citys = {
+  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+  '福建': ['福州', '厦门', '莆田', '三明', '泉州']
+}
+
 export default {
   name: 'EditPersonalMessage',
   data () {
     return {
       newPassword: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      major: '',
+      age: '',
+      sex: '',
+      maxDate: new Date(),
+      minDate: new Date(1941, 0, 1), // 时间选择器，最小时间
+      towCell: false, // 学科选择
+      open: 'time',
+      columns: [
+        {
+          values: Object.keys(citys),
+          className: 'column1'
+        },
+        {
+          values: citys['浙江'],
+          className: 'column2',
+          defaultIndex: 2
+        }
+      ],
+      sexList: ['男', '女']
     }
   },
   components: {
     CTitle,
-    JInput
+    JInput,
+    Popup
   },
   computed: {
     warning () {
@@ -94,14 +151,42 @@ export default {
         return true
       }
     }
+  },
+  methods: {
+    // 专业选择器，二级联动
+    onChange (picker, values) {
+      picker.setColumnValues(1, citys[values[0]])
+      this.major = values.join('、')
+    },
+    // 时间选择器
+    getAge (picker, value) {
+      let year = picker.getValues()[0]
+      let month = picker.getValues()[1]
+      let date = picker.getValues()[2]
+      let age = GetAge(year, month, date)
+      this.age = `${year}.${month}.${date} ${age}岁`
+    },
+    // 性别选择
+    selectSex (picker, value) {
+      this.sex = value
+    },
+    close (type) {
+      this.towCell = !this.towCell
+      this.open = type
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
+.editPersonalMessage >>> .van-picker-column
+  font-size: 16px
 .editPersonalMessage >>> .J-input
   padding 0
   text-align right
+  .aSelect
+    background none
+    padding 0
   input
     text-align right
     width 100%
@@ -148,4 +233,16 @@ export default {
     left 0
   .last
     padding-bottom 40px
+  .pop-btn
+    display flex
+    justify-content space-between
+    padding 15px 10px
+    font-size: 13px;
+    color: #2873FF;
+    button
+      background none
+  .pop-title
+    display flex
+    justify-content space-around
+    padding-bottom 15px
 </style>

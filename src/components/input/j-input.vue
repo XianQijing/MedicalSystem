@@ -5,6 +5,7 @@
         :value="value"
         :placeholder="placeholder"
         @input="$emit('input', $event.target.value)"
+        @blur="$emit('blur')"
         >
     </div>
 
@@ -77,6 +78,9 @@ export default {
     box-sizing border-box
     width 100%
     height 100%
+    .select
+      cursor: not-allowed
+      pointer-events:none
   .text
     input:focus::-webkit-input-placeholder
       color: transparent;
@@ -88,10 +92,14 @@ export default {
       color: transparent;
   input::-webkit-input-placeholder
     color: rgb(161, 161, 161);
+    font-weight 400
   input:-moz-placeholder
     color: rgb(161, 161, 161);
+    font-weight 400
   input::-moz-placeholder
     color: rgb(161, 161, 161);
+    font-weight 400
   input::-ms-input-placeholder
     color: rgb(161, 161, 161);
+    font-weight 400
 </style>

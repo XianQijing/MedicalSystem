@@ -1,6 +1,8 @@
 <template>
   <div id="user">
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 

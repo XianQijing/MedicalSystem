@@ -5,16 +5,23 @@
       <p class="account">登录账号：陈阿斌</p>
       <div class="cell border-1px">
         <span class="label">旧密码:</span>
-        <j-input placeholder="填写内容" v-model="oldPassword"/>
+        <j-input placeholder="输入密码" v-model="oldPassword"/>
       </div>
       <div class="cell border-1px">
         <span class="label">新密码:</span>
-        <j-input placeholder="填写内容" v-model="newPassword"/>
+        <j-input placeholder="输入新密码" v-model="newPassword"/>
       </div>
       <div class="cell border-1px">
         <span class="label">确认密码:</span>
-        <j-input placeholder="填写内容" v-model="confirmPassword"/>
+        <j-input @blur="blur" placeholder="确认密码" v-model="confirmPassword"/>
       </div>
+    </div>
+    <p class="warning" v-show="show">
+      密码不一致
+    </p>
+    <div class="button-cell">
+      <button class="reset">取消</button>
+      <button class="complete">确认修改</button>
     </div>
   </div>
 </template>
@@ -28,12 +35,22 @@ export default {
     return {
       oldPassword: '',
       newPassword: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      show: false
     }
   },
   components: {
     CTitle,
     JInput
+  },
+  methods: {
+    blur () {
+      if (this.confirmPassword !== this.oldPassword) {
+        this.show = true
+      } else {
+        this.show = false
+      }
+    }
   }
 }
 </script>
@@ -67,4 +84,13 @@ export default {
         border-radius: 6px
       span
         padding-left 10px
+  .warning
+    font-size: 16px;
+    color: #FD4D4D;
+    padding-top 20px
+    text-align center
+  .button-cell
+    position fixed
+    bottom 0
+    left 0
 </style>

@@ -56,7 +56,7 @@ export default {
   background rgba(51,51,51,0.20)
 .popup
   width 100%
-  height 100vh
+  height 100%
   position fixed
   top 0
   left 0

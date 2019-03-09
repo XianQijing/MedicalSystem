@@ -20,7 +20,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">出生年月:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input type="select" placeholder="下拉选择"/>
           </div>
           <div class="cell border-1px">
             <span class="label">性别:</span>
@@ -37,7 +37,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">民族:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input type="select" placeholder="下拉选择"/>
           </div>
           <div class="cell border-1px">
             <span class="label">手机号:</span>
@@ -53,7 +53,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">专业:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input type="select" placeholder="下拉选择"/>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">职业类别:</span>
-            <j-input placeholder="填写内容"/>
+            <j-input placeholder="下拉选择"/>
           </div>
           <div class="cell border-1px">
             <span class="label">工作年限:</span>
@@ -96,16 +96,16 @@
           <div class="cell border-1px">
             <span class="label">博导:</span>
             <div class="radio">
-              <van-radio v-model="radio" name="硕导">
-                <img :src="radio=='硕导' ? icon.active : icon.normal" width=14>
+              <van-radio v-model="checked" name="硕导">
+                <img :src="checked=='硕导' ? icon.active : icon.normal" width=14>
                 硕导
               </van-radio>
-              <van-radio v-model="radio" name="博导">
-                <img :src="radio=='博导' ? icon.active : icon.normal" width=14>
+              <van-radio v-model="checked" name="博导">
+                <img :src="checked=='博导' ? icon.active : icon.normal" width=14>
                 博导
               </van-radio>
-              <van-radio v-model="radio" name="否">
-                <img :src="radio=='否' ? icon.active : icon.normal" width=14>
+              <van-radio v-model="checked" name="否">
+                <img :src="checked=='否' ? icon.active : icon.normal" width=14>
                 否
               </van-radio>
             </div>
@@ -116,7 +116,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">社会任职:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input type="select" placeholder="下拉选择"/>
           </div>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default {
     return {
       whichPage: true,
       radio: '男',
-      checked: 'e',
+      checked: '否',
       test: '',
       icon: {
         normal: require('./image/normal.png'),
