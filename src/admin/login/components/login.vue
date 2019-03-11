@@ -14,13 +14,13 @@
       </j-input>
     </div>
 
+    <button class="btn">
+      登陆
+    </button>
     <div class="select">
       <router-link :to="{name: 'Register'}" tag="span">立即注册</router-link>
       <router-link :to="{name: 'Rorget'}" tag="span">忘记密码?</router-link>
     </div>
-    <button class="btn">
-      登陆
-    </button>
   </div>
 </template>
 
@@ -54,6 +54,7 @@ export default {
 
 <style lang="stylus" scoped>
 .login
+  padding-bottom 20px
   .btn
     width:80%
     height:49px
@@ -88,7 +89,7 @@ export default {
     max-width 444px
     display flex
     justify-content space-between
-    margin 0 auto 20px auto
+    margin 20PX auto 0 auto
     font-size:15px;
     font-family:PingFangSC-Medium;
     font-weight:500;

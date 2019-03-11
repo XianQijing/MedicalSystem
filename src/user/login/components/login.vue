@@ -1,14 +1,22 @@
 <template>
   <div class="login">
-    <j-input placeholder="请输入账号" type="clearable" v-model="test"></j-input>
+    <j-input placeholder="请输入账号" type="clearable" v-model="test">
+      <div class="icon">
+        <img width="19" height="19" src="../image/user.png" alt="">
+      </div>
+    </j-input>
+
     <div class="pass">
       <j-input v-model="form.password" placeholder="请输入密码" text="password" v-show="password === false">
-        <div>
+        <div class="icon">
+          <img width="22" height="19" src="../image/lock.png" alt="">
+        </div>
+        <div slot="footer">
           <img width="18" :src="icon.normal" @click="watchPassword">
         </div>
       </j-input>
       <j-input v-model="form.password" placeholder="请输入密码" text="text" v-show="password === true">
-        <div>
+        <div slot="footer">
           <img width="18" :src="icon.active" @click="watchPassword">
         </div>
       </j-input>
@@ -54,7 +62,6 @@ export default {
 
 <style lang="stylus" scoped>
 .login
-  padding-bottom 20px
   .btn
     width:80%
     height:49px
@@ -93,5 +100,21 @@ export default {
     font-size:15px;
     font-family:PingFangSC-Medium;
     font-weight:500;
-    color:rgba(182,182,182,1);
+    color:rgba(182,182,182,1)
+  .icon
+    height 100%
+    width 20px
+    display inline-block
+  .pass
+    .icon
+      position relative
+      left 0
+.login >>> .J-input
+  input
+    width 80%
+  .ss
+    input
+      position relative
+      left 22px
+      width 80%
 </style>

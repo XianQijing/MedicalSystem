@@ -13,4 +13,7 @@ export default {
 </script>
 
 <style>
+body, #user {
+  height: 100%;
+}
 </style>

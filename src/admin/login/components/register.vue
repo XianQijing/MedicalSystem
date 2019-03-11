@@ -59,6 +59,7 @@ export default {
 
 <style lang="stylus" scoped>
 .login
+  padding-bottom 20px
   .J-input
     width 80%
     height 54px

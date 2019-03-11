@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div class="image">
-      <img src="" alt="图片">
+      <img width="100%" height="100px" src="https://dpic.tiankong.com/3t/k2/QJ6251464424.jpg?x-oss-process=style/670ws" alt="图片">
     </div>
     <div class="header">
       <img width="72" height="72" src="./image/header.png" alt="">
@@ -19,13 +19,15 @@ export default {
 <style lang="stylus" scoped>
 .index
   .image
-    width 100%
-    height 67px
-    background white
+    width 80%
+    // height 67px
+    max-width 444px
+    margin 0 auto
+    margin-top 20px
   .header
     width 94px
     height 94px
-    margin 61px auto
+    margin 30px auto
     text-align center
     overflow hidden
     border-radius 50%

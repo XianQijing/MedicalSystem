@@ -1,16 +1,18 @@
 <template>
   <div class="J-input">
-    <div class="text" v-if="type==='text'">
+    <div class="text ss" v-if="type==='text'">
+      <slot></slot>
       <input :type="text"
         :value="value"
         :placeholder="placeholder"
         @input="$emit('input', $event.target.value)"
         @blur="$emit('blur')"
         >
-        <slot></slot>
+        <slot name="footer"></slot>
     </div>
 
     <div class="text" v-if="type==='clearable'">
+    <slot></slot>
       <input type="text"
         :value="value"
         :placeholder="placeholder"
