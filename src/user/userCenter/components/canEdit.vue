@@ -20,7 +20,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">出生年月:</span>
-            <j-input type="select" placeholder="下拉选择"/>
+            <j-input v-model="form.birth" @click="close('birth')" type="select" placeholder="下拉选择"/>
           </div>
           <div class="cell border-1px">
             <span class="label">性别:</span>
@@ -37,7 +37,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">民族:</span>
-            <j-input type="select" placeholder="下拉选择"/>
+            <j-input @click="close" type="select" placeholder="下拉选择"/>
           </div>
           <div class="cell border-1px">
             <span class="label">手机号:</span>
@@ -53,7 +53,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">专业:</span>
-            <j-input type="select" placeholder="下拉选择"/>
+            <j-input @click="close" type="select" placeholder="下拉选择"/>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">IC卡号:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input @click="close" type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">人员编号:</span>
@@ -75,7 +75,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">医生资格证号:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input @click="close" type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">职业医生注册号:</span>
@@ -91,7 +91,7 @@
           </div>
           <div class="cell border-1px">
             <span class="label">工作年限:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input @click="close" type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">博导:</span>
@@ -112,11 +112,11 @@
           </div>
           <div class="cell border-1px">
             <span class="label">政治面貌:</span>
-            <j-input type="select" placeholder="填写内容"/>
+            <j-input @click="close" type="select" placeholder="填写内容"/>
           </div>
           <div class="cell border-1px">
             <span class="label">社会任职:</span>
-            <j-input type="select" placeholder="下拉选择"/>
+            <j-input @click="close" type="select" placeholder="下拉选择"/>
           </div>
         </div>
       </div>
@@ -127,6 +127,16 @@
     <div class="btn ba" v-show="!whichPage">
       <button @click="next" class="back" >上一项</button>
     </div>
+
+    <popup position="bottom" @close="close" :toShow="show">
+      <van-datetime-picker
+        type="date"
+        :item-height=30
+        :min-date="minDate"
+        @confirm="confirm"
+      />
+    </popup>
+
     <div class="tabBar" v-show="!whichPage">
       <button class="reset">重置</button>
       <button class="submit">确认提交</button>
@@ -137,18 +147,25 @@
 <script>
 import CTitle from '@/components/title/title'
 import JInput from '@/components/input/j-input'
+import Popup from '@/components/popup/popup'
 import BaseMessage from './baseMessage'
 export default {
   name: 'CanEdit',
   data () {
     return {
       whichPage: true,
+      show: true,
       radio: '男',
       checked: '否',
+      type: 'birth',
+      minDate: new Date(1900, 0, 1),
       test: '',
       icon: {
         normal: require('./image/normal.png'),
         active: require('./image/active.png')
+      },
+      form: {
+        birth: ''
       }
     }
   },
@@ -164,17 +181,22 @@ export default {
   methods: {
     next () {
       this.whichPage = !this.whichPage
+    },
+    close (type) {
+      this.show = !this.show
+      this.type = type
+    },
+    confirm (val) {
+      let birth = [val.getFullYear(), val.getMonth(), val.getDate()]
+      this.form.birth = birth.join('.')
+      this.show = false
     }
   },
   components: {
     BaseMessage,
     CTitle,
-    JInput
-  },
-  watch: {
-    radio (val) {
-      console.log(val)
-    }
+    JInput,
+    Popup
   }
 }
 </script>

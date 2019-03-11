@@ -70,7 +70,7 @@
     <popup :toShow="towCell" position="bottom" @close="close">
       <div class="pop-btn">
         <button @click="close">取消</button>
-        <button @click="close">完成</button>
+        <button @click="onConfirm(open)">完成</button>
       </div>
       <div class="pop-title" v-show="open === 'major'">
         <span>二级学科</span>
@@ -79,11 +79,13 @@
       <van-picker
         v-show="open === 'major'"
         :columns="columns"
+        ref="major"
         :item-height=30
         @change="onChange" />
 
       <van-datetime-picker
         type="date"
+        ref="Time"
         v-show="open === 'time'"
         :item-height=30
         :show-toolbar="false"
@@ -92,7 +94,7 @@
         @change="getAge"
       />
 
-      <van-picker :item-height=30 :columns="sexList" v-show="open === 'sex'" @change="selectSex" />
+      <van-picker :item-height=30 ref="Sex" :columns="sexList" v-show="open === 'sex'" @change="selectSex" />
     </popup>
 
     <div class="button-cell">
@@ -173,6 +175,22 @@ export default {
     close (type) {
       this.towCell = !this.towCell
       this.open = type
+    },
+    onConfirm (open) {
+      if (open === 'sex') {
+        this.sex = this.$refs.Sex.getValues(1)
+      } else if (open === 'time') {
+        let time = this.$refs.Time.$refs.picker.getValues()
+        let year = time[0]
+        let month = time[1]
+        let date = time[2]
+        let age = GetAge(year, month, date)
+        this.age = `${year}.${month}.${date} ${age}岁`
+      } else if (open === 'major') {
+        let major = this.$refs.major.getValues()
+        this.major = major.join('、')
+      }
+      this.towCell = false
     }
   }
 }

@@ -28,7 +28,7 @@
 
     <div class="btn">
       <div class="checkWapper border-1pxTop"><checkbox @change="select($event)" v-model="all"/><p>全选/反选</p></div>
-      <button class="start">启用</button>
+      <button class="start" @click="stop('启用')">启用</button>
       <button class="stop" @click="stop('停用')">停用</button>
       <button class="delete" @click="stop('删除')">删除</button>
     </div>
@@ -45,7 +45,7 @@
         </div>
       <div class="button-cell">
         <button class="complete" @click="open">取消</button>
-        <button class="reset" @click="open">确认</button>
+        <button class="reset" @click="confirm(toDo)">确认</button>
       </div>
       </div>
     </popup>
@@ -64,7 +64,6 @@
 import CTitle from '@/components/title/title'
 import Checkbox from '@/components/checkbox/checkbox'
 import Popup from '@/components/popup/popup'
-// import JInput from '@/components/input/j-input'
 import Card from './components/card'
 import PopupData from './components/popupData'
 export default {
@@ -151,6 +150,20 @@ export default {
     dropConfirm (value, index) {
       this.$toast(value)
       this.dropDown()
+    },
+    confirm (type) {
+      this.multipleList.forEach(v => {
+        if (this.messageList.indexOf(v) !== -1) {
+          if (type === '删除') {
+            this.messageList.splice(this.messageList.indexOf(v), 1)
+          } else if (type === '停用') {
+            this.messageList[this.messageList.indexOf(v)].type = '停用'
+          } else {
+            this.messageList[this.messageList.indexOf(v)].type = '正常'
+          }
+        }
+      })
+      this.warning = false
     }
   },
   components: {
