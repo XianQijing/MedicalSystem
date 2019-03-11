@@ -74,7 +74,7 @@ export default {
       this.$emit('click', e)
     },
     blur () {
-      // this.clear = false
+      this.clear = false
     },
     focus () {
       this.clear = true
