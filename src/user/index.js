@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '@/user/homePage/homePage'
 import UserCenter from '@/user/userCenter/userCenter'
-// import UserHomePage from '@/User/homePage/homePage'
+import Login from '@/User/login/index'
 
 Vue.use(Router)
 
@@ -21,6 +21,31 @@ const router = new Router({
       name: 'UserCenter',
       component: UserCenter,
       meta: '用户中心'
+    },
+    {
+      path: '/Login',
+      // name: 'Login',
+      component: Login,
+      children: [
+        {
+          path: 'register',
+          name: 'Register',
+          meta: '注册',
+          component: resolve => require(['@/User/login/components/register'], resolve)
+        },
+        {
+          path: 'forget',
+          name: 'Rorget',
+          meta: '修改密码',
+          component: resolve => require(['@/User/login/components/register'], resolve)
+        },
+        {
+          path: '',
+          name: 'Login',
+          meta: '登陆',
+          component: resolve => require(['@/User/login/components/login'], resolve)
+        }
+      ]
     }
   ]
 })

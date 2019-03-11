@@ -1,12 +1,27 @@
 <template>
   <div class="J-input">
     <div class="text" v-if="type==='text'">
-      <input type="text"
+      <input :type="text"
         :value="value"
         :placeholder="placeholder"
         @input="$emit('input', $event.target.value)"
         @blur="$emit('blur')"
         >
+        <slot></slot>
+    </div>
+
+    <div class="text" v-if="type==='clearable'">
+      <input type="text"
+        :value="value"
+        :placeholder="placeholder"
+        ref="text"
+        @input="getValue($event.target.value)"
+        @blur="blur"
+        @focus="focus"
+        >
+        <div class="clearable" v-show="clear">
+          <img @click="toClear" src="./image/delete.png" alt="">
+        </div>
     </div>
 
     <div @click="open($event)" class="aSelect" v-if="type==='select'">
@@ -30,6 +45,11 @@
 <script>
 import Popup from '@/components/popup/popup'
 export default {
+  data () {
+    return {
+      clear: false
+    }
+  },
   props: {
     value: {},
     type: {
@@ -40,7 +60,11 @@ export default {
       type: Boolean,
       default: true
     },
-    placeholder: {}
+    placeholder: {},
+    text: {
+      type: String,
+      default: 'text'
+    }
   },
   components: {
     Popup
@@ -48,6 +72,18 @@ export default {
   methods: {
     open (e) {
       this.$emit('click', e)
+    },
+    blur () {
+      // this.clear = false
+    },
+    focus () {
+      this.clear = true
+    },
+    toClear () {
+      this.$emit('input', '')
+    },
+    getValue (value) {
+      this.$emit('input', value)
     }
   }
 }
@@ -61,12 +97,28 @@ export default {
   display flex
   align-items center
   margin 0
+  box-sizing border-box
   .text
     background none
     width 100%
+    height 100%
+    position relative
+    .clearable
+      position absolute
+      top 0
+      right 0
+      display flex
+      align-items center
+      height 100%
+      padding 0 10px 0 5px
+      background-color: rgb(239, 239, 244);
+      img
+        width 20px
+        height 20px
   input
     width 100%
     font-size: 14px;
+    height 100%
     background none
   .aSelect
     background-size 12px

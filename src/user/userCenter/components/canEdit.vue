@@ -231,7 +231,7 @@ export default {
         &:last-child
           border-none()
         .J-input
-          width 160px
+          width 180px
           height 30px
           border 1px solid #FD4D4D
           border-radius: 6px

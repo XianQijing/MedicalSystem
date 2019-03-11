@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HomePage from '@/admin/homePage/homePage'
 import UserCenter from '@/admin/userCenter/userCenter'
 import EditPersonalMessage from '@/admin/userCenter/editPersonalMessage'
+import Login from '@/User/login/index'
 
 Vue.use(Router)
 
@@ -27,6 +28,31 @@ const router = new Router({
       name: 'EditPersonalMessage',
       component: EditPersonalMessage,
       meta: '信息修改'
+    },
+    {
+      path: '/Login',
+      // name: 'Login',
+      component: Login,
+      children: [
+        {
+          path: 'register',
+          name: 'Register',
+          meta: '注册',
+          component: resolve => require(['@/User/login/components/register'], resolve)
+        },
+        {
+          path: 'forget',
+          name: 'Rorget',
+          meta: '修改密码',
+          component: resolve => require(['@/User/login/components/register'], resolve)
+        },
+        {
+          path: '',
+          name: 'Login',
+          meta: '登陆',
+          component: resolve => require(['@/User/login/components/login'], resolve)
+        }
+      ]
     }
   ]
 })
