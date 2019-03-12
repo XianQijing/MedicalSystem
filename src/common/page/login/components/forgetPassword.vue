@@ -1,6 +1,12 @@
 <template>
-  <div class="login">
-    <j-input placeholder="请输入账号" type="clearable" v-model="test"></j-input>
+  <div class="forget">
+    <j-input placeholder="请输入手机号" type="clearable" v-model="test"></j-input>
+    <div class="identifying">
+      <j-input placeholder="请输入验证码"></j-input>
+      <div class="identifying-img">
+        <img src="" alt="验证码">
+      </div>
+    </div>
     <div class="pass">
       <j-input v-model="form.password" placeholder="请输入密码" text="password" v-show="password === false">
         <div>
@@ -13,21 +19,16 @@
         </div>
       </j-input>
     </div>
-
     <button class="btn">
-      登陆
+      修改密码
     </button>
-    <div class="select">
-      <router-link :to="{name: 'Register'}" tag="span">立即注册</router-link>
-      <router-link :to="{name: 'Rorget'}" tag="span">忘记密码?</router-link>
-    </div>
   </div>
 </template>
 
 <script>
 import JInput from '@/components/input/j-input'
 export default {
-  name: 'Login',
+  name: 'Forget',
   data () {
     return {
       test: '',
@@ -41,29 +42,20 @@ export default {
       }
     }
   },
+  components: {
+    JInput
+  },
   methods: {
     watchPassword () {
       this.password = !this.password
     }
-  },
-  components: {
-    JInput
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.login
-  padding-bottom 20px
-  .btn
-    width:80%
-    height:49px
-    max-width 444px
-    background:rgba(71,104,243,1)
-    border-radius:5px
-    color white
-    display block
-    margin 0 auto
+.forget
+  // padding-bottom 20px
   .J-input
     width 80%
     height 54px
@@ -84,14 +76,27 @@ export default {
         display flex
         align-items center
         height 100%
-  .select
-    width 80%
-    max-width 444px
+  .identifying
     display flex
     justify-content space-between
-    margin 20PX auto 0 auto
-    font-size:15px;
-    font-family:PingFangSC-Medium;
-    font-weight:500;
-    color:rgba(182,182,182,1);
+    width 80%
+    max-width 444px
+    margin 0 auto
+    .J-input
+      width 100%
+      flex 1
+    .identifying-img
+      width 109px
+      margin-left 20px
+      height 54px
+      background white
+.btn
+  width:80%
+  height:49px
+  max-width 444px
+  background:rgba(71,104,243,1)
+  border-radius:5px
+  color white
+  display block
+  margin 0 auto
 </style>
