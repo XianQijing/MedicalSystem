@@ -1,8 +1,14 @@
 <template>
   <div class="forget">
-    <j-input placeholder="请输入手机号" type="clearable" v-model="test"></j-input>
+    <j-input placeholder="请输入邮箱地址" type="clearable" v-model="test"></j-input>
     <div class="identifying">
-      <j-input placeholder="请输入验证码"></j-input>
+      <j-input placeholder="请输入邮箱验证码"></j-input>
+      <div class="identifying-img">
+        <button>获取邮箱验证码</button>
+      </div>
+    </div>
+    <div class="identifying">
+      <j-input placeholder="请输入系统验证码"></j-input>
       <div class="identifying-img">
         <img src="" alt="验证码">
       </div>
@@ -19,8 +25,20 @@
         </div>
       </j-input>
     </div>
+    <div class="pass">
+      <j-input v-model="form.password" placeholder="请再次输入密码" text="password" v-show="password === false">
+        <div>
+          <img width="18" :src="icon.normal" @click="watchPassword">
+        </div>
+      </j-input>
+      <j-input v-model="form.password" placeholder="请再次输入密码" text="text" v-show="password === true">
+        <div>
+          <img width="18" :src="icon.active" @click="watchPassword">
+        </div>
+      </j-input>
+    </div>
     <button class="btn">
-      修改密码
+      提交新密码
     </button>
   </div>
 </template>
@@ -80,6 +98,7 @@ export default {
     display flex
     justify-content space-between
     width 80%
+    background none
     max-width 444px
     margin 0 auto
     .J-input
@@ -90,6 +109,13 @@ export default {
       margin-left 20px
       height 54px
       background white
+    button
+      border:1px solid rgba(71,104,243,1);
+      border-radius:5px;
+      color #4768F3
+      width:109px;
+      height:52px;
+      background rgb(239, 239, 244);
 .btn
   width:80%
   height:49px

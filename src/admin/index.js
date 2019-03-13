@@ -44,7 +44,7 @@ const router = new Router({
           path: 'forget',
           name: 'Rorget',
           meta: '修改密码',
-          component: resolve => require(['@/common/page/login/components/register'], resolve)
+          component: resolve => require(['@/common/page/login/components/forgetPassword'], resolve)
         },
         {
           path: '',
