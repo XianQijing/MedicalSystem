@@ -100,6 +100,7 @@ export default {
   align-items center
   margin 0
   box-sizing border-box
+  font-size 14px
   .text
     background none
     width 100%
@@ -119,7 +120,7 @@ export default {
         height 20px
   input
     width 100%
-    font-size: 14px;
+    // font-size: 14px;
     height 100%
     background none
   .aSelect
@@ -147,13 +148,17 @@ export default {
   input::-webkit-input-placeholder
     color: rgb(161, 161, 161);
     font-weight 400
+    // font-size 12px
   input:-moz-placeholder
     color: rgb(161, 161, 161);
     font-weight 400
+    // font-size 12px
   input::-moz-placeholder
     color: rgb(161, 161, 161);
     font-weight 400
+    // font-size 12px
   input::-ms-input-placeholder
     color: rgb(161, 161, 161);
     font-weight 400
+    // font-size 12px
 </style>

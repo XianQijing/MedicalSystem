@@ -55,9 +55,9 @@ export default {
               path: '/'
             },
             {
-              name: '科技服务',
+              name: '科研服务',
               icon: 'service',
-              path: '/'
+              path: '/scientificServing'
             }
           ]
         },

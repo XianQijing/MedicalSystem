@@ -11,9 +11,19 @@
           <slot></slot>
         </div>
       </transition>
-      <transition>
+      <!-- <transition>
         <div v-show="toShow" class="centerPop" v-if="position==='center'" @click="cancel($event)">
           <slot></slot>
+        </div>
+      </transition> -->
+      <transition>
+        <div v-show="toShow" class="centerPop warning" v-if="position==='center'" @click="cancel($event)">
+          <div class="wraning">
+            <p class="waring-title border-1px">
+              <slot name="title"></slot>
+            </p>
+            <slot></slot>
+          </div>
         </div>
       </transition>
     </div>
@@ -58,6 +68,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../../common/style/mixin.styl'
 .overlay
   background rgba(51,51,51,0.20)
 .popup
@@ -71,7 +82,7 @@ export default {
   overflow hidden
   z-index 50
   .rightPop
-    width 80%
+    width 90%
     max-width 300px
     height 100%
     background white
@@ -86,8 +97,24 @@ export default {
     position absolute
     bottom 0
     left 0
+    z-index 300
   .centerPop
     width 100%
+    z-index 290
+  .wraning
+    width 80%
+    max-width 300px
+    background white
+    margin 0 auto
+    .waring-title
+      margin 0 10px
+      padding 15px 0
+      text-align center
+      font-size: 16px;
+      color: #333333;
+      font-weight 700
+      border-1px(#D3D3D3)
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .1s;
 }

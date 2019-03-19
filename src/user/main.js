@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './index'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from '../store/user'
 import { DatetimePicker, Picker, RadioGroup, Radio, Toast } from 'vant'
 
 import '@/common/style/reset.css'
@@ -21,5 +22,6 @@ Vue.use(Picker)
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })

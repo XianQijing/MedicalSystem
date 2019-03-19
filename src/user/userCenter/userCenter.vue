@@ -1,23 +1,17 @@
 <template>
-  <div class="UserCenter">
+  <div style="min-height:100%">
     <div class="drop">
-      <button class="drop-down" @click="close">
-        <span class="iconfont" v-show="!show">&#xe7ee;</span>
-        <span class="iconfont" v-show="show">&#xe7ed;</span>
+      <button class="drop-down" @click="dropDown">
+        <span class="iconfont" v-show="!drop">&#xe7ee;</span>
+        <span class="iconfont" v-show="drop">&#xe7ed;</span>
       </button>
     </div>
-    <div class="tabs">
-      <button class="tab" v-for="(btn, i) in btnList" :key="i" :class="{'btn-active': active === i}" @click="active=i">{{btn}}</button>
-    </div>
-    <personal-message v-show="active === 0"></personal-message>
-    <can-edit v-show="active === 1"></can-edit>
-    <edit-password v-show="active === 2"></edit-password>
-
-    <popup position="bottom" :toShow="show" @close="close">
+    <router-view/>
+    <popup position="bottom" :toShow="drop" @close="dropDown">
       <van-picker
-        :columns="columns"
-        @cancel="close"
-        @confirm="onConfirm"
+        :columns="dropList"
+        @cancel="dropDown"
+        @confirm="dropConfirm"
         :item-height=30
         :show-toolbar="true"/>
     </popup>
@@ -25,75 +19,71 @@
 </template>
 
 <script>
-import PersonalMessage from './components/personalMessage'
-import CanEdit from './components/canEdit'
-import EditPassword from './components/editPassword'
 import Popup from '@/components/popup/popup'
 
 export default {
   name: 'UserCenter',
   data () {
     return {
-      active: 0,
-      show: false,
-      btnList: ['个人信息', '修改信息', '修改密码'],
-      columns: ['用户信息', '用户业绩']
+      drop: false,
+      dropList: [
+        {
+          text: '用户信息',
+          name: 'UserMessage'
+        },
+        {
+          text: '用户业绩',
+          name: 'Achievement'
+        },
+        {
+          text: '学术简历',
+          name: 'UserMessage'
+        },
+        {
+          text: '科研对标',
+          name: 'Scientific',
+          from: 'user'
+        },
+        {
+          text: '继续学分',
+          name: 'Credit'
+        },
+        {
+          text: '社会任职',
+          name: 'Sociology'
+        }
+      ]
     }
   },
   components: {
-    PersonalMessage,
-    CanEdit,
-    EditPassword,
     Popup
   },
   methods: {
-    close () {
-      this.show = !this.show
+    dropDown () {
+      this.drop = !this.drop
     },
-    onConfirm (value, index) {
-      this.$toast(value)
-      this.close()
+    dropConfirm (value, index) {
+      this.dropDown()
+      this.$router.push({name: value.name, params: {from: value.from}})
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.UserCenter
-  .tabs
-    margin 10px 6px 1px 6px
-    display flex
-    position relative
-    z-index 1
-    .tab
-      margin-right 4px
-      border 1px solid #2873FF
-      background rgb(239, 239, 244)
-      color #2873FF
-      font-size 12px
-      flex 1
-      height 30px
-      &:last-child
-        margin-right 0
-      &.btn-active
-      border none
-        background #2873FF
-        color white
-  .drop
-    position absolute
-    width 100%
-    text-align center
-    top 20px
-    z-index 0
-    .drop-down
-      background rgb(221, 221, 221)
-      width 40px
-      height 40px
-      font-size 20px
-      color #999999
-      border-radius 50%
-      // position relative
-      span
-        position relative
-        top 7px
+.drop
+  position absolute
+  width 100%
+  top -20px
+  text-align center
+  .drop-down
+    width 40px
+    height 40px
+    font-size 20px
+    background rgb(221, 221, 221)
+    color #999999
+    border-radius 50%
+    span
+      position relative
+      top 7px
 </style>
