@@ -18,8 +18,8 @@ export default {
     return {
       open: false,
       icon: {
-        open: require('./image/open.png'),
-        close: require('./image/close.png')
+        open: require('../../common/image/open.png'),
+        close: require('../../common/image/close.png')
       }
     }
   },

@@ -37,7 +37,7 @@ export default {
         },
         {
           text: '学术简历',
-          name: 'UserMessage'
+          name: 'Resume'
         },
         {
           text: '科研对标',

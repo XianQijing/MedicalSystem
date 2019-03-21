@@ -14,9 +14,13 @@
         <j-input placeholder="省市级" @click="open('belong')" v-model="form.belong" type="select">
         </j-input>
       </div>
-      <div class="form-cell" v-if="filter('学历选择')">
-        <p class="label">学历选择</p>
-        <j-input placeholder="学历选择" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
+      <div class="form-cell" v-if="filter('性别选择')">
+        <p class="label">性别选择</p>
+        <j-input placeholder="男女" @click="open('degree')" v-model="form.degree" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('民族选择')">
+        <p class="label">民族选择</p>
+        <j-input placeholder="民族选择" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
       </div>
       <div class="form-cell" v-if="filter('任职类别')">
         <p class="label">任职类别</p>
@@ -26,9 +30,17 @@
         <p class="label">所属科室</p>
         <j-input placeholder="所属科室" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
       </div>
-      <div class="form-cell" v-if="filter('性别选择')">
-        <p class="label">性别选择</p>
-        <j-input placeholder="男女" @click="open('degree')" v-model="form.degree" type="select"></j-input>
+      <div class="form-cell" v-if="filter('科室选择')">
+        <p class="label">科室选择</p>
+        <j-input placeholder="科室选择" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('专业选择')">
+        <p class="label">专业选择</p>
+        <j-input placeholder="专业选择" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('学历选择')">
+        <p class="label">学历选择</p>
+        <j-input placeholder="学历选择" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
       </div>
       <div class="form-cell" v-if="filter('职称选择')">
         <p class="label">职称选择</p>
@@ -110,6 +122,20 @@
         <p class="label">著作类型</p>
         <j-input placeholder="著作类型" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
+      <!-- 政策 -->
+      <div class="form-cell" v-if="filter('区域选择')">
+        <p class="label">区域选择</p>
+        <j-input placeholder="区域选择" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('省份选择')">
+        <p class="label">省份选择</p>
+        <j-input placeholder="省份选择" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('城市选择')">
+        <p class="label">城市选择</p>
+        <j-input placeholder="城市选择" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+
       <!--  -->
       <p class="title">搜索项目</p>
       <div class="form-cell">

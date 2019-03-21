@@ -34,7 +34,7 @@ const router = [
       {
         path: 'scientific/:from',
         name: 'Scientific',
-        component: resolve => require(['@/page/userCenter/scientific'], resolve),
+        component: resolve => require(['@/page/userCenter/scientific/scientific'], resolve),
         meta: '科研对标'
       },
       // 修改密码
@@ -49,6 +49,12 @@ const router = [
         name: 'Sociology',
         component: resolve => require(['@/admin/userCenter/sociology/sociology'], resolve),
         meta: '社会任职'
+      },
+      {
+        path: 'resume',
+        name: 'Resume',
+        component: resolve => require(['@/page/userCenter/resume/resume'], resolve),
+        meta: '学术简历'
       }
     ]
     // meta: '用户中心'
@@ -207,6 +213,13 @@ const router = [
     name: 'ActivityDetail',
     component: resolve => require(['@/page/userCenter/achievement/activityDetail'], resolve),
     meta: '活动详情'
+  },
+  // 简历详情
+  {
+    path: '/resumeDetail',
+    name: 'ResumeDetail',
+    component: resolve => require(['@/page/userCenter/resume/resumeDetail'], resolve),
+    meta: '简历详情'
   }
 ]
 

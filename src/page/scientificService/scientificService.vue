@@ -9,3 +9,8 @@ export default {
   name: 'ScientificService'
 }
 </script>
+
+<style lang="stylus" scoped>
+.scientificService
+  height 100%
+</style>

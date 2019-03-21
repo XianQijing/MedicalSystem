@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HomePage from '@/admin/homePage/homePage'
 import UserCenter from '@/router/admin/userCenter'
 import scientificServing from '@/router/admin/scientificServing'
+import Policy from '@/router/admin/policy'
+import Notic from '@/router/admin/notic'
 import Login from '@/page/login/index'
 
 Vue.use(Router)
@@ -42,7 +44,9 @@ const router = new Router({
         }
       ]
     },
-    scientificServing
+    scientificServing,
+    Policy,
+    Notic
   ].concat(UserCenter)
 })
 

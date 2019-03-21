@@ -47,12 +47,12 @@ export default {
             {
               name: '通知公告',
               icon: 'notic',
-              path: '/'
+              path: '/Notic'
             },
             {
               name: '政策法规',
               icon: 'policy',
-              path: '/'
+              path: '/policy'
             },
             {
               name: '科研服务',

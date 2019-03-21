@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import HomePage from '@/user/homePage/homePage'
 import UserCenter from '@/user/userCenter/userCenter'
 import Login from '@/page/login/index'
+import Policy from '@/router/user/policy'
+import Notic from '@/router/user/notic'
+import scientificServing from '@/router/user/scientificServing'
 
 Vue.use(Router)
 
@@ -38,7 +41,7 @@ const router = new Router({
         {
           path: 'scientific/:from',
           name: 'Scientific',
-          component: resolve => require(['@/page/userCenter/scientific'], resolve),
+          component: resolve => require(['@/page/userCenter/scientific/scientific'], resolve),
           meta: '科研对标'
         },
         {
@@ -52,6 +55,12 @@ const router = new Router({
           name: 'Achievement',
           component: resolve => require(['@/user/userCenter/achievement/achievement'], resolve),
           meta: '用户业绩'
+        },
+        {
+          path: 'resume',
+          name: 'ResumeDetail',
+          component: resolve => require(['@/page/userCenter/resume/resumeDetail'], resolve),
+          meta: '学术简历'
         }
       ]
     },
@@ -164,7 +173,11 @@ const router = new Router({
           component: resolve => require(['@/page/login/components/login'], resolve)
         }
       ]
-    }
+    },
+    // 科研服务
+    scientificServing,
+    Policy,
+    Notic
   ]
 })
 

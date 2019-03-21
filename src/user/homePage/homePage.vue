@@ -31,17 +31,17 @@ export default {
             {
               name: '通知公告',
               icon: 'notic',
-              path: '/'
+              path: '/notic'
             },
             {
               name: '政策法规',
               icon: 'policy',
-              path: '/'
+              path: '/policy'
             },
             {
-              name: '科技服务',
+              name: '科研服务',
               icon: 'service',
-              path: '/'
+              path: '/ScientificServing'
             }
           ]
         },

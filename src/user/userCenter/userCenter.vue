@@ -37,12 +37,12 @@ export default {
         },
         {
           text: '学术简历',
-          name: 'UserMessage'
+          name: 'Resume'
         },
         {
           text: '科研对标',
-          name: 'Scientific',
-          from: 'user'
+          name: 'Scientific'
+          // from: 'user'
         },
         {
           text: '继续学分',

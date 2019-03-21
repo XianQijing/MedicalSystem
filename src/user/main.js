@@ -3,7 +3,9 @@ import App from './App'
 import router from './index'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from '../store/user'
-import { DatetimePicker, Picker, RadioGroup, Radio, Toast } from 'vant'
+import Dialog from '@/components/toast/toast.js'
+import MessageBox from '@/components/messageBox/messageBox.js'
+import { Picker, Radio, RadioGroup, DatetimePicker, Toast, Popup } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
@@ -17,6 +19,9 @@ Vue.use(Picker)
   .use(VueAwesomeSwiper)
   .use(Toast)
   .use(DatetimePicker)
+  .use(Dialog)
+  .use(MessageBox)
+  .use(Popup)
 
 /* eslint-disable no-new */
 new Vue({

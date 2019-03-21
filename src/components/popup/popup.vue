@@ -26,6 +26,17 @@
           </div>
         </div>
       </transition>
+
+      <transition>
+        <div class="centerPop warning" v-if="position==='title'" @click="cancel($event)">
+          <div class="wraning">
+            <p class="waring-title border-1px">
+              <slot name="title"></slot>
+            </p>
+            <slot></slot>
+          </div>
+        </div>
+      </transition>
     </div>
   </transition>
 </template>
@@ -53,11 +64,16 @@ export default {
     overlay: {
       type: Boolean,
       default: true
+    },
+    value: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     show (e) {
       this.$emit('close', false)
+      this.$emit('input', false)
     },
     cancel (e) {
       e.stopPropagation()
@@ -79,7 +95,6 @@ export default {
   left 0
   display flex
   align-items center
-  overflow hidden
   z-index 50
   .rightPop
     width 90%

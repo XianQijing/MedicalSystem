@@ -4,13 +4,13 @@ import router from './index'
 import Dialog from '@/components/toast/toast.js'
 import MessageBox from '@/components/messageBox/messageBox.js'
 import store from '../store/user'
-import { Picker, DatetimePicker, Toast } from 'vant'
+import { Picker, DatetimePicker, Toast, Popup, Radio, RadioGroup } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
 import '@/common/style/index.styl'
 
-Vue.use(Picker).use(Dialog).use(DatetimePicker).use(Toast).use(MessageBox)
+Vue.use(Picker).use(Dialog).use(DatetimePicker).use(Toast).use(MessageBox).use(Popup).use(Radio).use(RadioGroup)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
