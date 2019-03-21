@@ -72,6 +72,7 @@ export default {
     margin-bottom 2px
     textarea
       height 170px
+      width 100%
   .formCell
     height 30px
     p
