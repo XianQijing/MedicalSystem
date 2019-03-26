@@ -3,7 +3,7 @@ import App from './App'
 import router from './index'
 import Dialog from '@/components/toast/toast.js'
 import MessageBox from '@/components/messageBox/messageBox.js'
-import store from '../store/user'
+import store from '../store/admin'
 import { Picker, DatetimePicker, Toast, Popup, Radio, RadioGroup } from 'vant'
 
 import '@/common/style/reset.css'

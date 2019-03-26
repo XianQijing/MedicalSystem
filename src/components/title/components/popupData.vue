@@ -54,13 +54,13 @@
         <p class="label">任职属性</p>
         <j-input placeholder="任职属性" @click="open('titles')" v-model="form.titles" type="select"></j-input>
       </div>
-      <div class="form-cell" v-if="filter('审核状态')">
-        <p class="label">审核状态</p>
-        <j-input placeholder="通过" @click="open('levels')" v-model="form.levels" type="select"></j-input>
-      </div>
       <div class="form-cell" v-if="filter('科研课题')">
         <p class="label">科研课题</p>
         <j-input placeholder="科研课题" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('类别选择')">
+        <p class="label">类别选择</p>
+        <j-input placeholder="类别选择" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
       <div class="form-cell" v-if="filter('项目类别')">
         <p class="label">项目类别</p>
@@ -102,6 +102,30 @@
         <p class="label">成果类别</p>
         <j-input placeholder="成果类别" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
+      <div class="form-cell" v-if="filter('著作类别')">
+        <p class="label">著作类别</p>
+        <j-input placeholder="著作类别" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('著作属性')">
+        <p class="label">著作属性</p>
+        <j-input placeholder="著作属性" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('著作类型')">
+        <p class="label">著作类型</p>
+        <j-input placeholder="著作类型" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('所属学科')">
+        <p class="label">所属学科</p>
+        <j-input placeholder="所属学科" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('审核状态')">
+        <p class="label">审核状态</p>
+        <j-input placeholder="通过" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('打印状态')">
+        <p class="label">打印状态</p>
+        <j-input placeholder="打印状态" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
       <div class="form-cell" v-if="filter('人员属性')">
         <p class="label">人员属性</p>
         <j-input placeholder="人员属性" @click="open('levels')" v-model="form.levels" type="select"></j-input>
@@ -113,14 +137,6 @@
       <div class="form-cell" v-if="filter('奖励等级')">
         <p class="label">奖励等级</p>
         <j-input placeholder="奖励等级" @click="open('levels')" v-model="form.levels" type="select"></j-input>
-      </div>
-      <div class="form-cell" v-if="filter('著作属性')">
-        <p class="label">著作属性</p>
-        <j-input placeholder="著作属性" @click="open('levels')" v-model="form.levels" type="select"></j-input>
-      </div>
-      <div class="form-cell" v-if="filter('著作类型')">
-        <p class="label">著作类型</p>
-        <j-input placeholder="著作类型" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
       <!-- 政策 -->
       <div class="form-cell" v-if="filter('区域选择')">

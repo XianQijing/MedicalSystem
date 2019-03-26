@@ -1,4 +1,4 @@
-// 我的成功
+// 我的成果
 <template>
   <div class="myAchievement">
     <c-title
@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'achievementDetail'})
+      this.$router.push({name: 'AchievementDetail'})
     }
   }
 }

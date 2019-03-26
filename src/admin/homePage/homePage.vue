@@ -107,7 +107,7 @@ export default {
             {
               name: '成果管理',
               icon: 'result',
-              path: '/'
+              path: '/ManagementOfAchievement'
             }
           ]
         },

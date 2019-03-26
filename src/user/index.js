@@ -6,6 +6,8 @@ import Login from '@/page/login/index'
 import Policy from '@/router/user/policy'
 import Notic from '@/router/user/notic'
 import scientificServing from '@/router/user/scientificServing'
+import ManagementOfAchievement from '@/router/user/managementOfAchievement'
+import FundManagement from '@/router/user/fundManagement'
 
 Vue.use(Router)
 
@@ -177,7 +179,9 @@ const router = new Router({
     // 科研服务
     scientificServing,
     Policy,
-    Notic
+    Notic,
+    ManagementOfAchievement,
+    FundManagement
   ]
 })
 

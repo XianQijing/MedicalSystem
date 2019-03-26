@@ -86,12 +86,12 @@ export default {
             {
               name: '经费管理',
               icon: 'funds',
-              path: '/'
+              path: '/FundManagement'
             },
             {
               name: '成果管理',
               icon: 'result',
-              path: '/'
+              path: '/ManagementOfAchievement'
             }
           ]
         },

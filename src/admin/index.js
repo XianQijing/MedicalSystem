@@ -6,6 +6,7 @@ import scientificServing from '@/router/admin/scientificServing'
 import Policy from '@/router/admin/policy'
 import Notic from '@/router/admin/notic'
 import Login from '@/page/login/index'
+import ManagementOfAchievement from '@/router/admin/managementOfAchievement'
 
 Vue.use(Router)
 
@@ -46,7 +47,8 @@ const router = new Router({
     },
     scientificServing,
     Policy,
-    Notic
+    Notic,
+    ManagementOfAchievement
   ].concat(UserCenter)
 })
 
