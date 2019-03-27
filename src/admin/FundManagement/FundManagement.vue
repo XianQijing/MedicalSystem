@@ -28,7 +28,15 @@ export default {
       dropList: [
         {
           text: '报销审核',
-          name: 'ApplicationForReimbursement'
+          name: 'ReimbursementAudit'
+        },
+        {
+          text: '经费管理',
+          name: 'FundManagement1'
+        },
+        {
+          text: '绩效管理',
+          name: 'FundManagement1'
         },
         {
           text: '经费决算',
@@ -47,7 +55,7 @@ export default {
           name: 'BalanceOfFunds'
         },
         {
-          text: '项目预算',
+          text: '经费预算',
           name: 'ProjectBudget'
         },
         {

@@ -70,7 +70,7 @@ export default {
 .FundsFinalAccounts >>> .comTitle
   margin 0
 .FundsFinalAccounts
-  padding-bottom 20px
+  margin 0 6px
   .card
     margin 0 6px
     .abtn

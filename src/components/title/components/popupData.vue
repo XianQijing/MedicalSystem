@@ -30,6 +30,10 @@
         <p class="label">所属科室</p>
         <j-input placeholder="所属科室" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
       </div>
+      <div class="form-cell" v-if="filter('经费类别')">
+        <p class="label">经费类别</p>
+        <j-input placeholder="经费类别" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
+      </div>
       <div class="form-cell" v-if="filter('科室选择')">
         <p class="label">科室选择</p>
         <j-input placeholder="科室选择" @click="open('eduation')" v-model="form.eduation" type="select"></j-input>
@@ -57,6 +61,10 @@
       <div class="form-cell" v-if="filter('科研课题')">
         <p class="label">科研课题</p>
         <j-input placeholder="科研课题" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('申报类别')">
+        <p class="label">申报类别</p>
+        <j-input placeholder="申报类别" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
       <div class="form-cell" v-if="filter('类别选择')">
         <p class="label">类别选择</p>

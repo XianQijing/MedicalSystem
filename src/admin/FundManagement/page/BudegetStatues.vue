@@ -88,7 +88,7 @@
         <th>设备费</th>
         <td>5</td>
         <td>7</td>
-        <td>2</td>
+        <td>4</td>
         <td>4</td>
       </tr>
       <tr class="move">

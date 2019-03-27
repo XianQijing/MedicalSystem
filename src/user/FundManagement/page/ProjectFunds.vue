@@ -71,9 +71,8 @@ export default {
 .ProjectFunds >>> .comTitle
   margin 0
 .ProjectFunds
-  padding-bottom 20px
+  margin 0 6px
   .card
-    margin 0 6px
     .abtn
       background: #2873FF;
       border-radius: 6px;

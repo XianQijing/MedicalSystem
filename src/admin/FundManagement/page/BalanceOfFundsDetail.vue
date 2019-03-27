@@ -86,7 +86,7 @@
         <JTableColums label="拨款金额" prop="index"/>
         <JTableColums label="项目金额" prop="name"/>
         <JTableColums label="匹配金额" prop="price"/>
-        <JTableColums label="其他金额" prop="index"/>
+        <JTableColums label="其他金额" prop="price"/>
       </JTable>
     </card>
   </div>

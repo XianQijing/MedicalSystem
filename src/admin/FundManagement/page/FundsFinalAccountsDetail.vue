@@ -103,7 +103,7 @@
           <JTableColums label="预算数" prop="name"/>
           <JTableColums label="实际数" prop="price"/>
           <JTableColums label="结余数" prop="index"/>
-          <JTableColums label="备注" prop="price"/>
+          <JTableColums label="备注" prop="money"/>
         </JTable>
       </tab>
     </tabs>

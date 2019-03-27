@@ -7,7 +7,8 @@ import Policy from '@/router/admin/policy'
 import Notic from '@/router/admin/notic'
 import Login from '@/page/login/index'
 import ManagementOfAchievement from '@/router/admin/managementOfAchievement'
-import FundManagement from '@/router/user/fundManagement'
+import FundManagement from '@/router/admin/fundManagement'
+import ItemsManagement from '@/router/admin/ItemsManagement'
 
 Vue.use(Router)
 
@@ -50,7 +51,8 @@ const router = new Router({
     Policy,
     Notic,
     ManagementOfAchievement,
-    FundManagement
+    FundManagement,
+    ItemsManagement
   ].concat(UserCenter)
 })
 

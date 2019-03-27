@@ -2,7 +2,7 @@ import Notic from '@/page/notic/notic'
 
 const router = {
   path: '/notic',
-  name: 'Notic',
+  // name: 'Notic',
   component: Notic,
   children: [
     {

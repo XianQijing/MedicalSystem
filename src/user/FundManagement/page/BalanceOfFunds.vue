@@ -64,12 +64,11 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.BalanceOfFunds >>> .comTitle
-  margin 0
 .BalanceOfFunds
-  padding-bottom 20px
+  margin 0 6px
+  .comTitle
+    margin 0
   .card
-    margin 0 6px
     .abtn
       background: #2873FF;
       border-radius: 6px;

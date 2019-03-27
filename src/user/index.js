@@ -8,6 +8,8 @@ import Notic from '@/router/user/notic'
 import scientificServing from '@/router/user/scientificServing'
 import ManagementOfAchievement from '@/router/user/managementOfAchievement'
 import FundManagement from '@/router/user/fundManagement'
+import ItemsManagement from '@/router/user/ItemsManagement'
+
 
 Vue.use(Router)
 
@@ -181,7 +183,8 @@ const router = new Router({
     Policy,
     Notic,
     ManagementOfAchievement,
-    FundManagement
+    FundManagement,
+    ItemsManagement
   ]
 })
 

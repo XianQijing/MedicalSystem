@@ -2,7 +2,7 @@
 <template>
   <div class="ProjectFunds">
     <div>
-      <CTitle :screen="true" :textList="textList">到款入账列表</CTitle>
+      <CTitle :screen="true" :textList="textList">项目列表</CTitle>
 
       <card
         v-for="(item, index) in messageList"
@@ -14,13 +14,13 @@
         <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属单位</span>
         <p style="padding: 15px 0" class="black border-1pxTop">
-          论文题目
+          项目名称
         </p>
         <span>项目类别</span>
         <span>项目计划</span>
-        <span class="resTime">批准日期：2018.09.01 12:00</span>
+        <span class="resTime">项目到款总额：0.00</span>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
+          <button slot="button" class="abtn" @click="jump">经费录入</button>
         </div>
       </card>
     </div>
@@ -35,7 +35,7 @@ export default {
   name: 'ProjectFunds',
   data () {
     return {
-      textList: ['时间范围', '类别选择', '项目类别', '项目计划'],
+      textList: ['时间范围', '申报类别', '项目类别', '所属科室'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -71,7 +71,8 @@ export default {
 .ProjectFunds >>> .comTitle
   margin 0
 .ProjectFunds
-  padding-bottom 20px
+  padding 0 0 10px 0
+  margin 0 6px
   .card
     margin 0 6px
     .abtn

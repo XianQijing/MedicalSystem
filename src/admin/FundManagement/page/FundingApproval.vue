@@ -1,45 +1,108 @@
 // 经费审批
 <template>
   <div class="FundingApproval">
-    <tabs v-model="clickTab">
-      <tab title="事项申请" name="0">
-        <ApplicationForMatters/>
-      </tab>
-      <tab title="状态查询及打印" name="1">
-        <StateSearchAndPritin/>
-      </tab>
-    </tabs>
+    <CTitle :screen="true" :textList="textList">项目列表</CTitle>
+
+    <card
+      v-for="(item, index) in messageList"
+      :key="index"
+      :aType="item.type"
+      >
+      <div slot="time">2018.04.12 14:56</div>
+      <p class="no border-1pxLeft">NO：{{item.name}}</p>
+      <p slot="type" style="height:100%">{{item.type}}</p>
+      <span class="black">负责人-所属科室</span>
+      <p style="padding: 15px 0" class="black border-1pxTop">
+        项目名称
+      </p>
+      <span>项目类别、项目支出名目</span>
+      <span>项目计划</span>
+      <span class="resTime">批准日期：2018.09.01 12:00</span>
+      <div style="text-align:center">
+        <button slot="button" class="abtn" @click="jump">查看</button>
+        <button slot="button" class="abtn">返回上一步</button>
+      </div>
+    </card>
   </div>
 </template>
 
 <script>
-import Tab from '@/components/tab/tab'
-import Tabs from '@/components/tab/tabs'
-import ApplicationForMatters from '../components/ApplicationForMatters'
-import StateSearchAndPritin from '../components/StateSearchAndPritin'
+import CTitle from '@/components/title/title'
+import Card from '@/components/card/card'
 export default {
   name: 'FundingApproval',
   data () {
     return {
-      clickTab: 0
+      textList: ['时间范围', '申报类别', '项目类别', '项目计划', '审核状态', '所属科室'],
+      messageList: [
+        {
+          time: '2018.04.12 14:56',
+          no: '00210',
+          name: '用户名占位',
+          type: '通过',
+          dayin: '未打印'
+        },
+        {
+          time: '2018.04.12 14:56',
+          no: '00210',
+          name: '用户名占位',
+          type: '通过',
+          dayin: '已打印'
+        }
+      ]
     }
   },
   components: {
-    Tab,
-    Tabs,
-    ApplicationForMatters,
-    StateSearchAndPritin
+    CTitle,
+    Card
+  },
+  methods: {
+    jump () {
+      this.$router.push({name: 'FundingApprovalDetail'})
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.FundingApproval >>> .tabs
-  .tab-pane
-    width 1.77rem
-    font-size 12px
+.FundingApproval >>> .comTitle
+  margin 0
 .FundingApproval
   margin 0 6px
-  padding 20px 0 10px 0
+  .card
+    .abtn
+      background: #2873FF;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #FFFFFF;
+      width 100px
+      height 30px
+      // display block
+      margin 0 auto
+      &:last-child
+        margin-left 5px
+        font-size: 14px;
+        color: #2873FF;
+        background: #C6DAFF;
+    .no, .user
+        font-size: 12px;
+        color: #555555;
+        display inline-block
+        vertical-align top
+    span
+      display block
+      font-size: 14px;
+      color: #333333;
+      margin-bottom 15px
+    .black
+      margin-top 15px
+      font-weight 700
+      font-size: 16px;
+    .border-1pxTop
+      border-1pxTop(#D3D3D3)
+      color: #333333;
+    .resTime
+      font-size: 12px;
+      color: #999999
 </style>

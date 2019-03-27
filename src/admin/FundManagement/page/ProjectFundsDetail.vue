@@ -1,5 +1,4 @@
 // 项目经费--详情
-// 状态查询及打印--查看详情
 <template>
   <div class="ProjectFundsDetail">
     <div class="base-message">
@@ -70,41 +69,117 @@
         </div>
       </div>
     </div>
-
-    <div class="content blue">
-      <p class="title">到款入项金额</p>
-      <div>
-        <span>到款总额</span>
-        <span class="num">9000.00</span>
+    <div class="content">
+      <Collaspe name="第一期经费额度">
+      <div class="wrapper">
+        <div class="formCell">
+          <p class="form-label">项目经费：</p>
+          <p class="form-msg">2000.00</p>
+        </div>
+        <div class="formCell">
+          <p class="form-label">到款时间：</p>
+          <p class="form-msg">2018.09.01 12:23:31</p>
+        </div>
+        <div class="formCell none">
+          <p class="form-label">入账时间：</p>
+          <p class="form-msg">2018.09.01 12:23:31</p>
+        </div>
+        <div class="button">
+          <button>管理费提取</button>
+          <button>及消费提取</button>
+        </div>
       </div>
+      <div class="wrapper">
+        <div class="formCell">
+          <p class="form-label">项目经费：</p>
+          <p class="form-msg">2000.00</p>
+        </div>
+        <div class="formCell">
+          <p class="form-label">到款时间：</p>
+          <p class="form-msg">2018.09.01 12:23:31</p>
+        </div>
+        <div class="formCell none">
+          <p class="form-label">入账时间：</p>
+          <p class="form-msg">2018.09.01 12:23:31</p>
+        </div>
+        <div class="button">
+          <button>管理费提取</button>
+          <button>及消费提取</button>
+        </div>
+      </div>
+      </Collaspe>
     </div>
 
-    <div class="content green">
-      <div class="formCell">
-        <p class="title">第一期经费额度</p>
-        <p class="num">分项合计：2938.00<span @click="jump('第一期经费额度')" class="iconfont">&#xe7eb;</span></p>
-      </div>
+    <div class="btn">
+      <button @click="show=true">审核</button>
     </div>
+    <popup position="center" v-model="show" title="项目审核">
+      <div class="popup-form">
+        <p class="form-label">评审意见</p>
+        <textarea></textarea>
+      </div>
+      <div class="popup-form">
+        <p class="form-label">单位意见</p>
+        <JInput v-model="form.pass" type="select" @click="selected = true"></JInput>
+      </div>
+      <div class="button-cell">
+        <button class="reset">取消</button>
+        <button class="complete">确认</button>
+      </div>
+    </popup>
+
+    <popup position="bottom" :overlay="false" v-model="selected">
+      <van-picker
+        :item-height="30"
+        :columns="$store.state.columns"
+        show-toolbar
+        @cancel="selected = false"
+        @confirm="onConfirm" />
+    </popup>
   </div>
 </template>
 
 <script>
 import JInput from '@/components/input/j-input'
 import CTitle from '@/components/title/title'
+import Collaspe from '@/components/collaspe/collaspe'
+import JTable from '@/components/table/table'
+import JTableColums from '@/components/table/table-colums'
+import Popup from '@/components/popup/popup2'
 export default {
   name: 'ProjectFundsDetail',
   data () {
     return {
+      clickTab: 0,
+      show: false,
+      selected: false,
+      tableList: [
+        {
+          index: 1,
+          name: '场地租金',
+          price: '300/天',
+          num: 1,
+          money: 300,
+          remarks: '其他'
+        }
+      ],
+      form: {
+        pass: ''
+      }
     }
   },
   components: {
     JInput,
-    CTitle
+    CTitle,
+    Collaspe,
+    JTable,
+    JTableColums,
+    Popup
   },
   methods: {
-    jump (msg) {
-      this.$router.push({name: 'AmountOfFunds', query: {msg: msg}})
-      document.title = msg
+    onConfirm (value) {
+      this.form.pass = value
+      this.selected = false
     }
   }
 }
@@ -155,41 +230,83 @@ export default {
           font-size 12px
           line-height 26px
   .content
-    background white
-    padding 15px 10px
-    color: #FFFFFF;
-  .blue
-    background: #003BAA;
     margin-top 10px
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    margin-bottom 10px
-    .title
-      font-size: 16px;
-    div
-      margin-top 15px
-      text-align center
-      span
-        font-size: 14px;
-      .num
-        font-size: 20px;
-        margin-left 20px
-  .green
-    background: #45C186;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    color white
-    position relative
-    margin-bottom 4px
-    .formCell
-      align-items center
-      width 93%
-    .title
-      font-size: 16px;
-    .num
-      font-size: 14px;
-      .iconfont
-        font-size 25px
-        position absolute
-        right 0
-        top 50%
-        margin-top -12.5px
+    .wrapper
+      background white
+      border-radius 6px
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
+      overflow hidden
+      margin-top 4px
+      .formCell
+        background white
+        height 28px
+        align-items center
+        // margin-top 2px
+        align-items center
+        height 30px
+        margin 0 10px
+        border-bottom 1px solid #d3d3d3
+        &.none
+          border none
+        p
+          font-size: 14px;
+          color: #333333;
+        .form-msg
+          font-size: 12px;
+          color: #333333;
+          font-weight 700
+        .blue
+          color #2873FF
+      .button
+        button
+          width 49.4%
+          box-sizing border-box
+          color #2873FF
+          background none
+          font-weight 700
+          height 30px
+          &:first-child
+            border-right 1px solid #d3d3d3
+  .btn
+    text-align center
+    margin-top 20px
+    button
+      background #2873FF
+      border-radius: 6px;
+      color white
+      width 100px
+      height 30px
+.popup-form
+  padding 0 15px
+  display flex
+  justify-content space-between
+  margin-top 10px
+  .form-label
+    font-size: 14px;
+    color: #333333
+    display inline-block
+    line-height 30px
+  textarea
+    border: 1px solid #2873FF;
+    width 74%
+    box-sizing border-box
+    font-size: 14px
+    padding 5px
+    border-radius: 4px;
+    height 95px
+  .J-input
+    border-radius: 4px;
+    font-size: 14px
+    border: 1px solid #2873FF;
+    height 26px
+    box-sizing border-box
+    width 74%
+.button-cell
+  font-size: 14px
+  margin-top 10px
+.ProjectFundsDetail >>> .j-table
+    table
+      table-layout:fixed;
+      th
+        font-size 14px
 </style>

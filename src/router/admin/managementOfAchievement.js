@@ -2,12 +2,12 @@ import managementOfAchievement from '@/admin/managementOfAchievement/managementO
 
 const router = {
   path: '/managementOfAchievement',
-  name: 'ManagementOfAchievement',
+  // name: 'ManagementOfAchievement',
   component: managementOfAchievement,
   children: [
     {
       path: '',
-      name: 'Achievement',
+      name: 'Achievement1',
       component: resolve => require(['@/admin/managementOfAchievement/page/achievement'], resolve),
       meta: '成果转化'
     },

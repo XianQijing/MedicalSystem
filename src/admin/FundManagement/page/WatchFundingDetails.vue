@@ -21,7 +21,7 @@
       <div class="base-right">
         <div class="form-cell">
           <p class="label">项目负责人:</p>
-          <p class="j-input">项目负责人</p>
+          <p class="j-input">项目负责人占位</p>
         </div>
         <div class="form-cell">
           <p class="label">所属科室:</p>

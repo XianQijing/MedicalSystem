@@ -67,9 +67,8 @@ export default {
 .FundingDetails >>> .comTitle
   margin 0
 .FundingDetails
-  padding-bottom 20px
+  margin 0 6px
   .card
-    margin 0 6px
     .abtn
       background: #2873FF;
       border-radius: 6px;

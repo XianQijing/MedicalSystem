@@ -3,27 +3,33 @@ import FundManagement from '@/admin/FundManagement/FundManagement'
 
 const router = {
   path: '/FundManagement',
-  name: 'FundManagement',
+  // name: 'FundManagement',
   component: FundManagement,
   redirect: '',
   children: [
     {
       path: '',
-      name: 'ApplicationForReimbursement',
-      component: resolve => require(['@/admin/FundManagement/page/ApplicationForReimbursement'], resolve),
-      meta: '报销申请'
+      name: 'ReimbursementAudit',
+      component: resolve => require(['@/admin/FundManagement/page/ReimbursementAudit'], resolve),
+      meta: '报销审核'
     },
     {
-      path: 'ApplicationPort',
-      name: 'ApplicationPort',
-      component: resolve => require(['@/admin/FundManagement/page/ApplicationPort'], resolve),
-      meta: '申报端口'
+      path: 'ReimbursementAuditDetail',
+      name: 'ReimbursementAuditDetail',
+      component: resolve => require(['@/admin/FundManagement/page/ReimbursementAuditDetail'], resolve),
+      meta: '报销审核'
     },
     {
-      path: 'StatusSearch',
-      name: 'StatusSearch',
-      component: resolve => require(['@/admin/FundManagement/page/StatusSearch'], resolve),
-      meta: '查看详情'
+      path: 'FundManagement1',
+      name: 'FundManagement1',
+      component: resolve => require(['@/admin/FundManagement/page/FundManagement1'], resolve),
+      meta: '经费管理'
+    },
+    {
+      path: 'FundingAuditDetail',
+      name: 'FundingAuditDetail',
+      component: resolve => require(['@/admin/FundManagement/page/FundingAuditDetail'], resolve),
+      meta: '经费管理'
     },
     {
       path: 'FundsFinalAccounts',
@@ -56,6 +62,12 @@ const router = {
       meta: '经费审批'
     },
     {
+      path: 'FundingApprovalDetail',
+      name: 'FundingApprovalDetail',
+      component: resolve => require(['@/admin/FundManagement/page/FundingApprovalDetail'], resolve),
+      meta: '查看详情'
+    },
+    {
       path: 'BalanceOfFunds',
       name: 'BalanceOfFunds',
       component: resolve => require(['@/admin/FundManagement/page/BalanceOfFunds'], resolve),
@@ -68,22 +80,10 @@ const router = {
       meta: '查看详情'
     },
     {
-      path: 'StateSearchDetail',
-      name: 'StateSearchDetail',
-      component: resolve => require(['@/admin/FundManagement/page/StateSearchDetail'], resolve),
-      meta: '查看详情'
-    },
-    {
       path: 'ProjectBudget',
       name: 'ProjectBudget',
       component: resolve => require(['@/admin/FundManagement/page/ProjectBudget'], resolve),
       meta: '项目预算'
-    },
-    {
-      path: 'Budget',
-      name: 'Budget',
-      component: resolve => require(['@/admin/FundManagement/page/Budget'], resolve),
-      meta: '直接经费'
     },
     {
       path: 'BudegetStatues',
@@ -101,12 +101,7 @@ const router = {
       path: 'ProjectFundsDetail',
       name: 'ProjectFundsDetail',
       component: resolve => require(['@/admin/FundManagement/page/ProjectFundsDetail'], resolve),
-      meta: '查看详情'
-    },
-    {
-      path: 'AmountOfFunds',
-      name: 'AmountOfFunds',
-      component: resolve => require(['@/admin/FundManagement/page/AmountOfFunds'], resolve)
+      meta: '经费录入'
     }
   ]
 }

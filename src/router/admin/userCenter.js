@@ -3,7 +3,7 @@ import UserCenter from '@/admin/userCenter/userCenter'
 const router = [
   {
     path: '/UserCenter',
-    name: 'UserCenter',
+    // name: 'UserCenter',
     component: UserCenter,
     children: [
       {

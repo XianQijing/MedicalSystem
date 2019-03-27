@@ -31,7 +31,7 @@ export default {
   name: 'FundingDetails',
   data () {
     return {
-      textList: ['时间范围', '类别选择', '项目类别', '项目计划', '所属科室'],
+      textList: ['时间范围', '申报类别', '项目类别', '项目计划', '所属科室'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -67,9 +67,8 @@ export default {
 .FundingDetails >>> .comTitle
   margin 0
 .FundingDetails
-  padding-bottom 20px
-  .card
     margin 0 6px
+  .card
     .abtn
       background: #2873FF;
       border-radius: 6px;

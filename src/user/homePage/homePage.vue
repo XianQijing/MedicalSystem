@@ -81,7 +81,7 @@ export default {
             {
               name: '事项管理',
               icon: 'matter',
-              path: '/'
+              path: '/ItemsManagement'
             },
             {
               name: '经费管理',
