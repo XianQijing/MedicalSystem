@@ -126,6 +126,14 @@
         <p class="label">所属学科</p>
         <j-input placeholder="所属学科" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
+      <div class="form-cell" v-if="filter('合同类型')">
+        <p class="label">合同类型</p>
+        <j-input placeholder="合同类型" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('付款方式')">
+        <p class="label">付款方式</p>
+        <j-input placeholder="付款方式" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
       <div class="form-cell" v-if="filter('审核状态')">
         <p class="label">审核状态</p>
         <j-input placeholder="通过" @click="open('levels')" v-model="form.levels" type="select"></j-input>

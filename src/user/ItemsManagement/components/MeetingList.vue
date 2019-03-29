@@ -1,124 +1,180 @@
-// 会议列表
+// 学术会议申请
 <template>
   <div class="MeetingList">
-    <CTitle :screen="true" :textList="textList">项目列表</CTitle>
-
-    <checkall v-model="multiple">
-      <card
-        v-for="(item, index) in messageList"
-        :key="index"
-        type="selection"
-        :data="item"
-        :aType="item.type"
-        >
-        <div slot="time">2018.04.12 14:56</div>
-        <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
-        <span class="black">申请人-所属科室</span>
-        <p style="padding: 15px 0" class="black border-1pxTop">
-          会议名称
-        </p>
-        <span>交流论文题目、主办单位</span>
-        <span class="resTime">会议地点：上海市闸北中兴路778号</span>
-        <span class="resTime">审核日期：2018.09.01 12:09</span>
-        <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
-          <button slot="button" class="abtn btn">返回上一步</button>
+    <CTitle>学术会议申请</CTitle>
+    <div class="wrapper">
+      <p class="title">会议信息</p>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议名称：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">主办单位：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">论文题目：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议级别：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议级别：</p>
+        <JInput placeholder="下拉选择" type="select"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议地点：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议日期：</p>
+        <JInput placeholder="下拉选择" type="select"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">离院日期：</p>
+        <JInput placeholder="下拉选择" type="select"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">返院日期：</p>
+        <JInput placeholder="下拉选择" type="select"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议天数（天）：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">会议经费（元）：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">科室意见：</p>
+        <JInput placeholder="下拉选择"/>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title a">发明专利请求书：</p>
+        <div class="upload">
+          <input type="file" class="tem">
+          <div class="text"><img :src="icon" alt="">上传文件</div>
         </div>
-      </card>
-      <button slot="button" class="delete" @click="stop('删除')">删除</button>
-    </checkall>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title">主要内容：</p>
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <div class="button-cell">
+      <button class="reset">重置</button>
+      <button class="complete">确认提交</button>
+    </div>
   </div>
 </template>
 
 <script>
 import CTitle from '@/components/title/title'
-import Card from '@/components/card/card'
-import Checkall from '@/components/checkbox/checkall'
+import JInput from '@/components/input/j-input'
 export default {
-  name: 'MeetingList',
+  namw: 'MeetingList',
   data () {
     return {
-      textList: ['时间范围', '所属学科'],
-      multiple: [],
-      messageList: [
-        {
-          time: '2018.04.12 14:56',
-          no: '00210',
-          name: '用户名占位',
-          type: '通过'
-        },
-        {
-          time: '2018.04.12 14:56',
-          no: '00210',
-          name: '用户名占位',
-          type: '审核中'
-        }
-      ]
+      icon: require('../../../common/image/upload.png')
     }
   },
   components: {
     CTitle,
-    Card,
-    Checkall
-  },
-  methods: {
-    jump () {
-      this.$router.push({name: 'ExaminMeeting'})
-    }
+    JInput
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.MeetingList >>> .comTitle
-  margin 0
+@import '../../../common/style/mixin.styl';
 .MeetingList
-  padding-bottom 20px
-  .checkAll
-    margin 0 6px
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      // display block
-      margin 0 auto
-      &.btn
-        margin-left 5px
+  .wrapper
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
+    padding 10px 10px 0 10px
+    margin-bottom 30px
+    position relative
+    .title
+      font-size 14px;
+      color: #333333;
+      div
+        float right
         font-size: 14px;
         color: #2873FF;
-        background: #C6DAFF;
-    .no, .user
-        padding-left 10px
-        font-size: 12px;
-        color: #555555;
+        span
+          margin-left 10px
+    .item-wrapper
+      border-1px(#D3D3D3)
+      padding 15px 10px
+      position relative
+      &:last-child
+        border-none()
+      .item-title
         display inline-block
+        font-size: 16px;
+        color: #FD4D4D;
         vertical-align top
-    .no
-      border-1pxLeft(#D3D3D3)
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-weight 700
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-      color: #333333;
-    .resTime
-      font-size: 12px;
-      color: #999999;
-  .delete
-    width 58px
-    color white
-    height 30px
-    background: #FD4D4D
-    font-size 14px
+      .a
+        display block
+      .JRadioGrounp
+        display inline-block
+        float right
+      .J-input
+        border: 1px solid #FD4D4D;
+        border-radius: 6px;
+        width 1rem
+        min-width 100px
+        height 30px
+        position absolute
+        right 0
+        top 8px
+      textarea
+        border: 1px solid #FD4D4D;
+        border-radius: 6px;
+        display block
+        width 100%
+        margin-top 10px
+        padding 10px
+        box-sizing border-box
+        height 80px
+    .upload
+      border none
+      // display inline-block
+      width 100%
+      text-align center
+      height 37px
+      position relative
+      input
+        border none
+        position absolute
+        bottom 0
+        margin 0
+        padding 0
+        height 14px
+        width 75px
+        opacity 0
+        left 50%
+        margin-left -37.5px
+      .text
+        position absolute
+        font-size 14px
+        color: #2873FF;
+        bottom 0
+        vertical-align bottom
+        width 100%
+        text-align center
+        img
+          width 19px
+          height 19px
+          vertical-align bottom
+          margin-right 10px
+.button-cell
+  position fixed
+  width 100%
+  bottom 0
+  left 0
 </style>

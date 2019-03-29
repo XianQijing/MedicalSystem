@@ -1,6 +1,6 @@
 <template>
   <div class="PrintingDetail">
-    <CTitle>基本信息</CTitle>
+    <CTitle>专利信息</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">姓名:</p>
@@ -15,32 +15,20 @@
         <p class="form-msg">发明专利</p>
       </div>
       <div class="formCell">
-        <p class="form-label">专利号:</p>
+        <p class="form-label">专利申请费:</p>
         <p class="form-msg">二级学科：皮肤专业</p>
       </div>
       <div class="formCell">
-        <p class="form-label">专利申请日期:</p>
+        <p class="form-label">专利奖励费:</p>
         <p class="form-msg">国家级</p>
       </div>
       <div class="formCell">
-        <p class="form-label">专利权利人:</p>
+        <p class="form-label">专利维护费:</p>
         <p class="form-msg">省市内先进</p>
       </div>
       <div class="formCell">
-        <p class="form-label">授权公告日期:</p>
+        <p class="form-label">经费来源:</p>
         <p class="form-msg">合作单位-单位性质</p>
-      </div>
-      <div class="formCell">
-        <p class="form-label">上传专利证书:</p>
-        <p class="form-msg">合作方式</p>
-      </div>
-      <div class="formCell">
-        <p class="form-label">专利转化日期:</p>
-        <p class="form-msg">农业、生物新品种</p>
-      </div>
-      <div class="formCell">
-        <p class="form-label">转化授权单位:</p>
-        <p class="form-msg">2018.09.01 12:00:00 0</p>
       </div>
     </div>
   </div>
@@ -78,16 +66,4 @@ export default {
       .form-msg
         font-size: 14px;
         color: #999999
-    .form-Cell
-      padding 7px 10px
-      background white
-      .form-label
-        font-size: 14px;
-        color: #333333;
-        margin-bottom 10px
-      .form-msg
-        font-size: 14px;
-        color: #999999
-        height 40px
-        overflow auto
 </style>

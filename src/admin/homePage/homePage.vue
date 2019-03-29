@@ -70,7 +70,7 @@ export default {
               path: '/'
             },
             {
-              name: '重点学科',
+              name: '学科基地',
               icon: 'subject',
               path: '/'
             },
@@ -80,7 +80,7 @@ export default {
               path: '/'
             },
             {
-              name: '科研基地',
+              name: '科技奖励',
               icon: 'base',
               path: '/'
             }
@@ -92,7 +92,7 @@ export default {
             {
               name: '项目管理',
               icon: 'project',
-              path: '/'
+              path: '/ProjectManagement'
             },
             {
               name: '事项管理',

@@ -93,32 +93,23 @@
       </div>
     </div>
     <CTitle>主办会议预算</CTitle>
-    <Collaspe name="会场费用" right="分项合计：882.34">
-      <JTable :data="tableList">
-        <table-colums label="序号" prop="index"/>
-        <table-colums label="科目名称" prop="name"/>
-        <table-colums label="单价" prop="price"/>
-        <table-colums label="数量" prop="num"/>
-        <table-colums label="价格" prop="money"/>
-        <table-colums label="备注" prop="remarks"/>
-      </JTable>
-    </Collaspe>
-    <Collaspe name="住宿费用" right="分项合计：882.34"></Collaspe>
-    <Collaspe name="专家费用" right="分项合计：882.34"></Collaspe>
+    <div class="iconList">
+      <div class="wrapper" v-for="(item, index) in list" :key="index">
+        <div class="icon" @click="jump(icon.name)" v-for="icon in item" :key="icon.name">
+          <img :src="icon.icon.normal" alt="">
+          <p>{{icon.name}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 import CTitle from '@/components/title/title'
-import Collaspe from '@/components/collaspe/collaspe'
-import JTable from '@/components/table/table'
-import TableColums from '@/components/table/table-colums'
 export default {
   name: 'ProjectSearchDetail',
   data () {
     return {
-      clickTab: 0,
       tableList: [
         {
           index: 1,
@@ -148,21 +139,32 @@ export default {
     }
   },
   components: {
-    JInput,
-    CTitle,
-    Collaspe,
-    TableColums,
-    JTable
+    CTitle
+  },
+  computed: {
+    list () {
+      const pages = []
+      this.$store.state.iconList.forEach((item, index) => {
+        let page = Math.floor(index / 3)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
+  },
+  methods: {
+    jump (msg) {
+      this.$router.push({name: 'AProjectMessageDetail', query: {msg: msg}})
+      document.title = msg
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.ProjectSearchDetail >>> .j-table
-  tr
-    td
-      border-bottom 1px solid rgba(0,0,0,0.50)
 .ProjectSearchDetail
   padding 10px 6px
   .comTitle
@@ -229,4 +231,21 @@ export default {
         color: #FFFFFF;
         background: #2873FF;
         border-radius: 6px;
+.iconList
+  background white
+  box-shadow:0px 1px 2px rgba(0,0,0,0.5);
+  padding 5px 0
+  .wrapper
+    display flex
+    justify-content space-between
+    .icon
+      text-align center
+      padding 15px 0
+      flex 1
+      img
+        width .34rem
+        margin-bottom 10px
+      p
+        font-size:14px;
+        color #2873FF
 </style>

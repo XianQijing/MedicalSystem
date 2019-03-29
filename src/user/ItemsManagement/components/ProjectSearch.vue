@@ -74,7 +74,7 @@ export default {
   margin 0 6px
   .card
     .abtn
-      background: #2873FF;
+      background: #2873FF
       border-radius: 6px;
       font-size: 14px;
       color: #FFFFFF;

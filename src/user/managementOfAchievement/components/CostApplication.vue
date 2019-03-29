@@ -102,6 +102,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl';
 .CostApplication
+  padding-bottom 20px
   .wrapper
     background: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);

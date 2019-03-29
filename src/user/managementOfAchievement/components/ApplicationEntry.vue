@@ -45,6 +45,32 @@
           <div class="text"><img :src="icon" alt="">上传文件</div>
         </div>
       </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title a">摘要：</p>
+        <div class="upload">
+          <input type="file" class="tem">
+          <div class="text"><img :src="icon" alt="">上传文件</div>
+        </div>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title a">说明书：</p>
+        <div class="upload">
+          <input type="file" class="tem">
+          <div class="text"><img :src="icon" alt="">上传文件</div>
+        </div>
+      </div>
+      <div class="item-wrapper border-1px">
+        <p class="item-title a">权利要求书：</p>
+        <div class="upload">
+          <input type="file" class="tem">
+          <div class="text"><img :src="icon" alt="">上传文件</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-cell">
+      <button class="reset">重置</button>
+      <button class="complete">确认提交</button>
     </div>
   </div>
 </template>
@@ -69,6 +95,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl';
 .ApplicationEntry
+  padding-bottom 20px
   .wrapper
     background: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
@@ -144,4 +171,8 @@ export default {
           height 19px
           vertical-align bottom
           margin-right 10px
+.button-cell
+  position fixed
+  bottom 0
+  left 0
 </style>

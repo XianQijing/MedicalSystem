@@ -1,14 +1,20 @@
 // 主办会议
 <template>
-  <div class="AttendTheMeeting">
+  <div class="HostMeeting">
     <tabs v-model="clickTab">
-      <tab title="项目列表" name="0">
-        <!-- <MeetingList/> -->
+      <tab title="项目申报" name="0">
+        <ProjectList/>
       </tab>
-      <tab title="执行列表" name="1">
+      <tab title="申报状态" name="1">
+        <ApplicationStatus/> //查看没有
+      </tab>
+      <tab title="项目执行" name="2">
+        <DoProject/>
+      </tab>
+      <tab title="执行状态" name="3">
         <ExecutionList/>
       </tab>
-      <tab title="项目查询" name="2">
+      <tab title="项目查询" name="4">
         <ProjectSearch/>
       </tab>
     </tabs>
@@ -18,11 +24,13 @@
 <script>
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
-// // import MeetingList from '../components/MeetingList'
+import ProjectList from '../components/ProjectList'
+import ApplicationStatus from '../components/ApplicationStatus'
+import DoProject from '../components/DoProject'
 import ExecutionList from '../components/ExecutionList'
 import ProjectSearch from '../components/ProjectSearch'
 export default {
-  name: 'AttendTheMeeting',
+  name: 'HostMeeting',
   data () {
     return {
       clickTab: 0
@@ -31,20 +39,22 @@ export default {
   components: {
     Tab,
     Tabs,
-    // MeetingList,
+    ProjectList,
+    ApplicationStatus,
     ProjectSearch,
-    ExecutionList
+    ExecutionList,
+    DoProject
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.AttendTheMeeting >>> .tabs
+.HostMeeting >>> .tabs
   .tab-pane
-    width 32.1%
+    width 18.5%
     // font-size 12px
-.AttendTheMeeting
+.HostMeeting
   margin 0 6px
   padding 20px 0 10px 0
 </style>

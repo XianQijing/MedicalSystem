@@ -14,10 +14,10 @@
       <p style="padding: 15px 0" class="black border-1pxTop">
         会议名称
       </p>
-      <span>交流论文题目、主办单位</span>
+      <span>主办单位</span>
       <div class="formCell">
         <span>经费来源:医院经费</span>
-        <span>会议经费(元):2000</span>
+        <span>报销经费:2000</span>
       </div>
       <span class="resTime">会议地点：上海市闸北中兴路778号</span>
       <span class="resTime">审核日期：2018.09.01 12:09</span>

@@ -2,7 +2,6 @@ import managementOfAchievement from '@/user/managementOfAchievement/managementOf
 
 const router = {
   path: '/managementOfAchievement',
-  name: 'ManagementOfAchievement',
   component: managementOfAchievement,
   children: [
     {
@@ -82,6 +81,24 @@ const router = {
       name: 'BookPublishing',
       component: resolve => require(['@/user/managementOfAchievement/page/BookPublishing'], resolve),
       meta: '著作出版'
+    },
+    {
+      path: 'RegistrationStatueDetail',
+      name: 'RegistrationStatueDetail',
+      component: resolve => require(['@/user/managementOfAchievement/page/RegistrationStatueDetail'], resolve),
+      meta: '查看详情'
+    },
+    {
+      path: 'RegistrationStatuesDetail',
+      name: 'RegistrationStatuesDetail',
+      component: resolve => require(['@/user/managementOfAchievement/page/RegistrationStatuesDetail'], resolve),
+      meta: '查看详情'
+    },
+    {
+      path: 'AwardRegistrationDetail',
+      name: 'AwardRegistrationDetail',
+      component: resolve => require(['@/user/managementOfAchievement/page/AwardRegistrationDetail'], resolve),
+      meta: '查看详情'
     }
   ]
 }

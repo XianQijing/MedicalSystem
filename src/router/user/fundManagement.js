@@ -3,7 +3,6 @@ import FundManagement from '@/user/FundManagement/FundManagement'
 
 const router = {
   path: '/FundManagement',
-  name: 'FundManagement',
   component: FundManagement,
   redirect: '',
   children: [

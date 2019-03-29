@@ -12,7 +12,7 @@
         <RegistrationEntry/>
       </tab>
       <tab title="登记状态查询" name="3">
-        <!-- <ConversionSearch/> -->
+        <RegistrationStatue/>
       </tab>
       <tab title="专利经费申请" name="4">
         <PatentFunds/>
@@ -32,7 +32,7 @@ import ApplicationType from '../components/ApplicationType'
 import RegistrationEntry from '../components/RegistrationEntry'
 import PatentFunds from '../components/PatentFunds'
 import Printing from '../components/Printing'
-// // import ConversionSearch from '../components/ConversionSearch'
+import RegistrationStatue from '../components/RegistrationStatue'
 export default {
   name: 'Achievement1',
   data () {
@@ -47,8 +47,8 @@ export default {
     ApplicationType,
     RegistrationEntry,
     PatentFunds,
-    Printing
-    // ConversionSearch
+    Printing,
+    RegistrationStatue
   }
 }
 </script>

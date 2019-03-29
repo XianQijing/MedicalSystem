@@ -9,7 +9,7 @@
         <PublicationType/>
       </tab>
       <tab title="著作登记" name="2">
-        <RegistrationOfAchievements/>
+        <PublicatioRegistration/>
       </tab>
       <tab title="登记状态查询" name="3">
         <RegistrationStatus/>
@@ -23,7 +23,7 @@ import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 import PublicationApplication from '../components/PublicationApplication'
 import PublicationType from '../components/PublicationType'
-import RegistrationOfAchievements from '../components/RegistrationOfAchievements'
+import PublicatioRegistration from '../components/PublicatioRegistration'
 import RegistrationStatus from '../components/RegistrationStatus'
 export default {
   name: 'Achievement1',
@@ -37,7 +37,7 @@ export default {
     Tabs,
     PublicationApplication,
     PublicationType,
-    RegistrationOfAchievements,
+    PublicatioRegistration,
     RegistrationStatus
   }
 }

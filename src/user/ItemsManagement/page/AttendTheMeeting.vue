@@ -9,10 +9,10 @@
         <Expense/>
       </tab>
       <tab title="差旅费申请" name="2">
-        <AcademicConference/>
+        <TravelExpenses/> // 不全
       </tab>
       <tab title="差旅费查询" name="3">
-        <AcademicConference/>
+        <AcademicConference/> // 详情不全
       </tab>
     </tabs>
   </div>
@@ -24,6 +24,7 @@ import Tabs from '@/components/tab/tabs'
 import MeetingList from '../components/MeetingList'
 import Expense from '../components/Expense'
 import AcademicConference from '../components/AcademicConference'
+import TravelExpenses from '../components/TravelExpenses'
 export default {
   name: 'AttendTheMeeting',
   data () {
@@ -36,7 +37,8 @@ export default {
     Tabs,
     MeetingList,
     AcademicConference,
-    Expense
+    Expense,
+    TravelExpenses
   }
 }
 </script>

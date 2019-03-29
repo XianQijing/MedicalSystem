@@ -3,7 +3,6 @@ import Policy from '@/page/policy/policy'
 
 const router = {
   path: '/policy',
-  name: 'Policy',
   component: Policy,
   // meta: '政策法规',
   children: [

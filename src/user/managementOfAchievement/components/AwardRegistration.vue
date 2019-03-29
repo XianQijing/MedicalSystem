@@ -91,7 +91,6 @@ export default {
       color: #333333;
       &.black
         font-size 16px
-        font-weight 700
         margin-top 10px
       div
         float right

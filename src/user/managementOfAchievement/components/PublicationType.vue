@@ -1,7 +1,7 @@
 // 出版状态查询
 <template>
   <div class="PublicationType">
-    <CTitle :screen="true" :textList="textList">介绍信列表</CTitle>
+    <CTitle :screen="true" :textList="textList">著作列表</CTitle>
 
     <card
       v-for="(item, index) in messageList"

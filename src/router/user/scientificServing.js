@@ -3,7 +3,6 @@ import ScientificServing from '@/page/scientificService/scientificService.vue'
 
 const scientificServing = {
   path: '/scientificServing',
-  name: 'ScientificServing',
   component: ScientificServing,
   children: [
     {

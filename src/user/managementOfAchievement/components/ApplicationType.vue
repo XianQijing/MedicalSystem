@@ -1,4 +1,4 @@
-// 转化查询
+// 申请状态查询
 <template>
   <div class="ApplicationType">
     <CTitle :screen="true" :textList="textList">成果列表</CTitle>

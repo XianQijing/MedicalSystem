@@ -56,277 +56,45 @@
       </div>
     </div>
     <CTitle>主办会议预算</CTitle>
-    <div class="content">
-      <Collaspe name="会场费用" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
+    <div class="iconList">
+      <div class="wrapper" v-for="(item, index) in list" :key="index">
+        <div class="icon" @click="jump(icon.name)" v-for="icon in item" :key="icon.name">
+          <img :src="icon.icon.normal" alt="">
+          <p>{{icon.name}}</p>
         </div>
-      </Collaspe>
-      <Collaspe name="住宿费用" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="专家费用" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="餐费" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="交通费用" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="会议用品费用" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="会议劳务费" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="其他" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
-      <Collaspe name="会议总额" right="分项合计：3882.34">
-        <div class="table">
-          <table>
-            <tr>
-              <th>序号</th>
-              <th>科目名称</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>备注</th>
-            </tr>
-            <tr>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-            </tr>
-          </table>
-        </div>
-      </Collaspe>
+      </div>
     </div>
-
-    <div class="btn">
-      <button @click="show=true">审核</button>
-    </div>
-    <popup position="center" v-model="show" title="项目审核">
-      <div class="popup-form">
-        <p class="form-label">评审意见</p>
-        <textarea></textarea>
-      </div>
-      <div class="popup-form">
-        <p class="form-label">单位意见</p>
-        <JInput v-model="form.pass" type="select" @click="selected = true"></JInput>
-      </div>
-      <div class="button-cell">
-        <button class="reset">取消</button>
-        <button class="complete">确认</button>
-      </div>
-    </popup>
-
-    <popup position="bottom" :overlay="false" v-model="selected">
-      <van-picker
-        :item-height="30"
-        :columns="$store.state.columns"
-        show-toolbar
-        @cancel="selected = false"
-        @confirm="onConfirm" />
-    </popup>
   </div>
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 import CTitle from '@/components/title/title'
-import Collaspe from '@/components/collaspe/collaspe'
-import JTable from '@/components/table/table'
-import JTableColums from '@/components/table/table-colums'
-import Popup from '@/components/popup/popup2'
 export default {
   name: 'AProjectMessage',
   data () {
     return {
-      clickTab: 0,
-      show: false,
-      selected: false,
-      tableList: [
-        {
-          index: 1,
-          name: '场地租金',
-          price: '300/天',
-          num: 1,
-          money: 300,
-          remarks: '其他'
-        }
-      ],
-      form: {
-        pass: ''
-      }
     }
   },
   components: {
-    JInput,
-    CTitle,
-    Collaspe,
-    JTable,
-    JTableColums,
-    Popup
+    CTitle
+  },
+  computed: {
+    list () {
+      const pages = []
+      this.$store.state.iconList.forEach((item, index) => {
+        let page = Math.floor(index / 3)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
   },
   methods: {
-    onConfirm (value) {
-      this.form.pass = value
-      this.selected = false
+    jump (msg) {
+      this.$router.push({name: 'AProjectMessageDetail', query: {msg: msg}})
+      document.title = msg
     }
   }
 }
@@ -376,49 +144,21 @@ export default {
           text-align right
           font-size 12px
           line-height 26px
-  .btn
-    text-align center
-    margin-top 20px
-    button
-      background #2873FF
-      border-radius: 6px;
-      color white
-      width 100px
-      height 30px
-.popup-form
-  padding 0 15px
-  display flex
-  justify-content space-between
-  margin-top 10px
-  .form-label
-    font-size: 14px;
-    color: #333333
-    display inline-block
-    line-height 30px
-  textarea
-    border: 1px solid #2873FF;
-    width 74%
-    box-sizing border-box
-    font-size: 14px
-    padding 5px
-    border-radius: 4px;
-    height 95px
-  .J-input
-    border-radius: 4px;
-    font-size: 14px
-    border: 1px solid #2873FF;
-    height 26px
-    box-sizing border-box
-    width 74%
-.button-cell
-  font-size: 14px
-  margin-top 10px
-.table
-  table
-    table-layout fixed
-.AProjectMessage >>> .j-table
-    table
-      table-layout:fixed;
-      th
-        font-size 14px
+.iconList
+  background white
+  box-shadow:0px 1px 2px rgba(0,0,0,0.5);
+  padding 5px 0
+  .wrapper
+    display flex
+    justify-content space-between
+    .icon
+      text-align center
+      padding 15px 0
+      flex 1
+      img
+        width .34rem
+        margin-bottom 10px
+      p
+        font-size:14px;
+        color #2873FF
 </style>

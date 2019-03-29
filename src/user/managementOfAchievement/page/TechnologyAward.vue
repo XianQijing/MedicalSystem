@@ -12,13 +12,13 @@
         <RegistrationOfAchievements/>
       </tab>
       <tab title="成果登记状态查询" name="3">
-        <!-- <RegistrationOfAchievements/> -->
+        <RegistrationStatuesSearch/>
       </tab>
       <tab title="奖励登记" name="4">
         <AwardRegistration/>
       </tab>
       <tab title="奖励登记状态查询" name="5">
-        <!-- <Printing/> -->
+        <AwardRegistrationStatues/>
       </tab>
     </tabs>
   </div>
@@ -32,6 +32,8 @@ import ApplyForAchievementsType from '../components/ApplyForAchievementsType'
 import RegistrationEntry from '../components/RegistrationEntry'
 import RegistrationOfAchievements from '../components/RegistrationOfAchievements'
 import AwardRegistration from '../components/AwardRegistration'
+import RegistrationStatuesSearch from '../components/RegistrationStatuesSearch'
+import AwardRegistrationStatues from '../components/AwardRegistrationStatues'
 export default {
   name: 'TechnologyAward',
   data () {
@@ -46,7 +48,9 @@ export default {
     ApplyForAchievementsType,
     RegistrationEntry,
     RegistrationOfAchievements,
-    AwardRegistration
+    AwardRegistration,
+    RegistrationStatuesSearch,
+    AwardRegistrationStatues
   }
 }
 </script>

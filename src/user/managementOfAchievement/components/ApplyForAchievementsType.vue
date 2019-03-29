@@ -12,6 +12,7 @@
         <p class="no">NO：{{item.name}}</p>
         <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申报人－眼科</span>
+        <span>完成人-完成人属性、完成人单位、排名</span>
         <p style="padding: 15px 0" class="black border-1pxTop">
           成果名称
         </p>
@@ -102,7 +103,6 @@ export default {
       margin-bottom 17px
     .black
       margin-top 15px
-      font-weight 700
       font-size: 16px;
     .border-1pxTop
       border-1pxTop(#D3D3D3)
