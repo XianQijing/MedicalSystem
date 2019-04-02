@@ -9,7 +9,8 @@ import Login from '@/page/login/index'
 import ManagementOfAchievement from '@/router/admin/managementOfAchievement'
 import FundManagement from '@/router/admin/fundManagement'
 import ItemsManagement from '@/router/admin/ItemsManagement'
-import ProjectManagement from '@/router/user/ProjectManagement'
+import ProjectManagement from '@/router/admin/ProjectManagement'
+import ScientificResearchTopic from '@/router/admin/ScientificResearchTopic'
 
 Vue.use(Router)
 
@@ -54,7 +55,8 @@ const router = new Router({
     ManagementOfAchievement,
     FundManagement,
     ItemsManagement,
-    ProjectManagement
+    ProjectManagement,
+    ScientificResearchTopic
   ].concat(UserCenter)
 })
 

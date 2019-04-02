@@ -1,15 +1,15 @@
-// 结题鉴定
+// 中期检查
 <template>
-  <div class="Concluding">
+  <div class="IntermediateInspection">
     <tabs v-model="clickTab">
-      <tab title="通知列表" name="0">
-        <ConcludingList/> <!-- 没有详情 -->
+      <tab title="通知管理" name="0">
+        <NoticeList/>
       </tab>
-      <tab title="鉴定申请" name="1">
-        <ConcludingApplication/>
+      <tab title="检查列表" name="1">
+        <InspectionApplication/>
       </tab>
-      <tab title="状态查询" name="2">
-        <ConcludingSearch/>
+      <tab title="专家分配" name="2">
+        <InspectionSearch/>
       </tab>
     </tabs>
   </div>
@@ -18,11 +18,11 @@
 <script>
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
-import ConcludingList from '../components/ConcludingList'
-import ConcludingApplication from '../components/ConcludingApplication'
-import ConcludingSearch from '../components/ConcludingSearch'
+import NoticeList from '../components/NoticeList'
+import InspectionApplication from '../components/InspectionApplication'
+import InspectionSearch from '../components/InspectionSearch'
 export default {
-  name: 'Concluding',
+  name: 'IntermediateInspection',
   data () {
     return {
       clickTab: 0
@@ -31,20 +31,20 @@ export default {
   components: {
     Tab,
     Tabs,
-    ConcludingList,
-    ConcludingApplication,
-    ConcludingSearch
+    NoticeList,
+    InspectionApplication,
+    InspectionSearch
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.Concluding >>> .tabs
+.IntermediateInspection >>> .tabs
   .tab-pane
     width 32%
     // font-size 12px
-.Concluding
+.IntermediateInspection
   margin 0 6px
   padding 20px 0 10px 0
 </style>

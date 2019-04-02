@@ -50,23 +50,23 @@ export default {
           children: [
             {
               name: '科研课题',
-              icon: 'topic',
+              icon: 'tScientificResearchTopicopic',
               path: '/'
             },
             {
               name: '学科基地',
               icon: 'subject',
-              path: '/'
+              path: '/ScientificResearchTopic'
             },
             {
               name: '优秀人才',
               icon: 'personnel',
-              path: '/'
+              path: '/ScientificResearchTopic'
             },
             {
               name: '科技奖励',
               icon: 'base',
-              path: '/'
+              path: '/ScientificResearchTopic'
             }
           ]
         },

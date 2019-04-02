@@ -1,9 +1,7 @@
-// 项目查询
+// 形式审查
 <template>
-  <div class="AssessmentSearch">
-    <div>
-      <CTitle :screen="true" :textList="textList">项目列表</CTitle>
-
+  <div class="ReviewManagement">
+    <CTitle :screen="true" :textList="textList">进程列表</CTitle>
       <card
         v-for="(item, index) in messageList"
         :key="index"
@@ -13,17 +11,21 @@
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
         <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属单位</span>
-        <p style="padding: 15px 0" class="black border-1pxTop">
-          项目名称
-        </p>
         <span>项目类别</span>
-        <span>项目计划</span>
-        <span class="resTime">批准日期：2018.09.01 12:00</span>
-        <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
+        <span class="resTime border-1px">开始时间：2017.08.12</span>
+        <div class="label">
+          <p>项目申报</p>
+          <p>项目进程</p>
+        </div>
+        <div class="right">
+          <div>
+            <p>直接评审</p>
+          </div>
+          <div>
+            <p>批准文件</p>
+          </div>
         </div>
       </card>
-    </div>
   </div>
 </template>
 
@@ -31,10 +33,10 @@
 import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 export default {
-  name: 'AssessmentSearch',
+  name: 'ReviewManagement',
   data () {
     return {
-      textList: ['时间范围', '申报类别', '项目类别', '项目计划', '所属科室', '审核状态'],
+      textList: ['时间范围', '项目类别', '项目计划', '计划状态'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -59,7 +61,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'AssessmentSearch'})
+      this.$router.push({name: 'declareDetail'})
     }
   }
 }
@@ -67,11 +69,11 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.AssessmentSearch >>> .comTitle
-  margin 0
-.AssessmentSearch
+.ReviewManagement
+  margin 0 6px
+  .comTitle
+    margin 0
   .card
-    margin 0 6px
     .abtn
       background: #2873FF;
       border-radius: 6px;
@@ -94,10 +96,50 @@ export default {
     .black
       margin-top 15px
       font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
+    .border-1px
+      border-1px(#D3D3D3)
       color: #333333;
+      padding-bottom 15px
+      display block
     .resTime
       font-size: 12px;
       color: #999999;
+  .label, .right
+    display inline-block
+    vertical-align middle
+  .label
+    width 4em
+    font-size 16px
+    line-height 20px
+  .right
+    margin-left 10px
+    div
+      display inline-block
+      position relative
+      width 76px
+      p
+        width 50px
+        height 50px
+        font-size 12px
+        border-radius 50%
+        background #2873FF
+        box-sizing border-box
+        vertical-align top
+        padding 13px
+        color white
+      &:after
+        display block
+        position absolute
+        content ' '
+        border-top 1px solid #d3d3d3
+        width 23px
+        top 50%
+        right 2px
+      &:first-child
+        p
+          background #C6DAFF
+          color #2873FF
+      &:last-child
+        &:after
+          display none
 </style>

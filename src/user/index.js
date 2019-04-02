@@ -10,6 +10,7 @@ import ManagementOfAchievement from '@/router/user/managementOfAchievement'
 import FundManagement from '@/router/user/fundManagement'
 import ItemsManagement from '@/router/user/ItemsManagement'
 import ProjectManagement from '@/router/user/ProjectManagement'
+import ScientificResearchTopic from '@/user/ScientificResearchTopic/ScientificResearchTopic'
 
 Vue.use(Router)
 
@@ -184,7 +185,8 @@ const router = new Router({
     ManagementOfAchievement,
     FundManagement,
     ItemsManagement,
-    ProjectManagement
+    ProjectManagement,
+    ScientificResearchTopic
   ]
 })
 

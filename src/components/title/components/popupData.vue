@@ -134,6 +134,10 @@
         <p class="label">付款方式</p>
         <j-input placeholder="付款方式" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
+      <div class="form-cell" v-if="filter('研究类型')">
+        <p class="label">研究类型</p>
+        <j-input placeholder="研究类型" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
       <div class="form-cell" v-if="filter('审核状态')">
         <p class="label">审核状态</p>
         <j-input placeholder="通过" @click="open('levels')" v-model="form.levels" type="select"></j-input>
@@ -154,6 +158,14 @@
         <p class="label">奖励等级</p>
         <j-input placeholder="奖励等级" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
+      <div class="form-cell" v-if="filter('分配状态')">
+        <p class="label">分配状态</p>
+        <j-input placeholder="分配状态" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('显示状态')">
+        <p class="label">显示状态</p>
+        <j-input placeholder="显示状态" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
       <!-- 政策 -->
       <div class="form-cell" v-if="filter('区域选择')">
         <p class="label">区域选择</p>
@@ -166,6 +178,10 @@
       <div class="form-cell" v-if="filter('城市选择')">
         <p class="label">城市选择</p>
         <j-input placeholder="城市选择" @click="open('levels')" v-model="form.levels" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-if="filter('计划状态')">
+        <p class="label">计划状态</p>
+        <j-input placeholder="计划状态" @click="open('levels')" v-model="form.levels" type="select"></j-input>
       </div>
 
       <!--  -->

@@ -1,7 +1,7 @@
-// 项目查询
+// 形式审查
 <template>
-  <div class="ProjectChange">
-    <CTitle :screen="true" :textList="textList">项目列表</CTitle>
+  <div class="FormalInspection">
+    <CTitle :screen="true" :textList="textList">信息列表</CTitle>
     <checkall v-model="multiple">
       <card
         v-for="(item, index) in messageList"
@@ -18,14 +18,12 @@
           项目名称
         </p>
         <span>项目类别</span>
-        <span>项目计划</span>
-        <span class="resTime">批准日期：2018.09.01 12:00</span>
+        <span class="resTime">开始时间：2017.08.12</span>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
-          <button slot="button" class="abtn blue" v-if="item.type==='通过'">返回上一步</button>
+          <button slot="button" class="abtn" @click="jump">修改</button>
         </div>
       </card>
-        <button slot="button" class="delete" @click="stop('删除')">删除</button>
+      <button slot="button" class="delete" @click="stop('删除')">删除</button>
     </checkall>
   </div>
 </template>
@@ -35,10 +33,10 @@ import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
-  name: 'ProjectChange',
+  name: 'FormalInspection',
   data () {
     return {
-      textList: ['时间范围', '申报类别', '项目类别', '项目计划', '所属科室', '审核状态'],
+      textList: ['时间范围', '所属科室', '研究类型', '项目类别', '项目计划', '审核状态'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -51,7 +49,7 @@ export default {
           time: '2018.04.12 14:56',
           no: '00210',
           name: '用户名占位',
-          type: '审核中',
+          type: '通过',
           dayin: '已打印'
         }
       ],
@@ -65,7 +63,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'ChangeApplicationSearch'})
+      this.$router.push({name: 'declareDetail'})
     }
   }
 }
@@ -73,7 +71,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.ProjectChange
+.FormalInspection
   padding-bottom 20px
   .checkAll
     margin 0 6px
@@ -86,11 +84,6 @@ export default {
       height 30px
       // display block
       margin 0 auto
-      &.blue
-        margin-left 5px
-        font-size: 14px;
-        color: #2873FF;
-        background: #C6DAFF;
     .no, .user
         font-size: 12px;
         color: #555555;

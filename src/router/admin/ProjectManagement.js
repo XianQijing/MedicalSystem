@@ -17,18 +17,6 @@ const router = {
       meta: '项目合同'
     },
     {
-      path: 'ContractSubmission',
-      name: 'ContractSubmission',
-      component: resolve => require(['@/admin/ProjectManagement/page/ContractSubmission'], resolve),
-      meta: '提交合同'
-    },
-    {
-      path: 'ContractChange',
-      name: 'ContractChange',
-      component: resolve => require(['@/admin/ProjectManagement/page/ContractChange'], resolve),
-      meta: '提交合同'
-    },
-    {
       path: 'ContractSearch',
       name: 'ContractSearch',
       component: resolve => require(['@/admin/ProjectManagement/page/ContractSearch'], resolve),
@@ -65,28 +53,28 @@ const router = {
       meta: '中期检查'
     },
     {
+      path: 'WatchNotice',
+      name: 'WatchNotice',
+      component: resolve => require(['@/admin/ProjectManagement/page/WatchNotice'], resolve),
+      meta: '查看详情'
+    },
+    {
+      path: 'EditNotice',
+      name: 'EditNotice',
+      component: resolve => require(['@/admin/ProjectManagement/page/EditNotice'], resolve),
+      meta: '编辑修改'
+    },
+    {
       path: 'InspectionSearch',
       name: 'InspectionSearch',
       component: resolve => require(['@/admin/ProjectManagement/page/InspectionSearch'], resolve),
       meta: '查看详情'
     },
     {
-      path: 'InspectionEdit',
-      name: 'InspectionEdit',
-      component: resolve => require(['@/admin/ProjectManagement/page/InspectionEdit'], resolve),
-      meta: '内容修改'
-    },
-    {
       path: 'Concluding',
       name: 'Concluding',
       component: resolve => require(['@/admin/ProjectManagement/page/Concluding'], resolve),
       meta: '结题鉴定'
-    },
-    {
-      path: 'ConcludingSearch',
-      name: 'ConcludingSearch',
-      component: resolve => require(['@/admin/ProjectManagement/page/ConcludingSearch'], resolve),
-      meta: '查看详情'
     },
     {
       path: 'CarryForward',

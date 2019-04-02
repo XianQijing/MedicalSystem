@@ -2,13 +2,13 @@
 <template>
   <div class="IntermediateInspection">
     <tabs v-model="clickTab">
-      <tab title="通知列表" name="0">
-        <NoticeList/> <!-- 没有详情 -->
+      <tab title="通知管理" name="0">
+        <NoticeList/>
       </tab>
-      <tab title="检查申请" name="1">
+      <tab title="检查列表" name="1">
         <InspectionApplication/>
       </tab>
-      <tab title="状态查询" name="2">
+      <tab title="专家分配" name="2">
         <InspectionSearch/>
       </tab>
     </tabs>

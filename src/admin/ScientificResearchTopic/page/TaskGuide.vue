@@ -1,32 +1,29 @@
 // 项目查询
 <template>
-  <div class="ProjectChange">
-    <CTitle :screen="true" :textList="textList">项目列表</CTitle>
-    <checkall v-model="multiple">
-      <card
-        v-for="(item, index) in messageList"
-        :key="index"
-        :aType="item.type"
-        type="selection"
-        :data="item"
-        >
-        <div slot="time">2018.04.12 14:56</div>
-        <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
-        <span class="black">申请人-所属单位</span>
-        <p style="padding: 15px 0" class="black border-1pxTop">
-          项目名称
-        </p>
-        <span>项目类别</span>
-        <span>项目计划</span>
-        <span class="resTime">批准日期：2018.09.01 12:00</span>
-        <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
-          <button slot="button" class="abtn blue" v-if="item.type==='通过'">返回上一步</button>
-        </div>
-      </card>
-        <button slot="button" class="delete" @click="stop('删除')">删除</button>
-    </checkall>
+  <div class="TaskGuide">
+      <CTitle :screen="true" :textList="textList">项目列表</CTitle>
+      <checkall v-model="multiple">
+        <card
+          v-for="(item, index) in messageList"
+          :key="index"
+          :aType="item.type"
+          type="selection"
+          :data="item"
+          >
+          <div slot="time">2018.04.12 14:56</div>
+          <p class="no border-1pxLeft">NO：{{item.name}}</p>
+          <p slot="type" style="height:100%">{{item.type}}</p>
+          <span class="black">申请人-所属单位</span>
+          <span>项目类别</span>
+          <span>项目计划</span>
+          <span class="resTime">批准日期：2018.09.01 12:00</span>
+          <div style="text-align:center">
+            <button slot="button" class="abtn" @click="jump">详情</button>
+            <button slot="button" class="abtn blue">修改</button>
+          </div>
+        </card>
+          <button slot="button" class="delete" @click="stop('删除')">删除</button>
+      </checkall>
   </div>
 </template>
 
@@ -35,10 +32,10 @@ import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
-  name: 'ProjectChange',
+  name: 'TaskGuide',
   data () {
     return {
-      textList: ['时间范围', '申报类别', '项目类别', '项目计划', '所属科室', '审核状态'],
+      textList: ['时间范围', '项目类别', '项目计划', '显示状态'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -65,7 +62,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'ChangeApplicationSearch'})
+      this.$router.push({name: 'GuideRelease'})
     }
   }
 }
@@ -73,7 +70,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.ProjectChange
+.TaskGuide
   padding-bottom 20px
   .checkAll
     margin 0 6px

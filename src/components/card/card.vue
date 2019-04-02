@@ -62,11 +62,11 @@ export default {
   computed: {
     color () {
       let type = this.aType
-      if (type === '正常' || type === '通过') {
+      if (type === '正常' || type === '通过' || type === '已分配') {
         return 'normal'
-      } else if (type === '停用') {
+      } else if (type === '停用' || type === '隐藏') {
         return 'stop'
-      } else if (type === '审核中') {
+      } else if (type === '审核中' || type === '未分配') {
         return 'active'
       } else if (type === '建议修改') {
         return 'warning'
@@ -145,7 +145,7 @@ export default {
           display flex
           align-items center
           height 40px
-          line-height 11px
+          line-height 14px
           margin 0 auto
           flex-wrap wrap
           word-wrap: break-word;
