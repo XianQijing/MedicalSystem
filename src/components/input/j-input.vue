@@ -12,7 +12,7 @@
     </div>
 
     <div class="text" v-if="type==='clearable'">
-    <slot></slot>
+      <slot></slot>
       <input type="text"
         :value="value"
         :placeholder="placeholder"
@@ -22,7 +22,7 @@
         @focus="focus"
         >
         <div class="clearable" v-show="clear">
-          <img @click="toClear" src="./image/delete.png" alt="">
+          <img @click="toClear" :src="image" :width="width" alt="">
         </div>
     </div>
 
@@ -66,6 +66,13 @@ export default {
     text: {
       type: String,
       default: 'text'
+    },
+    image: {
+      default: require('./image/delete.png')
+    },
+    width: {
+      type: String,
+      default: '20px'
     }
   },
   components: {
@@ -114,10 +121,7 @@ export default {
       align-items center
       height 100%
       padding 0 10px 0 5px
-      background-color: rgb(239, 239, 244);
-      img
-        width 20px
-        height 20px
+      background-color: none;
   input
     width 100%
     // font-size: 14px;

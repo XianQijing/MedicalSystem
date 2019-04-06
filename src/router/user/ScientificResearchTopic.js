@@ -9,56 +9,44 @@ const router = {
       path: '',
       name: 'ProjectSettings',
       component: resolve => require(['@/user/ScientificResearchTopic/page/ProjectSettings'], resolve),
-      meta: '项目设置'
-    },
-    {
-      path: 'TaskGuide',
-      name: 'TaskGuide',
-      component: resolve => require(['@/user/ScientificResearchTopic/page/TaskGuide'], resolve),
       meta: '课题指南'
     },
     {
       path: 'GuideRelease',
       name: 'GuideRelease',
       component: resolve => require(['@/user/ScientificResearchTopic/page/GuideRelease'], resolve),
-      meta: '指南发布'
+      meta: '查看详情'
     },
     {
-      path: 'PlanRelease',
-      name: 'PlanRelease',
-      component: resolve => require(['@/user/ScientificResearchTopic/page/PlanRelease'], resolve),
-      meta: '计划发布'
-    },
-    {
-      path: 'addPlan',
-      name: 'addPlan',
-      component: resolve => require(['@/user/ScientificResearchTopic/page/addPlan'], resolve),
-      meta: '新增发布'
-    },
-    {
-      path: 'FormalInspection',
-      name: 'FormalInspection',
-      component: resolve => require(['@/user/ScientificResearchTopic/page/FormalInspection'], resolve),
-      meta: '形式审查'
+      path: 'ProjectDeclaration',
+      name: 'ProjectDeclaration',
+      component: resolve => require(['@/user/ScientificResearchTopic/page/ProjectDeclaration'], resolve),
+      meta: '课题申报'
     },
     {
       path: 'ReviewManagement',
       name: 'ReviewManagement',
       component: resolve => require(['@/user/ScientificResearchTopic/page/ReviewManagement'], resolve),
-      meta: '评审管理'
+      meta: '评审进程'
     },
     {
-      path: 'Approval',
-      name: 'Approval',
-      component: resolve => require(['@/user/ScientificResearchTopic/page/Approval'], resolve),
-      meta: '批准文件'
+      path: 'DirectAssessment',
+      name: 'DirectAssessment',
+      component: resolve => require(['@/user/ScientificResearchTopic/page/DirectAssessment'], resolve),
+      meta: '直接评审'
     },
     {
-      path: 'FileRelease',
-      name: 'FileRelease',
-      component: resolve => require(['@/user/ScientificResearchTopic/page/FileRelease'], resolve),
-      meta: '文件发布'
+      path: 'PreliminaryAssessment',
+      name: 'PreliminaryAssessment',
+      component: resolve => require(['@/user/ScientificResearchTopic/page/PreliminaryAssessment'], resolve),
+      meta: '课题初评'
     },
+    {
+      path: 'TopicListDetail',
+      name: 'TopicListDetail',
+      component: resolve => require(['@/user/ScientificResearchTopic/page/TopicListDetail'], resolve),
+      meta: '查看详情'
+    }
   ]
 }
 

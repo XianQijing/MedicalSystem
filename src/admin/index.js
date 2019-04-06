@@ -11,6 +11,8 @@ import FundManagement from '@/router/admin/fundManagement'
 import ItemsManagement from '@/router/admin/ItemsManagement'
 import ProjectManagement from '@/router/admin/ProjectManagement'
 import ScientificResearchTopic from '@/router/admin/ScientificResearchTopic'
+import SecuritySupport from '@/router/admin/SecuritySupport'
+import ElectronicArchives from '@/router/admin/ElectronicArchives'
 
 Vue.use(Router)
 
@@ -56,7 +58,9 @@ const router = new Router({
     FundManagement,
     ItemsManagement,
     ProjectManagement,
-    ScientificResearchTopic
+    ScientificResearchTopic,
+    SecuritySupport,
+    ElectronicArchives
   ].concat(UserCenter)
 })
 

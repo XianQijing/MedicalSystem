@@ -4,6 +4,7 @@
       <span>{{name}}</span>
       <img @click="open = !open" :src="open ? icon.close : icon.open" width="18" height="18">
       <span class="right">{{right}}</span>
+      <slot name="blue"></slot>
     </div>
     <div class="collaspe-content" v-show="open">
       <slot></slot>
@@ -37,13 +38,14 @@ export default {
 <style lang="stylus" scoped>
 .collaspe
   width 100%
-  font-size 14px
+  font-size 0px
   margin-top 2px
   .collaspe-header
     background white
     height 30px
     line-height 30px
     padding 0 10px
+    font-size: 14px;
     &.open
       background none
     img
@@ -55,5 +57,10 @@ export default {
       color #999999
       float right
   .collaspe-content
+    font-size: 14px;
     margin-bottom 10px
+.blue
+  margin-left 10px
+  color: #2873ff;
+  font-size: 14px;
 </style>

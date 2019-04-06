@@ -1,93 +1,56 @@
-// 指南发布
+// 计划指南列表--查看详情
 <template>
   <div class="GuideRelease">
-    <CTitle>指南发布</CTitle>
+    <CTitle>指南信息</CTitle>
     <div class="form">
       <div class="formCell">
-        <p class="form-label">项目类别:</p>
-        <JInput/>
-      </div>
-      <div class="formCell">
-        <p class="form-label">项目计划:</p>
-        <JInput/>
+        <p class="form-label">指南名称:</p>
+        <p class="J-input">dsf</p>
       </div>
       <div class="formCell">
         <p class="form-label">发布单位:</p>
-        <JInput/>
+        <p class="J-input">dsf</p>
       </div>
       <div class="formCell">
-        <p class="form-label">指南名称:</p>
-        <JInput/>
-      </div>
-      <div class="form-Cell">
-        <p class="form-label">计划指南：</p>
-        <textarea></textarea>
+        <p class="form-label">发布日期:</p>
+        <p class="J-input">dsf</p>
       </div>
       <div class="formCell">
-        <p class="form-label">截止时间:</p>
-        <JInput/>
+        <p class="form-label">计划指南:</p>
+        <p class="J-input">dsf</p>
       </div>
       <div class="formCell">
         <p class="form-label">相关附件：</p>
-        <div class="upload">
-          上传
-          <input type="file">
-        </div>
+        <p class="blue J-input">预览</p>
       </div>
-    </div>
-    <div class="button-cell">
-      <button class="reset">取消</button>
-      <button class="complete">确认提交</button>
     </div>
   </div>
 </template>
 
 <script>
 import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'GuideRelease',
   components: {
-    CTitle,
-    JInput
+    CTitle
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.GuideRelease >>> .J-input
-  padding 0
-  input
-    text-align right
 .GuideRelease
+  .comTitle
+    margin 0
   .form
-    margin 0 6px
     font-size:14px;
-    .formCell, .form-Cell
+    .formCell
       padding 0 10px
       background white
       margin-bottom 2px
       align-items center
-    .form-Cell
-      line-height 30px
-      textarea
-        height 155px
-        width 100%
-    .formCell
       height 30px
-      .upload
-        position relative
-        font-size:14px;
+      .J-input
+        color #999999
+      .blue
         color #2873FF
-        width 2em
-        input
-          position absolute
-          width 2em
-          top 0
-          height 14px
-          z-index 3
-          opacity 0
-  .button-cell
-    position fixed
-    bottom 0
 </style>

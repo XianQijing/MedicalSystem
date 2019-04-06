@@ -28,28 +28,24 @@ export default {
       drop: false,
       dropList: [
         {
-          text: '项目设置',
+          text: '课题指南',
           name: 'ProjectSettings'
         },
         {
-          text: '课题指南',
-          name: 'TaskGuide'
+          text: '课题申报',
+          name: 'ProjectDeclaration'
         },
         {
-          text: '计划发布',
-          name: 'PlanRelease'
-        },
-        {
-          text: '形式审查',
-          name: 'FormalInspection'
-        },
-        {
-          text: '评审管理',
+          text: '评审进程',
           name: 'ReviewManagement'
         },
         {
-          text: '批准文件',
-          name: 'Approval'
+          text: '直接评审',
+          name: 'DirectAssessment'
+        },
+        {
+          text: '课题初评',
+          name: 'PreliminaryAssessment'
         }
       ]
     }

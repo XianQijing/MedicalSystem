@@ -1,29 +1,27 @@
-// 项目查询
+// 科研队伍
 <template>
-  <div class="TaskGuide">
-      <CTitle :screen="true" :textList="textList">项目列表</CTitle>
-      <checkall v-model="multiple">
-        <card
-          v-for="(item, index) in messageList"
-          :key="index"
-          :aType="item.type"
-          type="selection"
-          :data="item"
-          >
-          <div slot="time">2018.04.12 14:56</div>
-          <p class="no border-1pxLeft">NO：{{item.name}}</p>
-          <p slot="type" style="height:100%">{{item.type}}</p>
-          <span class="black">申请人-所属单位</span>
-          <span>项目类别</span>
-          <span>项目计划</span>
-          <span class="resTime">批准日期：2018.09.01 12:00</span>
-          <div style="text-align:center">
-            <button slot="button" class="abtn" @click="jump">详情</button>
-            <button slot="button" class="abtn blue">修改</button>
-          </div>
-        </card>
-          <button slot="button" class="delete" @click="stop('删除')">删除</button>
-      </checkall>
+  <div class="ScientificTeam">
+    <CTitle :screen="true" :textList="textList">信息列表</CTitle>
+    <checkall v-model="multiple">
+      <card
+        v-for="(item, index) in messageList"
+        :key="index"
+        :aType="item.type"
+        type="selection"
+        :data="item"
+        >
+        <div slot="time">2018.04.12 14:56</div>
+        <p class="no border-1pxLeft">NO：{{item.name}}</p>
+        <p slot="type" style="height:100%">{{item.type}}</p>
+        <span class="black">申请人-所属单位</span>
+        <span>项目类别</span>
+        <span>项目类别</span>
+        <div style="text-align:center">
+          <button slot="button" class="abtn" @click="jump">审核</button>
+        </div>
+      </card>
+      <button slot="button" class="delete" @click="stop('删除')">删除</button>
+    </checkall>
   </div>
 </template>
 
@@ -32,10 +30,10 @@ import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
-  name: 'TaskGuide',
+  name: 'ScientificTeam',
   data () {
     return {
-      textList: ['时间范围', '项目类别', '项目计划', '显示状态'],
+      textList: ['时间范围', '审核状态'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -48,7 +46,7 @@ export default {
           time: '2018.04.12 14:56',
           no: '00210',
           name: '用户名占位',
-          type: '审核中',
+          type: '通过',
           dayin: '已打印'
         }
       ],
@@ -62,7 +60,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'GuideRelease'})
+      this.$router.push({name: 'InformationAudit'})
     }
   }
 }
@@ -70,7 +68,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.TaskGuide
+.ScientificTeam
   padding-bottom 20px
   .checkAll
     margin 0 6px
@@ -81,13 +79,11 @@ export default {
       color: #FFFFFF;
       width 100px
       height 30px
-      // display block
       margin 0 auto
       &.blue
-        margin-left 5px
-        font-size: 14px;
-        color: #2873FF;
-        background: #C6DAFF;
+        background #C6DAFF
+        color:rgba(40,115,255,1);
+        margin-left 10px
     .no, .user
         font-size: 12px;
         color: #555555;

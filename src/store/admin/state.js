@@ -110,5 +110,73 @@ export default {
     degree: ['全选', '学士', '硕士', '博士', '无'],
     Title: ['全选', '初级', '中级', '副高级', '高级'],
     age: ['不限', '35以下', '40岁以下', '45岁以下']
+  },
+  ElectronicArchives: [
+    {
+      name: '科研课题',
+      icon: require('../../common/image/keTi.png'),
+      path: 'FileScientificTopic',
+      colums: 'base'
+    },
+    {
+      name: '学科基地',
+      icon: require('../../common/image/jiDi.png'),
+      colums: 'base',
+      path: 'JumpPage'
+    },
+    {
+      name: '优秀人才',
+      icon: require('../../common/image/renCai.png'),
+      colums: 'base',
+      path: 'JumpPage'
+    },
+    {
+      name: '科技奖励',
+      icon: require('../../common/image/jiangLi.png'),
+      colums: 'base',
+      path: 'JumpPage'
+    },
+    {
+      name: '学术活动',
+      icon: require('../../common/image/xueShu.png'),
+      path: 'ActivityList',
+      colums: 'xueshu'
+    },
+    {
+      name: '批准文件',
+      icon: require('../../common/image/piZhun.png'),
+      colums: 'base',
+      path: 'JumpPage'
+    },
+    {
+      name: '论文会议',
+      icon: require('../../common/image/huiYi.png'),
+      colums: 'base',
+      path: 'JumpPage'
+    },
+    {
+      name: '著作出版',
+      icon: require('../../common/image/zhuZuo.png'),
+      path: 'TeachingMaterial'
+    },
+    {
+      name: '知识产权',
+      icon: require('../../common/image/chanQuan.png'),
+      path: 'InventionPatent'
+    },
+    {
+      name: '社会任职',
+      icon: require('../../common/image/renZhi.png'),
+      path: 'SocialService'
+    },
+    {
+      name: '科研服务',
+      icon: require('../../common/image/renZhi.png'),
+      path: 'SCI'
+    }
+  ],
+  xunHuan: {
+    base: ['国家级', '省部级', '市部级', '区部级'],
+    xueshu: ['国家级', '省市级', '校级', '院级', '科级']
   }
 }

@@ -5,6 +5,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from '../store/user'
 import Dialog from '@/components/toast/toast.js'
 import MessageBox from '@/components/messageBox/messageBox.js'
+import CTitle from '@/components/title/title.js'
+import JInput from '@/components/input/index.js'
 import { Picker, Radio, RadioGroup, DatetimePicker, Toast, Popup } from 'vant'
 
 import '@/common/style/reset.css'
@@ -22,6 +24,8 @@ Vue.use(Picker)
   .use(Dialog)
   .use(MessageBox)
   .use(Popup)
+  .use(CTitle)
+  .use(JInput)
 
 /* eslint-disable no-new */
 new Vue({

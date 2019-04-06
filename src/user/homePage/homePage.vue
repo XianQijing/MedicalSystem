@@ -50,8 +50,8 @@ export default {
           children: [
             {
               name: '科研课题',
-              icon: 'tScientificResearchTopicopic',
-              path: '/'
+              icon: 'topic',
+              path: '/ScientificResearchTopic'
             },
             {
               name: '学科基地',
@@ -99,9 +99,9 @@ export default {
           title: '管理应用',
           children: [
             {
-              name: '保障支持',
+              name: '保障支撑',
               icon: 'support',
-              path: '/'
+              path: '/SecuritySupport'
             },
             {
               name: '评估决策',
@@ -116,7 +116,7 @@ export default {
             {
               name: '电子档案',
               icon: 'archives',
-              path: '/'
+              path: '/ElectronicArchives'
             }
           ]
         }
