@@ -1,9 +1,9 @@
 <template>
   <div class="homePage">
-    <user-title>
+    <CTitle>
       重要通知
       <div slot="float">更多<i class="iconfont">&#xe7eb;</i></div>
-    </user-title>
+    </CTitle>
     <div class="swiper-wrapper">
       <user-swiper :list="swiperList"></user-swiper>
     </div>
@@ -13,7 +13,6 @@
 
 <script>
 import IconList from '@/components/iconList/iconList'
-import UserTitle from '@/components/title/title'
 import UserSwiper from './components/swiper'
 export default {
   name: 'HomePage',
@@ -106,12 +105,12 @@ export default {
             {
               name: '评估决策',
               icon: 'decisions',
-              path: '/'
+              path: '/EvaluationDecision'
             },
             {
               name: '数据报表',
               icon: 'report',
-              path: '/'
+              path: '/DataReport'
             },
             {
               name: '电子档案',
@@ -126,7 +125,6 @@ export default {
   },
   components: {
     IconList,
-    UserTitle,
     UserSwiper
   }
 }

@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'Achievement',
   data () {
@@ -71,9 +70,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    CTitle
   },
   methods: {
     jump (path) {

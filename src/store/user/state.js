@@ -233,5 +233,128 @@ export default {
   xunHuan: {
     base: ['国家级', '省部级', '市部级', '区部级'],
     xueshu: ['国家级', '省市级', '校级', '院级', '科级']
-  }
+  },
+  InfluenceList: [
+    {
+      img: require('../../common/image/InfluenceList(1).png'),
+      name: '人力资源',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(2).png'),
+      name: '科研项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(3).png'),
+      name: '人才项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(4).png'),
+      name: '科研基地',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(5).png'),
+      name: '学科建设',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(6).png'),
+      name: '科技论文',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(7).png'),
+      name: '发明专利',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(8).png'),
+      name: '科技奖励',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(9).png'),
+      name: '指南标准',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(10).png'),
+      name: '新增模块',
+      width: 'normal'
+    }
+  ],
+  InfluenceList1: [
+    {
+      img: require('../../common/image/InfluenceList(2).png'),
+      name: '国外项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(11).png'),
+      name: '国家级项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(12).png'),
+      name: '教育部项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(13).png'),
+      name: '国家<br/>卫计委项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(14).png'),
+      name: '上海市<br/>科委项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(15).png'),
+      name: '上海市<br/>教委项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(13).png'),
+      name: '上海市<br/>教委项目',
+      width: 'normal'
+    }
+  ],
+  InfluenceList2: [
+    {
+      img: require('../../common/image/InfluenceList(16).png'),
+      name: '国家科技重大专项',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(17).png'),
+      name: '国家重点研发计划',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/专著red.png'),
+      name: '国家自然科学<br/>基金项目',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(18).png'),
+      name: '国家国际科技<br/>合作专项',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(18).png'),
+      name: '通用项目占位',
+      width: 'normal'
+    },
+    {
+      img: require('../../common/image/InfluenceList(18).png'),
+      name: '通用项目占位',
+      width: 'normal'
+    }
+  ],
+  HorizontalContrast: [
+  ]
 }

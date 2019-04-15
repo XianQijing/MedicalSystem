@@ -39,14 +39,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
-  name: 'GuideRelease',
-  components: {
-    CTitle,
-    JInput
-  }
+  name: 'GuideRelease'
 }
 </script>
 

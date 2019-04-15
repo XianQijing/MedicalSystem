@@ -35,12 +35,8 @@
 </template>
 
 <script>
-import CTitlt from '@/components/title/title'
 export default {
-  name: 'ServingDetail',
-  components: {
-    CTitlt
-  }
+  name: 'ServingDetail'
 }
 </script>
 

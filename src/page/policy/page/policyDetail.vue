@@ -15,12 +15,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'PolicyDetail',
-  components: {
-    CTitle
-  }
+  name: 'PolicyDetail'
 }
 </script>
 

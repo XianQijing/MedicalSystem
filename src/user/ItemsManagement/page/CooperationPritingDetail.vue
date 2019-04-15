@@ -48,12 +48,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'CooperationPritingDetail',
-  components: {
-    CTitle
-  }
+  name: 'CooperationPritingDetail'
 }
 </script>
 

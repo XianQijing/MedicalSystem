@@ -68,15 +68,11 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'AProjectMessage',
   data () {
     return {
     }
-  },
-  components: {
-    CTitle
   },
   computed: {
     list () {

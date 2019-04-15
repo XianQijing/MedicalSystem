@@ -17,16 +17,12 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'AProjectMessageDetail',
   data () {
     return {
       msg: ''
     }
-  },
-  components: {
-    CTitle
   },
   created () {
     this.msg = this.$route.query.msg

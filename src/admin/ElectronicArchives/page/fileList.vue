@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
+// import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 export default {
   name: 'FileList',
@@ -46,7 +46,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card
   },
   methods: {

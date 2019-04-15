@@ -26,9 +26,7 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'KeyDisciplines',
   data () {
@@ -55,9 +53,7 @@ export default {
     }
   },
   components: {
-    CTitle,
-    Card,
-    JInput
+    Card
   },
   methods: {
     jump () {

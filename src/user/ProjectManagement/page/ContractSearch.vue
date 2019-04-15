@@ -64,12 +64,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'ContractSearch',
-  components: {
-    CTitle
-  }
+  name: 'ContractSearch'
 }
 </script>
 

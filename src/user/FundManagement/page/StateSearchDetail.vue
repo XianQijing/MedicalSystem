@@ -87,17 +87,11 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
-import CTitle from '@/components/title/title'
 export default {
   name: 'FundsFinalAccountsDetail',
   data () {
     return {
     }
-  },
-  components: {
-    JInput,
-    CTitle
   }
 }
 </script>

@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 export default {
   name: 'ProjectSearch',
@@ -57,7 +56,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card
   },
   methods: {

@@ -68,7 +68,6 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 import ProjectMessage from './projectMessage'
@@ -84,7 +83,6 @@ export default {
     }
   },
   components: {
-    JInput,
     Tab,
     Tabs,
     ProjectMessage,

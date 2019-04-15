@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import BaseMessage from './baseMessage'
 export default {
   name: 'PersonalMessage',
@@ -45,7 +44,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     BaseMessage
   }
 }

@@ -206,7 +206,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Collaspe from '@/components/collaspe/collaspe'
 export default {
   name: 'SubjectServiceAbility',
@@ -215,7 +214,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Collaspe
   }
 }

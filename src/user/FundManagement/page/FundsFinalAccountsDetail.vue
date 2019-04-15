@@ -111,8 +111,6 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
-import CTitle from '@/components/title/title'
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 import JTable from '@/components/table/table'
@@ -151,8 +149,6 @@ export default {
     }
   },
   components: {
-    JInput,
-    CTitle,
     Tab,
     Tabs,
     JTable,

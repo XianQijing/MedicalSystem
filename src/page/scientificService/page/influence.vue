@@ -44,8 +44,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import BScroll from 'better-scroll'
 import Alphabet from './Alphabet'
 export default {
@@ -120,9 +118,7 @@ export default {
     }
   },
   components: {
-    CTitle,
-    Alphabet,
-    JInput
+    Alphabet
   },
   mounted () {
     this.title = this.$route.query.title

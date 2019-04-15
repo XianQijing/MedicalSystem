@@ -33,10 +33,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import JRadio from '@/components/radio/JRadio'
 import JRadioGrounp from '@/components/radio/JRadioGrounp'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'EditNotice',
   data () {
@@ -45,8 +43,6 @@ export default {
     }
   },
   components: {
-    CTitle,
-    JInput,
     JRadioGrounp,
     JRadio
   }

@@ -172,10 +172,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import JRadio from '@/components/radio/JRadio'
 import JRadioGrounp from '@/components/radio/JRadioGrounp'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'ConversionDeclaration',
   data () {
@@ -186,10 +184,8 @@ export default {
     }
   },
   components: {
-    CTitle,
     JRadio,
-    JRadioGrounp,
-    JInput
+    JRadioGrounp
   },
   methods: {
     next () {

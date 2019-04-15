@@ -80,9 +80,7 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import JTable from '@/components/table/table'
-import JInput from '@/components/input/j-input'
 import JTableColums from '@/components/table/table-colums'
 import Card from '@/components/card/card'
 import Popup from '@/components/popup/popup2'
@@ -108,12 +106,10 @@ export default {
     }
   },
   components: {
-    CTitle,
     JTable,
     JTableColums,
     Card,
-    Popup,
-    JInput
+    Popup
   },
   methods: {
     onConfirm (value) {

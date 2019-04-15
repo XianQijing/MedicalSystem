@@ -43,18 +43,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
-  name: 'RegistrationStatuesDetail',
-  data () {
-    return {
-    }
-  },
-  components: {
-    CTitle,
-    JInput
-  }
+  name: 'RegistrationStatuesDetail'
 }
 </script>
 

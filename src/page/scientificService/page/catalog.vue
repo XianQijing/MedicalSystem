@@ -24,15 +24,14 @@
         show-toolbar
         :columns="columns"
         @cancel="onCancel"
-        @confirm="onConfirm"
         :item-height=30
+        @confirm="onConfirm"
       />
     </van-popup>
   </div>
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import BScroll from 'better-scroll'
 import Alphabet from './Alphabet'
 export default {
@@ -96,7 +95,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Alphabet
   },
   mounted () {

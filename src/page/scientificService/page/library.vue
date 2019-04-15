@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import BScroll from 'better-scroll'
 import Alphabet from './Alphabet'
 export default {
@@ -58,7 +57,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Alphabet
   },
   mounted () {

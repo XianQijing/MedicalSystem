@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import StatusPrinting from './StatusPrinting'
 export default {
@@ -64,7 +63,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     StatusPrinting
   },

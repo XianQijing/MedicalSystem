@@ -164,9 +164,7 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Popup from '@/components/popup/popup2'
-import JInput from '@/components/input/j-input'
 import collaspe from '@/components/collaspe/collaspe'
 export default {
   name: 'ProjectSettings',
@@ -221,14 +219,11 @@ export default {
     }
   },
   components: {
-    CTitle,
     Popup,
-    JInput,
     collaspe
   },
   methods: {
     onConfirm (value) {
-      console.log(value)
       this.show = false
     },
     open (msg) {

@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'Ranking',
   data () {
@@ -30,9 +29,6 @@ export default {
         fouth: ['耳鼻喉科学', '临床神经学', '生殖生物学', '外周血管学', '胃肠肝病学', '心血管系统']
       }
     }
-  },
-  components: {
-    CTitle
   },
   methods: {
     jump () {

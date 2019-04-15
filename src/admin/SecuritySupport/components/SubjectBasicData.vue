@@ -121,11 +121,9 @@
 
 <script>
 import Popup from '@/components/popup/popup2'
-import CTitle from '@/components/title/title'
 import JRadio from '@/components/radio/JRadio'
 import JRadioGrounp from '@/components/radio/JRadioGrounp'
 import Collaspe from '@/components/collaspe/collaspe'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'SubjectBasicData',
   data () {
@@ -138,9 +136,7 @@ export default {
     }
   },
   components: {
-    CTitle,
     Popup,
-    JInput,
     Collaspe,
     JRadio,
     JRadioGrounp

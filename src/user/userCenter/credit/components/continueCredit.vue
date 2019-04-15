@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Popup from '@/components/popup/popup'
 
@@ -48,7 +47,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     Popup
   },

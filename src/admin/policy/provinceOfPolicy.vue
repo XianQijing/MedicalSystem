@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Popup from '@/components/popup/popup2'
 export default {
   name: 'ProvinceOfPolicy',
@@ -68,7 +67,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Popup
   },
   methods: {

@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 export default {
   name: 'ProjectBudget',
@@ -55,7 +54,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card
   },
   methods: {

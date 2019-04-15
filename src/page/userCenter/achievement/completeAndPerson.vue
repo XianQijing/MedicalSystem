@@ -174,7 +174,6 @@
 
 <script>
 import Popup from '@/components/popup/popup'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'CompleteAndPerson',
   data () {
@@ -189,8 +188,7 @@ export default {
     }
   },
   components: {
-    Popup,
-    JInput
+    Popup
   },
   methods: {
     close (msg) {

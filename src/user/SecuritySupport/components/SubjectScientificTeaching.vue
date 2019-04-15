@@ -338,9 +338,7 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Upload from '@/components/upload/upload'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'SubjectMedicalQuality',
   data () {
@@ -350,8 +348,6 @@ export default {
     }
   },
   components: {
-    CTitle,
-    JInput,
     Upload
   },
   methods: {

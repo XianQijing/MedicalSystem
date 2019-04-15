@@ -17,17 +17,17 @@ export default {
             {
               name: '领导办公',
               icon: 'boss',
-              path: '/'
+              path: '/LeadingOffice'
             },
             {
               name: '专家评审',
               icon: 'expert',
-              path: '/'
+              path: '/ExpertReview'
             },
             {
               name: '系统维护',
               icon: 'maintenance',
-              path: '/'
+              path: '/SystemMaintenance'
             },
             {
               name: '系统日志',
@@ -122,12 +122,12 @@ export default {
             {
               name: '评估决策',
               icon: 'decisions',
-              path: '/'
+              path: '/EvaluationDecision'
             },
             {
               name: '数据报表',
               icon: 'report',
-              path: '/'
+              path: '/DataReport'
             },
             {
               name: '电子档案',

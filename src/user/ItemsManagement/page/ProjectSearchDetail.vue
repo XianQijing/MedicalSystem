@@ -105,7 +105,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'ProjectSearchDetail',
   data () {
@@ -137,9 +136,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    CTitle
   },
   computed: {
     list () {

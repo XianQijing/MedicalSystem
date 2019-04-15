@@ -50,12 +50,8 @@
 </template>
 
 <script>
-import CTitlt from '@/components/title/title'
 export default {
-  name: 'PaperDetail',
-  components: {
-    CTitlt
-  }
+  name: 'PaperDetail'
 }
 </script>
 

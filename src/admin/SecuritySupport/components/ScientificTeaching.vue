@@ -251,7 +251,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Collaspe from '@/components/collaspe/collaspe'
 export default {
   name: 'ScientificTeaching',
@@ -260,7 +259,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Collaspe
   }
 }

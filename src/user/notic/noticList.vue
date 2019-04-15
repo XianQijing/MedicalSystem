@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'NoticList',
   data () {
@@ -46,9 +45,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    CTitle
   },
   methods: {
     jump () {

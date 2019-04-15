@@ -56,12 +56,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'ExaminFund',
-  components: {
-    CTitle
-  }
+  name: 'ExaminFund'
 }
 </script>
 

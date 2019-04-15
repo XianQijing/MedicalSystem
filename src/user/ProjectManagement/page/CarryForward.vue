@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import JTable from '@/components/table/table'
 import TableColums from '@/components/table/table-colums'
@@ -79,7 +78,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     JTable,
     TableColums

@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
@@ -51,7 +50,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     Checkall
   },

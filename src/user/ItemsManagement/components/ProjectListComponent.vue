@@ -56,8 +56,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'HomeSwiper',
   data () {
@@ -89,10 +87,6 @@ export default {
       })
       return pages
     }
-  },
-  components: {
-    CTitle,
-    JInput
   },
   methods: {
     clickTab (msg, i) {

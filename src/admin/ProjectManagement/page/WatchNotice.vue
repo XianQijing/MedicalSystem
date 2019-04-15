@@ -28,15 +28,11 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'ContractSearch',
   data () {
     return {
     }
-  },
-  components: {
-    CTitle
   }
 }
 </script>

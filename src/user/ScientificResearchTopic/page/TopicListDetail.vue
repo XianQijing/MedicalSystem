@@ -28,12 +28,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'TopicListDetail',
-  components: {
-    CTitle
-  }
+  name: 'TopicListDetail'
 }
 </script>
 

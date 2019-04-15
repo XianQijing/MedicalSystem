@@ -105,8 +105,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import Popup from '@/components/popup/popup'
 import GetAge from '@/common/js/getAge'
 
@@ -143,8 +141,6 @@ export default {
     }
   },
   components: {
-    CTitle,
-    JInput,
     Popup
   },
   computed: {

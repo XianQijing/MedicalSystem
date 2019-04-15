@@ -34,16 +34,14 @@
       show-toolbar
       :columns="columns"
       @cancel="show = false"
-      @confirm="onConfirm"
       :item-height=30
+      @confirm="onConfirm"
     />
     </popup>
   </div>
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import Popup from '@/components/popup/popup2'
 export default {
   name: 'Budget',
@@ -56,8 +54,6 @@ export default {
     }
   },
   components: {
-    CTitle,
-    JInput,
     Popup
   },
   created () {

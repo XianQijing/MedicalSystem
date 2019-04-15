@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import JRadio from '@/components/radio/JRadio'
 import JRadioGrounp from '@/components/radio/JRadioGrounp'
 export default {
@@ -50,10 +48,8 @@ export default {
     }
   },
   components: {
-    CTitle,
     JRadio,
-    JRadioGrounp,
-    JInput
+    JRadioGrounp
   }
 }
 </script>

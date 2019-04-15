@@ -38,7 +38,6 @@
 
 <script>
 import Card from '@/components/card/card'
-import CTitle from '@/components/title/title'
 export default {
   name: 'ConcludingList',
   data () {
@@ -73,7 +72,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card
   },
   methods: {

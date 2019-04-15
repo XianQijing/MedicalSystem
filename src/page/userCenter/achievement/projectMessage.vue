@@ -45,12 +45,8 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 export default {
-  name: 'ProjectMessage',
-  components: {
-    JInput
-  }
+  name: 'ProjectMessage'
 }
 </script>
 

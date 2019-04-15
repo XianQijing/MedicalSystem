@@ -70,9 +70,7 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Popup from '@/components/popup/popup'
-import JInput from '@/components/input/j-input'
 import { ImagePreview } from 'vant'
 export default {
   name: 'Reviewed',
@@ -113,9 +111,7 @@ export default {
     }
   },
   components: {
-    CTitle,
-    Popup,
-    JInput
+    Popup
   }
 }
 </script>

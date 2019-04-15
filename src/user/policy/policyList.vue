@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'PolicyList',
   data () {
@@ -39,9 +38,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    CTitle
   },
   methods: {
     jump () {

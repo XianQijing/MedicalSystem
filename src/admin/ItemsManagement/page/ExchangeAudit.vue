@@ -1,6 +1,6 @@
 // 交流审核
 <template>
-  <div class="ExaminMeeting">
+  <div class="ExchangeAudit">
     <CTitle>基本信息</CTitle>
     <div class="form">
       <div class="formCell">
@@ -83,10 +83,8 @@
 
 <script>
 import Popup from '@/components/popup/popup2'
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
-  name: 'ExaminMeeting',
+  name: 'ExchangeAudit',
   data () {
     return {
       show: false,
@@ -97,9 +95,7 @@ export default {
     }
   },
   components: {
-    CTitle,
-    Popup,
-    JInput
+    Popup
   },
   methods: {
     onConfirm (value) {
@@ -115,7 +111,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.ExaminMeeting
+.ExchangeAudit
   .form
     margin 0 6px
     .formCell

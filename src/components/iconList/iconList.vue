@@ -1,7 +1,7 @@
 <template>
   <div class="iconList">
     <div class="iconWrapper border-1px" v-for="item in icons" :key="item.title">
-      <common-title>{{item.title}}</common-title>
+      <CTitle>{{item.title}}</CTitle>
       <div class="menu">
         <router-link tag="div" :to="icon.path" class="icon border-1pxLeft" v-for="(icon, index) in item.children" :key="index">
           <span class="spot">{{index}}</span>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import CommonTitle from '../title/title'
+// import CTitle from '../title/title'
 export default {
   name: 'iconList',
   props: {
@@ -25,7 +25,7 @@ export default {
     }
   },
   components: {
-    CommonTitle
+    // CTitle
   }
 }
 </script>

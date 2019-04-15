@@ -51,12 +51,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'ExperimentalPritingDetail',
-  components: {
-    CTitle
-  }
+  name: 'ExperimentalPritingDetail'
 }
 </script>
 

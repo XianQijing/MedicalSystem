@@ -427,9 +427,7 @@
 
 <script>
 import Popup from '@/components/popup/popup2'
-import CTitle from '@/components/title/title'
 import Collaspe from '@/components/collaspe/collaspe'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'TalentsAchievements',
   data () {
@@ -442,9 +440,7 @@ export default {
     }
   },
   components: {
-    CTitle,
     Popup,
-    JInput,
     Collaspe
   },
   methods: {

@@ -75,16 +75,12 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
   name: 'AssessmentSearch',
   data () {
     return {
       list: this.$store.state.ProjectIcon
     }
-  },
-  components: {
-    CTitle
   }
 }
 </script>

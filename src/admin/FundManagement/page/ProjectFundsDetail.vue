@@ -140,8 +140,6 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
-import CTitle from '@/components/title/title'
 import Collaspe from '@/components/collaspe/collaspe'
 import JTable from '@/components/table/table'
 import JTableColums from '@/components/table/table-colums'
@@ -169,8 +167,6 @@ export default {
     }
   },
   components: {
-    JInput,
-    CTitle,
     Collaspe,
     JTable,
     JTableColums,

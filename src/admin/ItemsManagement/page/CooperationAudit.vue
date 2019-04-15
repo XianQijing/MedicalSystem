@@ -72,8 +72,6 @@
 
 <script>
 import Popup from '@/components/popup/popup2'
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'ExaminMeeting',
   data () {
@@ -86,9 +84,7 @@ export default {
     }
   },
   components: {
-    CTitle,
-    Popup,
-    JInput
+    Popup
   },
   methods: {
     onConfirm (value) {

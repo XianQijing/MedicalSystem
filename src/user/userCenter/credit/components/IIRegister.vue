@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import JInput from '@/components/input/j-input'
 // import dealImage from '@/common/js/compressPic.js'
 export default {
@@ -87,7 +86,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     JInput
   },
   methods: {

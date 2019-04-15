@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 import JTable from '@/components/table/table'
@@ -81,7 +80,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     Checkall,
     JTable,
@@ -102,7 +100,6 @@ export default {
 .ExecutionList
   padding-bottom 20px
   .checkAll
-    margin 0 6px
     .abtn
       background: #2873FF;
       border-radius: 6px;

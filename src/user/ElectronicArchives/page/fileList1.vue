@@ -26,15 +26,11 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Popup from '@/components/popup/popup2'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'FileList1',
   components: {
-    CTitle,
-    Popup,
-    JInput
+    Popup
   },
   data () {
     return {

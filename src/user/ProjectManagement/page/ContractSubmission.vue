@@ -50,14 +50,10 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import Upload from '@/components/upload/upload'
 export default {
   name: 'ContractSubmission',
   components: {
-    CTitle,
-    JInput,
     Upload
   }
 }

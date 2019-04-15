@@ -13,6 +13,8 @@ import ProjectManagement from '@/router/user/ProjectManagement'
 import ScientificResearchTopic from '@/router/user/ScientificResearchTopic'
 import SecuritySupport from '@/router/user/SecuritySupport'
 import ElectronicArchives from '@/router/user/ElectronicArchives'
+import EvaluationDecision from '@/router/user/EvaluationDecision'
+import DataReport from '@/router/user/DataReport'
 
 Vue.use(Router)
 
@@ -45,7 +47,7 @@ const router = new Router({
         },
         // 用户中心的科研对标，与管理端公用页面
         {
-          path: 'scientific/:from',
+          path: 'scientific',
           name: 'Scientific',
           component: resolve => require(['@/page/userCenter/scientific/scientific'], resolve),
           meta: '科研对标'
@@ -190,7 +192,9 @@ const router = new Router({
     ProjectManagement,
     ScientificResearchTopic,
     SecuritySupport,
-    ElectronicArchives
+    ElectronicArchives,
+    EvaluationDecision,
+    DataReport
   ]
 })
 

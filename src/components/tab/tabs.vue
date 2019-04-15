@@ -67,11 +67,12 @@ export default {
     justify-content space-between
     .tab-pane
       // width 31.5%
-      height 30px
+      height .3rem
       text-align center
       border: 1px solid #2873FF;
       color #2873FF
-      line-height 30px
+      line-height .3rem
+      font-size .12rem
     .active
       background #2873FF
       color white

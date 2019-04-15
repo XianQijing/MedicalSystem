@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 export default {
   name: 'ProjectSearch',
@@ -57,7 +56,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card
   },
   methods: {
@@ -71,7 +69,8 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .ProjectSearch
-  margin 0 6px
+  .comTitle
+    margin 0
   .card
     .abtn
       background: #2873FF;

@@ -100,8 +100,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import Checkbox from '@/components/checkbox/checkbox'
 import Popup from '@/components/popup/popup2'
 export default {
@@ -115,8 +113,6 @@ export default {
     }
   },
   components: {
-    CTitle,
-    JInput,
     Checkbox,
     Popup
   },

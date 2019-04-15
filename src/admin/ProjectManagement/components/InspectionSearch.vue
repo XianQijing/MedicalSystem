@@ -53,10 +53,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Card from '@/components/card/card'
 import Popup from '@/components/popup/popup2'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'InspectionSearch',
   data () {
@@ -84,10 +82,8 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
-    Popup,
-    JInput
+    Popup
   },
   methods: {
     jump (name) {

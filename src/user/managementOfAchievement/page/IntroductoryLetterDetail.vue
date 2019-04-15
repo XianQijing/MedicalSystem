@@ -52,17 +52,11 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 export default {
   name: 'IntroductoryLetterDetail',
   data () {
     return {
     }
-  },
-  components: {
-    CTitle,
-    JInput
   }
 }
 </script>

@@ -33,12 +33,8 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 export default {
-  name: 'ResearchFunds',
-  components: {
-    CTitle
-  }
+  name: 'ResearchFunds'
 }
 </script>
 

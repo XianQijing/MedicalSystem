@@ -65,8 +65,6 @@
 </template>
 
 <script>
-import CTitlt from '@/components/title/title'
-import JInput from '@/components/input/j-input'
 import Popup from '@/components/popup/popup2'
 export default {
   name: 'ExpensesReimbursement',
@@ -80,8 +78,6 @@ export default {
     }
   },
   components: {
-    CTitlt,
-    JInput,
     Popup
   },
   methods: {

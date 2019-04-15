@@ -31,7 +31,6 @@
 
 <script>
 import Card from '@/components/card/card'
-import CTitle from '@/components/title/title'
 import Checkall from '@/components/checkbox/checkall'
 export default {
   name: 'NoticeList',
@@ -68,7 +67,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     Checkall
   },

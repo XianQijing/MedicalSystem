@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import CTitle from '@/components/title/title'
 import Checkall from '@/components/checkbox/checkall'
 import Card from '@/components/card/card'
 export default {
@@ -101,7 +100,6 @@ export default {
     }
   },
   components: {
-    CTitle,
     Card,
     Checkall
     // JInput,

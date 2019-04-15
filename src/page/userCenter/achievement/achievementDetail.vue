@@ -47,12 +47,8 @@
 </template>
 
 <script>
-import CTitlt from '@/components/title/title'
 export default {
-  name: 'AchievementDetail',
-  components: {
-    CTitlt
-  }
+  name: 'AchievementDetail'
 }
 </script>
 
