@@ -7,7 +7,7 @@
           <p class="time">2019.03.06</p>
         </div>
       </swiper-slide>
-    <div class="swiper-pagination"  slot="pagination"></div>
+    <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
   </div>
 </template>
@@ -39,35 +39,39 @@ export default {
 <style lang="stylus" scoped>
 .wapper >>> .my-bullet
   background: #C6DAFF;
-  border-radius: 4px;
-  width 20px
-  height 4px
+  border-radius: .04rem;
+  width .20rem
+  height .04rem
   display inline-block
-  margin-right 10px
+  margin-right .1rem
 .wapper >>> .my-bullet-active
   background: #2873FF;
 .wapper
   overflow hidden
-  height 100px
+  height 1rem
+  .swiper-container
+    height 100%
   .text-content
-    height 80px;
+    height .80rem;
     background #003BAA;
-    border-radius 4px
+    border-radius .04rem
     box-shadow 0 1px 2px 0 rgba(0,0,0,0.50)
     vertical-align top
     color white
   .content
-    margin 0 20px
-    padding 18px 0
-    font-size: 14px;
+    margin 0 .2rem
+    padding .18rem 0
+    font-size: .14rem;
     font-weight 700
     white-space nowrap
     text-overflow ellipsis
     overflow hidden
   .time
-    font-size: 12px;
-    margin 0 20px
+    font-size: .12rem;
+    margin 0 .20rem
   .swiper-pagination
-    position relative
-    top 2px
+    bottom 0
+    // position relative
+    // height .04rem
+    // top .02rem
 </style>

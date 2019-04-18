@@ -17,19 +17,19 @@
         <span>项目类别</span>
         <span>项目类别</span>
         <div class="icon">
-          <div>
+          <div @click="toQuota('一级指标')">
             <p class="iconfont">&#xe612;</p>
             <p class="desc">一级指标</p>
           </div>
-          <div>
+          <div @click="toQuota('二级指标')">
           <p class="iconfont">&#xe613;</p>
             <p class="desc">二级指标</p>
           </div>
-          <div>
+          <div @click="toQuota('三级指标')">
           <p class="iconfont">&#xe615;</p>
             <p class="desc">三级指标</p>
           </div>
-          <div>
+          <div @click="toQuota('四级指标')">
           <p class="iconfont">&#xe614;</p>
             <p class="desc">四级指标</p>
           </div>
@@ -41,7 +41,25 @@
       </card>
       <button slot="button" class="delete">删除</button>
     </checkall>
-    <div class="edit-button" @click="addType('新增来源')"></div>
+    <div class="edit-button" @click="addType('添加专家评分表')"></div>
+    <Popup v-model="add" position="center" :title="title">\
+      <div class="formCell">
+        <p class="form-label">评分表名称</p>
+        <JInput/>
+      </div>
+      <div class="formCell">
+        <p class="form-label">评分表类别</p>
+        <JInput/>
+      </div>
+      <div class="formCell">
+        <p class="form-label">评分表类型</p>
+        <JInput type="select"/>
+      </div>
+      <div class="button-cell">
+        <button class="reset">重置</button>
+        <button class="complete">完成</button>
+      </div>
+    </Popup>
   </div>
 </template>
 
@@ -53,6 +71,8 @@ export default {
   name: 'ExpertRating',
   data () {
     return {
+      add: false,
+      title: '新增期刊',
       textList: ['时间范围', '选择学历', '选择职称'],
       messageList: [
         {
@@ -81,6 +101,14 @@ export default {
   methods: {
     jump () {
       this.$router.push({name: 'DailySetting'})
+    },
+    addType (msg) {
+      this.title = msg
+      this.add = true
+    },
+    toQuota (msg) {
+      this.$router.push({name: 'Quota', query: {msg: msg}})
+      document.title = msg
     }
   }
 }
@@ -165,4 +193,19 @@ export default {
     position fixed
     right .3rem
     bottom .39rem
+  .popup
+    .button-cell
+      margin-top 34px
+  .formCell
+    padding 0 15px
+    // height 35px
+    font-size:14px;
+    align-items center
+    margin-top 10px
+    color #fd4d4d
+    .J-input
+      width 66.67%
+      border:1px solid #fd4d4d;
+      border-radius:4px;
+      height 26px
 </style>

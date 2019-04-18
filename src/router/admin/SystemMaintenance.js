@@ -82,6 +82,11 @@ const router = {
       name: 'DeanAccount',
       component: resolve => require(['@/admin/SystemMaintenance/DeanAccount/DeanAccount'], resolve),
       meta: '院长账号'
+    },
+    {
+      path: 'Quota',
+      name: 'Quota',
+      component: resolve => require(['@/admin/SystemMaintenance/DailySetup/Quota'], resolve)
     }
   ]
 }

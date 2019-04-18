@@ -16,22 +16,22 @@ export default {
           children: [
             {
               name: '领导办公',
-              icon: 'boss',
+              icon: '&#xe625;',
               path: '/LeadingOffice'
             },
             {
               name: '专家评审',
-              icon: 'expert',
+              icon: '&#xe632;',
               path: '/ExpertReview'
             },
             {
               name: '系统维护',
-              icon: 'maintenance',
+              icon: '&#xe630;',
               path: '/SystemMaintenance'
             },
             {
               name: '系统日志',
-              icon: 'log',
+              icon: '&#xe629;',
               path: '/'
             }
           ]
@@ -41,22 +41,22 @@ export default {
           children: [
             {
               name: '用户中心',
-              icon: 'center',
+              icon: '&#xe62a;',
               path: '/UserCenter'
             },
             {
               name: '通知公告',
-              icon: 'notic',
+              icon: '&#xe62d;',
               path: '/Notic'
             },
             {
               name: '政策法规',
-              icon: 'policy',
+              icon: '&#xe623;',
               path: '/policy'
             },
             {
               name: '科研服务',
-              icon: 'service',
+              icon: '&#xe631;',
               path: '/scientificServing'
             }
           ]
@@ -66,22 +66,22 @@ export default {
           children: [
             {
               name: '科研课题',
-              icon: 'topic',
+              icon: '&#xe626;',
               path: '/ScientificResearchTopic'
             },
             {
               name: '学科基地',
-              icon: 'subject',
+              icon: '&#xe635;',
               path: '/ScientificResearchTopic'
             },
             {
               name: '优秀人才',
-              icon: 'personnel',
+              icon: '&#xe62e;',
               path: '/ScientificResearchTopic'
             },
             {
               name: '科技奖励',
-              icon: 'base',
+              icon: '&#xe627;',
               path: '/ScientificResearchTopic'
             }
           ]
@@ -91,22 +91,22 @@ export default {
           children: [
             {
               name: '项目管理',
-              icon: 'project',
+              icon: '&#xe62f;',
               path: '/ProjectManagement'
             },
             {
               name: '事项管理',
-              icon: 'matter',
+              icon: '&#xe628;',
               path: '/ItemsManagement'
             },
             {
               name: '经费管理',
-              icon: 'funds',
+              icon: '&#xe633;',
               path: '/FundManagement'
             },
             {
               name: '成果管理',
-              icon: 'result',
+              icon: '&#xe62c;',
               path: '/ManagementOfAchievement'
             }
           ]
@@ -116,22 +116,22 @@ export default {
           children: [
             {
               name: '保障支撑',
-              icon: 'support',
+              icon: '&#xe62b;',
               path: '/SecuritySupport'
             },
             {
               name: '评估决策',
-              icon: 'decisions',
+              icon: '&#xe624;',
               path: '/EvaluationDecision'
             },
             {
               name: '数据报表',
-              icon: 'report',
+              icon: '&#xe622;',
               path: '/DataReport'
             },
             {
               name: '电子档案',
-              icon: 'archives',
+              icon: '&#xe634;',
               path: '/ElectronicArchives'
             }
           ]
@@ -144,3 +144,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.homePage
+  padding-top .1rem
+</style>

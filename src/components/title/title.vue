@@ -77,14 +77,14 @@ export default {
 @import '../../common/style/mixin.styl'
 .comTitle
   margin 0 6px
-  padding 10px 0
-  height 13px
-  font-size: 13px;
+  padding .1rem 0
+  height .13rem
+  font-size: .13rem;
   .green
-    border-radius 4px
-    border-left 2.5px solid rgba(69,193,134,1);
-    border-right 2.5px solid rgba(69,193,134,1);
-    height 13px
+    border-radius .04rem
+    border-left .025rem solid rgba(69,193,134,1);
+    border-right .025rem solid rgba(69,193,134,1);
+    height .13rem
     width 0
     display inline-block
     margin-right 4px
@@ -92,18 +92,18 @@ export default {
   .font
     display inline-block
     vertical-align top
-    line-height 13px
+    line-height .13rem
   .float
     float right
     color #2873FF
-    font-size: 13px;
+    font-size: .13rem;
     div
       vertical-align top
     .screen
       display inline-block
-      width 13px
-      height 13px
-      background-size 13px
+      width .13rem
+      height .13rem
+      background-size .13rem
       vertical-align top
       bg-image(screen)
 </style>
