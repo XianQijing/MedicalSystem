@@ -3,7 +3,7 @@
     <CTitle>院长办公</CTitle>
     <div class="icon-wrapper">
       <div @click="jump(item.path)" class="icon" v-for="item in $store.state.LeadingOffice" :key="item.name">
-        <img :src="item.img" alt="">
+        <IconSvg :iconClass="item.icon"></IconSvg>
         <p>{{item.name}}</p>
         <span>新增：0</span>
       </div>
@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../../../common/style/mixin.styl'
 .LeadingOffice
   .icon-wrapper
     margin 0 .28rem
@@ -39,13 +40,15 @@ export default {
       margin-bottom .1rem
       &:nth-of-type(3n)
         margin-right 0
-      img
+      .svg-icon
         height .4rem
+        font-size .4rem
+        color $blue
         margin .16rem 0 .1rem 0
       p
         font-size .14rem
         margin-bottom .12rem
-        color #2873ff
+        color $blue
       span
         font-size .12rem
 </style>

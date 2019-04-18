@@ -6,11 +6,14 @@ import MessageBox from '@/components/messageBox/messageBox.js'
 import store from '../store/admin'
 import JInput from '@/components/input/index.js'
 import CTitle from '@/components/title/title.js'
+import IconSvg from '@/components/icon-svg/index.js'
+import JButton from '@/components/button/button.js'
 import { Picker, DatetimePicker, Toast, Popup, Radio, RadioGroup } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
 import '@/common/style/index.styl'
+import '@/common/iconfont/iconfont.js'
 
 Vue
   .use(Picker)
@@ -23,6 +26,8 @@ Vue
   .use(RadioGroup)
   .use(CTitle)
   .use(JInput)
+  .use(IconSvg)
+  .use(JButton)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

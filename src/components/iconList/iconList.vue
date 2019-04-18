@@ -5,7 +5,10 @@
       <div class="menu">
         <router-link tag="div" :to="icon.path" class="icon border-1pxLeft" v-for="(icon, index) in item.children" :key="index">
           <span class="spot">{{index}}</span>
-          <div class="iconfont" v-html="icon.icon">{{icon.icon}}</div>
+          <!-- <svg class="iconfont" aria-hidden="true">
+            <use :xlink:href="'#'+icon.icon"></use>
+          </svg> -->
+          <IconSvg :iconClass="icon.icon"></IconSvg>
           <p class="name">
             {{icon.name}}
           </p>
@@ -81,73 +84,9 @@ export default {
           font-size: .1rem;
           text-align: center;
           line-height .22rem
-        .iconfont
+        .svg-icon
           font-size .35rem
           color $blue
           width 100%
           text-align center
-        // .iconName
-        //   background-position bottom center
-        //   height 45px
-        //   width 100%
-        // .boss
-        //   bg-image(boss)
-        //   background-size: 35px
-        // .expert
-        //   bg-image(expert)
-        //   background-size: 35px
-        // .maintenance
-        //   bg-image(maintenance)
-        //   background-size: 35px
-        // .log
-        //   bg-image(log)
-        //   background-size: 35px
-        // .center
-        //   bg-image(center)
-        //   background-size: 35px
-        // .notic
-        //   bg-image(notic)
-        //   background-size: 35px
-        // .policy
-        //   bg-image(policy)
-        //   background-size: 35px
-        // .service
-        //   bg-image(service)
-        //   background-size: 35px
-        // .topic
-        //   bg-image(topic)
-        //   background-size: 35px
-        // .subject
-        //   bg-image(subject)
-        //   background-size: 35px
-        // .personnel
-        //   bg-image(personnel)
-        //   background-size: 35px
-        // .base
-        //   bg-image(base)
-        //   background-size: 35px
-        // .project
-        //   bg-image(project)
-        //   background-size: 35px
-        // .matter
-        //   bg-image(matter)
-        //   background-size: 35px
-        // .funds
-        //   bg-image(funds)
-        //   background-size: 35px
-        // .result
-        //   bg-image(result)
-        //   background-size: 35px
-        // .support
-        //   bg-image(support)
-        //   background-size: 35px
-        // .decisions
-        //   bg-image(decisions)
-        //   background-size: 35px
-        // .report
-        //   bg-image(report)
-        //   background-size: 35px
-        // .archives
-        //   bg-image(archives)
-        //   background-size: 35px
 </style>

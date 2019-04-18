@@ -302,59 +302,59 @@ export default {
   ],
   LeadingOffice: [
     {
-      img: require('../../common/image/LeadingOffice(1).png'),
+      icon: 'icon-keyanxiangmuicon',
       name: '科研项目',
       path: 'Leading'
     },
     {
-      img: require('../../common/image/LeadingOffice(2).png'),
+      icon: 'icon-xuekejiansheicon-zhengchang',
       name: '重点学科'
     },
     {
-      img: require('../../common/image/LeadingOffice(3).png'),
+      icon: 'icon-rencaijihuaicon-zhengchang',
       name: '人才培养'
     },
     {
-      img: require('../../common/image/jiangLi.png'),
+      icon: 'icon-kejijiangliicon-zhengchang',
       name: '科技奖励'
     },
     {
-      img: require('../../common/image/LeadingOffice(4).png'),
+      icon: 'icon-chuguojiaoliuicon-zhengchang',
       name: '出国交流',
       path: 'OfficeAbroad'
     },
     {
-      img: require('../../common/image/huiYi.png'),
+      icon: 'icon-guoneihuiyiicon',
       name: '国内会议',
       path: 'OfficeMeeting'
     },
     {
-      img: require('../../common/image/LeadingOffice(5).png'),
+      icon: 'icon-xueshulunwenicon',
       name: '学术论文',
       path: 'OfficePaper'
     },
     {
-      img: require('../../common/image/chanQuan.png'),
+      icon: 'icon-zhuanliicon',
       name: '发明专利',
       path: 'OfficePatent'
     },
     {
-      img: require('../../common/image/zhuZuo.png'),
+      icon: 'icon-zhuanzhuicon',
       name: '学术专著',
       path: 'OfficeMonograph'
     },
     {
-      img: require('../../common/image/LeadingOffice(6).png'),
+      icon: 'icon-jingfeiicon',
       name: '经费使用',
       path: 'OfficeFunds'
     },
     {
-      img: require('../../common/image/renZhi.png'),
+      icon: 'icon-Page3',
       name: '学术任职',
       path: 'OfficeServing'
     },
     {
-      img: require('../../common/image/LeadingOffice(7).png'),
+      icon: 'icon-keyanketiicon-zhengchang',
       name: '科研合作',
       path: 'Cooperation'
     }

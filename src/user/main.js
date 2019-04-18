@@ -7,12 +7,15 @@ import Dialog from '@/components/toast/toast.js'
 import MessageBox from '@/components/messageBox/messageBox.js'
 import CTitle from '@/components/title/title.js'
 import JInput from '@/components/input/index.js'
+import IconSvg from '@/components/icon-svg/index.js'
+
 import { Picker, Radio, RadioGroup, DatetimePicker, Toast, Popup } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 import '@/common/style/index.styl'
+import '@/common/iconfont/iconfont.js'
 
 Vue.config.productionTip = false
 Vue.use(Picker)
@@ -26,6 +29,7 @@ Vue.use(Picker)
   .use(Popup)
   .use(CTitle)
   .use(JInput)
+  .use(IconSvg)
 
 /* eslint-disable no-new */
 new Vue({

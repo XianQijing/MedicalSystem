@@ -1,30 +1,20 @@
 <template>
-  <div>
-    <div class="card" v-if="type !== 'selection'">
-      <div class="timeIcon" v-if="time" :class="color"><i class="iconfont">&#xe608;</i></div>
-      <div class="time"><slot name="time"></slot></div>
-      <div class="card-content">
-        <div class="card-white">
-          <slot></slot>
-          <div class="type" :class="color" v-if="nowType"><slot name="type"></slot></div>
-          <div class="button">
-            <slot name="button"></slot>
-          </div>
-          </div>
-      </div>
-    </div>
-    <div class="card" v-if="type === 'selection'">
-      <div class="timeIcon" v-if="time" :class="color"><i class="iconfont">&#xe608;</i></div>
-      <div class="time"><slot name="time"></slot></div>
-      <div class="card-content">
-        <div class="card-white">
-          <checkbox v-model="checked"></checkbox>
-          <slot></slot>
-          <div class="type" :class="color" v-if="nowType"><slot name="type"></slot></div>
-          <div class="button">
-            <slot name="button"></slot>
-          </div>
-          </div>
+  <div
+    class="card"
+    :class="[
+      time ? 'time-card' : '',
+      {
+        'is-selection': type === 'selection'
+      }
+    ]"
+  >
+    <IconSvg class="timeIcon" :class="color" iconClass="icon-shijian" v-if="time"></IconSvg>
+    <div class="time">{{time}}</div>
+    <div class="card-content">
+      <div class="card-white">
+        <checkbox v-model="checked" v-if="type === 'selection'"></checkbox>
+        <slot></slot>
+        <div class="type" :class="color" v-if="status"><p>{{status}}</p></div>
       </div>
     </div>
   </div>
@@ -40,17 +30,8 @@ export default {
     }
   },
   props: {
-    aType: {
-      type: String
-    },
-    time: {
-      type: Boolean,
-      default: true
-    },
-    nowType: {
-      type: Boolean,
-      default: true
-    },
+    time: String,
+    status: String,
     type: {
       type: String
     },
@@ -61,7 +42,7 @@ export default {
   },
   computed: {
     color () {
-      let type = this.aType
+      let type = this.status
       if (type === '正常' || type === '通过' || type === '已分配') {
         return 'normal'
       } else if (type === '停用' || type === '隐藏') {
@@ -93,85 +74,67 @@ export default {
 <style lang="stylus" scoped>
 @import '../../common/style/mixin.styl'
 .card
-  margin-left 6px
   font-size 0
   .timeIcon
-    width 16px
-    height 16px
+    width .16rem
+    height .16rem
     background #45C186
     color white
-    font-size 10px
+    font-size .1rem
     display inline-block
     border-radius 50%
     vertical-align top
-    margin-right 10px
   .time
     display inline-block
     vertical-align bottom
-    font-size: 14px;
+    font-size: .14rem;
     color: #999999;
   .card-content
-    margin-left 7px
-    border-left 2px solid #D3D3D3
-    padding 10px 0
+    padding-bottom .1rem
     .card-white
-      margin-left 17px
-      padding 15px 10px
+      padding .15rem .1rem
       background white
       position relative
       .checkbox
-        margin-right 10px
+        margin-right .10rem
       .no, .user
         font-size: 12px;
         color: #555555;
         display inline-block
         vertical-align top
-      // .no
-      //   padding-left 10px
-      //   border-1pxLeft(#D3D3D3)
       .type
-        height 40px
-        width 30px
+        height .4rem
+        width .3rem
         position absolute
-        font-size: 10px;
+        font-size: .1rem
         color: #FFFFFF;
         text-align center
         top 0
-        right 10px
-        line-height 40px
+        right .1rem
         text-align center
+        display flex
+        align-items center
+        flex-wrap wrap
         p
-          width 20px
-          display flex
-          align-items center
-          height 40px
-          line-height 14px
-          margin 0 auto
-          flex-wrap wrap
+          width .2rem
           word-wrap: break-word;
-          word-break: normal;
-          overflow visible
-      // span
-      //   display block
-      //   font-size: 14px;
-      //   color: #333333;
-      //   margin-bottom 17px
-      // .black
-      //   margin-top 15px
-      //   font-weight 700
-      //   font-size: 16px;
-      // .resTime
-      //   font-size: 12px;
-      //   color: #999999;
-      // .button
-      //   // background: #2873FF;
-      //   // border-radius: 6px;
-      //   // font-size: 14px;
-      //   // color: #FFFFFF;
-      //   // width 100px
-      //   height 30px
-      //   // display block
-      //   // margin 0 auto
+          margin 0 auto
+  &.is-selection
+    .card-content
+      .card-white
+        .no, .user
+          padding-left .1rem
+          border-1pxLeft(#d3d3d3)
+  &.time-card
+    margin-left 6px
+    .timeIcon
+      margin-right .1rem
+    .card-content
+      margin-left .07rem
+      padding .1rem 0
+      border-left .02rem solid #D3D3D3
+      .card-white
+        margin-left .17rem
   .normal
     background #45C186
   .stop
