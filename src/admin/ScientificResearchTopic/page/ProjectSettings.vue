@@ -14,17 +14,17 @@
       <div class="content">
         <div class="img" @click="addType('添加大类')">
           <div class="img-wrapper">
-            <img src="../../../common/image/daLei.png" alt="">
+            <IconSvg iconClass="icon-daleiicon-zhengchang"/>
           </div>
           <p class="border-1pxLeft">添加大类</p>
         </div><div class="img" @click="addType('添加小类')">
           <div class="img-wrapper">
-            <img src="../../../common/image/xiaoLei.png" alt="">
+            <IconSvg iconClass="icon-xiaoleiicon-zhengchang"/>
           </div>
           <p class="border-1pxLeft">添加小类</p>
         </div><div class="img">
           <div class="img-wrapper" @click="plan = true">
-            <img src="../../../common/image/plan.png" alt="">
+            <IconSvg iconClass="icon-jihuaicon-zhengchang"/>
           </div>
           <p class="border-1pxLeft">添加计划</p>
         </div>
@@ -262,14 +262,14 @@ export default {
       color #555555
       .bule
         float right
-        color #2873FF
+        color $blue
         span
           margin-left .10rem
     .content
       display flex
       justify-content space-between
       .img
-        border:1px solid rgba(40,115,255,1);
+        border:1px solid $blue
         border-radius .04rem
         color #333333
         flex 1
@@ -289,8 +289,9 @@ export default {
           font-size .12rem;
         .img-wrapper
           flex 1 0 .45rem
-          img
-            width .23rem
+          .svg-icon
+            font-size .23rem
+            color $blue
         p
           flex 2 1 .66rem
           border-1pxLeft(#D3D3D3)
@@ -304,7 +305,7 @@ export default {
     margin-top 10px
     .J-input
       width 66.67%
-      border:1px solid rgba(40,115,255,1);
+      border:1px solid $blue
       border-radius:4px;
       height 26px
   .popup
@@ -320,7 +321,7 @@ export default {
       border-1px(#d3d3d3)
       .iconfont
         float right
-        color #2873FF
+        color $blue
     .plan-wrapper
       padding 10px 10px 0 10px
       height 391px
@@ -339,8 +340,8 @@ export default {
       .content
         width 28.67%
         font-size:12px;
-        color:rgba(40,115,255,1);
-        border:1px solid rgba(40,115,255,1)
+        color:$blue
+        border:1px solid $blue
         background white
         height:30px;
         border-radius:4px;
@@ -351,13 +352,13 @@ export default {
           margin-left 0
       .active
         color white
-        background-color rgba(40,115,255,1)
+        background-color $blue
       .liucheng
         .J-input
           width 26.67%
           display inline-block
           height:30px;
-          border:1px solid rgba(40,115,255,1);
+          border:1px solid $blue
           border-radius:4px;
       .direct
         &:last-child, &:nth-of-type(10)

@@ -10,13 +10,19 @@ const router = {
       path: '',
       name: 'AttendTheMeeting',
       component: resolve => require(['@/admin/ItemsManagement/page/AttendTheMeeting'], resolve),
-      meta: '事项管理'
+      meta: {
+        title: '事项管理',
+        requireAuth: true
+      }
     },
     {
       path: 'ExaminMeeting',
       name: 'ExaminMeeting',
       component: resolve => require(['@/admin/ItemsManagement/page/ExaminMeeting'], resolve),
-      meta: '会议审核'
+      meta: {
+        title: '会议审核',
+        requireAuth: true
+      }
     },
     {
       path: 'ExaminFund',
@@ -40,67 +46,100 @@ const router = {
       path: 'ScientificResearchCooperation',
       name: 'ScientificResearchCooperation',
       component: resolve => require(['@/admin/ItemsManagement/page/ScientificResearchCooperation'], resolve),
-      meta: '科研合作'
+      meta: {
+        title: '科研合作',
+        requireAuth: true
+      }
     },
     {
       path: 'CooperationAudit',
       name: 'CooperationAudit',
       component: resolve => require(['@/admin/ItemsManagement/page/CooperationAudit'], resolve),
-      meta: '合作审核'
+      meta: {
+        title: '合作审核',
+        requireAuth: true
+      }
     },
     {
       path: 'ExperimentalApplication',
       name: 'ExperimentalApplication',
       component: resolve => require(['@/admin/ItemsManagement/page/ExperimentalApplication'], resolve),
-      meta: '实验申请'
+      meta: {
+        title: '实验申请',
+        requireAuth: true
+      }
     },
     {
       path: 'UseAudit',
       name: 'UseAudit',
       component: resolve => require(['@/admin/ItemsManagement/page/UseAudit'], resolve),
-      meta: '使用审核'
+      meta: {
+        title: '使用审核',
+        requireAuth: true
+      }
     },
     {
       path: 'ReagentConsumables',
       name: 'ReagentConsumables',
       component: resolve => require(['@/admin/ItemsManagement/page/ReagentConsumables'], resolve),
-      meta: '试剂耗材'
+      meta: {
+        title: '试剂耗材',
+        requireAuth: true
+      }
     },
     {
       path: 'ConsumablesAudit',
       name: 'ConsumablesAudit',
       component: resolve => require(['@/admin/ItemsManagement/page/ConsumablesAudit'], resolve),
-      meta: '耗材审核'
+      meta: {
+        title: '耗材审核',
+        requireAuth: true
+      }
     },
     {
       path: 'EquipmentPurchase',
       name: 'EquipmentPurchase',
       component: resolve => require(['@/admin/ItemsManagement/page/EquipmentPurchase'], resolve),
-      meta: '仪器设备'
+      meta: {
+        title: '仪器设备',
+        requireAuth: true
+      }
     },
     {
       path: 'PurchaseAudit',
       name: 'PurchaseAudit',
       component: resolve => require(['@/admin/ItemsManagement/page/PurchaseAudit'], resolve),
-      meta: '购买审核'
+      meta: {
+        title: '购买审核',
+        requireAuth: true
+      }
     },
     {
       path: 'HostMeeting',
       name: 'HostMeeting',
       component: resolve => require(['@/admin/ItemsManagement/page/HostMeeting'], resolve),
-      meta: '主办单位'
+      meta: {
+        title: '主办单位',
+        requireAuth: true
+      }
     },
     {
       path: 'AProjectMessage',
       name: 'AProjectMessage',
       component: resolve => require(['@/admin/ItemsManagement/page/AProjectMessage'], resolve),
-      meta: '项目信息'
+      meta: {
+        title: '项目信息',
+        requireAuth: true
+      }
     },
     {
       path: 'ProjectSearchDetail',
       name: 'ProjectSearchDetail',
       component: resolve => require(['@/admin/ItemsManagement/page/ProjectSearchDetail'], resolve),
-      meta: '项目信息'
+      meta: {
+        title: '项目信息',
+        requireAuth: true
+      }
     }
   ]
 }

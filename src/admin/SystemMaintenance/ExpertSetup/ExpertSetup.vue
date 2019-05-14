@@ -54,7 +54,7 @@ export default {
     height .3rem
 .ExpertSetup
   margin 0 6px
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
   .a
     .ExpertInformation
       margin 0

@@ -1,6 +1,6 @@
 <template>
   <div class="resume">
-    <CTitlt :screen="true" :textList="textList">简历列表</CTitlt>
+    <CTitle :screen="true" :textList="textList">简历列表</CTitle>
     <div class="list" @click="jump">
       <div class="img-wapper">
         <img width="100%" src="../../../common/image/Bitmap@2x.png" alt="">
@@ -15,16 +15,12 @@
 </template>
 
 <script>
-import CTitlt from '@/components/title/title'
 export default {
   name: 'Resume',
   data () {
     return {
       textList: ['性别选择', '民族选择', '科室选择', '专业选择', '学历选择']
     }
-  },
-  components: {
-    CTitlt
   },
   methods: {
     jump () {

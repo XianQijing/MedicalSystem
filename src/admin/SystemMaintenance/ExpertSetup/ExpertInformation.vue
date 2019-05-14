@@ -9,15 +9,14 @@
         :key="index"
         type="selection"
         :data="item"
-        :aType="item.type"
+        :status="item.type"
+        :time="item.time"
         >
-        <div slot="time">2018.04.12 14:56</div>
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属科室</span>
         <span>论文题目、组织单位名称</span>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">审核</button>
+        <JButton type="primary" round @click="jump">审核</JButton>
         </div>
       </card>
       <button slot="button" class="use">启用</button>
@@ -28,7 +27,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
   name: 'ExpertInformation',
@@ -47,13 +45,12 @@ export default {
           time: '2018.04.12 14:56',
           no: '00210',
           name: '用户名占位',
-          type: '审核中'
+          type: '停用'
         }
       ]
     }
   },
   components: {
-    Card,
     Checkall
   },
   methods: {
@@ -68,38 +65,6 @@ export default {
 @import '../../../common/style/mixin.styl'
 .ExpertInformation
   padding-bottom 20px
-  margin 0 6px
-  .comTitle
-    margin 0
-  .checkAll
-    .abtn
-      background: #2873FF;
-      border-radius: .06rem;
-      font-size: .14rem;
-      color: #FFFFFF;
-      width 1.00rem
-      height .30rem
-      // display block
-      margin 0 auto
-    .no, .user
-        padding-left 10px
-        font-size: .12rem
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .no
-      border-1pxLeft(#D3D3D3)
-    span
-      display block
-      font-size: .14rem
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-size: .16rem
-    .resTime
-      font-size: .12rem
-      color: #999999;
   .delete, .use, .stop
     width 58px
     color white

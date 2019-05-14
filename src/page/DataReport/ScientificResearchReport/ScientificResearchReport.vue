@@ -22,11 +22,11 @@
     <card
       v-for="(item, index) in messageList"
       :key="index"
+      :time="item.time"
       >
-      <div slot="time">2018.04.12 14:56</div>
       <p class="no">NO：{{item.name}}</p>
       <span class="black">申报人－眼科</span>
-      <p style="padding: 15px 0" class="black border-1pxTop">
+      <p class="black border-1pxTop">
         专利名称
       </p>
       <span>专利分类</span>
@@ -37,7 +37,6 @@
 
 <script>
 import Collaspe from '@/components/collaspe/collaspe'
-import Card from '@/components/card/card'
 export default {
   name: 'ScientificResearchReport',
   data () {
@@ -59,8 +58,7 @@ export default {
     }
   },
   components: {
-    Collaspe,
-    Card
+    Collaspe
   }
 }
 </script>
@@ -75,10 +73,8 @@ export default {
     background none
     padding 0
 .ScientificResearchReport
-  margin 0 6px
-  padding-bottom 20px
-  .comTitle
-    margin 0
+  margin 0 .06rem
+  padding-bottom .3rem
   .collaspe
     .formCell
       background white
@@ -88,25 +84,4 @@ export default {
       align-items center
       font-size: 14px
       font-weight: 400;
-  .card
-    .no, .user
-      font-size: 12px;
-      color: #555555;
-      display inline-block
-      vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      font-size: 16px;
-      margin-top 10px
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-      color: #333333;
-    .resTime
-      font-size: 12px;
-      color: #999999;
-      margin 0
 </style>

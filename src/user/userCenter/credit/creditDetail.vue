@@ -166,7 +166,7 @@ export default {
     }
   },
   mounted () {
-    document.title = this.$route.params.name
+    this.$store.commit('changeTitle', this.$route.params.name)
   }
 }
 </script>

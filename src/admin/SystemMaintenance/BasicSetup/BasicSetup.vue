@@ -38,8 +38,6 @@ import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 import DepartmentSetup from './DepartmentSetup'
 import ProfessionalSetup from './ProfessionalSetup'
-// // import InspectionApplication from '../components/InspectionApplication'
-// // import InspectionSearch from '../components/InspectionSearch'
 export default {
   name: 'BasicSetup',
   data () {
@@ -52,8 +50,6 @@ export default {
     Tabs,
     DepartmentSetup,
     ProfessionalSetup
-    // InspectionApplication,
-    // InspectionSearch
   }
 }
 </script>
@@ -68,5 +64,5 @@ export default {
     height .3rem
 .BasicSetup
   margin 0 6px
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
 </style>

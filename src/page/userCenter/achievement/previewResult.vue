@@ -2,56 +2,56 @@
   <div class="PreviewResult">
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/论文icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-xueshulunwenicon"/>
         <p>论文</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/专利icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-zhuanliicon"/>
         <p>专利</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/成果icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-chengguoicon"/>
         <p>成果</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/奖项icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-jiangxiangicon"/>
         <p>奖项</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/专著icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-zhuanzhuicon"/>
         <p>专著</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/会议icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-guoneihuiyiicon"/>
         <p>会议</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/任职icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-Page3"/>
         <p>任职</p>
       </div>
       <div class="cell-right">32</div>
     </div>
     <div class="cell">
       <div class="cell-left">
-        <img width="24" src="../../../common/image/其他icon@3x.png" alt="">
+        <IconSvg :weight="20" border="white" iconClass="icon-qitaicon"/>
         <p>其他</p>
       </div>
       <div class="cell-right">32</div>
@@ -67,7 +67,7 @@ export default {
 
 <style lang="stylus" scoped>
 .PreviewResult
-  margin-top 5px
+  margin-top .05rem
   width 100%
   display flex
   justify-content space-between
@@ -77,22 +77,26 @@ export default {
     // margin-left 4px
     // flex 1 1 170px
     width 49.5%
-    height 64px
-    margin-bottom 4px
+    height .64rem
+    margin-bottom .04rem
     .cell-left
-      flex 0 0 70px
+      width .7rem
       background: #003BAA;
       text-align center
       color white
       p
-        margin-top 10px
-      img
-        margin-top 10px
+        margin-top .1rem
+        font-size .12rem
+        line-height .15rem
+      .svg-icon
+        margin-top .1rem
+        font-size .24rem
+        font-weight bolder
     .cell-right
       text-align center
-      flex 1 1 110px
+      width 1.1rem
       background white
       font-weight 700
-      font-size 20px
-      line-height 64px
+      font-size .2rem
+      line-height .64rem
 </style>

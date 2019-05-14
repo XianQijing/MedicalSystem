@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 export default {
   name: 'Forget',
   data () {
@@ -59,9 +58,6 @@ export default {
         password: ''
       }
     }
-  },
-  components: {
-    JInput
   },
   methods: {
     watchPassword () {

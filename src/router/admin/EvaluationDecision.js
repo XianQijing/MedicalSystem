@@ -8,25 +8,37 @@ const router = {
       path: '',
       name: 'InfluenceList',
       component: resolve => require(['@/page/EvaluationDecision/page/InfluenceList'], resolve),
-      meta: '影响力表'
+      meta: {
+        title: '影响力表',
+        requireAuth: true
+      }
     },
     {
       path: 'ScientificResearchPerformance',
       name: 'ScientificResearchPerformance',
       component: resolve => require(['@/page/EvaluationDecision/page/ScientificResearchPerformance'], resolve),
-      meta: '科研绩效'
+      meta: {
+        title: '科研绩效',
+        requireAuth: true
+      }
     },
     {
       path: 'PerformanceDetail',
       name: 'PerformanceDetail',
       component: resolve => require(['@/page/EvaluationDecision/page/PerformanceDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: 'InfluenceListDetail',
       name: 'InfluenceListDetail',
       component: resolve => require(['@/page/EvaluationDecision/page/InfluenceListDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     }
   ]
 }

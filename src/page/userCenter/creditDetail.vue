@@ -73,47 +73,44 @@
     </div>
 
     <div class="button-one">
-      <button class="butto" @click="pass">审核</button>
+      <button class="butto" @click="show = true">审核</button>
     </div>
 
-    <popup :toShow="towCell" position="bottom" @close="close">
+    <!-- <popup :toShow="towCell" position="bottom" @close="close">
       <div class="pop-btn">
         <button @click="close">取消</button>
         <button @click="onConfirm(open)">完成</button>
       </div>
       <van-picker :item-height=30 ref="Sex" :columns="sexList" v-show="open === 'sex'" @change="selectSex" />
-    </popup>
+    </popup> -->
 
-    <popup position="warning" :toShow="tanChuang" @close="pass">
-      <span slot="title">项目审核</span>
-      <div class="content">
-        <div class="formCell">
-          <p class="form-label">评审意见</p>
-          <textarea placeholder="填写意见"></textarea>
-        </div>
-        <div class="formCell">
-          <p class="form-label">评审结果</p>
-          <j-input @click="openPassed" placeholder="通过" type="select" v-model="sex"></j-input>
-        </div>
+    <popup position="center" v-model="show" title="项目审核">
+      <div class="popup-form">
+        <p class="form-label">评审意见</p>
+        <textarea></textarea>
       </div>
-      <popup :overlay="false" :toShow="passed" position="bottom" @close="openPassed">
-        <van-picker
-          :item-height=30
-          ref="Sex"
-          :columns="sexList"
-          v-show="open === 'sex'"
-          @change="selectSex" />
-      </popup>
+      <div class="popup-form">
+        <p class="form-label">评审结果</p>
+        <JInput v-model="form.pass" type="select" @click="selected = true"></JInput>
+      </div>
       <div class="button-cell">
-        <button class="complete" @click="pass">取消</button>
-        <button class="reset">确认</button>
+        <button class="reset">取消</button>
+        <button class="complete">确认</button>
       </div>
+    </popup>
+    <popup position="bottom" :overlay="false" v-model="selected">
+      <van-picker
+        :item-height="30"
+        :columns="$store.state.columns"
+        show-toolbar
+        @cancel="selected = false"
+        @confirm="onConfirm" />
     </popup>
   </div>
 </template>
 
 <script>
-import Popup from '@/components/popup/popup'
+import Popup from '@/components/popup/popup2'
 import { ImagePreview } from 'vant'
 
 export default {
@@ -122,38 +119,22 @@ export default {
     return {
       age: '',
       sex: '',
-      towCell: false, // 学科选择
-      tanChuang: false, // 审核,
-      passed: false, // 是否通过选择器
+      show: false,
+      selected: false,
       open: 'time',
-      sexList: ['男', '女']
+      sexList: ['男', '女'],
+      form: {
+        pass: '通过'
+      }
     }
   },
   components: {
     Popup
   },
   methods: {
-    // 性别选择
-    selectSex (picker, value) {
-      this.sex = value
-    },
-    close (type) {
-      this.towCell = !this.towCell
-      this.open = type
-    },
-    onConfirm (open) {
-      if (open === 'sex') {
-        this.sex = this.$refs.Sex.getValues(1)
-      }
-      this.towCell = false
-    },
-    // 审核通过弹窗按钮
-    pass () {
-      this.tanChuang = !this.tanChuang
-    },
-    // 审核结果按钮
-    openPassed () {
-      this.passed = !this.passed
+    onConfirm (value) {
+      this.form.pass = value
+      this.selected = false
     },
     // 图片预览
     watchPic () {
@@ -164,7 +145,8 @@ export default {
     }
   },
   mounted () {
-    document.title = this.$route.params.name
+    // alert(this.$route)
+    // this.$store.commit('changeTitle', this.$route.params.title)
   }
 }
 </script>
@@ -172,7 +154,7 @@ export default {
 <style lang="stylus" scoped>
 .creditDetail >>> .van-picker-column
   font-size: 16px
-.creditDetail >>> .J-input
+.formCell >>> .J-input
   padding 0
   text-align right
   .aSelect
@@ -218,34 +200,47 @@ export default {
       color: #FFFFFF;
       width 100px
       height 30px
-  .last
-    padding-bottom 40px
-  .pop-btn
+  .popup-form
+    padding 0 15px
     display flex
     justify-content space-between
-    padding 15px 10px
-    font-size: 13px;
-    color: #2873FF;
-    button
-      background none
-  .pop-title
-    display flex
-    justify-content space-around
-    padding-bottom 15px
-.content
-  margin 0 15px
-  .formCell
     margin-top 10px
-    font-size: 14px;
-    p
-      line-height 16px
+    .form-label
+      font-size: 14px;
+      color: #333333
+      display inline-block
+      line-height 30px
     textarea
       border: 1px solid #2873FF;
-      border-radius: 4px;
-      width 200px
-      height 95px
-      padding 0 10px
+      width 74%
       box-sizing border-box
+      font-size: 14px
+      padding 5px
+      border-radius: 4px;
+      height 95px
+    .J-input
+      border-radius: 4px;
+      font-size: 14px
+      border: 1px solid #2873FF;
+      height 26px
+      box-sizing border-box
+      width 74%
+  .button-cell
+    font-size: 14px
+    margin-top 10px
+  .form-Cell
+    padding 0 10px
+    background white
+    font-size 14px
+    height 121px
+    .form-label
+      line-height 30px
+    .main
+      color: #999999;
+      width 100%
+      height 100px
+      word-wrap break-word
+      line-height 18px
 .content >>> .J-input
       width 200px
       border: 1px solid #2873FF;

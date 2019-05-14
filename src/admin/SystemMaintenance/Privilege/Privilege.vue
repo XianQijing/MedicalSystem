@@ -53,7 +53,7 @@ export default {
     height .3rem
 .Privilege
   margin 0 6px
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
 .AdminMessage
   margin 0!important
 </style>

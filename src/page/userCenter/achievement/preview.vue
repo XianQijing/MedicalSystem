@@ -25,7 +25,7 @@ export default {
   },
   activated () {
     this.from = this.$route.params.from
-    document.title = this.from
+    this.$store.commit('changeTitle', this.$route.query.title)
   }
 }
 </script>

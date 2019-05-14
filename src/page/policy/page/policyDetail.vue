@@ -21,31 +21,32 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.img
-  margin 0 6px
-  height: 1.6rem;
-  background:rgba(0,0,0,0);
-  box-shadow:0px 3px 6px rgba(0,0,0,0.16)
-  overflow hidden
-  position relative
-  z-index 0
-  img
-    height 100%
-.content
-  margin 0 6px
-  background white
-  padding 10px
-  p
-    margin-bottom 0.15rem
-  .title
-    font-size 0.16rem
-    color #333333
-  .time
-    font-size 0.12rem
-    color #999999
-  .desc
-    font-size 0.12rem
-    color:#555555
-    line-height 0.18rem
-    text-indent 2em
+.policyDetail
+  margin 0 0.06rem
+  padding-bottom .05rem
+  .img
+    height: 1.6rem;
+    background:rgba(0,0,0,0);
+    box-shadow:0px 3px 6px rgba(0,0,0,0.16)
+    overflow hidden
+    position relative
+    z-index 0
+    img
+      height 100%
+  .content
+    background white
+    padding .1rem
+    p
+      margin-bottom 0.15rem
+    .title
+      font-size 0.16rem
+      color #333333
+    .time
+      font-size 0.12rem
+      color #999999
+    .desc
+      font-size 0.12rem
+      color:#555555
+      line-height 0.18rem
+      text-indent 2em
 </style>

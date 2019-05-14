@@ -17,10 +17,10 @@
         :key="index"
         type="selection"
         :data="item"
+        :time="item.time"
         >
-        <div slot="time">2018.04.12 14:56</div>
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p style="padding: 15px 0" class="black">
+        <p class="black">
           论文题目
           <span class="did" :class="{'not': item.dayin === '未打印'}">{{item.dayin}}</span>
         </p>
@@ -30,13 +30,12 @@
           <span>经费归属：项目经费</span>
         </div>
       </card>
-      <button slot="button" class="delete" @click="stop('删除')">打印</button>
+      <JButton slot="button" type="danger" @click="stop('删除')">打印</JButton>
     </checkall>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
   name: 'StatusPrinting',
@@ -74,7 +73,6 @@ export default {
     }
   },
   components: {
-    Card,
     Checkall
   },
   methods: {
@@ -86,9 +84,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.StatusPrinting >>> .comTitle
-  margin 0
 .StatusPrinting
   .checkAll
     margin 0 6px
@@ -103,51 +98,9 @@ export default {
       float right
       text-align center
       &.not
-        color: #FFFFFF;
+        color: #FFFFFF!important
         background: #555555;
         border none
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      // display block
-      margin 0 auto
-      &.btn
-        margin-left 5px
-        font-size: 14px;
-        color: #2873FF;
-        background: #C6DAFF;
-    .no, .user
-        padding-left 10px
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .no
-      border-1pxLeft(#D3D3D3)
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      font-weight 700
-      font-size: 16px
-    .resTime
-      font-size: 12px;
-      color: #999999;
-    .two
-      display flex
-      justify-content space-between
-  .delete
-    width 58px
-    color white
-    height 30px
-    background: #2873FF;
-    font-size 14px
   .formCell
     padding 0 10px
     background white

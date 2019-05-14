@@ -1,5 +1,11 @@
 <template>
   <div class="home">
+    <div class="drop">
+      <button class="drop-down" @click="dropDown">
+        <span class="iconfont" v-show="!drop">&#xe7ee;</span>
+        <span class="iconfont" v-show="drop">&#xe7ed;</span>
+      </button>
+    </div>
     <div class="tabs">
       <button
         :class="{'active': item.name === active}"
@@ -11,14 +17,24 @@
       </button>
     </div>
     <router-view></router-view>
+    <popup position="bottom" :toShow="drop" @close="dropDown">
+      <van-picker
+        :columns="dropList"
+        @cancel="dropDown"
+        @confirm="dropConfirm"
+        :item-height=30
+        :show-toolbar="true"/>
+    </popup>
   </div>
 </template>
 
 <script>
+import Popup from '@/components/popup/popup'
 export default {
   name: 'LeadingOffice',
   data () {
     return {
+      drop: false,
       list: [
         {
           name: '院长办公',
@@ -36,7 +52,8 @@ export default {
           name: '经费审批',
           path: 'FundingApproval1'
         }
-      ]
+      ],
+      dropList: ['课题审批', '学科审批', '人才审批', '奖励审批']
     }
   },
   computed: {
@@ -44,11 +61,25 @@ export default {
       return this.$store.state.LeadingOfficeActive
     }
   },
+  components: {
+    Popup
+  },
   methods: {
     jump (msg) {
       this.$store.commit('changeActive', msg.name)
       this.$router.push({name: msg.path})
+    },
+    dropDown () {
+      this.drop = !this.drop
+    },
+    dropConfirm (value, index) {
+      this.dropDown()
+      // this.$router.push({name: value.name})
+      this.$store.commit('changeTitle', value)
     }
+  },
+  mounted () {
+    this.$store.commit('changeTitle', '课题审批')
   }
 }
 </script>
@@ -71,4 +102,15 @@ export default {
     .active
       background #2873ff
       color white
+  .drop
+    position absolute
+    left .9rem
+    text-align center
+    top 0
+    height .43rem
+    .drop-down
+      font-size 20px
+      color white
+      background none
+      height 100%
 </style>

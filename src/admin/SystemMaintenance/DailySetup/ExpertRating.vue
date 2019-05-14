@@ -6,10 +6,9 @@
       <card
         v-for="(item, index) in messageList"
         :key="index"
-        :aType="item.type"
+        :status="item.type"
         type="selection"
         :data="item"
-        :time="false"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
         <p slot="type" style="height:100%">{{item.type}}</p>
@@ -18,25 +17,25 @@
         <span>项目类别</span>
         <div class="icon">
           <div @click="toQuota('一级指标')">
-            <p class="iconfont">&#xe612;</p>
+            <IconSvg iconClass="icon-Page"/>
             <p class="desc">一级指标</p>
           </div>
           <div @click="toQuota('二级指标')">
-          <p class="iconfont">&#xe613;</p>
+          <IconSvg iconClass="icon-Page1"/>
             <p class="desc">二级指标</p>
           </div>
           <div @click="toQuota('三级指标')">
-          <p class="iconfont">&#xe615;</p>
+          <IconSvg iconClass="icon-Pagex"/>
             <p class="desc">三级指标</p>
           </div>
           <div @click="toQuota('四级指标')">
-          <p class="iconfont">&#xe614;</p>
+          <IconSvg iconClass="icon-Pagex_"/>
             <p class="desc">四级指标</p>
           </div>
         </div>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">修改</button>
-          <button slot="button" class="abtn" @click="jump">复制并修改</button>
+        <JButton type="primary" round @click="jump">修改</JButton>
+        <JButton type="primary" round plain @click="jump">复制并修改</JButton>
         </div>
       </card>
       <button slot="button" class="delete">删除</button>
@@ -64,7 +63,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 import Popup from '@/components/popup/popup2'
 export default {
@@ -94,7 +92,6 @@ export default {
     }
   },
   components: {
-    Card,
     Checkall,
     Popup
   },
@@ -108,7 +105,7 @@ export default {
     },
     toQuota (msg) {
       this.$router.push({name: 'Quota', query: {msg: msg}})
-      document.title = msg
+      this.$store.commit('changeTitle', msg)
     }
   }
 }
@@ -116,51 +113,9 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.ExpertRating >>> .card
-  margin 0
-  margin-bottom 10px
-  .card-content
-    margin 0
-    border none
-    padding 0
-    .card-white
-      margin 0
 .ExpertRating
   padding-bottom 20px
-  .comTitle
-    margin 0
   .checkAll
-    .abtn
-      background: #2873FF;
-      border-radius: .06rem
-      font-size: .14rem;
-      color: #FFFFFF;
-      width 1rem
-      height .3rem
-      margin 0 auto
-      &:last-child
-        margin-left 10px
-        background: #c6daff;
-        color #2873FF
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .no
-      border-1pxLeft(#D3D3D3)
-      padding-left 10px
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-size: 16px
-    .border-1px
-      border-1px(#d3d3d3)
-      padding-bottom 15px
     .icon
       display flex
       justify-content space-around
@@ -168,10 +123,10 @@ export default {
         text-align center
       .desc
         font-size .12rem
-        margin-top 8px
+        margin-top .08rem
         line-height .15rem
-        margin-bottom 15px
-      .iconfont
+        margin-bottom .15rem
+      .svg-icon
         color #2873FF
         font-size .3445rem
         font-weight 600

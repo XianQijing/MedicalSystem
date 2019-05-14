@@ -69,35 +69,35 @@ export default {
   ProjectIcon: [
     {
       name: '论文',
-      icon: require('../../common/image/论文icon@3x.png')
+      icon: 'icon-xueshulunwenicon'
     },
     {
       name: '专利',
-      icon: require('../../common/image/专利icon@3x.png')
+      icon: 'icon-zhuanliicon'
     },
     {
       name: '成果',
-      icon: require('../../common/image/成果icon@3x.png')
+      icon: 'icon-chengguoicon'
     },
     {
       name: '奖项',
-      icon: require('../../common/image/奖项icon@3x.png')
+      icon: 'icon-jiangxiangicon'
     },
     {
       name: '专著',
-      icon: require('../../common/image/专著icon@3x.png')
+      icon: 'icon-zhuanzhuicon'
     },
     {
       name: '会议',
-      icon: require('../../common/image/会议icon@3x.png')
+      icon: 'icon-guoneihuiyiicon'
     },
     {
       name: '任职',
-      icon: require('../../common/image/任职icon@3x.png')
+      icon: 'icon-Page3'
     },
     {
       name: '其他',
-      icon: require('../../common/image/其他icon@3x.png')
+      icon: 'icon-qitaicon'
     }
   ],
   ProjectSettings: {
@@ -114,65 +114,76 @@ export default {
   ElectronicArchives: [
     {
       name: '科研课题',
-      icon: require('../../common/image/keTi.png'),
+      icon: 'icon-keyanketiicon',
       path: 'FileScientificTopic',
-      colums: 'base'
+      colums: 'base',
+      weight: 0
     },
     {
       name: '学科基地',
-      icon: require('../../common/image/jiDi.png'),
+      icon: 'icon-keyanjidiicon',
       colums: 'base',
-      path: 'JumpPage'
+      path: 'JumpPage',
+      weight: 0
     },
     {
       name: '优秀人才',
-      icon: require('../../common/image/renCai.png'),
+      icon: 'icon-youxiurencaiicon',
       colums: 'base',
-      path: 'JumpPage'
+      path: 'JumpPage',
+      weight: 0
     },
     {
       name: '科技奖励',
-      icon: require('../../common/image/jiangLi.png'),
+      icon: 'icon-kejijiangliicon-zhengchang',
       colums: 'base',
-      path: 'JumpPage'
+      path: 'JumpPage',
+      weight: 35
     },
     {
       name: '学术活动',
-      icon: require('../../common/image/xueShu.png'),
+      icon: 'icon-Page5',
       path: 'ActivityList',
-      colums: 'xueshu'
+      colums: 'xueshu',
+      weight: 0
     },
     {
       name: '批准文件',
-      icon: require('../../common/image/piZhun.png'),
+      icon: 'icon-chengguoicon',
       colums: 'base',
-      path: 'JumpPage'
+      path: 'JumpPage',
+      weight: 35
     },
     {
       name: '论文会议',
-      icon: require('../../common/image/huiYi.png'),
+      icon: 'icon-guoneihuiyiicon',
       colums: 'base',
-      path: 'JumpPage'
+      path: 'JumpPage',
+      weight: 35
     },
     {
       name: '著作出版',
-      icon: require('../../common/image/zhuZuo.png'),
-      path: 'TeachingMaterial'
+      icon: 'icon-zhuanzhuicon',
+      path: 'TeachingMaterial',
+      weight: 35
     },
     {
       name: '知识产权',
-      icon: require('../../common/image/chanQuan.png'),
-      path: 'InventionPatent'
+      icon: 'icon-zhuanliicon',
+      path: 'InventionPatent',
+      weight: 35
     },
     {
       name: '社会任职',
-      icon: require('../../common/image/renZhi.png'),
-      path: 'SocialService'
+      icon: 'icon-Page3',
+      path: 'SocialService',
+      weight: 35
     },
     {
       name: '科研服务',
-      icon: require('../../common/image/renZhi.png'),
-      path: 'SCI'
+      icon: 'icon-Page3',
+      path: 'SCI',
+      weight: 35
     }
   ],
   xunHuan: {
@@ -181,123 +192,116 @@ export default {
   },
   InfluenceList: [
     {
-      img: require('../../common/image/InfluenceList(1).png'),
+      img: 'icon-renliziyuanicon',
       name: '人力资源',
-      width: 'normal'
+      width: 0
     },
     {
-      img: require('../../common/image/InfluenceList(2).png'),
+      img: 'icon-keyanxiangmuicon',
       name: '科研项目',
-      width: 'normal'
+      width: 0
     },
     {
-      img: require('../../common/image/InfluenceList(3).png'),
+      img: 'icon-jixujiaoyuicon-zhengchang',
       name: '人才项目',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(4).png'),
+      img: 'icon-keyanketiicon-zhengchang',
       name: '科研基地',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(5).png'),
+      img: 'icon-xuekejiansheicon-zhengchang',
       name: '学科建设',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(6).png'),
+      img: 'icon-xueshulunwenicon',
       name: '科技论文',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(7).png'),
+      img: 'icon-zhuanliicon',
       name: '发明专利',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(8).png'),
+      img: 'icon-kejijiangliicon-zhengchang',
       name: '科技奖励',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(9).png'),
+      img: 'icon-zhinan',
       name: '指南标准',
-      width: 'normal'
+      width: 20
     },
     {
-      img: require('../../common/image/InfluenceList(10).png'),
+      img: 'icon-Page-',
       name: '新增模块',
-      width: 'normal'
+      width: 0
     }
   ],
   InfluenceList1: [
     {
-      img: require('../../common/image/InfluenceList(2).png'),
-      name: '国外项目',
-      width: 'normal'
+      img: 'icon-keyanxiangmuicon',
+      name: '国外项目'
     },
     {
-      img: require('../../common/image/InfluenceList(11).png'),
-      name: '国家级项目',
-      width: 'normal'
+      img: 'icon-Page10',
+      name: '国家级项目'
     },
     {
-      img: require('../../common/image/InfluenceList(12).png'),
-      name: '教育部项目',
-      width: 'normal'
+      img: 'icon-Page8',
+      name: '教育部项目'
     },
     {
-      img: require('../../common/image/InfluenceList(13).png'),
-      name: '国家<br/>卫计委项目',
-      width: 'normal'
+      img: 'icon-Page6',
+      name: '国家<br/>卫计委项目'
     },
     {
-      img: require('../../common/image/InfluenceList(14).png'),
-      name: '上海市<br/>科委项目',
-      width: 'normal'
+      img: 'icon-Page7',
+      name: '上海市<br/>科委项目'
     },
     {
-      img: require('../../common/image/InfluenceList(15).png'),
-      name: '上海市<br/>教委项目',
-      width: 'normal'
+      img: 'icon-Page9',
+      name: '上海市<br/>教委项目'
     },
     {
-      img: require('../../common/image/InfluenceList(13).png'),
-      name: '上海市<br/>教委项目',
-      width: 'normal'
+      img: 'icon-Page6',
+      name: '上海市<br/>教委项目'
     }
   ],
   InfluenceList2: [
     {
-      img: require('../../common/image/InfluenceList(16).png'),
+      img: 'icon-zhongdazhuanxiang',
       name: '国家科技重大专项',
-      width: 'normal'
+      width: 0
     },
     {
-      img: require('../../common/image/InfluenceList(17).png'),
+      img: 'icon-jihuaicon-zhengchang',
       name: '国家重点研发计划',
-      width: 'normal'
+      width: 0
     },
     {
-      img: require('../../common/image/专著red.png'),
+      img: 'icon-zhuanzhuicon',
       name: '国家自然科学<br/>基金项目',
-      width: 'normal'
+      width: 30
     },
     {
-      img: require('../../common/image/InfluenceList(18).png'),
+      img: 'icon-Page2',
       name: '国家国际科技<br/>合作专项',
-      width: 'normal'
+      width: 0
     },
     {
-      img: require('../../common/image/InfluenceList(18).png'),
+      img: 'icon-Page2',
       name: '通用项目占位',
-      width: 'normal'
+      width: 0
     },
     {
-      img: require('../../common/image/InfluenceList(18).png'),
+      img: 'icon-Page2',
       name: '通用项目占位',
-      width: 'normal'
+      width: 0
     }
   ],
   LeadingOffice: [
@@ -364,5 +368,75 @@ export default {
     AdminRole: ['全选', '用户中心', '通知文件', '科研课题', '人才培养', '学科建设', '科技奖励', '项目管理',
       '事项审批', '经费管理', '成果管理', '科研档案', '数据统计', '社会任职', '参数设置', '下载中心', '考试管理',
       '院长办公', '项目审批', '事项审批', '经费审批', '专家评审', '继续教育', '绩效考核', '科教服务', '数据导入']
-  }
+  },
+  SystemMaintenanceDataImport: [
+    {
+      icon: 'icon-yonghuzhongxinicon_',
+      path: 'UserMsg',
+      weight: 0,
+      name: '用户信息'
+    },
+    {
+      icon: 'icon-keyanxiangmuicon',
+      path: 'DataProject',
+      weight: 0,
+      name: '我的项目'
+    },
+    {
+      icon: 'icon-xueshulunwenicon',
+      path: '',
+      weight: 30,
+      name: '我的论文'
+    },
+    {
+      icon: 'icon-Page3',
+      path: '',
+      weight: 30,
+      name: '我的任职'
+    },
+    {
+      icon: 'icon-guoneihuiyiicon',
+      path: '',
+      weight: 30,
+      name: '我的会议'
+    },
+    {
+      icon: 'icon-zhuanliicon',
+      path: '',
+      weight: 30,
+      name: '我的专利'
+    },
+    {
+      icon: 'icon-shixiangshenpiicon_',
+      path: '',
+      weight: 0,
+      name: '我的成果'
+    },
+    {
+      icon: 'icon-zhuanzhuicon',
+      path: '',
+      weight: 30,
+      name: '我的著作'
+    },
+    {
+      icon: 'icon-Page5',
+      path: '',
+      weight: 0,
+      name: '我的活动'
+    }
+  ],
+  messageList: [
+    {
+      time: '2018.04.12 14:56',
+      no: '00210',
+      name: '用户名占位',
+      type: '通过'
+    },
+    {
+      time: '2018.04.12 14:56',
+      no: '00210',
+      name: '用户名占位',
+      type: '审核中'
+    }
+  ]
 }

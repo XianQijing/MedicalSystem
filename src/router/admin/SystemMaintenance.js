@@ -9,84 +9,171 @@ const router = {
       path: '',
       name: 'BasicSetup',
       component: resolve => require(['@/admin/SystemMaintenance/BasicSetup/BasicSetup'], resolve),
-      meta: '基本设置'
+      meta: {
+        title: '基本设置',
+        requireAuth: true
+      }
     },
     {
       path: 'Privilege',
       name: 'Privilege',
       component: resolve => require(['@/admin/SystemMaintenance/Privilege/Privilege'], resolve),
-      meta: '权限设置'
+      meta: {
+        title: '权限设置',
+        requireAuth: true
+      }
     },
     {
       path: 'AdminMessage',
       name: 'AdminMessage',
       component: resolve => require(['@/admin/SystemMaintenance/Privilege/AdminMessage'], resolve),
-      meta: '信息修改'
+      meta: {
+        title: '信息修改',
+        requireAuth: true
+      }
     },
     {
       path: 'ExpertSetup',
       name: 'ExpertSetup',
       component: resolve => require(['@/admin/SystemMaintenance/ExpertSetup/ExpertSetup'], resolve),
-      meta: '专家设置'
+      meta: {
+        title: '专家设置',
+        requireAuth: true
+      }
     },
     {
       path: 'ExpertEdit',
       name: 'ExpertEdit',
       component: resolve => require(['@/admin/SystemMaintenance/ExpertSetup/ExpertEdit'], resolve),
-      meta: '修改信息'
+      meta: {
+        title: '修改信息',
+        requireAuth: true
+      }
     },
     {
       path: 'ExpertInformation',
       name: 'ExpertInformation',
       component: resolve => require(['@/admin/SystemMaintenance/ExpertSetup/ExpertInformation'], resolve),
-      meta: '专家设置'
+      meta: {
+        title: '专家设置',
+        requireAuth: true
+      }
     },
     {
       path: 'PeriodicalSetup',
       name: 'PeriodicalSetup',
       component: resolve => require(['@/admin/SystemMaintenance/PeriodicalSetup/PeriodicalSetup'], resolve),
-      meta: '期刊设置'
+      meta: {
+        title: '期刊设置',
+        requireAuth: true
+      }
     },
     {
       path: 'FundsSetting',
       name: 'FundsSetting',
       component: resolve => require(['@/admin/SystemMaintenance/FundsSetting/FundsSetting'], resolve),
-      meta: '预算设置'
+      meta: {
+        title: '预算设置',
+        requireAuth: true
+      }
     },
     {
       path: 'Assessment',
       name: 'Assessment',
       component: resolve => require(['@/admin/SystemMaintenance/Assessment/Assessment'], resolve),
-      meta: '考核设置'
+      meta: {
+        title: '考核设置',
+        requireAuth: true
+      }
     },
     {
       path: 'DailySetup',
       name: 'DailySetup',
       component: resolve => require(['@/admin/SystemMaintenance/DailySetup/DailySetup'], resolve),
-      meta: '日常设置'
+      meta: {
+        title: '日常设置',
+        requireAuth: true
+      }
     },
     {
       path: 'CoreSetup',
       name: 'CoreSetup',
       component: resolve => require(['@/admin/SystemMaintenance/CoreSetup/CoreSetup'], resolve),
-      meta: '核心设置'
+      meta: {
+        title: '核心设置',
+        requireAuth: true
+      }
     },
     {
       path: 'DailySetting',
       name: 'DailySetting',
       component: resolve => require(['@/admin/SystemMaintenance/DailySetup/DailySetting'], resolve),
-      meta: '日常设置'
+      meta: {
+        title: '日常设置',
+        requireAuth: true
+      }
     },
     {
       path: 'DeanAccount',
       name: 'DeanAccount',
       component: resolve => require(['@/admin/SystemMaintenance/DeanAccount/DeanAccount'], resolve),
-      meta: '院长账号'
+      meta: {
+        title: '院长账号',
+        requireAuth: true
+      }
     },
     {
       path: 'Quota',
       name: 'Quota',
-      component: resolve => require(['@/admin/SystemMaintenance/DailySetup/Quota'], resolve)
+      component: resolve => require(['@/admin/SystemMaintenance/DailySetup/Quota'], resolve),
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: 'DataImport',
+      name: 'DataImport',
+      component: resolve => require(['@/admin/SystemMaintenance/DataImport/DataImport'], resolve),
+      meta: {
+        title: '账号导入',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'UserMsg',
+      name: 'UserMsg',
+      component: resolve => require(['@/admin/SystemMaintenance/DataImport/userMsg'], resolve),
+      meta: {
+        title: '用户信息',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'WatchData',
+      name: 'WatchData',
+      component: resolve => require(['@/admin/SystemMaintenance/DataImport/WatchData'], resolve),
+      meta: {
+        title: '用户信息',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'MsgDetail',
+      name: 'MsgDetail',
+      component: resolve => require(['@/admin/SystemMaintenance/DataImport/MsgDetail'], resolve),
+      meta: {
+        title: '信息修改',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'DataProject',
+      name: 'DataProject',
+      component: resolve => require(['@/admin/SystemMaintenance/DataImport/DataProject'], resolve),
+      meta: {
+        title: '我的项目',
+        requireAuth: true
+      }
     }
   ]
 }

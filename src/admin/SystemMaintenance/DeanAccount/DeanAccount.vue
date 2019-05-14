@@ -6,30 +6,29 @@
       <card
         v-for="(item, index) in messageList"
         :key="index"
-        :aType="item.type"
+        :status="item.type"
         type="selection"
         :data="item"
-        :time="false"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属单位</span>
         <span>项目类别</span>
         <span>项目类别</span>
-        <span class="border-1px">项目类别</span>
         <span>项目类别</span>
+        <span class="border-1pxTop" style="margin-bottom: 0">项目类别</span>
         <span>项目类别</span>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">修改</button>
+        <JButton type="primary" round @click="jump">修改</JButton>
         </div>
       </card>
-      <button slot="button" class="delete">删除</button>
+      <JButton slot="button" type="success">启用</JButton>
+      <JButton slot="button" type="warning">停用</JButton>
+      <JButton slot="button" type="danger">删除</JButton>
     </checkall>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 import Popup from '@/components/popup/popup2'
 export default {
@@ -57,7 +56,6 @@ export default {
     }
   },
   components: {
-    Card,
     Checkall,
     Popup
   },
@@ -71,48 +69,9 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.DeanAccount >>> .card
-  margin 0
-  margin-bottom 10px
-  .card-content
-    margin 0
-    border none
-    padding 0
-    .card-white
-      margin 0
 .DeanAccount
-  padding-bottom 20px
+  padding-bottom 30px
   margin 0 6px
-  .comTitle
-    margin 0
-  .checkAll
-    .abtn
-      background: #2873FF;
-      border-radius: .06rem
-      font-size: .14rem;
-      color: #FFFFFF;
-      width 1rem
-      height .3rem
-      margin 0 auto
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .no
-      border-1pxLeft(#D3D3D3)
-      padding-left 10px
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-size: 16px
-    .border-1px
-      border-1px(#d3d3d3)
-      padding-bottom 15px
   .delete
     width 58px
     color white

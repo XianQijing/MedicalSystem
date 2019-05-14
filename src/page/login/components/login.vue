@@ -22,7 +22,7 @@
       </j-input>
     </div>
 
-    <button class="btn">
+    <button class="btn" @click="toLogin">
       登陆
     </button>
     <div class="select">
@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 export default {
   name: 'Login',
   data () {
@@ -52,10 +51,11 @@ export default {
   methods: {
     watchPassword () {
       this.password = !this.password
+    },
+    toLogin () {
+      sessionStorage.setItem('token', '123')
+      this.$router.push({name: 'HomePage'})
     }
-  },
-  components: {
-    JInput
   }
 }
 </script>

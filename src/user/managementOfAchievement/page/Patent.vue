@@ -64,5 +64,5 @@ export default {
       margin-top 5px
 .Patent
   margin 0 6px
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
 </style>

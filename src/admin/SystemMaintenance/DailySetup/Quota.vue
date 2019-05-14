@@ -7,19 +7,19 @@
       <p class="desc">评分表类型</p>
       <div class="icon">
         <div>
-          <p class="iconfont" :class="{'active': active==='一级指标'}">&#xe612;</p>
+          <IconSvg :class="{'active': active==='一级指标'}" iconClass="icon-Page"/>
           <p class="icon-desc">一级指标</p>
         </div>
         <div>
-        <p class="iconfont" :class="{'active': active==='二级指标'}">&#xe613;</p>
+        <IconSvg :class="{'active': active==='二级指标'}" iconClass="icon-Page1"/>
           <p class="icon-desc">二级指标</p>
         </div>
         <div>
-        <p class="iconfont" :class="{'active': active==='三级指标'}">&#xe615;</p>
+        <IconSvg :class="{'active': active==='三级指标'}" iconClass="icon-Pagex"/>
           <p class="icon-desc">三级指标</p>
         </div>
         <div>
-        <p class="iconfont" :class="{'active': active==='四级指标'}">&#xe614;</p>
+        <IconSvg :class="{'active': active==='四级指标'}" iconClass="icon-Pagex_"/>
           <p class="icon-desc">四级指标</p>
         </div>
       </div>
@@ -157,7 +157,7 @@ export default {
         margin-top .08rem
         line-height .15rem
         margin-bottom .15rem
-      .iconfont
+      .svg-icon
         color #2873FF
         font-size .3445rem
         font-weight 600

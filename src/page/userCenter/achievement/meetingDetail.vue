@@ -1,6 +1,6 @@
 <template>
   <div class="meetingDetail">
-    <CTitlt>基本信息</CTitlt>
+    <CTitle>基本信息</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">会议名称:</p>

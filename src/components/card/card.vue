@@ -12,8 +12,10 @@
     <div class="time">{{time}}</div>
     <div class="card-content">
       <div class="card-white">
+        <div class="content">
         <checkbox v-model="checked" v-if="type === 'selection'"></checkbox>
-        <slot></slot>
+          <slot></slot>
+        </div>
         <div class="type" :class="color" v-if="status"><p>{{status}}</p></div>
       </div>
     </div>
@@ -30,7 +32,9 @@ export default {
     }
   },
   props: {
-    time: String,
+    time: {
+      type: String
+    },
     status: String,
     type: {
       type: String
@@ -92,13 +96,35 @@ export default {
   .card-content
     padding-bottom .1rem
     .card-white
-      padding .15rem .1rem
+      padding .15rem 0
       background white
       position relative
+      .content
+        p, span
+          margin-left .1rem
+          margin-right .1rem
+        span
+          display block
+          font-size .14rem;
+          color: #333333
+          margin-bottom .17rem
+        .resTime
+          font-size .12rem
+          color: #999999;
+        .black
+          margin-top .15rem
+          font-size: .16rem;
+          color: #333333;
+        .border-1pxTop
+          border-1pxTop(#D3D3D3)
+          color: #333333
+          padding: .15rem 0
       .checkbox
-        margin-right .10rem
+        margin-left .10rem
+        width .12rem
+        height .12rem
       .no, .user
-        font-size: 12px;
+        font-size: .12rem;
         color: #555555;
         display inline-block
         vertical-align top

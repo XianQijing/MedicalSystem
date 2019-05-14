@@ -44,5 +44,5 @@ export default {
     width 1.16rem
 .SAndTAchievements
   margin 0 6px
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
 </style>

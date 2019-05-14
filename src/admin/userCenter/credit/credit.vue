@@ -42,6 +42,6 @@ export default {
 .credit >>> .tab-pane
   width 31.5%
 .credit
-  padding-top 20px
+  padding-top 10px
   margin 0 6px
 </style>

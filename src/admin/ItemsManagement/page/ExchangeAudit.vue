@@ -105,7 +105,7 @@ export default {
   },
   created () {
     this.msg = this.$route.query.msg
-    document.title = this.msg
+    this.$store.commit('changeTitle', this.$route.query.msg)
   }
 }
 </script>

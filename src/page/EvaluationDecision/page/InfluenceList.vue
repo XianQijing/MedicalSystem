@@ -7,7 +7,7 @@
     </div>
     <div class="detail">
       <div class="icon-wapper" @click="open(item.name)" v-for="item in iconList" :key="item.name">
-        <img :src="item.img" alt="" :class="item.width">
+        <IconSvg :iconClass="item.img" :weight="item.width" border="#C90B0B"/>
         <p>{{item.name}}</p>
       </div>
     </div>
@@ -19,7 +19,7 @@
       </p>
       <div class="popup-wapper">
         <div class="icon-wapper" @click="openShow1" v-for="(item, index) in iconList1" :key="index">
-          <img :src="item.img" alt="" :class="item.width">
+          <IconSvg :iconClass="item.img"/>
           <p v-html="item.name">{{item.name}}</p>
         </div>
       </div>
@@ -35,7 +35,7 @@
       </p>
       <div class="popup-wapper1">
         <div class="icon-wapper" @click="jump" v-for="(item, index) in iconList2" :key="index">
-          <img :src="item.img" alt="" :class="item.width">
+          <IconSvg :iconClass="item.img" :weight="item.width" border="#C90B0B"/>
           <p v-html="item.name">{{item.name}}</p>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default {
 @import '../../../common/style/mixin.styl'
 .InfluenceList
   // width 100%
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
   margin 0 6px
   box-sizing border-box
   .base-message
@@ -112,10 +112,11 @@ export default {
       text-align center
       font-size 0.14rem
       margin-bottom 0.15rem
-      img
-        width 0.44rem
+      .svg-icon
+        font-size 0.44rem
         margin-bottom 0.1rem
         vertical-align top
+        color $deepred
       .bigger
         width 0.53rem
   .popup-wapper
@@ -131,8 +132,9 @@ export default {
       display inline-block
       margin-top .2rem
       clear both
-      img
-        width .4rem
+      .svg-icon
+        font-size 0.44rem
+        color $deepred
       p
         padding-bottom .15rem
         padding-top .1rem

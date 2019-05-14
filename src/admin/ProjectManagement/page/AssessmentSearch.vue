@@ -61,7 +61,7 @@
     <div class="wrapper">
       <div class="icon" v-for="item in list" :key="item.name">
         <div class="img">
-          <img :src="item.icon" alt="">
+          <IconSvg :weight="20" border="white" :iconClass="item.icon"/>
           <p>{{item.name}}</p>
         </div>
         <div class="desc">
@@ -188,8 +188,9 @@ export default {
         padding .05rem 0
         display inline-block
         vertical-align top
-        img
-          width .23rem
+        .svg-icon
+          font-size .23rem
+          color white
           margin .07rem
         p
           color white

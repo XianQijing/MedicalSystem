@@ -16,31 +16,29 @@
     </div>
 
     <div class="card-wrapper" v-show="clickTab === 0">
-      <Card>
-        <div slot="time">2018.04.12 14:56</div>
-        <span>NO：00210</span>
-        <p class="black border-1px">申请人-所属科室</p>
-        <p class="black">项目名称</p>
-        <p>项目类别</p>
-        <p>项目计划</p>
+      <Card time="2018.04.12 14:56">
+        <p class="no">NO：00210</p>
+        <p class="black">申请人-所属科室</p>
+        <p class="black border-1pxTop">项目名称</p>
+        <span>项目类别</span>
+        <span>项目计划</span>
         <div class="formCell">
-          <p>管理金额：20.00</p>
-          <p>经费类别：其他经费</p>
+          <span>管理金额：20.00</span>
+          <span>经费类别：其他经费</span>
         </div>
       </Card>
     </div>
 
     <div class="card-wrapper" v-show="clickTab === 1">
-      <Card>
-        <div slot="time">2018.04.12 14:56</div>
-        <span>NO：00210</span>
+      <Card time="2018.04.12 14:56">
+        <p class="no1 no">NO：00210</p>
         <div class="formCell">
-          <p>经费属性：科研课题</p>
-          <p>经费类别：其他经费</p>
+          <span>经费属性：科研课题</span>
+          <span>经费类别：其他经费</span>
         </div>
         <div class="formCell">
-          <p>管理金额：20.00</p>
-          <p>经费类别：其他经费</p>
+          <span>管理金额：20.00</span>
+          <span>经费类别：其他经费</span>
         </div>
       </Card>
     </div>
@@ -82,7 +80,6 @@
 <script>
 import JTable from '@/components/table/table'
 import JTableColums from '@/components/table/table-colums'
-import Card from '@/components/card/card'
 import Popup from '@/components/popup/popup2'
 export default {
   name: 'RecordedInAccount',
@@ -108,7 +105,6 @@ export default {
   components: {
     JTable,
     JTableColums,
-    Card,
     Popup
   },
   methods: {
@@ -121,9 +117,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.RecordedInAccount >>> .comTitle
-  margin 0
 .RecordedInAccount
   .tab
     display flex
@@ -142,17 +135,8 @@ export default {
         color white
   .card-wrapper
     margin-top 10px
-    .card
-      span
-        font-size: 12px;
-        color: #555555;
-      p
-        font-size: 14px;
-        color: #333333;
-        margin-top 10px
-      .border-1px
-        border-1px(#D3D3D3)
-        padding-bottom 10px
+    .no1
+      margin-bottom .15rem
 .popup-form
   padding 0 15px
   display flex

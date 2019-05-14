@@ -5,24 +5,22 @@
     <card
       v-for="(item, index) in messageList"
       :key="index"
-      :aType="item.type"
+      :status="item.type"
+      :time="item.time"
       >
-      <div slot="time">2018.04.12 14:56</div>
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
-      <p slot="type" style="height:100%">{{item.type}}</p>
       <span class="black border-1px">申请人-所属单位</span>
       <span>项目类别</span>
       <span>项目类别</span>
       <span class="resTime">审核时间:2018.06.01 00:00</span>
       <div style="text-align:center">
-        <button slot="button" class="abtn" @click="jump">详情</button>
+        <JButton type="primary" round @click="jump">详情</JButton>
       </div>
     </card>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'ProjectList',
   data () {
@@ -46,9 +44,6 @@ export default {
       ]
     }
   },
-  components: {
-    Card
-  },
   methods: {
     jump () {
       this.$router.push({name: 'DeclareDetail'})
@@ -56,38 +51,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.ProjectList
-  padding-bottom 20px
-  .card
-    margin 0 6px
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      margin 0 auto
-    .no, .user
-        color: #555555;
-        display inline-block
-        vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-size: 16px;
-    .border-1px
-      border-1px(#D3D3D3)
-      color: #333333;
-      padding-bottom 15px
-    .resTime
-      font-size: 12px;
-      color: #999999;
-</style>

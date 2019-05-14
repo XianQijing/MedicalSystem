@@ -3,29 +3,27 @@
   <div class="ApplicationType">
     <CTitle :screen="true" :textList="textList">成果列表</CTitle>
 
-      <card
-        v-for="(item, index) in messageList"
-        :key="index"
-        :aType="item.type"
-        >
-        <div slot="time">2018.04.12 14:56</div>
-        <p class="no">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
-        <span class="black">申报人－眼科</span>
-        <p style="padding: 15px 0" class="black border-1pxTop">
-          专利名称
-        </p>
-        <span>专利分类</span>
-        <span class="resTime">转化时间：2018.09.01 12:09:32-2018.10.12 12:00:00</span>
-        <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
-        </div>
-      </card>
+    <card
+      v-for="(item, index) in messageList"
+      :key="index"
+      :status="item.type"
+      :time="item.time"
+      >
+      <p class="no">NO：{{item.name}}</p>
+      <span class="black">申报人－眼科</span>
+      <p class="black border-1pxTop">
+        专利名称
+      </p>
+      <span>专利分类</span>
+      <span class="resTime">转化时间：2018.09.01 12:09:32-2018.10.12 12:00:00</span>
+      <div style="text-align:center">
+        <JButton type="primary" round @click="jump">查看</JButton>
+      </div>
+    </card>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 export default {
   name: 'ApplicationType',
@@ -50,7 +48,6 @@ export default {
     }
   },
   components: {
-    Card,
     Checkall
   },
   methods: {
@@ -62,59 +59,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.ApplicationType >>> .comTitle
-  margin 0
 .ApplicationType
-  // padding-bottom 20px
-  .card
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      // display block
-      margin 0 auto
-      &.btn
-        margin-left 5px
-        font-size: 14px;
-        color: #2873FF;
-        background: #C6DAFF;
-    .no, .user
-        // padding-left 10px
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .apply
-      float right
-      font-size: 12px;
-      color: #555555;
-      vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-weight 700
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-      color: #333333;
-    .resTime
-      font-size: 12px;
-      color: #999999;
-    .two
-      display flex
-      justify-content space-between
-  .delete
-    width 58px
-    color white
-    height 30px
-    background: #FD4D4D
-    font-size 14px
+  .two
+    display flex
+    justify-content space-between
 </style>

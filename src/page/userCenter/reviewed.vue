@@ -86,7 +86,7 @@ export default {
   },
   mounted () {
     this.from = this.$route.params.from
-    document.title = `任职${this.$route.params.from}`
+    this.$store.commit('changeTitle', `任职${this.$route.params.from}`)
   },
   methods: {
     // 性别选择

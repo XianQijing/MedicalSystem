@@ -5,20 +5,19 @@
       <card
         v-for="(item, index) in messageList"
         :key="index"
-        :aType="item.type"
+        :status="item.type"
         type="selection"
         :data="item"
-        :time="false"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属单位</span>
         <span>项目类别</span>
         <span>项目类别</span>
         <span>项目类别</span>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="setting">权限设置</button>
-          <button slot="button" class="abtn" @click="jump">修改账户</button>
+          <JButton type="primary" round @click="setting">权限设置</JButton>
+          <JButton type="primary" round plain @click="jump">修改账户</JButton>
+          <!-- <button slot="button" class="abtn" @click="jump">修改账户</button> -->
         </div>
       </card>
       <button slot="button" class="delete">删除</button>
@@ -141,53 +140,13 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.AdminRole >>> .card
-  margin 0
-  margin-top 10px
-  .card-content
-    margin 0
-    border none
-    padding 0
-    .card-white
-      margin 0
 .AdminRole
   padding-bottom 20px
-  .comTitle
-    margin 0
-  .checkAll
-    .abtn
-      background: #2873FF;
-      border-radius: .06rem
-      font-size: .14rem;
-      color: #FFFFFF;
-      width 1rem
-      height .3rem
-      margin 0 auto
-      &:last-child
-        background: #c6daff
-        color #2873FF
-        margin-left 10px
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .no
-      border-1pxLeft(#D3D3D3)
-      padding-left 10px
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-size: 16px
   .delete
     width 58px
     color white
     height 30px
-    background: #FD4D4D
+    background: $red
     font-size 14px
   .addNewOne
     background-image url('../../../common/image/newDetail.png')

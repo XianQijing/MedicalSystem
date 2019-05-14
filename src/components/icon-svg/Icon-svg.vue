@@ -1,6 +1,6 @@
 <template>
   <svg class="svg-icon" aria-hidden="true">
-    <use :xlink:href="iconName"></use>
+    <use :xlink:href="iconName" :stroke-width="weight" :stroke="border"></use>
   </svg>
 </template>
 
@@ -11,6 +11,13 @@ export default {
     iconClass: {
       type: String,
       required: true
+    },
+    weight: {
+      type: Number,
+      default: 0
+    },
+    border: {
+      type: String
     }
   },
   computed: {
@@ -28,5 +35,8 @@ export default {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  font-weight: 400;
+  stroke: black;
+  stroke-width:2;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="EvaluationOffice">
-    <Collaspe name="预置评审科室库">
+    <Collaspe class="first" name="预置评审科室库">
       <div class="select">
         <button v-for="(item, index) in testList" :key="index">
           {{item}}
@@ -109,8 +109,8 @@ export default {
 
 <style lang="stylus" scoped>
 .EvaluationOffice
-  .comTitle
-    margin 0
+  .first
+    margin-top .1rem
   .select
     button
       width calc(100% / 5 - 4px)

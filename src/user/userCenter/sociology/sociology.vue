@@ -37,6 +37,6 @@ export default {
 .sociology >>> .tab-pane
   width 48.5%
 .sociology
-  padding-top 20px
+  padding-top 10px
   margin 0 6px
 </style>

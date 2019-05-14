@@ -5,29 +5,27 @@
     <card
       v-for="(item, index) in messageList"
       :key="index"
+      :time="item.time"
       >
-      <div slot="time">2018.04.12 14:56</div>
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
-      <!-- <p slot="type" style="height:100%">{{item.type}}</p> -->
       <span class="black">申请人-所属科室</span>
-      <p style="padding: 15px 0" class="black border-1pxTop">
+      <p class="black border-1pxTop">
         会议名称
       </p>
       <span>交流论文题目、主办单位</span>
       <span>交流论文题目、主办单位</span>
       <span>交流论文题目、主办单位</span>
       <span>交流论文题目、主办单位</span>
-      <div style="text-align:center">
-        <button slot="button" class="abtn" @click="jump">查看</button>
-        <button slot="button" class="abtn" @click="jump">查看</button>
-        <button slot="button" class="abtn" @click="jump">查看</button>
+      <div style="text-align:center; font-size: 0">
+        <JButton type="primary" round @click="jump">审批</JButton>
+        <JButton type="primary" round plain @click="jump">查看</JButton>
+        <JButton type="primary" round plain @click="jump">查看</JButton>
       </div>
     </card>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'ListOfDeclaredTopics',
   data () {
@@ -49,53 +47,11 @@ export default {
       ]
     }
   },
-  components: {
-    Card
-  },
   methods: {
     jump () {
       this.$router.push({name: 'ScientificDetail', query: {msg: '查看详情'}})
-      document.title = '查看详情'
+      this.$store.commit('changeTitle', '查看详情')
     }
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.ListOfDeclaredTopics >>> .comTitle
-  margin 0
-.ListOfDeclaredTopics
-  .card
-    .abtn
-      border-radius: .06rem;
-      font-size: .14rem;
-      width .966rem
-      height .3rem
-      margin-left .05rem
-      color #2873FF
-      background: #c6daff;
-      &:first-child
-        background: #2873FF;
-        color: #FFFFFF;
-        margin 0
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-      color: #333333;
-    .resTime
-      font-size: 12px;
-      color: #999999;
-</style>

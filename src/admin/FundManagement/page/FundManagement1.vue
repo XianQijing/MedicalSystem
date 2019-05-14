@@ -46,5 +46,5 @@ export default {
     font-size 12px
 .FundManagement1
   margin 0 6px
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
 </style>

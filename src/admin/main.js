@@ -8,6 +8,7 @@ import JInput from '@/components/input/index.js'
 import CTitle from '@/components/title/title.js'
 import IconSvg from '@/components/icon-svg/index.js'
 import JButton from '@/components/button/button.js'
+import Card from '@/components/card/card.js'
 import { Picker, DatetimePicker, Toast, Popup, Radio, RadioGroup } from 'vant'
 
 import '@/common/style/reset.css'
@@ -28,6 +29,7 @@ Vue
   .use(JInput)
   .use(IconSvg)
   .use(JButton)
+  .use(Card)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

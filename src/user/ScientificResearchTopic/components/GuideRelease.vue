@@ -35,8 +35,6 @@ export default {
 
 <style lang="stylus" scoped>
 .GuideRelease
-  .comTitle
-    margin 0
   .form
     font-size:14px;
     .formCell

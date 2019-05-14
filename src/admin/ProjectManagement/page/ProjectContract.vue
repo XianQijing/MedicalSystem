@@ -6,13 +6,12 @@
       <card
         v-for="(item, index) in messageList"
         :key="index"
-        :aType="item.type"
+        :status="item.type"
+        :time="item.time"
         >
-        <div slot="time">2018.04.12 14:56</div>
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属单位</span>
-        <p style="padding: 15px 0" class="black border-1pxTop">
+        <p class="black border-1pxTop">
           论文题目
         </p>
         <span>项目类别</span>
@@ -23,8 +22,8 @@
         </div>
         <span class="resTime">批准日期：2018.09.01 12:00</span>
         <div style="text-align:center">
-          <button slot="button" class="abtn" @click="jump">查看</button>
-          <button slot="button" v-if="item.type === '通过'" class="abtn blue" @click="jump">返回上一步</button>
+          <JButton type="primary" round @click="jump">查看</JButton>
+          <JButton type="primary" v-if="item.type === '通过'" round plain @click="jump">返回上一步</JButton>
         </div>
       </card>
 
@@ -32,7 +31,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'ProjectContract',
   data () {
@@ -56,9 +54,6 @@ export default {
       ]
     }
   },
-  components: {
-    Card
-  },
   methods: {
     jump () {
       this.$router.push({name: 'ContractSearch'})
@@ -68,46 +63,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.ProjectContract >>> .comTitle
-  margin 0
 .ProjectContract
-  padding-bottom 20px
-  .card
-    margin 0 6px
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      // display block
-      margin 0 auto
-      &.blue
-        color: #2873ff;
-        background: #c6daff;
-        margin-left 10px
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-      color: #333333;
-    .resTime
-      font-size: 12px;
-      color: #999999;
-    .two
-      display flex
-      justify-content space-between
+  margin 0 .06rem
 </style>

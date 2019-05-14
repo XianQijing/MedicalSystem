@@ -53,15 +53,23 @@ export default {
   box-sizing: border-box;
   outline: none;
   margin-left .1rem
+  color white
   &:first-child
     margin-left 0
   &.j-button--primary
     background $blue
-    color white
     &.is-plain
       background $light
       color $blue
+  &.j-button--danger
+    background $red
+    &.is-plain
+      background $light
+      color $red
+  &.j-button--success
+    background $green
+  &.j-button--warning
+    background $orange
   &.is-round
     border-radius .06rem
-
 </style>

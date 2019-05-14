@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import store from '../store/admin'
 import Router from 'vue-router'
 import HomePage from '@/admin/homePage/homePage'
 import UserCenter from '@/router/admin/userCenter'
@@ -29,49 +30,73 @@ const router = new Router({
       path: '/',
       name: 'HomePage',
       component: HomePage,
-      meta: '首页'
+      meta: {
+        title: '首页',
+        requireAuth: true
+      }
     },
     {
       path: '/OfficeAbroadDetail',
       name: 'OfficeAbroadDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/OfficeAbroadDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: '/OfficeMeetingDetail',
       name: 'OfficeMeetingDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/OfficeMeetingDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: '/OfficePaperDetail',
       name: 'OfficePaperDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/OfficePaperDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: '/OfficePatentDetail',
       name: 'OfficePatentDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/OfficePatentDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: '/OfficeMonographDetail',
       name: 'OfficeMonographDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/OfficeMonographDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: '/OfficeServingDetail',
       name: 'OfficeServingDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/OfficeServingDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: '/CooperationDetail',
       name: 'CooperationDetail',
       component: resolve => require(['@/admin/LeadingOffice/LeadingOffice/CooperationDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     Login,
     scientificServing,
@@ -93,7 +118,20 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta
-  next()
+  if (to.meta.title) {
+    store.commit('changeTitle', to.meta.title)
+  }
+  if (to.meta.requireAuth) {
+    if (sessionStorage.getItem('token')) {
+      next()
+    } else {
+      next({
+        name: 'Login',
+        query: {redirect: to.fullPath}
+      })
+    }
+  } else {
+    next()
+  }
 })
 export default router

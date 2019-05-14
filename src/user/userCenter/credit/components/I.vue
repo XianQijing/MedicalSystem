@@ -9,17 +9,14 @@
 
     <div class="card-wapper">
       <card
-        :time="false"
         v-for="(item, index) in messageList"
         :key="index"
-        :aType="item.type"
+        :status="item.type"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
-        <!-- <div class="type" :class="color">{{messageList.type}}</div> -->
         <span class="black">陈升息－眼科、副主任医师、医生</span>
         <span>闸北中心医院、主任医师</span>
-        <p style="padding: 15px 0" class="black border-1pxTop">项目名称</p>
+        <p class="black border-1pxTop">项目名称</p>
         <div class="two">
           <span>项目编号：283746283</span>
           <span>证书编号：283746283</span>
@@ -29,14 +26,15 @@
           <span>I类学分：12</span>
         </div>
         <span class="resTime">项目主办单位：闸北中心医院</span>
-        <button slot="button" class="abtn" @click="jump('查看详情')">查看</button>
+        <div style="text-align:center">
+          <JButton type="primary" round @click="jump('查看详情')">查看</JButton>
+        </div>
       </card>
     </div>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'I',
   data () {
@@ -96,84 +94,15 @@ export default {
         this.toDo = type
       }
     }
-  },
-  components: {
-    Card
-    // JInput,
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../common/style/mixin.styl'
-.I >>> .card
-  margin 0
-  .card-content
-    border none
-    margin 0
-    padding 0
-    padding-bottom 10px
-    .card-white
-      margin 0
-      .no
-        padding 0!important
-        border-none()
 .I
-  // padding-bottom 30px
-  .comTitle
-    margin 0
-  .card-wapper
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      display block
-      margin 0 auto
-    .back
-      font-size: 14px;
-      color: #2873FF;
-      background: #C6DAFF;
-      border-radius: 6px;
-      width 100px
-      height 30px
-      margin-left 10px
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    .type
-      height 40px
-      width 30px
-      position absolute
-      font-size: 10px;
-      color: #FFFFFF;
-      top 0
-      right 10px
-      line-height 40px
-      text-align center
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-weight 700
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-    .resTime
-      font-size: 12px;
-      color: #999999;
-    .button
-      height 30px
-    .two
-      display flex
-      justify-content space-between
-      font-size: 14px;
-      color: #333333;
+  .two
+    display flex
+    justify-content space-between
+    font-size: 14px;
+    color: #333333;
 </style>

@@ -156,8 +156,6 @@ export default {
 
 <style lang="stylus" scoped>
 .ProfessionalSetup
-  .comTitle
-    margin 0
   .button
     font-size 0
     .edit, .daoru, .shanchu

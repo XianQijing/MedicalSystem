@@ -5,11 +5,10 @@
       <card
         v-for="(item, index) in messageList"
         :key="index"
-        :aType="item.type"
+        :status="item.type"
+        :time="item.time"
         >
-        <div slot="time">2018.04.12 14:56</div>
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p slot="type" style="height:100%">{{item.type}}</p>
         <span class="black">申请人-所属单位</span>
         <span>项目类别</span>
         <span class="resTime border-1px">开始时间：2017.08.12</span>
@@ -30,7 +29,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'ReviewManagement',
   data () {
@@ -53,9 +51,6 @@ export default {
       ]
     }
   },
-  components: {
-    Card
-  },
   methods: {
     jump () {
       this.$router.push({name: 'declareDetail'})
@@ -67,76 +62,46 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .ReviewManagement
-  margin 0 6px
-  .comTitle
-    margin 0
-  .card
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      // display block
-      margin 0 auto
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-size: 16px;
-    .border-1px
-      border-1px(#D3D3D3)
-      color: #333333;
-      padding-bottom 15px
-      display block
-    .resTime
-      font-size: 12px;
-      color: #999999;
+  .border-1px
+    border-1px(#d3d3d3)
+    padding-bottom .15rem
   .label, .right
     display inline-block
     vertical-align middle
   .label
-    width 4em
-    font-size 16px
-    line-height 20px
+    font-size .16rem
+    line-height .2rem
   .right
-    margin-left 10px
+    margin-left .1rem
     div
       display inline-block
       position relative
-      width 76px
+      width .76rem
       p
-        width 50px
-        height 50px
-        font-size 12px
+        width .50rem
+        height .50rem
+        font-size .12rem
         border-radius 50%
         background #2873FF
         box-sizing border-box
         vertical-align top
-        padding 13px
+        padding .13rem
         color white
+        margin 0 !important
       &:after
         display block
         position absolute
         content ' '
         border-top 1px solid #d3d3d3
-        width 23px
+        width .23rem
         top 50%
-        right 2px
+        right .02rem
       &:first-child
         p
           background #C6DAFF
           color #2873FF
       &:last-child
+        width .5rem
         &:after
           display none
 </style>

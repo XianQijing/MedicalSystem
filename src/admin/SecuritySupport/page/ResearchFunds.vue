@@ -41,8 +41,8 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .ResearchFunds
+  margin 0 .06rem
   .card
-    margin 0 6px
     padding 10px 0
     background white
     .border-1px

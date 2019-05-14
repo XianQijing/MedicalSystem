@@ -77,18 +77,13 @@ export default {
 <style lang="stylus" scoped>
 .drop
   position absolute
-  left: 50%;
-  margin-left: -20px;
-  top -20px
+  left .9rem
   text-align center
+  top 0
+  height .43rem
   .drop-down
-    width 40px
-    height 40px
     font-size 20px
-    background rgb(221, 221, 221)
-    color #999999
-    border-radius 50%
-    span
-      position relative
-      top 7px
+    color white
+    background none
+    height 100%
 </style>

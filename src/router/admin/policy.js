@@ -11,19 +11,28 @@ const router = {
       path: '',
       name: 'PolicyList',
       component: resolve => require(['@/admin/policy/policyList'], resolve),
-      meta: '政策法规'
+      meta: {
+        title: '政策法规',
+        requireAuth: true
+      }
     },
     {
       path: 'provinceOfPolicy',
       name: 'ProvinceOfPolicy',
       component: resolve => require(['@/admin/policy/provinceOfPolicy'], resolve),
-      meta: '省市自治区'
+      meta: {
+        title: '省市自治区',
+        requireAuth: true
+      }
     },
     {
       path: 'policyDetail',
       name: 'PolicyDetail',
       component: resolve => require(['@/page/policy/page/policyDetail'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     }
   ]
 }

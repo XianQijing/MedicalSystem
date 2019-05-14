@@ -37,7 +37,7 @@ export default {
 
 <style lang="stylus" scoped>
 .InfluenceListDetail
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
   // margin 0 6px
   box-sizing border-box
   margin 0 6px

@@ -9,13 +9,19 @@ const router = {
       path: '',
       name: 'NoticList',
       component: resolve => require(['@/admin/notic/noticList'], resolve),
-      meta: '通知公告'
+      meta: {
+        title: '通知公告',
+        requireAuth: true
+      }
     },
     {
       path: 'addOrEdit',
       name: 'AddOrEdit',
       component: resolve => require(['@/admin/notic/addOrEdit'], resolve),
-      meta: '通知'
+      meta: {
+        title: '通知',
+        requireAuth: true
+      }
     }
   ]
 }

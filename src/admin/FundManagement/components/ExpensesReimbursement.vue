@@ -1,7 +1,7 @@
 // 经费报销
 <template>
   <div class="ExpensesReimbursement">
-    <CTitlt>基本信息</CTitlt>
+    <CTitle>基本信息</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">经费类别:</p>

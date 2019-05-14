@@ -54,7 +54,7 @@ export default {
 
 <style lang="stylus" scoped>
 .userMessage
-  padding 20px 0 6px 0
+  padding 10px 0 6px 0
   .tabs
     margin 0 6px 1px 6px
     display flex

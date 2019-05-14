@@ -64,7 +64,7 @@ export default {
   },
   mounted () {
     this.title = this.$route.query.title
-    document.title = this.$route.query.title
+    this.$store.commit('changeTitle', this.$route.query.title)
     this.scroll = new BScroll(this.$refs.wrapper)
   },
   methods: {

@@ -9,49 +9,73 @@ const router = {
       path: '',
       name: 'SubjectInformation',
       component: resolve => require(['@/user/SecuritySupport/page/SubjectInformation'], resolve),
-      meta: '学科信息'
+      meta: {
+        title: '学科信息',
+        requireAuth: true
+      }
     },
     {
       path: 'SubjectBasicInformation',
       name: 'SubjectBasicInformation',
       component: resolve => require(['@/user/SecuritySupport/page/SubjectBasicInformation'], resolve),
-      meta: '学科信息'
+      meta: {
+        title: '学科信息',
+        requireAuth: true
+      }
     },
     {
       path: 'BasicConditions',
       name: 'BasicConditions',
       component: resolve => require(['@/user/SecuritySupport/page/BasicConditions'], resolve),
-      meta: '学科信息'
+      meta: {
+        title: '学科信息',
+        requireAuth: true
+      }
     },
     {
       path: 'SubjectTechnicalTeam',
       name: 'SubjectTechnicalTeam',
       component: resolve => require(['@/user/SecuritySupport/page/SubjectTechnicalTeam'], resolve),
-      meta: '学科信息'
+      meta: {
+        title: '学科信息',
+        requireAuth: true
+      }
     },
     {
       path: 'ProjectBasicInformation',
       name: 'ProjectBasicInformation',
       component: resolve => require(['@/user/SecuritySupport/components/ProjectBasicInformation'], resolve),
-      meta: '查看详情' // 待修改
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      } // 待修改
     },
     {
       path: 'TalentInformation',
       name: 'TalentInformation',
       component: resolve => require(['@/user/SecuritySupport/page/TalentInformation'], resolve),
-      meta: '人才信息'
+      meta: {
+        title: '人才信息',
+        requireAuth: true
+      }
     },
     {
       path: 'TalentBasicInformation',
       name: 'TalentBasicInformation',
       component: resolve => require(['@/user/SecuritySupport/components/TalentBasicInformation'], resolve),
-      meta: '查看详情'
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
     },
     {
       path: 'ResearchFunds',
       name: 'ResearchFunds',
       component: resolve => require(['@/user/SecuritySupport/page/ResearchFunds'], resolve),
-      meta: '科研经费'
+      meta: {
+        title: '科研经费',
+        requireAuth: true
+      }
     }
   ]
 }

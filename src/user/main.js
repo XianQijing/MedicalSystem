@@ -8,6 +8,8 @@ import MessageBox from '@/components/messageBox/messageBox.js'
 import CTitle from '@/components/title/title.js'
 import JInput from '@/components/input/index.js'
 import IconSvg from '@/components/icon-svg/index.js'
+import JButton from '@/components/button/button.js'
+import Card from '@/components/card/card.js'
 
 import { Picker, Radio, RadioGroup, DatetimePicker, Toast, Popup } from 'vant'
 
@@ -30,6 +32,8 @@ Vue.use(Picker)
   .use(CTitle)
   .use(JInput)
   .use(IconSvg)
+  .use(JButton)
+  .use(Card)
 
 /* eslint-disable no-new */
 new Vue({

@@ -2,7 +2,7 @@
   <div class="File">
     <div class="list-wrapper border-1px" v-for="(item, index) in list" :key="index">
       <div class="border-1pxLeft" @click="linkTo(icon)" v-for="icon in item" :key="icon.name">
-        <img :src="icon.icon" alt="">
+        <IconSvg border="#2873ff" :weight="icon.weight" :iconClass="icon.icon"/>
         <p>{{icon.name}}</p>
       </div>
     </div>
@@ -85,9 +85,10 @@ export default {
         margin-top -.245rem
       &:last-child
         border-none()
-      img
-        width .4rem
+      .svg-icon
+        font-size .4rem
         margin-top .23rem
+        color $blue
         margin-bottom 0.06rem
       p
         font-size .12rem

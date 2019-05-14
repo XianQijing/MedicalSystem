@@ -221,7 +221,6 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .SubjectMedicalQuality
-  .comTitle
     margin 0
   .formCell
     padding 0 10px

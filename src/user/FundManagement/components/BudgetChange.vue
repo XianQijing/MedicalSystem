@@ -79,16 +79,12 @@
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
 export default {
   name: 'BudgetChange',
-  components: {
-    JInput
-  },
   methods: {
     jump (msg) {
       this.$router.push({name: 'Budget', query: {form: msg}})
-      document.title = msg
+      this.$store.commit('changeTitle', msg)
     }
   }
 }

@@ -29,37 +29,37 @@ export default {
   height 100%
   // padding-bottom 15px
   .index-wapper
-    padding-bottom: 85px;
+    padding-bottom: .85rem
     min-height 100%
     box-sizing border-box
   .image
     width 80%
     // height 67px
-    max-width 444px
+    // max-width 444px
     margin 0 auto
-    padding-top 20px
+    padding-top .2rem
   .header
-    width 94px
-    height 94px
+    width .94rem
+    height .94rem
     margin 3.3vh auto
     text-align center
     overflow hidden
     border-radius 50%
     border 1px solid rgba(245,246,248,1)
-    line-height 94px
+    line-height .94rem
   .shangBiao
     width 100%
     position relative
     bottom 0px
     margin -60px auto 0 auto
     clear: both;
-    font-size 16px
+    font-size .16rem
     div
       width 80%
-      max-width 444px
+      max-width 4.44rem
       margin 0 auto
       span
-        line-height 26px
+        line-height .26rem
         margin-left 1em
       img
         vertical-align text-bottom

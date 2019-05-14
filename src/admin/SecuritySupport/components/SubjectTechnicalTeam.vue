@@ -308,8 +308,6 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .SubjectTechnicalTeam
-  .comTitle
-    margin 0
   .formCell
     padding 0 10px
     min-height 30px

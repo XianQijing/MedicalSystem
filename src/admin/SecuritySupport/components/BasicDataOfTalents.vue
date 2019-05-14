@@ -108,8 +108,6 @@ export default {
 
 <style lang="stylus" scoped>
 .BasicDataOfTalents
-  .comTitle
-    margin 0
   .form
     .formCell
       padding 0 10px

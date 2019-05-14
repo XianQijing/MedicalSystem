@@ -155,9 +155,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../../../common/style/mixin.styl'
 .DepartmentSetup
-  .comTitle
-    margin 0
   .button
     font-size 0
     .edit, .daoru, .shanchu
@@ -166,11 +165,11 @@ export default {
       font-size .14rem
       color white
     .edit
-      background: #2873ff;
+      background: $blue;
     .daoru
-      background: #45c186
+      background: $green
     .shanchu
-      background: #fd4d4d;
+      background: $red
   .edit-button
     width .4rem
     box-sizing border-box

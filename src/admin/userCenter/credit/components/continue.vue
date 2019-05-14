@@ -9,10 +9,8 @@
 
     <div class="card-wapper">
       <card
-        :time="false"
         v-for="(item, index) in messageList"
         :key="index"
-        :nowType="false"
         >
         <p class="no">NO：{{item.name}}</p>
         <span class="black">陈升息－眼科、副主任医师、医生</span>
@@ -28,7 +26,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'ContinueCredit',
   data () {
@@ -63,63 +60,20 @@ export default {
     jump (name) {
       this.$router.push({name: 'ContinueDetail'})
     }
-  },
-  components: {
-    Card
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../common/style/mixin.styl'
-.continueCredit >>> .float
-  font-size: 13px;
-  color: #2873FF;
-  .screen
-    display inline-block
-    width 13px
-    height 13px
-    background-size 13px
-    vertical-align top
-    bg-aimage(screen)
-.continueCredit >>> .card
-  margin 0
-  .card-content
-    border none
-    margin 0
-    padding 0
-    padding-bottom 10px
-    .card-white
-      margin 0
-      // .no
-      //   padding-left 0
-      //   border-none()
 .continueCredit
-  padding-bottom 30px
   .comTitle
     margin 0
   .card-wapper
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      display block
-      margin 0 auto
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-weight 700
-      font-size: 16px
     .two
       display flex
       justify-content space-between
       font-size: 14px;
       color: #333333;
+      span
+        margin-bottom 0!important
 </style>

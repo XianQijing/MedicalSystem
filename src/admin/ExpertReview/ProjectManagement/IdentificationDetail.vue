@@ -29,7 +29,8 @@
       </div>
       <div class="icon" v-for="item in list" :key="item.name">
         <div class="img">
-          <img :src="item.icon" alt="">
+          <IconSvg :iconClass="item.icon"/>
+          <!-- <img :src="item.icon" alt=""> -->
           <p>{{item.name}}</p>
         </div>
         <div class="desc">
@@ -119,9 +120,10 @@ export default {
         padding .05rem 0
         display inline-block
         vertical-align top
-        img
-          width .23rem
+        .svg-icon
+          font-size .23rem
           margin .07rem
+          color white
         p
           color white
           font-size .12rem

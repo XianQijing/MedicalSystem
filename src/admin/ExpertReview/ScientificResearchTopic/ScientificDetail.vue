@@ -39,7 +39,7 @@
     </div>
     <div class="float">
       <span>审核记录</span>
-      <img src="../../../common/image/shenhe.png" alt="">
+      <IconSvg iconClass="icon-shenhejiluicon"/>
     </div>
     <div class="formCell">
       <p class="form-label">项目名称:</p>
@@ -188,8 +188,9 @@ export default {
     font-size .13rem
     padding 10px 0
     width 100%
-    img
-      width .11rem
+    .svg-icon
+      font-size .11rem
+      color $blue
       vertical-align middle
   .popup-form
     padding 0 15px

@@ -59,23 +59,23 @@
     </div>
     <div class="float">
       <span>审核记录</span>
-      <img src="../../../common/image/shenhe.png" alt="">
+      <IconSvg iconClass="icon-shenhejiluicon"/>
     </div>
     <div class="wrapper">
       <div class="no-img">
         <p>验收<br/>申请表</p>
         <div class="yulan">
-          <img src="../../../common/image/eyes.png" alt=""><span>预览</span>
+          <IconSvg iconClass="icon-yulanicon"/><span>预览</span>
         </div>
       </div><div class="no-img">
         <p>验收<br/>申请表</p>
         <div class="yulan">
-          <img src="../../../common/image/eyes.png" alt=""><span>预览</span>
+          <IconSvg iconClass="icon-yulanicon"/><span>预览</span>
         </div>
       </div>
       <div class="icon" v-for="item in list" :key="item.name">
         <div class="img">
-          <img :src="item.icon" alt="">
+          <IconSvg :iconClass="item.icon"/>
           <p>{{item.name}}</p>
         </div>
         <div class="desc">
@@ -202,9 +202,10 @@ export default {
         padding .05rem 0
         display inline-block
         vertical-align top
-        img
-          width .23rem
+        .svg-icon
+          font-size .23rem
           margin .07rem
+          color white
         p
           color white
           font-size .12rem
@@ -276,12 +277,13 @@ export default {
     height 165px
 .float
   text-align right
-  color: #2873ff
+  color: $blue
   font-size .13rem
   padding 10px 0
   width 100%
-  img
-    width .11rem
+  .svg-icon
+    font-size .11rem
+    color $blue
     vertical-align middle
 .no-img
   display inline-block
@@ -310,8 +312,9 @@ export default {
     text-align right
     line-height .5rem
     height .5rem
-    img
-      width .16rem
+    .svg-icon
+      font-size .16rem
+      color $blue
     span
       color #2873ff
       font-size .12rem

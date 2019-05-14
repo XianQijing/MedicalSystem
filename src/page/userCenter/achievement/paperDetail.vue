@@ -1,6 +1,6 @@
 <template>
   <div class="paperDetail">
-    <CTitlt>基本信息</CTitlt>
+    <CTitle>基本信息</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">刊物名称:</p>
@@ -27,7 +27,7 @@
         <p class="content">主要内容</p>
       </div>
     </div>
-    <CTitlt>科室审查意见</CTitlt>
+    <CTitle>科室审查意见</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">资料是否真实:</p>

@@ -54,7 +54,7 @@ export default {
   },
   created () {
     this.msg = this.$route.query.msg
-    document.title = this.$route.query.msg + '通知'
+    this.$store.commit('changeTitle', this.$route.query.msg + '通知')
   }
 }
 </script>

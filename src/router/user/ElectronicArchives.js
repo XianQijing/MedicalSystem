@@ -9,55 +9,82 @@ const router = {
       path: '',
       name: 'File',
       component: resolve => require(['@/user/ElectronicArchives/page/File'], resolve),
-      meta: '科研档案'
+      meta: {
+        title: '科研档案',
+        requireAuth: true
+      }
     },
     {
       path: 'jumpPage',
       name: 'JumpPage',
-      component: resolve => require(['@/user/ElectronicArchives/page/jumpPage'], resolve)
+      component: resolve => require(['@/user/ElectronicArchives/page/jumpPage'], resolve),
+      meta: {
+        requireAuth: true
+      }
       // meta: '科研档案'
     },
     {
       path: 'fileList',
       name: 'FileList',
       component: resolve => require(['@/user/ElectronicArchives/page/fileList'], resolve),
-      meta: '档案列表'
+      meta: {
+        title: '档案列表',
+        requireAuth: true
+      }
     },
     {
       path: 'fileList1',
       name: 'FileList1',
       component: resolve => require(['@/user/ElectronicArchives/page/fileList1'], resolve),
-      meta: '档案列表'
+      meta: {
+        title: '档案列表',
+        requireAuth: true
+      }
     },
     {
       path: 'FileScientificTopic',
       name: 'FileScientificTopic',
       component: resolve => require(['@/user/ElectronicArchives/page/FileScientificTopic'], resolve),
-      meta: '科研课题'
+      meta: {
+        title: '科研课题',
+        requireAuth: true
+      }
     },
     {
       path: 'ActivityList',
       name: 'ActivityList',
-      component: resolve => require(['@/user/ElectronicArchives/page/ActivityList'], resolve)
+      component: resolve => require(['@/user/ElectronicArchives/page/ActivityList'], resolve),
+      meta: {
+        requireAuth: true
+      }
       // meta: '国家级活动'
     },
     {
       path: 'TeachingMaterial',
       name: 'TeachingMaterial',
       component: resolve => require(['@/user/ElectronicArchives/page/TeachingMaterial'], resolve),
-      meta: '高等院校教材'
+      meta: {
+        title: '高等院校教材',
+        requireAuth: true
+      }
     },
     {
       path: 'InventionPatent',
       name: 'InventionPatent',
       component: resolve => require(['@/user/ElectronicArchives/page/InventionPatent'], resolve),
-      meta: '发明专利'
+      meta: {
+        title: '发明专利',
+        requireAuth: true
+      }
     },
     {
       path: 'SocialService',
       name: 'SocialService',
       component: resolve => require(['@/user/ElectronicArchives/page/SocialService'], resolve),
-      meta: '社会任职'
+      meta: {
+        title: '社会任职',
+        requireAuth: true
+      }
     }
   ]
 }

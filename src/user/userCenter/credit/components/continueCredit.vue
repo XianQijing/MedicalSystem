@@ -16,11 +16,9 @@
     </div>
     <c-title>学分获取</c-title>
     <card
-      aType="通过"
-      :nowType="false"
+      time="2018.04.12 14:56"
     >
-      <p slot="time" style="height:100%">2018.04.12 14:56</p>
-      <p class="black">项目名称</p>
+      <p class="black ss">项目名称</p>
       <div class="two">
         <span>分值：12</span>
         <span>学分属性：区内学分</span>
@@ -36,7 +34,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Popup from '@/components/popup/popup'
 
 export default {
@@ -47,7 +44,6 @@ export default {
     }
   },
   components: {
-    Card,
     Popup
   },
   methods: {
@@ -61,36 +57,38 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../../common/style/mixin.styl'
 .continueCredit
-  .comTitle
-    margin 0
   .black
-    font-size: 16px;
+    font-size: .16rem
     color: #333333;
-    font-weight 700
+    margin-bottom .15rem
+    &.ss
+      margin-top 0!important
   .two
-    margin-top 15px
+    // margin-top 15px
     display flex
     justify-content space-between
-    font-size: 14px;
     color: #333333;
+    &:last-child
+      span
+        margin-bottom 0!important
   .base-message
     background white
-    padding 15px 10px
+    padding .15rem .10rem
     div
       display flex
       justify-content space-between
-      font-size: 12px;
+      font-size: .12rem;
       color: #555555;
     p
-      margin-top 15px
+      margin-top .15rem
 .continueCredit >>> .float
-    font-size: 13px;
+    font-size: .13rem;
     color: #2873FF;
     .screen
       display inline-block
-      width 13px
-      height 13px
-      background-size 13px
+      width .13rem
+      height .13rem
+      background-size .13rem
       vertical-align top
       bg-aimage(screen)
 </style>

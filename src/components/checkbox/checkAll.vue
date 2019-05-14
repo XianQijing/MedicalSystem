@@ -68,20 +68,28 @@ export default {
     position fixed!important
     bottom 0
     left 0
-    height 30px
-    // z-index 300
+    height .3rem
+    display flex
+    align-items center
     width 100%
     background: rgb(250,250,250);
     box-shadow: inset 0 0 0 0 #B2B2B2;
     border-1pxTop(rgb(196, 196, 198))
     span
-      font-size: 14px;
-      margin-left 5px
-      line-height 30px
+      font-size: .14rem
+      margin-left .05rem
+      line-height .3rem
     .checkbox
-      margin-left 10px
+      margin-left .1rem
+      width .16rem
+      height .16rem
     .right
-      display inline-block
-      height 30px
-      float right
+      position absolute
+      height .3rem
+      right 0
+      button
+        &.j-button
+          height .3rem
+          width .58rem
+          margin-left 0!important
 </style>

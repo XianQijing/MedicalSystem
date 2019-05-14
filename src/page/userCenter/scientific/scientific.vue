@@ -7,7 +7,7 @@
     </div>
     <div class="detail">
       <div class="icon-wapper" @click="open(item.name)" v-for="item in iconList" :key="item.name">
-        <img :src="item.img" alt="" :class="item.width">
+        <IconSvg :weight="10" border="#c90b0b" :iconClass="item.icon"/>
         <p>{{item.name}}</p>
       </div>
     </div>
@@ -50,47 +50,47 @@ export default {
       name: '',
       iconList: [
         {
-          img: require('../../../common/image/人才称号icon@3x.png'),
+          icon: 'icon-rencaichenghaoicon',
           name: '人才称号',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/论文red.png'),
+          icon: 'icon-xueshulunwenicon',
           name: '学术论文',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/项目icon@3x.png'),
+          icon: 'icon-keyanxiangmuicon',
           name: '科研项目',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/专利red.png'),
+          icon: 'icon-zhuanliicon',
           name: '技术专利',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/奖项red.png'),
+          icon: 'icon-jiangxiangicon',
           name: '科技奖项',
           width: 'bigger'
         },
         {
-          img: require('../../../common/image/任职red.png'),
+          icon: 'icon-Page3',
           name: '社会任职',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/继续教育icon@3x.png'),
+          icon: 'icon-jixujiaoyuicon-zhengchang',
           name: '继教项目',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/专著red.png'),
+          icon: 'icon-zhuanzhuicon',
           name: '学术专著',
           width: 'normal'
         },
         {
-          img: require('../../../common/image/page.png'),
+          icon: 'icon-Page4',
           name: '学术',
           width: 'normal'
         }
@@ -110,7 +110,7 @@ export default {
 @import '../../../common/style/mixin.styl'
 .scientificc
   // width 100%
-  padding 20px 0 10px 0
+  padding 10px 0 10px 0
   margin 0 6px
   box-sizing border-box
   .base-message
@@ -143,10 +143,11 @@ export default {
       margin-bottom 0.38rem
       &:last-child
         margin-left 0.38rem
-      img
-        width 0.44rem
+      .svg-icon
+        font-size 0.44rem
         margin-bottom 0.1rem
         vertical-align top
+        color #c90b0b
       .bigger
         width 0.53rem
   .popup-wapper

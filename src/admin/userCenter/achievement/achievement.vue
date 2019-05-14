@@ -84,28 +84,28 @@ export default {
   margin 0 6px
   .card
     background white
-    padding 15px 10px
-    margin-bottom 10px
+    padding .15rem .10rem
+    margin-bottom .10rem
     p
-      font-size: 14px;
+      font-size: .14rem
       color: #333333;
     .gray
-      font-size: 12px;
+      font-size: .12rem
       color: #555555
     .black
-      font-size: 16px;
+      font-size: .16rem
       color: #333333;
-      margin 15px 0
+      margin .15rem 0
   .wapper
     display flex
     justify-content space-between
     flex-wrap wrap
     .aBlock
       width 22.8%
-      height 48px
+      height .48rem
       border: 1px solid #2873FF
-      border-radius: 4px;
-      margin-top 15px
+      border-radius: .04rem
+      margin-top .15rem
       display flex
       align-items center
       &:last-child
@@ -114,7 +114,7 @@ export default {
         display inline-block
         font-weight 700
         vertical-align top
-        font-size: 20px;
+        font-size: .2rem
         color: #333333;
         text-align: center;
         flex 2 1 44px
@@ -125,8 +125,8 @@ export default {
         flex 1 0 34px
         p
           text-align center
-          font-size: 12px
-          line-height 15px
-          width 34px
+          font-size: .12rem
+          line-height .15rem
+          width .34rem
           margin 0 auto
 </style>

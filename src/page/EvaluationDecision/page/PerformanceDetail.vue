@@ -68,6 +68,6 @@ export default {
   &:last-child
     width 49%
 .PerformanceDetail
-  padding-top 20px
+  padding-top 10px
   margin 0 6px
 </style>

@@ -65,7 +65,7 @@ export default {
           ]
         },
         {
-          title: '项目申报',
+          title: '申报评审',
           children: [
             {
               name: '科研课题',
@@ -78,7 +78,7 @@ export default {
               path: '/ScientificResearchTopic'
             },
             {
-              name: '优秀人才',
+              name: '人才计划',
               icon: 'icon-youxiurencaiicon',
               path: '/ScientificResearchTopic'
             },

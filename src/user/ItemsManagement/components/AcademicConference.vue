@@ -57,7 +57,7 @@ export default {
   methods: {
     jump () {
       this.$router.push({name: 'ExaminFund', query: {msg: '查看详情'}})
-      document.title = '查看详情'
+      this.$store.commit('changeTitle', '查看详情')
     }
   }
 }

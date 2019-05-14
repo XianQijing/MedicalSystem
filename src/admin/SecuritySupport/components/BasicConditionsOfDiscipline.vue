@@ -137,8 +137,6 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .TalentsAchievements
-  .comTitle
-    margin 0
   .formCell
     padding 0 10px
     height 30px

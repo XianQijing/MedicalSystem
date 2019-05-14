@@ -153,7 +153,7 @@ export default {
   methods: {
     jump (msg) {
       this.$router.push({name: 'AProjectMessageDetail', query: {msg: msg}})
-      document.title = msg
+      this.$store.commit('changeTitle', msg)
     }
   }
 }

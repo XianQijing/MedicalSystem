@@ -153,35 +153,33 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .SubjectBasicData
-  .comTitle
-    margin 0
-.wrapper
-  background white
-  margin-top 2px
-  &:first-child
-    margin 0
-  .title
-    padding 0 10px
-    font-size: 12px
-    line-height: 26px
-    height 26px
-    .float
-      float right
-  .author-wrapper
-    box-shadow: 0px 1px  2px rgba(0,0,0,0.5)
-    padding 10px 0
-    display flex
-    .author
-      flex 1
-      text-align center
-      font-size: 14px
-      border-1pxLeft(#d3d3d3)
-      &:first-child
-        border-none()
-      p
-        line-height 18px
-      .num
-        margin-top 15px
-        font-size: 20px;
-        color: #999999;
+  .wrapper
+    background white
+    margin-top 2px
+    &:first-child
+      margin 0
+    .title
+      padding 0 10px
+      font-size: 12px
+      line-height: 26px
+      height 26px
+      .float
+        float right
+    .author-wrapper
+      box-shadow: 0px 1px  2px rgba(0,0,0,0.5)
+      padding 10px 0
+      display flex
+      .author
+        flex 1
+        text-align center
+        font-size: 14px
+        border-1pxLeft(#d3d3d3)
+        &:first-child
+          border-none()
+        p
+          line-height 18px
+        .num
+          margin-top 15px
+          font-size: 20px;
+          color: #999999;
 </style>
