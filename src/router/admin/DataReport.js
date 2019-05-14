@@ -10,7 +10,7 @@ const router = {
       component: resolve => require(['@/page/DataReport/DataSearch/DataSearch'], resolve),
       meta: {
         title: '数据查询',
-        requireAuth: true
+        requireAuth: true 
       }
     },
     {
