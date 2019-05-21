@@ -6,11 +6,10 @@
     <card
       v-for="(item, index) in messageList"
       :key="index"
-      :aType="item.type"
+      :time="item.time"
+      :status="item.type"
       >
-      <div slot="time">2018.04.12 14:56</div>
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
-      <p slot="type" style="height:100%">{{item.type}}</p>
       <span class="black">申请人-所属单位</span>
       <p style="padding: 15px 0" class="black border-1pxTop">
         专利名称
@@ -35,7 +34,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import JTable from '@/components/table/table'
 import TableColums from '@/components/table/table-colums'
 export default {
@@ -78,7 +76,6 @@ export default {
     }
   },
   components: {
-    Card,
     JTable,
     TableColums
   },
@@ -91,36 +88,14 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
-.CarryForward >>> .comTitle
-  margin 0
 .CarryForward
   .card
-    margin 0 6px
-    .no, .user
-        font-size: 12px;
-        color: #555555;
-        display inline-block
-        vertical-align top
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 15px
-    .black
-      margin-top 15px
-      font-weight 700
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-      color: #333333;
-    .resTime
-      font-size: 12px;
-      color: #999999;
     .two
       display flex
       justify-content space-between
     .j-table
       font-size 12px
       margin-bottom 15px
+      &:last-child
+        margin-bottom 0
 </style>

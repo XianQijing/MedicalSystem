@@ -5,9 +5,6 @@
       <div class="menu">
         <router-link tag="div" :to="icon.path" class="icon border-1pxLeft" v-for="(icon, index) in item.children" :key="index">
           <span class="spot">{{index}}</span>
-          <!-- <svg class="iconfont" aria-hidden="true">
-            <use :xlink:href="'#'+icon.icon"></use>
-          </svg> -->
           <IconSvg :iconClass="icon.icon"></IconSvg>
           <p class="name">
             {{icon.name}}

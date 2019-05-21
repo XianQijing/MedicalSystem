@@ -1,9 +1,9 @@
-import ScientificResearchTopic from '@/user/ScientificResearchTopic/ScientificResearchTopic'
+import DisciplineBase from '@/user/DisciplineBase/DisciplineBase'
 
 const router = {
   path: '/DisciplineBase',
   // name: 'ScientificResearchTopic',
-  component: ScientificResearchTopic,
+  component: DisciplineBase,
   children: [
     {
       path: '',
@@ -13,61 +13,61 @@ const router = {
         title: '学科指南',
         requireAuth: true
       }
+    },
+    {
+      path: 'DisciplineDeclaration',
+      name: 'DisciplineDeclaration',
+      component: resolve => require(['@/user/DisciplineBase/DisciplineDeclaration/DisciplineDeclaration'], resolve),
+      meta: {
+        title: '学科申报',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'open',
+      name: 'open',
+      component: resolve => require(['@/user/DisciplineBase/DisciplineDeclaration/page/open'], resolve),
+      meta: {
+        title: '申报开放',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'DisciplineProcess',
+      name: 'DisciplineProcess',
+      component: resolve => require(['@/user/ScientificResearchTopic/page/DirectAssessment'], resolve),
+      meta: {
+        title: '评审进程',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'DisciplineReview',
+      name: 'DisciplineReview',
+      component: resolve => require(['@/user/DisciplineBase/DisciplineReview/DisciplineReview'], resolve),
+      meta: {
+        title: '初评评审',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'DisciplineDetail',
+      name: 'DisciplineDetail',
+      component: resolve => require(['@/user/DisciplineBase/DisciplineReview/page/watchDetail'], resolve),
+      meta: {
+        title: '查看详情',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'DisciplineResult',
+      name: 'DisciplineResult',
+      component: resolve => require(['@/user/DisciplineBase/DisciplineResult/DisciplineResult'], resolve),
+      meta: {
+        title: '评审结果',
+        requireAuth: true
+      }
     }
-    // {
-    //   path: 'GuideRelease',
-    //   name: 'GuideRelease',
-    //   component: resolve => require(['@/user/ScientificResearchTopic/page/GuideRelease'], resolve),
-    //   meta: {
-    //     title: '查看详情',
-    //     requireAuth: true
-    //   }
-    // },
-    // {
-    //   path: 'ProjectDeclaration',
-    //   name: 'ProjectDeclaration',
-    //   component: resolve => require(['@/user/ScientificResearchTopic/page/ProjectDeclaration'], resolve),
-    //   meta: {
-    //     title: '课题申报',
-    //     requireAuth: true
-    //   }
-    // },
-    // {
-    //   path: 'ReviewManagement',
-    //   name: 'ReviewManagement',
-    //   component: resolve => require(['@/user/ScientificResearchTopic/page/ReviewManagement'], resolve),
-    //   meta: {
-    //     title: '评审进程',
-    //     requireAuth: true
-    //   }
-    // },
-    // {
-    //   path: 'DirectAssessment',
-    //   name: 'DirectAssessment',
-    //   component: resolve => require(['@/user/ScientificResearchTopic/page/DirectAssessment'], resolve),
-    //   meta: {
-    //     title: '直接评审',
-    //     requireAuth: true
-    //   }
-    // },
-    // {
-    //   path: 'PreliminaryAssessment',
-    //   name: 'PreliminaryAssessment',
-    //   component: resolve => require(['@/user/ScientificResearchTopic/page/PreliminaryAssessment'], resolve),
-    //   meta: {
-    //     title: '课题初评',
-    //     requireAuth: true
-    //   }
-    // },
-    // {
-    //   path: 'TopicListDetail',
-    //   name: 'TopicListDetail',
-    //   component: resolve => require(['@/user/ScientificResearchTopic/page/TopicListDetail'], resolve),
-    //   meta: {
-    //     title: '查看详情',
-    //     requireAuth: true
-    //   }
-    // }
   ]
 }
 

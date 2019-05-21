@@ -25,19 +25,20 @@
     <card
       v-for="(item, index) in messageList"
       :key="index"
+      :time="item.time"
       >
-      <div slot="time">2018.04.12 14:56</div>
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
       <span class="black">陈升息－眼科、副主任医师、医生</span>
       <p style="padding: 15px 0" class="black border-1pxTop">通知标题</p>
       <span class="resTime">发布单位：静安区卫计委</span>
-      <button slot="button" class="abtn" @click="jump">查看</button>
+      <div style="text-align:center">
+        <JButton type="primary" round @click="jump">查看</JButton>
+      </div>
     </card>
   </div>
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'NoticeList',
   data () {
@@ -71,9 +72,6 @@ export default {
       textList: ['时间范围']
     }
   },
-  components: {
-    Card
-  },
   methods: {
     jump () {
       // this.$router.push({name: 'NoticeList'})
@@ -85,34 +83,6 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .NoticeList
-  .comTitle
-    margin 0
-  .card
-    margin 0 6px
-    .abtn
-      background: #2873FF;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #FFFFFF;
-      width 100px
-      height 30px
-      display block
-      margin 0 auto
-    span
-      display block
-      font-size: 14px;
-      color: #333333;
-      margin-bottom 17px
-    .black
-      margin-top 15px
-      font-size: 16px;
-    .border-1pxTop
-      border-1pxTop(#D3D3D3)
-    .resTime
-      font-size: 12px;
-      color: #999999;
-    .button
-      height 30px
   .wrapper
     width 100%
     height 126px

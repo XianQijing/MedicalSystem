@@ -55,6 +55,6 @@ export default {
     width 48.5%
     margin-bottom 5px
 .credit
-  padding-top 20px
+  padding-top 10px
   margin 0 6px
 </style>

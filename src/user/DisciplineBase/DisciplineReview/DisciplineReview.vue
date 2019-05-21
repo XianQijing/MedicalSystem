@@ -1,12 +1,12 @@
-// 学科计划指南
+// 初评评审
 <template>
-  <div class="DisciplineGuide">
+  <div class="DisciplineReview">
     <tabs v-model="clickTab">
-      <tab title="项目申报指南" name="0">
-        <Disciplineplan/>
+      <tab title="评审通知列表" name="0">
+        <NoticeList/>
       </tab>
-      <tab title="学科指南列表" name="1">
-        <guideList/>
+      <tab title="初评状态查询" name="1">
+        <statuesSearch/>
       </tab>
     </tabs>
   </div>
@@ -15,10 +15,10 @@
 <script>
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
-import Disciplineplan from './components/Disciplineplan'
-import guideList from './components/guideList'
+import NoticeList from './components/NoticeList'
+import statuesSearch from './components/statuesSearch'
 export default {
-  name: 'DisciplineGuide',
+  name: 'DisciplineReview',
   data () {
     return {
       clickTab: 0
@@ -27,19 +27,19 @@ export default {
   components: {
     Tab,
     Tabs,
-    Disciplineplan,
-    guideList
+    NoticeList,
+    statuesSearch
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.DisciplineGuide >>> .tabs
+.DisciplineReview >>> .tabs
   .tab-pane
     width 49%
     // font-size 12px
-.DisciplineGuide
+.DisciplineReview
   margin 0 6px
   padding 10px 0 10px 0
 </style>

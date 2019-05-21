@@ -20,10 +20,10 @@
         :time="item.time"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <p class="black">
+        <span class="black">
           论文题目
           <span class="did" :class="{'not': item.dayin === '未打印'}">{{item.dayin}}</span>
-        </p>
+        </span>
         <span>论文属性、期刊名称</span>
         <div class="two">
           <span>支出金额：200.00</span>
@@ -85,8 +85,8 @@ export default {
 
 <style lang="stylus" scoped>
 .StatusPrinting
+  padding-bottom .2rem
   .checkAll
-    margin 0 6px
     .did
       border: 1px solid #999999;
       border-radius: 4px;

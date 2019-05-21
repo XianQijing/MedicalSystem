@@ -1,6 +1,6 @@
-// 状态查询
+// 初评状态查询
 <template>
-  <div class="InspectionSearch">
+  <div class="statuesSearch">
     <CTitle :screen="true" :textList="textList">项目列表</CTitle>
 
     <card
@@ -19,8 +19,7 @@
       <span>项目计划</span>
       <span class="resTime">批准日期：2018.09.01 12:00</span>
       <div style="text-align:center">
-        <JButton type="primary" round @click="jump('InspectionSearch')">查看</JButton>
-        <JButton type="primary" v-if="item.type === '审核中'" round plain @click="jump('InspectionEdit')">修改</JButton>
+        <JButton type="primary" round @click="jump">查看</JButton>
       </div>
     </card>
   </div>
@@ -28,7 +27,7 @@
 
 <script>
 export default {
-  name: 'InspectionSearch',
+  name: 'statuesSearch',
   data () {
     return {
       textList: ['时间范围', '申报类别', '项目类别', '项目计划', '所属科室', '审核状态'],
@@ -51,8 +50,8 @@ export default {
     }
   },
   methods: {
-    jump (name) {
-      this.$router.push({name: name})
+    jump () {
+      this.$router.push({name: 'DeclareDetail'})
     }
   }
 }

@@ -89,9 +89,9 @@ export default {
   background rgba(51,51,51,0.20)
 .popup
   width 100%
-  height 100%
+  height calc(100% - .43rem)
   position fixed
-  top 0
+  top .43rem
   left 0
   display flex
   align-items center

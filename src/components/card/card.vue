@@ -49,7 +49,7 @@ export default {
       let type = this.status
       if (type === '正常' || type === '通过' || type === '已分配') {
         return 'normal'
-      } else if (type === '停用' || type === '隐藏') {
+      } else if (type === '停用' || type === '隐藏' || '申报结束') {
         return 'stop'
       } else if (type === '审核中' || type === '未分配') {
         return 'active'

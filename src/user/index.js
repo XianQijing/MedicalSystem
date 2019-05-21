@@ -16,6 +16,8 @@ import SecuritySupport from '@/router/user/SecuritySupport'
 import ElectronicArchives from '@/router/user/ElectronicArchives'
 import EvaluationDecision from '@/router/user/EvaluationDecision'
 import DataReport from '@/router/user/DataReport'
+import DisciplineBase from '@/router/user/DisciplineBase'
+import TalentPlan from '@/router/user/TalentPlan'
 
 Vue.use(Router)
 
@@ -261,7 +263,9 @@ const router = new Router({
     SecuritySupport,
     ElectronicArchives,
     EvaluationDecision,
-    DataReport
+    DataReport,
+    DisciplineBase,
+    TalentPlan
   ]
 })
 

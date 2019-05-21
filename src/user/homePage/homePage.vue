@@ -60,7 +60,7 @@ export default {
             {
               name: '人才计划',
               icon: 'icon-youxiurencaiicon',
-              path: '/ScientificResearchTopic'
+              path: '/TalentPlan'
             },
             {
               name: '科技奖励',

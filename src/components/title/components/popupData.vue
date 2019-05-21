@@ -1,11 +1,11 @@
 <template>
   <div class="PopupData">
       <p class="title">基本信息</p>
-      <div class="form-cell" v-if="filter('时间范围')">
-        <p class="label">时间范围</p>
-        <j-input placeholder="1987.09 - 1992.09" @click="open('time')" v-model="form.time" type="select"></j-input>
+      <div class="form-cell" v-for="item in list" :key="item.label">
+        <p class="label">{{item.label}}</p>
+        <j-input :placeholder="`请选择${item.label}`" @click="open('time')" v-model="item.model" type="select"></j-input>
       </div>
-      <div class="form-cell" v-if="filter('时间选择')">
+      <!-- <div class="form-cell" v-if="filter('时间选择')">
         <p class="label">时间选择</p>
         <j-input placeholder="选择时间" @click="open('time')" v-model="form.time" type="select"></j-input>
       </div>
@@ -165,7 +165,7 @@
       <div class="form-cell" v-if="filter('显示状态')">
         <p class="label">显示状态</p>
         <j-input placeholder="显示状态" @click="open('levels')" v-model="form.levels" type="select"></j-input>
-      </div>
+      </div> -->
       <!-- 政策 -->
       <div class="form-cell" v-if="filter('区域选择')">
         <p class="label">区域选择</p>
@@ -237,6 +237,13 @@ export default {
     selectList: {},
     textList: {
       type: Array
+    }
+  },
+  computed: {
+    list () {
+      return this.textList.map(data => {
+        return {label: data, model: ''}
+      })
     }
   },
   components: {
