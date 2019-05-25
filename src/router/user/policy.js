@@ -1,9 +1,9 @@
 // 政策法规路由文件
-import Policy from '@/page/policy/policy'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/policy',
-  component: Policy,
+  component: Layout,
   // meta: '政策法规',
   children: [
     {
@@ -30,7 +30,8 @@ const router = {
       component: resolve => require(['@/page/policy/page/policyDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

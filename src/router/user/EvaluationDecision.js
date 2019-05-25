@@ -1,8 +1,8 @@
-import EvaluationDecision from '@/page/EvaluationDecision/EvaluationDecision'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/EvaluationDecision',
-  component: EvaluationDecision,
+  component: Layout,
   children: [
     {
       path: '',
@@ -28,7 +28,8 @@ const router = {
       component: resolve => require(['@/page/EvaluationDecision/page/PerformanceDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -37,7 +38,8 @@ const router = {
       component: resolve => require(['@/page/EvaluationDecision/page/InfluenceListDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

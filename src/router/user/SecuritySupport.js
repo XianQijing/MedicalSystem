@@ -1,9 +1,9 @@
-import SecuritySupport from '@/user/SecuritySupport/SecuritySupport'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/SecuritySupport',
   // name: 'SecuritySupport',
-  component: SecuritySupport,
+  component: Layout,
   children: [
     {
       path: '',
@@ -15,39 +15,13 @@ const router = {
       }
     },
     {
-      path: 'SubjectBasicInformation',
-      name: 'SubjectBasicInformation',
-      component: resolve => require(['@/user/SecuritySupport/page/SubjectBasicInformation'], resolve),
-      meta: {
-        title: '学科信息',
-        requireAuth: true
-      }
-    },
-    {
-      path: 'BasicConditions',
-      name: 'BasicConditions',
-      component: resolve => require(['@/user/SecuritySupport/page/BasicConditions'], resolve),
-      meta: {
-        title: '学科信息',
-        requireAuth: true
-      }
-    },
-    {
-      path: 'SubjectTechnicalTeam',
-      name: 'SubjectTechnicalTeam',
-      component: resolve => require(['@/user/SecuritySupport/page/SubjectTechnicalTeam'], resolve),
-      meta: {
-        title: '学科信息',
-        requireAuth: true
-      }
-    },
-    {
       path: 'ProjectBasicInformation',
       name: 'ProjectBasicInformation',
       component: resolve => require(['@/user/SecuritySupport/components/ProjectBasicInformation'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       } // 待修改
     },
     {
@@ -65,7 +39,8 @@ const router = {
       component: resolve => require(['@/user/SecuritySupport/components/TalentBasicInformation'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {

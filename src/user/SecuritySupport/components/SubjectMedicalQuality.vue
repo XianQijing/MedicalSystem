@@ -265,15 +265,15 @@
     <!--  -->
     <div class="btn">
       <button class="blue" v-if="page > 1" @click="change('les')">上一项</button>
-      <button class="butto" v-if="page < 5" @click="change('add')">下一项</button>
+      <button class="butto" v-if="page < 4" @click="change('add')">下一项</button>
     </div>
 
-    <p class="desc" v-if="page === 5">
+    <p class="desc" v-if="page === 4">
       提交：当申报书所有信息上传无误后，可以提交申报书，申报书
       提交后不可修改。如需修改必须联系单位或相关科教主管部门退
       回修改。
     </p>
-    <div class="button-cell" v-if="page === 5">
+    <div class="button-cell" v-if="page === 4">
       <button class="reset">重置</button>
       <button class="complete">确认</button>
     </div>

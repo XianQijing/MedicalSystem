@@ -1,9 +1,9 @@
 // 科研服务路由
-import ScientificServing from '@/page/scientificService/scientificService.vue'
+import Layout from '@/layout/layout'
 
 const scientificServing = {
-  path: '/scientificServing',
-  component: ScientificServing,
+  path: '/ScientificServing',
+  component: Layout,
   children: [
     {
       path: '',
@@ -11,7 +11,8 @@ const scientificServing = {
       component: resolve => require(['@/page/scientificService/page/SCI'], resolve),
       meta: {
         title: 'SCI期刊',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -19,7 +20,8 @@ const scientificServing = {
       name: 'Catalog',
       component: resolve => require(['@/page/scientificService/page/Catalog'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -27,7 +29,8 @@ const scientificServing = {
       name: 'Library',
       component: resolve => require(['@/page/scientificService/page/library'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -35,7 +38,8 @@ const scientificServing = {
       name: 'International',
       component: resolve => require(['@/page/scientificService/page/international'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -44,7 +48,8 @@ const scientificServing = {
       component: resolve => require(['@/page/scientificService/page/ranking'], resolve),
       meta: {
         title: 'SCI期刊排名',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -53,7 +58,8 @@ const scientificServing = {
       component: resolve => require(['@/page/scientificService/page/journalRanking'], resolve),
       meta: {
         title: 'SCI期刊排名',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -62,7 +68,8 @@ const scientificServing = {
       component: resolve => require(['@/page/scientificService/page/influence'], resolve),
       meta: {
         title: '影响因子',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

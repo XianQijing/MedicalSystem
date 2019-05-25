@@ -1,5 +1,6 @@
 export default {
   reviewed: false,
+  sideBar: [],
   iconList: [
     {
       name: '会场费用',

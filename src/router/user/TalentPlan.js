@@ -1,9 +1,9 @@
-import TalentPlan from '@/user/TalentPlan/TalentPlan'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/TalentPlan',
   // name: 'ScientificResearchTopic',
-  component: TalentPlan,
+  component: Layout,
   children: [
     {
       path: '',

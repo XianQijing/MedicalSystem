@@ -1,9 +1,9 @@
-import ElectronicArchives from '@/user/ElectronicArchives/ElectronicArchives'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ElectronicArchives',
   // name: 'ElectronicArchives',
-  component: ElectronicArchives,
+  component: Layout,
   children: [
     {
       path: '',
@@ -11,7 +11,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/File'], resolve),
       meta: {
         title: '科研档案',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -19,7 +20,8 @@ const router = {
       name: 'JumpPage',
       component: resolve => require(['@/user/ElectronicArchives/page/jumpPage'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
       // meta: '科研档案'
     },
@@ -29,7 +31,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/fileList'], resolve),
       meta: {
         title: '档案列表',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -38,7 +41,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/fileList1'], resolve),
       meta: {
         title: '档案列表',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -47,7 +51,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/FileScientificTopic'], resolve),
       meta: {
         title: '科研课题',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -55,7 +60,8 @@ const router = {
       name: 'ActivityList',
       component: resolve => require(['@/user/ElectronicArchives/page/ActivityList'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
       // meta: '国家级活动'
     },
@@ -65,7 +71,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/TeachingMaterial'], resolve),
       meta: {
         title: '高等院校教材',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -74,7 +81,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/InventionPatent'], resolve),
       meta: {
         title: '发明专利',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -83,7 +91,8 @@ const router = {
       component: resolve => require(['@/user/ElectronicArchives/page/SocialService'], resolve),
       meta: {
         title: '社会任职',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

@@ -1,8 +1,8 @@
-import managementOfAchievement from '@/user/managementOfAchievement/managementOfAchievement'
+import Layout from '@/layout/layout'
 
 const router = {
-  path: '/managementOfAchievement',
-  component: managementOfAchievement,
+  path: '/ManagementOfAchievement',
+  component: Layout,
   children: [
     {
       path: '',
@@ -19,7 +19,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/examineAndVerify'], resolve),
       meta: {
         title: '成果审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -37,7 +38,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/ApplicationTypeDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -46,7 +48,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/PrintingDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -55,7 +58,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/ApplyForAchievementsDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -64,7 +68,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/IntroductoryLetterDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -73,7 +78,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/CostApplicationDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -82,7 +88,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/PublicationTypeDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -127,7 +134,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/RegistrationStatueDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -136,7 +144,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/RegistrationStatuesDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -145,7 +154,8 @@ const router = {
       component: resolve => require(['@/user/managementOfAchievement/page/AwardRegistrationDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

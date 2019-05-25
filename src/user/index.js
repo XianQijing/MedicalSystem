@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from '../store/admin'
+import store from '../store/user'
 import HomePage from '@/user/homePage/homePage'
-import UserCenter from '@/user/userCenter/userCenter'
+// import UserCenter from '@/user/userCenter/userCenter'
 import Login from '@/page/login/index'
 import Policy from '@/router/user/policy'
 import Notic from '@/router/user/notic'
@@ -18,6 +18,7 @@ import EvaluationDecision from '@/router/user/EvaluationDecision'
 import DataReport from '@/router/user/DataReport'
 import DisciplineBase from '@/router/user/DisciplineBase'
 import TalentPlan from '@/router/user/TalentPlan'
+import Layout from '@/layout/layout'
 
 Vue.use(Router)
 
@@ -25,8 +26,40 @@ const router = new Router({
   mode: 'history',
   base: '/user',
   routes: [
+    // 登录页面
     {
-      path: '/',
+      path: '/Login',
+      // name: 'Login',
+      component: Login,
+      children: [
+        {
+          path: 'register',
+          name: 'Register',
+          meta: {
+            title: '注册'
+          },
+          component: resolve => require(['@/page/login/components/register'], resolve)
+        },
+        {
+          path: 'forget',
+          name: 'Rorget',
+          meta: {
+            title: '修改密码'
+          },
+          component: resolve => require(['@/page/login/components/forgetPassword'], resolve)
+        },
+        {
+          path: '',
+          name: 'Login',
+          meta: {
+            title: '登陆'
+          },
+          component: resolve => require(['@/page/login/components/login'], resolve)
+        }
+      ]
+    },
+    {
+      path: '',
       name: 'HomePage',
       component: HomePage,
       meta: {
@@ -37,7 +70,7 @@ const router = new Router({
     // 用户中心
     {
       path: '/UserCenter',
-      component: UserCenter,
+      component: Layout,
       children: [
         {
           path: '',
@@ -103,7 +136,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/creditDetail'], resolve),
       meta: {
         title: '详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     // 社会任职的任职详情、审核详情，与admin公用
@@ -112,7 +146,8 @@ const router = new Router({
       name: 'Reviewed',
       component: resolve => require(['@/page/userCenter/reviewed'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
       // meta: '任职审核'
     },
@@ -123,7 +158,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/declareDetail'], resolve),
       meta: {
         title: '我的申报',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     // 我的申请--标书预览||附件预览
@@ -132,7 +168,8 @@ const router = new Router({
       name: 'Preview',
       component: resolve => require(['@/page/userCenter/achievement/preview'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     // 我的经费--详情
@@ -142,7 +179,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/myFundsDetail'], resolve),
       meta: {
         title: '经费详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     // 我的论文--详情
@@ -152,7 +190,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/paperDetail'], resolve),
       meta: {
         title: '论文详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     // 我的会议--详情
@@ -162,7 +201,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/meetingDetail'], resolve),
       meta: {
         title: '会议详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -171,7 +211,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/patentDetail'], resolve),
       meta: {
         title: '专利详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -180,7 +221,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/achievementDetail'], resolve),
       meta: {
         title: '成果详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -189,7 +231,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/rewardDetail'], resolve),
       meta: {
         title: '奖励详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -198,7 +241,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/writingsDetail'], resolve),
       meta: {
         title: '著作详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -207,7 +251,8 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/servingDetail'], resolve),
       meta: {
         title: '任职详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -216,42 +261,10 @@ const router = new Router({
       component: resolve => require(['@/page/userCenter/achievement/activityDetail'], resolve),
       meta: {
         title: '活动详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
-    // 登录页面
-    {
-      path: '/Login',
-      // name: 'Login',
-      component: Login,
-      children: [
-        {
-          path: 'register',
-          name: 'Register',
-          meta: {
-            title: '注册'
-          },
-          component: resolve => require(['@/page/login/components/register'], resolve)
-        },
-        {
-          path: 'forget',
-          name: 'Rorget',
-          meta: {
-            title: '修改密码'
-          },
-          component: resolve => require(['@/page/login/components/forgetPassword'], resolve)
-        },
-        {
-          path: '',
-          name: 'Login',
-          meta: {
-            title: '登陆'
-          },
-          component: resolve => require(['@/page/login/components/login'], resolve)
-        }
-      ]
-    },
-    // 科研服务
     scientificServing,
     Policy,
     Notic,
@@ -266,11 +279,14 @@ const router = new Router({
     DataReport,
     DisciplineBase,
     TalentPlan
+    // 科研服务
   ]
 })
 
 router.beforeEach((to, from, next) => {
   store.commit('changeTitle', to.meta.title)
+  // store.commit('thisMenu', to.name)
+  // console.log(router)
   if (to.meta.requireAuth) {
     if (sessionStorage.getItem('token')) {
       next()

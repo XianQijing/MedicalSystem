@@ -1,9 +1,9 @@
 // 经费管理路由文件
-import FundManagement from '@/user/FundManagement/FundManagement'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/FundManagement',
-  component: FundManagement,
+  component: Layout,
   redirect: '',
   children: [
     {
@@ -30,7 +30,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/StatusSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -48,7 +49,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/FundsFinalAccountsDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -66,7 +68,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/WatchFundingDetails'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -93,7 +96,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/BalanceOfFundsDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -102,7 +106,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/StateSearchDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -129,7 +134,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/BudegetStatues'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -147,7 +153,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/ProjectFundsDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -155,7 +162,8 @@ const router = {
       name: 'AmountOfFunds',
       component: resolve => require(['@/user/FundManagement/page/AmountOfFunds'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

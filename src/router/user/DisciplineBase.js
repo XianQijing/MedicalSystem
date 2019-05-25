@@ -1,9 +1,9 @@
-import DisciplineBase from '@/user/DisciplineBase/DisciplineBase'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/DisciplineBase',
   // name: 'ScientificResearchTopic',
-  component: DisciplineBase,
+  component: Layout,
   children: [
     {
       path: '',
@@ -56,7 +56,8 @@ const router = {
       component: resolve => require(['@/user/DisciplineBase/DisciplineReview/page/watchDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -65,7 +66,8 @@ const router = {
       component: resolve => require(['@/user/DisciplineBase/DisciplineResult/DisciplineResult'], resolve),
       meta: {
         title: '评审结果',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

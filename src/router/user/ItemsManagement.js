@@ -1,10 +1,10 @@
 // 事项管理路由文件
-import ItemsManagement from '@/user/ItemsManagement/ItemsManagement'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ItemsManagement',
   // name: 'ItemsManagement',
-  component: ItemsManagement,
+  component: Layout,
   children: [
     {
       path: '',
@@ -21,7 +21,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/ExaminFund'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -39,7 +40,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/GoAbroadPritingDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -57,7 +59,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/CooperationPritingDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -75,7 +78,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/ExperimentalPritingDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -93,7 +97,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/ReagentStatuesDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -111,7 +116,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/EquipmentStatuesDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -129,7 +135,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/AProjectMessage'], resolve),
       meta: {
         title: '项目信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -137,7 +144,8 @@ const router = {
       name: 'AProjectMessageDetail',
       component: resolve => require(['@/user/ItemsManagement/page/AProjectMessageDetail'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -146,7 +154,8 @@ const router = {
       component: resolve => require(['@/user/ItemsManagement/page/ProjectSearchDetail'], resolve),
       meta: {
         title: '项目信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

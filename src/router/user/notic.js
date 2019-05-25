@@ -1,8 +1,8 @@
-import Notic from '@/page/notic/notic'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/notic',
-  component: Notic,
+  component: Layout,
   children: [
     {
       path: '',
@@ -19,7 +19,8 @@ const router = {
       component: resolve => require(['@/user/notic/reviews'], resolve),
       meta: {
         title: '文件预览',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

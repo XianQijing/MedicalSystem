@@ -1,8 +1,8 @@
-import DataReport from '@/page/DataReport/DataReport'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/DataReport',
-  component: DataReport,
+  component: Layout,
   children: [
     {
       path: '',

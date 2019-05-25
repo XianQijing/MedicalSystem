@@ -1,8 +1,8 @@
-import ProjectManagement from '@/user/ProjectManagement/ProjectManagement'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ProjectManagement',
-  component: ProjectManagement,
+  component: Layout,
   children: [
     {
       path: '',
@@ -28,7 +28,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/ContractSubmission'], resolve),
       meta: {
         title: '提交合同',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -37,7 +38,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/ContractChange'], resolve),
       meta: {
         title: '提交合同',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -46,7 +48,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/ContractSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -64,7 +67,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/ChangeApplicationSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -82,7 +86,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/AssessmentSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -100,7 +105,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/InspectionSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -109,7 +115,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/InspectionEdit'], resolve),
       meta: {
         title: '内容修改',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -127,7 +134,8 @@ const router = {
       component: resolve => require(['@/user/ProjectManagement/page/ConcludingSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {

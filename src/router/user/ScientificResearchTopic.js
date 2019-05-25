@@ -1,9 +1,9 @@
-import ScientificResearchTopic from '@/user/ScientificResearchTopic/ScientificResearchTopic'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ScientificResearchTopic',
   // name: 'ScientificResearchTopic',
-  component: ScientificResearchTopic,
+  component: Layout,
   children: [
     {
       path: '',
@@ -20,7 +20,8 @@ const router = {
       component: resolve => require(['@/user/ScientificResearchTopic/page/GuideRelease'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -65,7 +66,8 @@ const router = {
       component: resolve => require(['@/user/ScientificResearchTopic/page/TopicListDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

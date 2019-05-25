@@ -85,6 +85,30 @@
         <p class="num">分项合计：2938.00<span @click="jump('第一期经费额度')" class="iconfont">&#xe7eb;</span></p>
       </div>
     </div>
+    <div class="content green">
+      <div class="formCell">
+        <p class="title">第二期经费额度</p>
+        <p class="num">分项合计：2938.00<span @click="jump('第二期经费额度')" class="iconfont">&#xe7eb;</span></p>
+      </div>
+    </div>
+    <div class="content green">
+      <div class="formCell">
+        <p class="title">第三期经费额度</p>
+        <p class="num">分项合计：2938.00<span @click="jump('第三期经费额度')" class="iconfont">&#xe7eb;</span></p>
+      </div>
+    </div>
+    <div class="content green">
+      <div class="formCell">
+        <p class="title">第四期经费额度</p>
+        <p class="num">分项合计：2938.00<span @click="jump('第四期经费额度')" class="iconfont">&#xe7eb;</span></p>
+      </div>
+    </div>
+    <div class="content green">
+      <div class="formCell">
+        <p class="title">第五期经费额度</p>
+        <p class="num">分项合计：2938.00<span @click="jump('第五期经费额度')" class="iconfont">&#xe7eb;</span></p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -98,7 +122,7 @@ export default {
   methods: {
     jump (msg) {
       this.$router.push({name: 'AmountOfFunds', query: {msg: msg}})
-      this.$store.commit('changeTitle', msg)
+      // this.$store.commit('changeTitle', msg)
     }
   }
 }

@@ -55,50 +55,51 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .AmountOfFunds
+  margin 0 .06rem
   .blue
     background: #003BAA;
-    padding 10px
-    margin-top 10px
+    padding .10rem
+    margin-top .10rem
     color: #FFFFFF;
     .title
-      font-size: 16px;
+      font-size: .16rem;
     .blue-wrapper
-      padding 0 10px
+      padding 0 .10rem
       text-align center
       .border-1px
         border-1px(#D3D3D3)
-        padding 15px 0 10px 0
+        padding .15rem 0 .10rem 0
         .all
-          font-size: 14px;
+          font-size: .14rem;
           display inline-block
           vertical-align middle
         .num
-          font-size: 20px;
-          margin-left 20px
+          font-size: .20rem;
+          margin-left .20rem
           display inline-block
           vertical-align middle
     .formCell
-      margin-top 10px
+      margin-top .10rem
       .desc
-        font-size: 14px;
+        font-size: .14rem;
       .num
-        font-size: 20px;
-        margin-top 15px
+        font-size: .20rem;
+        margin-top .15rem
   .content
     background: #FFFFFF;
-    margin-top 10px
-    padding 10px
+    margin-top .10rem
+    padding .10rem
     .title
-      font-size: 12px;
+      font-size: .12rem;
       color: #555555;
     .formCell
-      padding-top 15px
+      padding-top .15rem
       span
         font-size: 12px;
         color: #999999;
     .border-1px
-      padding-bottom 15px
-      font-size: 16px;
+      padding-bottom .15rem
+      font-size: .16rem;
       color: #333333;
       font-weight 700
       border-1px(#D3D3D3)

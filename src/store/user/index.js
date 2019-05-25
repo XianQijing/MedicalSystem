@@ -3,12 +3,14 @@ import Vuex from 'vuex'
 import state from './state'
 import mutations from './mutations'
 import app from '../app/app'
+import Layout from './modules/layout.js'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
   state,
   mutations,
   modules: {
-    app
+    app,
+    Layout
   }
 })
