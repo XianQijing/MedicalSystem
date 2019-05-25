@@ -2,8 +2,8 @@
 <template>
   <div class="ApplicationEntry">
     <div class="wrapper">
-      <JInput type="select"></JInput>
-      <JInput type="select"></JInput>
+      <JInput type="select" placeholder="项目类别"></JInput>
+      <JInput type="select" placeholder="项目名称"></JInput>
     </div>
     <div class="s wrapper">
       <span>项目编号：29382</span>
@@ -58,6 +58,11 @@
         <textarea></textarea>
       </div>
     </div>
+
+    <div class="button-cell">
+      <button class="reset">重置</button>
+      <button class="complete">确认提交</button>
+    </div>
   </div>
 </template>
 
@@ -80,65 +85,66 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl';
 .ApplicationEntry
+  padding-bottom .2rem
   .wrapper
     background: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    padding 10px 10px 0 10px
-    margin-bottom 10px
+    padding .1rem .1rem 0 .1rem
+    margin-bottom .10rem
     p
-      font-size: 14px;
+      font-size: .14rem;
       color: #333333;
-      padding-top 15px
+      padding-top .15rem
     .black
-      font-size 16px
+      font-size .16rem
     span
-      font-size: 12px;
+      font-size: .12rem;
       color: #555555;
-      margin-bottom 10px
+      margin-bottom .10rem
     &:first-child
-      margin-top 10px
-      padding-bottom 10px
+      margin-top .10rem
+      padding-bottom .10rem
       display flex
       justify-content space-between
     &.s
       margin 0
-      padding-bottom 10px
+      padding-bottom .10rem
     .J-input
       border: 1px solid #FD4D4D;
-      border-radius: 6px;
+      border-radius: .06rem;
       width 1.64rem
       display inline-block
-      height 30px
+      height .30rem
     .item-wrapper
-      padding 0 10px 15px 10px
+      padding 0 .10rem .15rem .10rem
       .item-title
         display inline-block
-        font-size: 16px;
+        font-size: .16rem;
         color: #FD4D4D;
         vertical-align top
       textarea
         border: 1px solid #FD4D4D;
-        border-radius: 6px;
+        border-radius: .06rem;
         display block
         width 100%
-        margin-top 10px
-        padding 10px
+        margin-top .10rem
+        padding .10rem
         box-sizing border-box
-        height 80px
+        height .80rem
   .green
     background: #45C186;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    padding 15px 0 15px 10px
+    padding .15rem 0 .15rem .10rem
     color white
     .middle
       display flex
       justify-content space-between
       align-items center
       .msg
-        font-size: 16px;
+        font-size: .16rem;
       .delete
-        font-size 13px
-        margin-right 10px
+        font-size .13rem
+        margin-right .10rem
     .desc, .arrow
       display inline-block
       text-align center
@@ -147,26 +153,31 @@ export default {
       .sum-price
         width 3.14rem
         border-1px(#D3D3D3)
-        padding 15px 0 15px 0
+        padding .15rem 0 .15rem 0
         span
-          font-size: 14px
+          font-size: .14rem
           &:last-child
-            font-size 20px
-            margin-left 20px
+            font-size .20rem
+            margin-left .20rem
       .detail-price
         display flex
         justify-content space-between
-        margin-top 15px
+        margin-top .15rem
         div
           flex 1
           p
-            font-size: 14px
+            font-size: .14rem
           .num
-            font-size 20px
-            margin-top 16px
+            font-size .20rem
+            margin-top .16rem
     .arrow
-        margin-top -20px
+        margin-top -.20rem
         width .313rem
       .iconfont
-        font-size 25px
+        font-size .25rem
+  .button-cell
+    position fixed
+    bottom 0
+    left 0
+    right 0
 </style>
