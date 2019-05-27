@@ -21,7 +21,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/ApplicationPort'], resolve),
       meta: {
         title: '申报端口',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -115,7 +116,7 @@ const router = {
       name: 'ProjectBudget',
       component: resolve => require(['@/user/FundManagement/page/ProjectBudget'], resolve),
       meta: {
-        title: '项目预算',
+        title: '经费预算',
         requireAuth: true
       }
     },
@@ -125,7 +126,8 @@ const router = {
       component: resolve => require(['@/user/FundManagement/page/Budget'], resolve),
       meta: {
         title: '直接经费',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {

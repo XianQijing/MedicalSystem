@@ -31,6 +31,17 @@ border-1pxLeft($color)
     border-left: 1px solid $color
     content: ' '
 
+border-1pxRight($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    right 0
+    top 0
+    height: 100%
+    border-left: 1px solid $color
+    content: ' '
+
 border-none()
   &:after
     display none

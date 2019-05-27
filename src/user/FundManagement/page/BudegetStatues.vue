@@ -82,35 +82,35 @@
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td></td>
       </tr>
       <tr class="move">
         <th>设备费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td class="blue" @click="open('设备费')">详情</td>
       </tr>
       <tr class="move">
         <th>会议费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td class="blue" @click="open('会议费')">详情</td>
       </tr>
       <tr class="move">
         <th>间接经费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td></td>
       </tr>
       <tr class="move">
         <th>设备费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td class="blue" @click="open('设备费')">详情</td>
       </tr>
       <tr class="move">
         <th style="text-align:left">总计</th>
@@ -123,11 +123,19 @@
         <td colspan="3"></td>
       </tr>
     </table>
+
+    <Popup v-model="show" position="center" title="详情">
+      <div class="detail">
+        <p class="detail-title">{{desc}}</p>
+        <p class="detail-desc">设备费用鼠标移上显示说明占位</p>
+        <p class="detail-detail">详情占位</p>
+      </div>
+    </Popup>
   </div>
 </template>
 
 <script>
-import JInput from '@/components/input/j-input'
+import Popup from '@/components/popup/popup2'
 import JTable from '@/components/table/table'
 import JTableColums from '@/components/table/table-colums'
 export default {
@@ -135,6 +143,8 @@ export default {
   data () {
     return {
       clickTab: 0,
+      show: false,
+      desc: '',
       tableList: [
         {
           index: 1,
@@ -164,9 +174,15 @@ export default {
     }
   },
   components: {
-    JInput,
     JTable,
-    JTableColums
+    JTableColums,
+    Popup
+  },
+  methods: {
+    open (msg) {
+      this.show = true
+      this.desc = msg
+    }
   }
 }
 </script>
@@ -244,4 +260,25 @@ export default {
         text-align center
         padding-left 5px
         font-weight 400
+      .blue
+        color $blue
+        font-weight 700
+  .detail
+    padding .09rem .1rem
+    height 1.79rem
+    box-sizing border-box
+    .detail-title
+      font-size .14rem
+      font-weight 700
+      line-height .18rem
+      margin-bottom .04rem
+    .detail-desc
+      font-size .12rem
+      line-height .16rem
+      color: #999999;
+      margin-bottom .07rem
+    .detail-detail
+      font-size .12rem
+      line-height .16rem
+      margin 0 .1rem
 </style>

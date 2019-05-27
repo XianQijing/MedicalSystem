@@ -24,11 +24,14 @@
       <p class="title">经费审批申请</p>
       <div class="item-wrapper border-1px">
         <p class="item-title">支出金额（元）：</p>
-        <JInput type="select"></JInput>
+        <JInput placeholder="填写金额"/>
       </div>
       <div class="item-wrapper border-1px">
         <p class="item-title">支出科目：</p>
-        <JInput type="select"></JInput>
+        <div class="two">
+          <JInput placeholder="填写内容" type="select"/>
+          <JInput placeholder="填写内容" type="select"/>
+        </div>
       </div>
       <div class="item-wrapper border-1px">
         <p class="item-title">支付形式：</p>
@@ -39,8 +42,11 @@
       </div>
       <div class="item-wrapper border-1px">
         <p class="item-title">报销详细说明：</p>
-        <textarea></textarea>
+        <textarea placeholder="填写支出说明"></textarea>
       </div>
+    </div>
+    <div style="text-align:center">
+      <JButton type="primary" round @click="jump">确认提交</JButton>
     </div>
   </div>
 </template>
@@ -74,48 +80,48 @@ export default {
   .wrapper
     background: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    padding 10px 10px 0 10px
-    margin-bottom 10px
+    padding .10rem .10rem 0 .10rem
+    margin-bottom .10rem
     &.shuo
       box-shadow none
     .title
-      font-size 14px;
+      font-size .14rem;
       color: #333333;
     p
-      font-size: 14px;
+      font-size: .14rem;
       color: #333333;
-      padding-top 15px
+      padding-top .15rem
     .black
-      font-size 16px
+      font-size .16rem
       &.border-1px
-        padding-bottom 15px
+        padding-bottom .15rem
         border-1px(#D3D3D3)
     span
-      font-size: 12px;
+      font-size: .12rem;
       color: #555555;
     &:first-child
-      margin-top 10px
-      padding-bottom 10px
+      margin-top .04rem
+      padding-bottom .10rem
       display flex
       justify-content space-between
     &.s
       margin 0
-      padding-bottom 10px
+      padding-bottom .10rem
     .J-input
       border: 1px solid #FD4D4D;
-      border-radius: 6px;
+      border-radius: .06rem;
       width 1.64rem
       display inline-block
-      height 30px
+      height .30rem
     .item-wrapper
-      padding 0 10px 15px 10px
+      padding 0 .10rem .15rem .10rem
       position relative
       border-1px(#D3D3D3)
       &:last-child
         border-none()
       .item-title
         display inline-block
-        font-size: 16px;
+        font-size: .16rem;
         color: #FD4D4D;
         vertical-align top
       textarea
@@ -123,10 +129,10 @@ export default {
         border-radius: 6px;
         display block
         width 100%
-        margin-top 10px
-        padding 10px
+        margin-top .1rem
+        padding .06rem .1rem
         box-sizing border-box
-        height 80px
+        height .80rem
       .JRadioGrounp
         display inline-block
         position absolute
@@ -135,11 +141,13 @@ export default {
         margin-top -7px
       .J-input
         border: 1px solid #FD4D4D;
-        border-radius: 6px;
+        border-radius: .06rem;
         width 1rem
-        min-width 100px
-        height 30px
+        min-width 1.00rem
+        height .30rem
         position absolute
         right 0
-        top 8px
+        top .08rem
+        &:first-child
+          right 1.03rem
 </style>

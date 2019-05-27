@@ -5,7 +5,10 @@
       <tab title="经费报销申请" name="0">
         <ApplyReimbursement/>
       </tab>
-      <tab title="审核状态查询" name="1">
+      <tab title="状态查询" name="1">
+        <StateQuery/>
+      </tab>
+      <tab title="打印报销清单" name="2">
         <StateQuery/>
       </tab>
     </tabs>
@@ -37,9 +40,9 @@ export default {
 @import '../../../common/style/mixin.styl'
 .ApplicationForReimbursement >>> .tabs
   .tab-pane
-    width 1.77rem
-    font-size 12px
+    width calc(100%/3 - .14rem / 3)
+    font-size .12rem
 .ApplicationForReimbursement
-  margin 0 6px
-  padding 10px 0 10px 0
+  margin 0 .06rem
+  padding .1rem 0 .1rem 0
 </style>

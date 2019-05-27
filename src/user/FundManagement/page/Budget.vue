@@ -7,19 +7,19 @@
         <p class="title">设备费</p>
         <div class="item-wrapper border-1px">
           <p class="item-title">项目经费：</p>
-          <JInput></JInput>
+          <JInput placeholder="填写金额"></JInput>
         </div>
         <div class="item-wrapper border-1px">
           <p class="item-title">匹配经费：</p>
-          <JInput></JInput>
+          <JInput placeholder="填写金额"></JInput>
         </div>
         <div class="item-wrapper border-1px">
           <p class="item-title">其他经费：</p>
-          <JInput></JInput>
+          <JInput placeholder="填写金额"></JInput>
         </div>
         <div class="item-wrapper border-1px">
           <p class="item-title">备注：</p>
-          <textarea></textarea>
+          <textarea placeholder="填写计算依据和说明"></textarea>
         </div>
       </div>
       <p class="desc">提交：当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可修改。如需修改必须联系单位或相关科教主管部门退回修改。</p>

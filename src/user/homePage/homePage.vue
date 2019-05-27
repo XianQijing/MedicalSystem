@@ -1,13 +1,21 @@
 <template>
   <div class="homePage">
-    <CTitle>
-      重要通知
-      <div slot="float">更多<IconSvg iconClass="icon-right"/></div>
-    </CTitle>
-    <div class="swiper-wrapper">
-      <user-swiper :list="swiperList"></user-swiper>
+    <div class="icon-wrapper">
+      <CTitle>
+        重要通知
+        <div slot="float">更多<IconSvg iconClass="icon-right"/></div>
+      </CTitle>
+      <div class="swiper-wrapper">
+        <user-swiper :list="swiperList"></user-swiper>
+      </div>
+      <icon-list :icons="list"></icon-list>
     </div>
-    <icon-list :icons="list"></icon-list>
+    <div class="shangBiao">
+      <div>
+        <img src="./icon.png" width="22" alt="">
+        <span>技术支持</span><span>上海润银软件有限公司</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -134,10 +142,30 @@ export default {
 .homePage >>> .float
   color: #2873FF;
   font-size: 13px;
+.homePage
+  height 100%
 .swiper-wrapper
   padding 0 6px
   box-sizing border-box
   width 100%
 .iconfont
   font-size .16rem
+.icon-wrapper
+  min-height 100%
+.shangBiao
+  width 100%
+  position relative
+  bottom 0px
+  margin -60px auto 0 auto
+  clear: both;
+  font-size .16rem
+  div
+    width 80%
+    max-width 4.44rem
+    margin 0 auto
+    span
+      line-height .26rem
+      margin-left 1em
+    img
+      vertical-align text-bottom
 </style>

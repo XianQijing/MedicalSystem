@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#app, body
+#app
   height: 100%
   .header
     background rgba(51,51,51,0.9)

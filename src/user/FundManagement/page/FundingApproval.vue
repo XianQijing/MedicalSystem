@@ -8,6 +8,12 @@
       <tab title="状态查询及打印" name="1">
         <StateSearchAndPritin/>
       </tab>
+      <tab title="打印申请列表" name="2">
+        <ApplicationForMatters/>
+      </tab>
+      <tab title="已打印列表" name="3">
+        <StateSearchAndPritin/>
+      </tab>
     </tabs>
   </div>
 </template>
@@ -37,9 +43,11 @@ export default {
 @import '../../../common/style/mixin.styl'
 .FundingApproval >>> .tabs
   .tab-pane
-    width 1.77rem
+    width calc((100% - .06rem) / 2)
     font-size 12px
+    &:nth-of-type(n+3)
+      margin-top .04rem
 .FundingApproval
-  margin 0 6px
-  padding 10px 0 10px 0
+  margin 0 .06rem
+  padding .1rem 0 .1rem 0
 </style>

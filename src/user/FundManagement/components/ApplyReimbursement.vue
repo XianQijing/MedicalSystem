@@ -2,8 +2,9 @@
 <template>
   <div class="ApplicationEntry">
     <div class="wrapper">
-      <JInput type="select" placeholder="项目类别"></JInput>
-      <JInput type="select" placeholder="项目名称"></JInput>
+      <JInput type="select" placeholder="类别选择"></JInput>
+      <JInput type="select" placeholder="项目选择"></JInput>
+      <JInput type="select" placeholder="事项号"></JInput>
     </div>
     <div class="s wrapper">
       <span>项目编号：29382</span>
@@ -19,30 +20,30 @@
 
     <CTitle>
       申请端口
-      <span slot="float">添加</span>
+      <span slot="float" @click="add">添加</span>
     </CTitle>
-    <div class="green">
+    <div class="green" v-for="(item, index) in list" :key="index">
       <div class="middle">
-        <span class="msg">2017年12月09日科研报销信息</span>
-        <span class="delete">删除</span>
+        <span class="msg">{{item.time}}科研报销信息</span>
+        <span class="delete" v-if="index !== 0" @click="deleted(item)">删除</span>
       </div>
       <div class="desc">
         <div class="sum-price border-1px">
           <span>报销金额</span>
-          <span class="num">9000.00</span>
+          <span class="num">{{item.baoXiao}}</span>
         </div>
         <div class="detail-price">
           <div>
             <p>项目经费</p>
-            <p class="num">3000.00</p>
+            <p class="num">{{item.xiangMu}}</p>
           </div>
           <div>
             <p>匹配经费</p>
-            <p class="num">2000.00</p>
+            <p class="num">{{item.piPei}}</p>
           </div>
           <div>
             <p>其他经费</p>
-            <p class="num">4000.00</p>
+            <p class="num">{{item.qiTa}}</p>
           </div>
         </div>
       </div>
@@ -71,12 +72,40 @@ export default {
   namw: 'ApplicationEntry',
   data () {
     return {
-      icon: require('../../../common/image/upload.png')
+      icon: require('../../../common/image/upload.png'),
+      list: [
+        {
+          time: '2017年12月09日',
+          baoXiao: '9000.00',
+          xiangMu: '3000.00',
+          piPei: '2000.00',
+          qiTa: '4000.00'
+        }
+      ]
     }
   },
   methods: {
     jump () {
       this.$router.push({name: 'ApplicationPort'})
+    },
+    add () {
+      const date = new Date()
+      const year = date.getFullYear()
+      const month = date.getMonth()
+      const day = date.getDate()
+      this.list.push({
+        time: `${year}年${month}月${day}日`,
+        baoXiao: '0.00',
+        xiangMu: '0.00',
+        piPei: '0.00',
+        qiTa: '0.00',
+        id: this.length + 1
+      })
+    },
+    deleted (item) {
+      this.list = this.list.filter(data => {
+        return data !== item
+      })
     }
   }
 }
@@ -112,7 +141,7 @@ export default {
     .J-input
       border: 1px solid #FD4D4D;
       border-radius: .06rem;
-      width 1.64rem
+      width 1.12rem
       display inline-block
       height .30rem
     .item-wrapper
@@ -136,6 +165,9 @@ export default {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
     padding .15rem 0 .15rem .10rem
     color white
+    margin-bottom .1rem
+    &:last-child(1)
+      margin-bottom 0
     .middle
       display flex
       justify-content space-between

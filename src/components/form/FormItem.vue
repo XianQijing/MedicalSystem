@@ -11,7 +11,7 @@
     ]"
   >
     <p class="label" :style="{lineHeight: `${lineHeight}rem`}">{{label}}:</p>
-    <div class="input-wrapper" :style="{height: `${inputHeight}rem`}">
+    <div class="input-wrapper" :style="{ height: `${inputHeight}rem`, width: `${width}rem` }">
       <slot/>
     </div>
   </div>
@@ -26,6 +26,7 @@ export default {
     label: String,
     height: Number,
     bottom: Boolean,
+    width: Number,
     type: {
       type: String,
       default: 'text'
@@ -72,6 +73,19 @@ export default {
     .text
       border 1px solid $red
       border-radius .06rem
+  &.border--blue
+    padding .08rem 0 .08rem 0.08rem
+    textarea
+      border 1px solid $blue
+      border-radius .06rem
+      height 100%
+    .input-wrapper
+      width 35.9%
+      min-width 100px
+      // width 1.54rem
+  &.border--blue >>> .J-input
+    border 1px solid $blue
+    border-radius .06rem
   &.border-1px
     border-1px(#d3d3d3)
   &.textarea

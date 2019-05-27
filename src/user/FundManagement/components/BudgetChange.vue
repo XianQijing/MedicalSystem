@@ -84,7 +84,7 @@ export default {
   methods: {
     jump (msg) {
       this.$router.push({name: 'Budget', query: {form: msg}})
-      this.$store.commit('changeTitle', msg)
+      // this.$store.commit('changeTitle', msg)
     }
   }
 }

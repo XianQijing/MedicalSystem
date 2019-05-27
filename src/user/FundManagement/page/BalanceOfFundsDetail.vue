@@ -71,9 +71,10 @@
     </div>
     <CTitle>项目列表</CTitle>
     <card
-    v-for="(item, index) in tableList"
-    :key="index">
-      <div slot="time">2018.04.12 14:56</div>
+      v-for="(item, index) in tableList"
+      :key="index"
+      :time="item.time">
+      <!-- <div slot="time">2018.04.12 14:56</div> -->
       <p class="no">NO：{{item.name}}</p>
       <p class="black">摘要</p>
       <JTable :data="tableList">
@@ -93,7 +94,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import JTable from '@/components/table/table'
 import JTableColums from '@/components/table/table-colums'
 export default {
@@ -108,7 +108,8 @@ export default {
           price: '300/天',
           num: 1,
           money: 300,
-          remarks: '其他'
+          remarks: '其他',
+          time: '2018-30-01'
         },
         {
           index: 2,
@@ -116,7 +117,8 @@ export default {
           price: '300/天',
           num: 1,
           money: 300,
-          remarks: '其他'
+          remarks: '其他',
+          time: '2018-30-01'
         },
         {
           index: 3,
@@ -124,15 +126,15 @@ export default {
           price: '300/天',
           num: 1,
           money: 300,
-          remarks: '其他'
+          remarks: '其他',
+          time: '2018-30-01'
         }
       ]
     }
   },
   components: {
     JTable,
-    JTableColums,
-    Card
+    JTableColums
   }
 }
 </script>

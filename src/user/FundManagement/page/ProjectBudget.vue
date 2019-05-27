@@ -2,10 +2,13 @@
 <template>
   <div class="ProjectBudget">
     <tabs v-model="clickTab">
-      <tab title="预算变更申请" name="0">
+      <tab title="项目预算" name="0">
+        <Budget/>
+      </tab>
+      <tab title="预算变更申请" name="1">
         <BudgetChange/>
       </tab>
-      <tab title="项目预算状态" name="1">
+      <tab title="状态查询" name="2">
         <ProjectBudgetStatues/>
       </tab>
     </tabs>
@@ -15,6 +18,7 @@
 <script>
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
+import Budget from '../components/Budget'
 import BudgetChange from '../components/BudgetChange'
 import ProjectBudgetStatues from '../components/ProjectBudgetStatues'
 export default {
@@ -27,6 +31,7 @@ export default {
   components: {
     Tab,
     Tabs,
+    Budget,
     BudgetChange,
     ProjectBudgetStatues
   }
@@ -37,7 +42,7 @@ export default {
 @import '../../../common/style/mixin.styl'
 .ProjectBudget >>> .tabs
   .tab-pane
-    width 1.77rem
+    width calc((100% - .12rem) / 3)
     font-size 12px
 .ProjectBudget
   margin 0 6px

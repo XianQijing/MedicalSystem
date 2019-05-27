@@ -1,7 +1,7 @@
 <template>
   <div class="upload">
     <div class="img">
-      <img src="../../common/image/upload.png" alt=""><span>上传文件</span>
+      <img v-if="icon" src="../../common/image/upload.png" alt=""><span>{{ label }}</span>
     </div>
     <input :accept="accept" @change="upload" type="file">
   </div>
@@ -11,7 +11,15 @@
 export default {
   name: 'upload',
   props: {
-    accept: {}
+    accept: {},
+    label: {
+      type: String,
+      default: '上传文件'
+    },
+    icon: {
+      type: Boolean,
+      default: true
+    }
   },
   methods: {
     upload (e) {
