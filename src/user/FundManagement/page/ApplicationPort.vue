@@ -209,6 +209,116 @@
     </popup>
 
     <popup v-model="openDomestic" position="center" title="国内差旅计算器">
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：会议费（培训费）</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :width=".13" color="black" label="备注">
+            <div class="canClick gray">无</div>
+          </FormItem>
+        </Form>
+      </div>
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：住宿费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：城市交通费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：伙食补贴费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：市内交通费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
     </popup>
   </div>
 </template>
@@ -228,9 +338,13 @@ export default {
       clickTab: 0,
       openPop: false,
       now: '',
+      openDomestic: false,
       notTavel: {
         project: '',
         fapiaoList: []
+      },
+      Domestic: {
+        test: null
       },
       iconList: [
         {
@@ -273,16 +387,18 @@ export default {
     Upload
   },
   methods: {
-    openFile (e, msg) {
-      if (e.target.files.length === 0) {
-        return ''
-      }
-      this.notTavel = Array.from(e.target.files)
+    openFile (e, msg, key) {
+      // if (e.target.files.length === 0) {
+      //   return ''
+      // }
+      this[msg][key] = e[0]
+      // this.notTavel = Array.from(e.target.files)
     },
-    deleted (item) {
-      this.fileList = this.fileList.filter(data => {
-        return data !== item
-      })
+    deleted (msg, key) {
+      this[msg][key] = null
+      // this.fileList = this.fileList.filter(data => {
+      //   return data !== item
+      // })
     },
     openPopup (msg) {
       this.openPop = true
@@ -439,6 +555,7 @@ export default {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)
     border-radius: .04rem
     font-size 0
+    text-align: left
     margin-bottom .04rem
     overflow hidden
     // padding .14rem 0
@@ -457,7 +574,7 @@ export default {
       padding-left .1rem
       .file-name
         font-size .14rem
-        // line-height .18rem
+        line-height .285rem
       .file-path
         font-size .12rem
         line-height .16rem
@@ -468,6 +585,23 @@ export default {
       float right
   .content
     height 1.48rem
+  .border-1px
+    border-1px(#d3d3d3)
+  .chailv
+    padding .1rem 0
+    margin 0 .1rem
+    .dom-header
+      padding 0 .1rem
+      font-size .15rem
+      line-height .19rem
+    .canClick
+      color $blue
+    .gray
+      text-align right
+      color #555555
+.ApplicationPort >>> .Form
+  .FormItem
+    font-size .13rem
 .ApplicationPort >>> .tabs
   .tab-pane
       width calc((100% - .12rem) / 3)

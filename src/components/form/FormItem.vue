@@ -73,6 +73,22 @@ export default {
     .text
       border 1px solid $red
       border-radius .06rem
+  &.border--black
+    padding .08rem 0 .08rem 0
+    .label
+      color #555555
+    textarea
+      border 1px solid $red
+      border-radius .06rem
+      height 100%
+    .input-wrapper
+      width 35.9%
+      min-width 100px
+  &.border--black >>> .J-input
+    padding 0
+    .text
+      border 1px solid $red
+      border-radius .06rem
   &.border--blue
     padding .08rem 0 .08rem 0.08rem
     textarea
