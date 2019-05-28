@@ -1,4 +1,5 @@
 <template>
+<div>
   <transition name="fade">
     <div class="popup" :class="{overlay: overlay}" v-show="value" @touchmove.prevent @click="show($event)" :close-on-click-overlay="clickOverlay">
       <transition name="slide-fade">
@@ -6,11 +7,16 @@
           <slot></slot>
         </div>
       </transition>
+    </div>
+  </transition>
+
+    <transition name="fade">
       <transition name="up">
         <div v-show="value" class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
           <slot></slot>
         </div>
       </transition>
+    </transition>
 
       <transition>
         <div class="centerPop warning" v-if="position==='center'" @click="cancel($event)">
@@ -23,8 +29,7 @@
           </div>
         </div>
       </transition>
-    </div>
-  </transition>
+  </div>
 </template>
 
 <script>
