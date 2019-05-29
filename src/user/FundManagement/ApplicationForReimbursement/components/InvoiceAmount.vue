@@ -1,197 +1,90 @@
-// 申报端口
 <template>
-  <div class="ApplicationPort">
-    <div class="blue">
-        <span class="msg">2017年12月09日科研报销信息</span>
-      <div class="desc">
-        <div class="sum-price border-1px">
-          <span>报销金额</span>
-          <span class="num">9000.00</span>
-        </div>
-        <div class="detail-price">
-          <div>
-            <p>项目经费</p>
-            <p class="num">3000.00</p>
+  <div>
+    <tabs v-model="clickTab">
+      <tab title="非差旅" name="0">
+        <div class="wrapper">
+          <p class="title">金额发票</p>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">项目经费：</p>
+            <JInput placeholder="下拉选择"/>
           </div>
-          <div>
-            <p>匹配经费</p>
-            <p class="num">2000.00</p>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">匹配经费：</p>
+            <JInput placeholder="下拉选择"/>
           </div>
-          <div>
-            <p>其他经费</p>
-            <p class="num">4000.00</p>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">其他经费：</p>
+            <JInput placeholder="下拉选择"/>
           </div>
-        </div>
-        <div class="detail-price">
-          <div class="icon" @click="active = index" v-for="(item, index) in iconList" :key="index">
-            <div>
-              <img class="img" :src="index === active ? item.icon.active : item.icon.normal">
-            </div>
-            <p>{{item.name}}</p>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">报销总额：</p>
+            <JInput placeholder="下拉选择"/>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrapper" v-show="active === 0">
-      <p class="title">摘要用途</p>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">一级科目：</p>
-        <JInput placeholder="下拉选择" type="select"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">二级科目：</p>
-        <JInput placeholder="下拉选择" type="select"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">三级科目：</p>
-        <JInput placeholder="下拉选择" type="select"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">四级科目：</p>
-        <JInput placeholder="下拉选择" type="select"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title a">用途：</p>
-        <textarea></textarea>
-      </div>
-    </div>
-
-    <div v-show="active === 1">
-      <tabs v-model="clickTab">
-        <tab title="非差旅" name="0">
-          <div class="wrapper">
-            <p class="title">金额发票</p>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">项目经费：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">匹配经费：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">其他经费：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">报销总额：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">支付方式</p>
-              <JInput placeholder="下拉选择" type="select"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title a">上传发票：</p>
-              <div class="fileList" v-for="(item, index) in notTavel.fapiaoList" :key="index">
-                <iconSvg iconClass="icon-wenjianjiaicon"/>
-                <div class="border-1pxLeft">
-                  <p class="file-name">文件名：{{item.name}}</p>
-                  <p class="file-path">文件类型：{{item.type}}</p>
-                </div>
-                <iconSvg @click="deleted(item)" class="border-1pxRight" iconClass="icon-delete"/>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">支付方式</p>
+            <JInput placeholder="下拉选择" type="select"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title a">上传发票：</p>
+            <div class="fileList" v-for="(item, index) in notTavel.fapiaoList" :key="index">
+              <iconSvg iconClass="icon-wenjianjiaicon"/>
+              <div class="border-1pxLeft">
+                <p class="file-name">文件名：{{item.name}}</p>
+                <p class="file-path">文件类型：{{item.type}}</p>
               </div>
-              <div class="upload" @click="openPopup('非差旅')">
-                <!-- <input type="file" multiple class="tem" @change="openFile($event)"> -->
-                <div class="text"><img src="../../../common/image/upload.png" alt=""></div>
-              </div>
+              <iconSvg @click="deleted(item)" class="border-1pxRight" iconClass="icon-delete"/>
             </div>
-          </div>
-        </tab>
-        <tab title="国内差旅" name="1">
-          <div class="wrapper">
-            <p class="title">金额发票</p>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">项目经费：</p>
-              <JInput placeholder="下拉选择"/>
+            <div class="upload" @click="openPopup('非差旅')">
+              <!-- <input type="file" multiple class="tem" @change="openFile($event)"> -->
+              <div class="text"><img src="../../../../common/image/upload.png" alt=""></div>
             </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">匹配经费：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">其他经费：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">报销总额：</p>
-              <JInput placeholder="下拉选择"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title">支付方式</p>
-              <JInput placeholder="下拉选择" type="select"/>
-            </div>
-            <div class="item-wrapper border-1px">
-              <p class="item-title a">上传发票：</p>
-              <div class="fileList" v-for="(item, index) in notTavel.fapiaoList" :key="index">
-                <iconSvg iconClass="icon-wenjianjiaicon"/>
-                <div class="border-1pxLeft">
-                  <p class="file-name">文件名：{{item.name}}</p>
-                  <p class="file-path">文件类型：{{item.type}}</p>
-                </div>
-                <iconSvg @click="deleted(item)" class="border-1pxRight" iconClass="icon-delete"/>
-              </div>
-              <div class="upload" @click="openDomestic = true">
-                <!-- <input type="file" multiple class="tem" @change="openFile($event)"> -->
-                <div class="text"><img src="../../../common/image/upload.png" alt=""></div>
-              </div>
-            </div>
-          </div>
-        </tab>
-        <tab title="国外差旅" name="2">
-          <!-- <ApplicationForMatters/> -->
-        </tab>
-      </tabs>
-    </div>
-
-    <div class="wrapper" v-show="active === 2">
-      <p class="title">审计附件</p>
-      <div class="item-wrapper border-1px">
-        <p class="item-title a">上传附件：</p>
-        <div class="file">
-          <div class="file-item">
-            <img src="../../../common/image/file.png" alt="">
-            <p>文件名</p>
-          </div>
-          <div class="file-item">
-            <img src="../../../common/image/file.png" alt="">
-            <p>文件名</p>
           </div>
         </div>
-        <div class="upload">
-          <input type="file" class="tem">
-          <div class="text"><img src="../../../common/image/upload.png" alt="">上传文件</div>
+      </tab>
+      <tab title="国内差旅" name="1">
+        <div class="wrapper">
+          <p class="title">金额发票</p>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">项目经费：</p>
+            <JInput placeholder="下拉选择"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">匹配经费：</p>
+            <JInput placeholder="下拉选择"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">其他经费：</p>
+            <JInput placeholder="下拉选择"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">报销总额：</p>
+            <JInput placeholder="下拉选择"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">支付方式</p>
+            <JInput placeholder="下拉选择" type="select"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title a">上传发票：</p>
+            <div class="fileList" v-for="(item, index) in notTavel.fapiaoList" :key="index">
+              <iconSvg iconClass="icon-wenjianjiaicon"/>
+              <div class="border-1pxLeft">
+                <p class="file-name">文件名：{{item.name}}</p>
+                <p class="file-path">文件类型：{{item.type}}</p>
+              </div>
+              <iconSvg @click="deleted(item)" class="border-1pxRight" iconClass="icon-delete"/>
+            </div>
+            <div class="upload" @click="openDomestic = true">
+              <!-- <input type="file" multiple class="tem" @change="openFile($event)"> -->
+              <div class="text"><img src="../../../../common/image/upload.png" alt=""></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="wrapper" v-show="active === 3">
-      <p class="title">金额发票</p>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">收款单位：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">纳税人号：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">开户银行：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">银行账号：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title a">上传凭证：</p>
-        <div class="upload">
-          <input type="file" class="tem">
-          <div class="text"><img src="../../../common/image/upload.png" alt="">上传文件</div>
-        </div>
-      </div>
-    </div>
+      </tab>
+      <tab title="国外差旅" name="2">
+        <!-- <ApplicationForMatters/> -->
+      </tab>
+    </tabs>
 
     <popup v-model="openPop" position="center" title="上传文件">
       <div class="content">
@@ -213,7 +106,7 @@
         <p class="dom-header">项目名称：会议费（培训费）</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput/>
+            <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
             <iconSvg iconClass="icon-wenjianjiaicon"/>
@@ -235,7 +128,7 @@
         <p class="dom-header">项目名称：住宿费</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput/>
+            <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
             <iconSvg iconClass="icon-wenjianjiaicon"/>
@@ -257,7 +150,7 @@
         <p class="dom-header">项目名称：城市交通费</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput/>
+            <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
             <iconSvg iconClass="icon-wenjianjiaicon"/>
@@ -279,7 +172,7 @@
         <p class="dom-header">项目名称：伙食补贴费</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput/>
+            <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
             <iconSvg iconClass="icon-wenjianjiaicon"/>
@@ -297,11 +190,12 @@
           </FormItem>
         </Form>
       </div>
+      <!--  -->
       <div class="border-1px chailv">
         <p class="dom-header">项目名称：市内交通费</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput/>
+            <JInput placeholder="计算金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
             <iconSvg iconClass="icon-wenjianjiaicon"/>
@@ -318,6 +212,40 @@
             <div class="canClick">点击查看-查看限额</div>
           </FormItem>
         </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：其他费用</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：差旅费合计</p>
+        <div class="baoxiao">
+          报销金额：20000元
+        </div>
+      </div>
+
+      <div class="buttonq">
+        <JButton type="primary" round>确定</JButton>
       </div>
     </popup>
   </div>
@@ -331,10 +259,10 @@ import Popup from '@/components/popup/popup2'
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 export default {
-  name: 'ApplicationPort',
+  name: 'InvoiceAmount',
   data () {
     return {
-      active: 0,
+      username: '',
       clickTab: 0,
       openPop: false,
       now: '',
@@ -345,46 +273,16 @@ export default {
       },
       Domestic: {
         test: null
-      },
-      iconList: [
-        {
-          name: '摘要用途',
-          icon: {
-            active: require('../image/zhaiyaoActive.png'),
-            normal: require('../image/zhaiyaoNormal.png')
-          }
-        },
-        {
-          name: '金额发票',
-          icon: {
-            active: require('../image/priceActive.png'),
-            normal: require('../image/priceNormal.png')
-          }
-        },
-        {
-          name: '审计附件',
-          icon: {
-            active: require('../image/shenjiActive.png'),
-            normal: require('../image/shenjiNormal.png')
-          }
-        },
-        {
-          name: '支付信息',
-          icon: {
-            active: require('../image/payActive.png'),
-            normal: require('../image/payNormal.png')
-          }
-        }
-      ]
+      }
     }
   },
   components: {
-    Tab,
-    Popup,
-    Tabs,
+    Upload,
     Form,
     FormItem,
-    Upload
+    Popup,
+    Tab,
+    Tabs
   },
   methods: {
     openFile (e, msg, key) {
@@ -409,53 +307,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl';
-.ApplicationPort
-  padding .1rem 0
-  margin 0 .06rem
-  .blue
-    padding .15rem .10rem
-    background: #003BAA;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    color white
-    span
-      font-weight 200
-    .desc
-      display inline-block
-      text-align center
-      vertical-align middle
-      width 100%
-      .sum-price
-        // width 3.14rem
-        border-1px(#D3D3D3)
-        padding .15rem 0 .15rem 0
-        span
-          font-size: .14rem
-          &:last-child
-            font-size .20rem
-            margin-left .20rem
-      .detail-price
-        display flex
-        justify-content space-between
-        margin-top .15rem
-        div
-          flex 1
-          p
-            font-size: .14rem
-          .num
-            font-size .20rem
-            margin-top .16rem
-          img
-            width .345rem
-            vertical-align bottom
-        .icon
-          p
-            margin-top .10rem
-            vertical-align bottom
-            font-size: .14rem;
-            color: #FFFFFF;
-          div
-            height .345rem
+@import '../../../../common/style/mixin.styl';
   .wrapper
     margin-top .10rem
     padding .15rem .10rem 0 .10rem
@@ -599,6 +451,13 @@ export default {
     .gray
       text-align right
       color #555555
+  .baoxiao
+    font-size .13rem
+    color #555555
+    padding .15rem .2rem 0 .2rem
+  .buttonq
+    text-align:center
+    padding .2rem 0
 .ApplicationPort >>> .Form
   .FormItem
     font-size .13rem

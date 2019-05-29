@@ -1,6 +1,6 @@
 <template>
 <div>
-  <transition name="fade">
+  <transition name="fade" v-if="position === 'right'">
     <div class="popup" :class="{overlay: overlay}" v-show="value" @touchmove.prevent @click="show($event)" :close-on-click-overlay="clickOverlay">
       <transition name="slide-fade">
         <div v-show="value" class="rightPop" v-if="position==='right'" @click="cancel($event)">
@@ -10,7 +10,7 @@
     </div>
   </transition>
 
-    <transition name="fade">
+    <transition name="fade"  v-if="position==='bottom'">
       <transition name="up">
         <div v-show="value" class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
           <slot></slot>
@@ -18,7 +18,7 @@
       </transition>
     </transition>
 
-      <transition>
+      <!-- <transition>
         <div class="centerPop warning" v-if="position==='center'" @click="cancel($event)">
           <div class="wraning">
             <p class="waring-title border-1px">
@@ -28,7 +28,18 @@
             <slot></slot>
           </div>
         </div>
-      </transition>
+      </transition> -->
+      <van-popup :value="value" v-if="position==='center'" :overlay="overlay" @click-overlay="show">
+        <div class="wraning">
+          <p class="waring-title border-1px">
+            <span class="title">{{title}}</span>
+            <span class="iconfont" @click="show">&#xe6d6;</span>
+          </p>
+          <div class="height">
+            <slot></slot>
+          </div>
+        </div>
+      </van-popup>
   </div>
 </template>
 
@@ -105,23 +116,26 @@ export default {
   .centerPop
     width 100%
     z-index 290
-  .wraning
-    width 80%
-    max-width 300px
-    background white
-    margin 0 auto
-    .waring-title
-      margin 0 10px
-      padding 15px 0
-      text-align center
-      font-size: 16px;
-      color: #333333;
-      // font-weight 700
-      border-1px(#D3D3D3)
-      .iconfont
-        position absolute
-        right 0
-        color #2873FF
+.wraning
+  width 3.3rem
+  max-width 300px
+  background white
+  margin 0 auto
+  .waring-title
+    margin 0 10px
+    padding 15px 0
+    text-align center
+    font-size: 16px;
+    color: #333333;
+    // font-weight 700
+    border-1px(#D3D3D3)
+    .iconfont
+      position absolute
+      right 0
+      color #2873FF
+  .height
+    overflow auto
+    max-height 5.9rem
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .1s;

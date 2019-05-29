@@ -77,6 +77,7 @@ export default {
     padding .08rem 0 .08rem 0
     .label
       color #555555
+      vertical-align top
     textarea
       border 1px solid $red
       border-radius .06rem

@@ -9,7 +9,7 @@ const router = {
     {
       path: '',
       name: 'ApplicationForReimbursement',
-      component: resolve => require(['@/user/FundManagement/page/ApplicationForReimbursement'], resolve),
+      component: resolve => require(['@/user/FundManagement/ApplicationForReimbursement/ApplicationForReimbursement'], resolve),
       meta: {
         title: '报销申请',
         requireAuth: true
@@ -18,7 +18,7 @@ const router = {
     {
       path: 'ApplicationPort',
       name: 'ApplicationPort',
-      component: resolve => require(['@/user/FundManagement/page/ApplicationPort'], resolve),
+      component: resolve => require(['@/user/FundManagement/ApplicationForReimbursement/ApplicationPort'], resolve),
       meta: {
         title: '申报端口',
         requireAuth: true,
