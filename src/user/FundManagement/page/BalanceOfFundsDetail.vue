@@ -84,7 +84,7 @@
         <JTableColums label="其他金额" prop="index"/>
       </JTable>
       <JTable :data="tableList">
-        <JTableColums label="拨款金额" prop="index"/>
+        <JTableColums label="使用金额" prop="index"/>
         <JTableColums label="项目金额" prop="name"/>
         <JTableColums label="匹配金额" prop="price"/>
         <JTableColums label="其他金额" prop="index"/>
@@ -103,31 +103,31 @@ export default {
       clickTab: 0,
       tableList: [
         {
-          index: 1,
-          name: '场地租金',
-          price: '300/天',
-          num: 1,
-          money: 300,
-          remarks: '其他',
-          time: '2018-30-01'
+          index: 2000.00,
+          name: '2000.00',
+          price: '2000.00',
+          num: 2000.00,
+          money: 2000.00,
+          remarks: '2000.00',
+          time: '2019.08.01'
         },
         {
-          index: 2,
-          name: '场地租金',
-          price: '300/天',
-          num: 1,
-          money: 300,
-          remarks: '其他',
-          time: '2018-30-01'
+          index: 2000.00,
+          name: '2000.00',
+          price: '2000.00',
+          num: 2000.00,
+          money: 2000.00,
+          remarks: '2000.00',
+          time: '2019.08.01'
         },
         {
-          index: 3,
-          name: '场地租金',
-          price: '300/天',
-          num: 1,
-          money: 300,
-          remarks: '其他',
-          time: '2018-30-01'
+          index: 2000.00,
+          name: '2000.00',
+          price: '2000.00',
+          num: 2000.00,
+          money: 2000.00,
+          remarks: '2000.00',
+          time: '2019.08.01'
         }
       ]
     }

@@ -169,10 +169,10 @@ export default {
       selected: false,
       tableList: [
         {
-          index: 1,
-          name: '场地租金',
-          price: '300/天',
-          num: 1,
+          index: 3000,
+          name: '300',
+          price: '300',
+          num: 30,
           money: 300,
           remarks: '其他'
         }
