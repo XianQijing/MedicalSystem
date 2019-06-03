@@ -29,7 +29,7 @@
         </JTable>
         <div style="text-align:center">
           <JButton type="primary" round @click="jump">查看</JButton>
-          <JButton type="primary" round plain @click="jump">返回上一步</JButton>
+          <JButton type="primary" round plain @click="back">返回上一步</JButton>
         </div>
       </card>
       <JButton slot="button" type="danger" @click="stop('删除')">删除</JButton>
@@ -85,6 +85,14 @@ export default {
   methods: {
     jump () {
       this.$router.push({name: 'AProjectMessage'})
+    },
+    back () {
+      this.$MessageBox('确认返回上一步！', '提示', {
+        cancelButtonText: '取消',
+        confirmButtonText: '确定'
+      }).then(() => {
+      }).catch(() => {
+      })
     }
   }
 }

@@ -17,7 +17,7 @@
       <span class="resTime">项目到款总额：0.00</span>
       <div style="text-align:center">
         <JButton type="primary" round @click="jump">查看</JButton>
-        <JButton type="primary" round plain @click="jump">返回上一步</JButton>
+        <JButton type="primary" round plain @click="back">返回上一步</JButton>
       </div>
     </card>
   </div>
@@ -51,6 +51,14 @@ export default {
   methods: {
     jump () {
       this.$router.push({name: 'BudegetStatues'})
+    },
+    back () {
+      this.$MessageBox('确认返回上一步！', '提示', {
+        cancelButtonText: '取消',
+        confirmButtonText: '确定'
+      }).then(() => {
+      }).catch(() => {
+      })
     }
   }
 }

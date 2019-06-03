@@ -19,7 +19,7 @@
       <span class="resTime">批准日期：2018.09.01 12:00</span>
       <div style="text-align:center">
         <JButton type="primary" round @click="jump">查看</JButton>
-        <JButton type="primary" round plain>返回上一步</JButton>
+        <JButton type="primary" round plain @click="back">返回上一步</JButton>
       </div>
     </card>
   </div>
@@ -52,6 +52,14 @@ export default {
   methods: {
     jump () {
       this.$router.push({name: 'FundingApprovalDetail'})
+    },
+    back () {
+      this.$MessageBox('确认返回上一步！', '提示', {
+        cancelButtonText: '取消',
+        confirmButtonText: '确定'
+      }).then(() => {
+      }).catch(() => {
+      })
     }
   }
 }
