@@ -11,9 +11,9 @@
         :time="item.time"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <span class="black">申请人-所属单位</span>
+        <span class="black">负责人-所属科室</span>
         <p class="black border-1pxTop">
-          论文题目
+          项目名称
           <span class="did" :class="{'not': item.dayin === '未打印'}">{{item.dayin}}</span>
         </p>
         <span>项目类别</span>

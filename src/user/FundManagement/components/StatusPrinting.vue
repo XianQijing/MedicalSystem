@@ -9,7 +9,7 @@
       <p class="form-label">立项时间:</p>
       <p class="form-desc">2018.09.01</p>
     </div>
-    <CTitle>学术论文列表</CTitle>
+    <CTitle>项目列表</CTitle>
 
     <checkall v-model="multiple">
       <card
@@ -21,13 +21,13 @@
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
         <span class="black">
-          论文题目
+          支出科目
           <span class="did" :class="{'not': item.dayin === '未打印'}">{{item.dayin}}</span>
         </span>
-        <span>论文属性、期刊名称</span>
+        <span>支出名目、用途说明</span>
         <div class="two">
-          <span>支出金额：200.00</span>
-          <span>经费归属：项目经费</span>
+          <p>支出金额：200.00</p>
+          <p>经费归属：项目经费</p>
         </div>
       </card>
       <JButton slot="button" type="danger" @click="stop('删除')">打印</JButton>
@@ -114,4 +114,8 @@ export default {
     &:first-child
       margin-bottom 2px
       margin-top 10px
+.two
+  display flex
+  justify-content space-between
+  font-size .14rem
 </style>

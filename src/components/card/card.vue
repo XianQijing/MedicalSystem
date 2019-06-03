@@ -35,7 +35,9 @@ export default {
     time: {
       type: String
     },
-    status: String,
+    status: {
+      type: String
+    },
     type: {
       type: String
     },
@@ -49,12 +51,14 @@ export default {
       let type = this.status
       if (type === '正常' || type === '通过' || type === '已分配') {
         return 'normal'
-      } else if (type === '停用' || type === '隐藏' || '申报结束') {
+      } else if (type === '停用' || type === '隐藏' || type === '申报结束') {
         return 'stop'
       } else if (type === '审核中' || type === '未分配') {
         return 'active'
       } else if (type === '建议修改') {
         return 'warning'
+      } else {
+        return 'normal'
       }
     }
   },

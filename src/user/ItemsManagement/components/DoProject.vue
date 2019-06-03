@@ -59,7 +59,7 @@
       </div>
       <div class="item-wrapper border-1px">
         <div>
-          <p class="item-title a">演讲ppt：</p>
+          <p class="item-title a">状态1：</p>
           <div class="float">
             <span>删除</span>
           </div>

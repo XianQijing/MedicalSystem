@@ -42,7 +42,7 @@
           <p class="j-input" style="color: #2873FF">预览</p>
         </div>
         <div class="form-cell">
-          <p class="label">演讲PPT:</p>
+          <p class="label">状态1:</p>
           <p class="j-input">理论收费总额</p>
         </div>
         <div class="form-cell">

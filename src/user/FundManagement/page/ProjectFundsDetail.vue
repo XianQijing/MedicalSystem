@@ -26,47 +26,47 @@
         </div>
         <div class="form-cell">
           <p class="label">所属科室:</p>
-          <p class="j-input">参加对象</p>
+          <p class="j-input">全体人员</p>
         </div>
         <div class="form-cell">
           <p class="label">项目来源:</p>
-          <p class="j-input">项目级别</p>
+          <p class="j-input">项目来源</p>
         </div>
         <div class="form-cell">
           <p class="label">项目编号:</p>
-          <p class="j-input">是否收费</p>
+          <p class="j-input">00902</p>
         </div>
         <div class="form-cell">
           <p class="label">财务编号:</p>
-          <p class="j-input">收费标准</p>
+          <p class="j-input">29384</p>
         </div>
         <div class="form-cell">
           <p class="label">经费总额:</p>
-          <p class="j-input">专家人数</p>
+          <p class="j-input">2000.00</p>
         </div>
         <div class="form-cell">
           <p class="label">项目经费:</p>
-          <p class="j-input">理论收费总额</p>
+          <p class="j-input">3000.00</p>
         </div>
         <div class="form-cell">
           <p class="label">匹配经费:</p>
-          <p class="j-input">实际收费总额</p>
+          <p class="j-input">3000.00</p>
         </div>
         <div class="form-cell">
           <p class="label">其他经费:</p>
-          <p class="j-input">参加人数</p>
+          <p class="j-input">100</p>
         </div>
         <div class="form-cell">
           <p class="label">项目周期:</p>
-          <p class="j-input">外省人数</p>
+          <p class="j-input">1年</p>
         </div>
         <div class="form-cell">
           <p class="label">验收时间:</p>
-          <p class="j-input">外院人数</p>
+          <p class="j-input">2018.10.12</p>
         </div>
         <div class="form-cell">
           <p class="label">项目状态:</p>
-          <p class="j-input">演讲PPT</p>
+          <p class="j-input">状态1</p>
         </div>
       </div>
     </div>

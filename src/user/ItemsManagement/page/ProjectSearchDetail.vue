@@ -64,8 +64,8 @@
           <p class="j-input">外院人数</p>
         </div>
         <div class="form-cell">
-          <p class="label">演讲PPT:</p>
-          <p class="j-input">演讲PPT</p>
+          <p class="label">状态1:</p>
+          <p class="j-input">状态1</p>
         </div>
         <div class="form-cell">
           <p class="label">活动签到:</p>
