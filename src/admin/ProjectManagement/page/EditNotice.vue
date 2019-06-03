@@ -55,8 +55,8 @@ export default {
   input
     text-align right
 .EditNotice
+  margin 0 6px
   .form
-    margin 0 6px
     font-size 14px
     .formCell, .form-Cell
       margin-bottom 2px

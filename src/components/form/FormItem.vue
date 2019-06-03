@@ -75,6 +75,7 @@ export default {
       border-radius .06rem
   &.border--black
     padding .08rem 0 .08rem 0
+    line-height .18rem
     .label
       color #555555
       vertical-align top
@@ -86,10 +87,10 @@ export default {
       width 35.9%
       min-width 100px
   &.border--black >>> .J-input
-    padding 0
-    .text
-      border 1px solid $red
-      border-radius .06rem
+    // padding 0
+    border 1px solid $red
+    border-radius .06rem
+    // .text
   &.border--blue
     padding .08rem 0 .08rem 0.08rem
     textarea

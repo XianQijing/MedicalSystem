@@ -69,11 +69,16 @@
         </div>
       </div>
     </div>
-    <CTitle>项目列表</CTitle>
+    <CTitle>
+      支出详情
+      <span slot="float">导出数据</span>
+      <IconSvg slot="float" iconClass="icon-icon_download"/>
+    </CTitle>
 
     <card
       v-for="(item, index) in messageList"
       :key="index"
+      :time="item.time"
       >
       <div slot="time">2018.04.12 14:56</div>
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
@@ -88,7 +93,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'FundsFinalAccountsDetail',
   data () {
@@ -110,9 +114,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Card
   }
 }
 </script>

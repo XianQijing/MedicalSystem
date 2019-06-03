@@ -1,9 +1,8 @@
-import ElectronicArchives from '@/admin/ElectronicArchives/ElectronicArchives'
-
+import Layout from '@/layout/layout'
 const router = {
   path: '/ElectronicArchives',
   // name: 'ElectronicArchives',
-  component: ElectronicArchives,
+  component: Layout,
   children: [
     {
       path: '',
@@ -20,7 +19,8 @@ const router = {
       component: resolve => require(['@/admin/ElectronicArchives/page/jumpPage'], resolve),
       meta: {
         title: '',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -38,7 +38,8 @@ const router = {
       component: resolve => require(['@/admin/ElectronicArchives/page/fileList1'], resolve),
       meta: {
         title: '档案列表',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -56,7 +57,8 @@ const router = {
       component: resolve => require(['@/admin/ElectronicArchives/page/ActivityList'], resolve),
       meta: {
         title: '',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {

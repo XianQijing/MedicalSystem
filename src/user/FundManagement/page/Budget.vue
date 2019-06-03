@@ -71,75 +71,79 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl';
 .Budget
+  margin 0 .06rem
+  height 100%
   .select
     color: #2873FF
     vertical-align middle
     text-align center
-    font-size: 16px;
+    font-size: .16rem;
     .iconfont
       vertical-align text-top
-      font-size: 20px;
+      font-size: .20rem;
       // width 21px
   .wrapper
     background: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
-    padding 10px 10px 0 10px
-    margin 10px 6px
+    padding .10rem .10rem 0 .10rem
+    margin .10rem 0
     &.shuo
       box-shadow none
     .title
-      font-size 14px;
+      font-size .14rem;
       color: #333333;
     p
-      font-size: 14px;
+      font-size: .14rem;
       color: #333333;
-      padding-top 15px
+      padding-top .15rem
     .J-input
       border: 1px solid #FD4D4D;
-      border-radius: 6px;
+      border-radius: .06rem;
       width 1.64rem
       display inline-block
-      height 30px
+      height .30rem
     .item-wrapper
-      padding 0 10px 15px 10px
+      padding 0 .10rem .15rem .10rem
       position relative
       border-1px(#D3D3D3)
       &:last-child
         border-none()
       .item-title
         display inline-block
-        font-size: 16px;
+        font-size: .16rem;
         color: #FD4D4D;
         vertical-align top
       textarea
         border: 1px solid #FD4D4D;
-        border-radius: 6px;
+        border-radius: .06rem;
         display block
         width 100%
-        margin-top 10px
-        padding 10px
+        margin-top .10rem
+        padding .10rem
         box-sizing border-box
-        height 80px
+        height .80rem
+        font-size .14rem
       .J-input
         border: 1px solid #FD4D4D;
-        border-radius: 6px;
+        border-radius: .06rem;
         width 1rem
-        min-width 100px
-        height 30px
+        min-width 1.00rem
+        height .30rem
         position absolute
         right 0
-        top 8px
+        top .08rem
+        font-size .14rem
   .desc
-    margin-top 10px
-    line-height 16px
-    font-size: 12px;
+    margin-top .10rem
+    line-height .16rem
+    font-size: .12rem;
     color: #999999;
-    margin 0 16px
+    margin 0 .16rem
   .content
-    min-height 100vh
-    padding-bottom 60px
+    min-height 99vh
+    padding-bottom .3rem
     box-sizing border-box
   .button-cell
     position relative
-    margin-top -30px
+    margin-top -.30rem
 </style>

@@ -23,7 +23,7 @@
     </div>
 
     <button class="btn" @click="toLogin">
-      登录
+      登&nbsp;&nbsp;录
     </button>
     <div class="select">
       <router-link :to="{name: 'Register'}" tag="span">立即注册</router-link>

@@ -144,6 +144,8 @@ export default {
   font-size: 13px;
 .homePage
   height 100%
+  .comTitle
+    margin-left .06rem
 .swiper-wrapper
   padding 0 6px
   box-sizing border-box

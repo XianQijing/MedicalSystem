@@ -1,8 +1,7 @@
-// 报销审核
 <template>
   <div class="ReimbursementAudit">
     <div>
-      <CTitle :screen="true" :textList="textList">项目列表</CTitle>
+      <CTitle :screen="true" :textList="textList">已审核列表</CTitle>
 
       <card
         v-for="(item, index) in messageList"
@@ -60,8 +59,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.ReimbursementAudit
-  margin 0 .06rem
-</style>

@@ -207,8 +207,8 @@ export default {
     padding 0
 .editPersonalMessage
   // height 100vh
+  margin 0 6px
   .form
-    margin 0 6px
     .formCell
       background white
       height 30px

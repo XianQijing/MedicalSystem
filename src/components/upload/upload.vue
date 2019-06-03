@@ -3,7 +3,7 @@
     <div class="img">
       <img v-if="icon" src="../../common/image/upload.png" alt=""><span>{{ label }}</span>
     </div>
-    <input :accept="accept" @change="upload" type="file">
+    <input :accept="accept" @change="upload" :multiple="multiple" type="file">
   </div>
 </template>
 
@@ -19,6 +19,10 @@ export default {
     icon: {
       type: Boolean,
       default: true
+    },
+    multiple: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

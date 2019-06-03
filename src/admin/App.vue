@@ -1,22 +1,35 @@
 <template>
   <div id="app">
-    <div class="header">
-      {{$store.state.app.title}}
-    </div>
-    <div class="content">
-      <router-view/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    getChildList () {
+      let menu = {}
+      const router = this.$router.options.routes
+      router.forEach(item => {
+        if (item.children) {
+          if (!menu[item.path]) {
+            menu[item.path] = []
+          }
+          menu[item.path] = item.children
+        }
+      })
+      this.$store.commit('getMenu', menu)
+    }
+  },
+  created () {
+    this.getChildList()
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
-#app, body
+#app
   height: 100%
   .header
     background rgba(51,51,51,0.9)
@@ -28,7 +41,4 @@ export default {
     line-height .43rem
     box-sizing border-box
     padding-left .2rem
-  .content
-    height calc(100vh - .43rem)
-    overflow auto
 </style>

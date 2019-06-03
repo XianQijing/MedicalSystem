@@ -57,8 +57,8 @@ export default {
 
 <style lang="stylus" scoped>
 .paperDetail
+  margin 0 6px
   .form
-    margin 0 6px
     .form-Cell
       background white
       padding 7px 10px

@@ -8,10 +8,46 @@ const router = {
   children: [
     {
       path: '',
+      name: 'ProjectFunds',
+      component: resolve => require(['@/user/FundManagement/page/ProjectFunds'], resolve),
+      meta: {
+        title: '项目经费',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'ProjectBudget',
+      name: 'ProjectBudget',
+      component: resolve => require(['@/user/FundManagement/page/ProjectBudget'], resolve),
+      meta: {
+        title: '经费预算',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'FundingApproval',
+      name: 'FundingApproval',
+      component: resolve => require(['@/user/FundManagement/page/FundingApproval'], resolve),
+      meta: {
+        title: '经费审批',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'ApplicationForReimbursement',
       name: 'ApplicationForReimbursement',
       component: resolve => require(['@/user/FundManagement/ApplicationForReimbursement/ApplicationForReimbursement'], resolve),
       meta: {
         title: '报销申请',
+        requireAuth: true
+      }
+    },
+    {
+      path: 'FundingDetails',
+      name: 'FundingDetails',
+      component: resolve => require(['@/user/FundManagement/page/FundingDetails'], resolve),
+      meta: {
+        title: '经费明细',
         requireAuth: true
       }
     },
@@ -36,6 +72,15 @@ const router = {
       }
     },
     {
+      path: 'BalanceOfFunds',
+      name: 'BalanceOfFunds',
+      component: resolve => require(['@/user/FundManagement/page/BalanceOfFunds'], resolve),
+      meta: {
+        title: '经费余额',
+        requireAuth: true
+      }
+    },
+    {
       path: 'FundsFinalAccounts',
       name: 'FundsFinalAccounts',
       component: resolve => require(['@/user/FundManagement/page/FundsFinalAccounts'], resolve),
@@ -55,15 +100,6 @@ const router = {
       }
     },
     {
-      path: 'FundingDetails',
-      name: 'FundingDetails',
-      component: resolve => require(['@/user/FundManagement/page/FundingDetails'], resolve),
-      meta: {
-        title: '经费明细',
-        requireAuth: true
-      }
-    },
-    {
       path: 'WatchFundingDetails',
       name: 'WatchFundingDetails',
       component: resolve => require(['@/user/FundManagement/page/WatchFundingDetails'], resolve),
@@ -71,24 +107,6 @@ const router = {
         title: '查看详情',
         requireAuth: true,
         hideInMenu: true
-      }
-    },
-    {
-      path: 'FundingApproval',
-      name: 'FundingApproval',
-      component: resolve => require(['@/user/FundManagement/page/FundingApproval'], resolve),
-      meta: {
-        title: '经费审批',
-        requireAuth: true
-      }
-    },
-    {
-      path: 'BalanceOfFunds',
-      name: 'BalanceOfFunds',
-      component: resolve => require(['@/user/FundManagement/page/BalanceOfFunds'], resolve),
-      meta: {
-        title: '经费余额',
-        requireAuth: true
       }
     },
     {
@@ -112,15 +130,6 @@ const router = {
       }
     },
     {
-      path: 'ProjectBudget',
-      name: 'ProjectBudget',
-      component: resolve => require(['@/user/FundManagement/page/ProjectBudget'], resolve),
-      meta: {
-        title: '经费预算',
-        requireAuth: true
-      }
-    },
-    {
       path: 'Budget',
       name: 'Budget',
       component: resolve => require(['@/user/FundManagement/page/Budget'], resolve),
@@ -138,15 +147,6 @@ const router = {
         title: '查看详情',
         requireAuth: true,
         hideInMenu: true
-      }
-    },
-    {
-      path: 'ProjectFunds',
-      name: 'ProjectFunds',
-      component: resolve => require(['@/user/FundManagement/page/ProjectFunds'], resolve),
-      meta: {
-        title: '项目经费',
-        requireAuth: true
       }
     },
     {

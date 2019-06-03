@@ -82,6 +82,7 @@ export default {
 
 <style lang="stylus" scoped>
 .library
+  margin 0 6px
   .ss
     color black
     font-size:13px;

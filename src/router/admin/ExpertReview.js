@@ -1,8 +1,8 @@
-import ExpertReview from '@/admin/ExpertReview/ExpertReview'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ExpertReview',
-  component: ExpertReview,
+  component: Layout,
   children: [
     {
       path: '',
@@ -19,7 +19,8 @@ const router = {
       component: resolve => require(['@/admin/ExpertReview/ScientificResearchTopic/ScientificDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -28,7 +29,8 @@ const router = {
       component: resolve => require(['@/admin/ExpertReview/ScoreSheet'], resolve),
       meta: {
         title: '评分表打分',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -37,7 +39,8 @@ const router = {
       component: resolve => require(['@/admin/ExpertReview/Result'], resolve),
       meta: {
         title: '提交结果',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -55,7 +58,8 @@ const router = {
       component: resolve => require(['@/admin/ExpertReview/DisciplineConstruction/DisciplineDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -91,7 +95,8 @@ const router = {
       component: resolve => require(['@/admin/ExpertReview/ProjectManagement/ProjectDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -100,7 +105,8 @@ const router = {
       component: resolve => require(['@/admin/ExpertReview/ProjectManagement/IdentificationDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

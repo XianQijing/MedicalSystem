@@ -1,8 +1,7 @@
-// 经费审核
 <template>
-  <div class="FundingAudit">
+  <div class="Discipline">
     <div>
-      <CTitle :screen="true" :textList="textList">审核列表</CTitle>
+      <CTitle :screen="true" :textList="textList">科管已审核列表</CTitle>
 
       <card
         v-for="(item, index) in messageList"
@@ -11,27 +10,30 @@
         :time="item.time"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <span class="black">负责人</span>
+        <span class="black">负责人-所属科室</span>
         <p class="black border-1pxTop">
-          经费类别、经费属性
+          项目名称
         </p>
-        <span>摘要：摘要占位</span>
+        <span>项目类别</span>
+        <span>项目计划</span>
         <span>报销额度：200.00</span>
         <span class="resTime">审核日期：2018.09.10</span>
         <div style="text-align:center">
           <JButton type="primary" round @click="jump">查看</JButton>
+          <JButton type="primary" round plain @click="jump">返回上一步</JButton>
         </div>
       </card>
     </div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FundingAudit',
+  name: 'Discipline',
   data () {
     return {
-      textList: ['时间范围', '申报类别', '经费类别'],
+      textList: ['时间范围', '申报类别', '项目类别', '项目计划', '审核状态', '所属科室'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -52,7 +54,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'FundingAuditDetail'})
+      this.$router.push({name: 'DisciplineDetail'})
     }
   }
 }

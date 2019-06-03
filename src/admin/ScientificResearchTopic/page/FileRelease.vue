@@ -50,8 +50,8 @@ export default {
   input
     text-align right
 .GuideRelease
+  margin 0 6px
   .form
-    margin 0 6px
     font-size:14px;
     .formCell, .form-Cell
       padding 0 10px

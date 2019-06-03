@@ -65,17 +65,17 @@ export default {
 <style lang="stylus" scoped>
 .SCI
   width 100%
+  margin 0 .06rem
   ul
-    margin 0 6px
     li
-      padding 0 10px
+      padding 0 .10rem
       background white
-      height 30px
+      height .30rem
       margin-bottom 2px
-      line-height 30px
-      font-size: 14px;
+      line-height .30rem
+      font-size: .14rem;
       color: #333333;
       span
-        font-size 16px
-        margin-right 5px
+        font-size .16rem
+        margin-right .05rem
 </style>

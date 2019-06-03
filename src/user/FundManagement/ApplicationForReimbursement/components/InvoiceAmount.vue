@@ -6,23 +6,23 @@
           <p class="title">金额发票</p>
           <div class="item-wrapper border-1px">
             <p class="item-title">项目经费：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">匹配经费：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">其他经费：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">报销总额：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">支付方式</p>
-            <JInput placeholder="下拉选择" type="select"/>
+            <JInput placeholder="下拉选择" type="select" @click="selected = true" v-model="fangshi"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title a">上传发票：</p>
@@ -46,23 +46,23 @@
           <p class="title">金额发票</p>
           <div class="item-wrapper border-1px">
             <p class="item-title">项目经费：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">匹配经费：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">其他经费：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">报销总额：</p>
-            <JInput placeholder="下拉选择"/>
+            <JInput placeholder="填写金额"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title">支付方式</p>
-            <JInput placeholder="下拉选择" type="select"/>
+            <JInput placeholder="下拉选择" type="select" @click="selected = true" v-model="fangshi"/>
           </div>
           <div class="item-wrapper border-1px">
             <p class="item-title a">上传发票：</p>
@@ -82,7 +82,44 @@
         </div>
       </tab>
       <tab title="国外差旅" name="2">
-        <!-- <ApplicationForMatters/> -->
+        <div class="wrapper">
+          <p class="title">金额发票</p>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">项目经费：</p>
+            <JInput placeholder="填写金额"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">匹配经费：</p>
+            <JInput placeholder="填写金额"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">其他经费：</p>
+            <JInput placeholder="填写金额"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">报销总额：</p>
+            <JInput placeholder="填写金额"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title">支付方式</p>
+            <JInput placeholder="下拉选择" type="select" @click="selected = true" v-model="fangshi"/>
+          </div>
+          <div class="item-wrapper border-1px">
+            <p class="item-title a">上传发票：</p>
+            <div class="fileList" v-for="(item, index) in notTavel.fapiaoList" :key="index">
+              <iconSvg iconClass="icon-wenjianjiaicon"/>
+              <div class="border-1pxLeft">
+                <p class="file-name">文件名：{{item.name}}</p>
+                <p class="file-path">文件类型：{{item.type}}</p>
+              </div>
+              <iconSvg @click="deleted(item)" class="border-1pxRight" iconClass="icon-delete"/>
+            </div>
+            <div class="upload" @click="openAbroad = true">
+              <!-- <input type="file" multiple class="tem" @change="openFile($event)"> -->
+              <div class="text"><img src="../../../../common/image/upload.png" alt=""></div>
+            </div>
+          </div>
+        </div>
       </tab>
     </tabs>
 
@@ -101,6 +138,29 @@
       </div>
     </popup>
 
+    <popup v-model="compute" position="center" :title="`${name}计算`">
+      <div class="content">
+        <Form fixed>
+          <FormItem color="blue" :height="0.26" :width="1.54" label="离沪日期">
+            <JInput type="select" placeholder="下拉选择"/>
+          </FormItem>
+          <FormItem color="blue" :height="0.26" :width="1.54" label="返沪日期">
+            <JInput type="select" placeholder="下拉选择"/>
+          </FormItem>
+          <FormItem color="blue" :height="0.26" :width="1.54" label="前往国家" v-if="openAbroad === true">
+            <JInput type="select" placeholder="下拉选择"/>
+          </FormItem>
+          <FormItem color="blue" :height="0.26" :width="1.54" label="标准">
+            <JInput type="select" placeholder="下拉选择" v-model="rule" @click="biaozhun = true"/>
+          </FormItem>
+        </Form>
+      </div>
+      <div class="button-cell">
+        <button class="reset">取消</button>
+        <button class="complete">上传</button>
+      </div>
+    </popup>
+
     <popup v-model="openDomestic" position="center" title="国内差旅计算器">
       <div class="border-1px chailv">
         <p class="dom-header">项目名称：会议费（培训费）</p>
@@ -109,12 +169,12 @@
             <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
-            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
             <div class="border-1pxLeft">
               <p class="file-name">文件名：{{Domestic.test.name}}</p>
-              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
             </div>
-            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
           </div>
           <FormItem :width="2" color="black" label="上传附件">
             <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
@@ -124,6 +184,7 @@
           </FormItem>
         </Form>
       </div>
+
       <div class="border-1px chailv">
         <p class="dom-header">项目名称：住宿费</p>
         <Form>
@@ -131,12 +192,12 @@
             <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
-            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
             <div class="border-1pxLeft">
               <p class="file-name">文件名：{{Domestic.test.name}}</p>
-              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
             </div>
-            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
           </div>
           <FormItem :width="2" color="black" label="上传附件">
             <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
@@ -146,6 +207,7 @@
           </FormItem>
         </Form>
       </div>
+
       <div class="border-1px chailv">
         <p class="dom-header">项目名称：城市交通费</p>
         <Form>
@@ -153,12 +215,12 @@
             <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
-            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
             <div class="border-1pxLeft">
               <p class="file-name">文件名：{{Domestic.test.name}}</p>
-              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
             </div>
-            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
           </div>
           <FormItem :width="2" color="black" label="上传附件">
             <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
@@ -168,19 +230,20 @@
           </FormItem>
         </Form>
       </div>
+
       <div class="border-1px chailv">
         <p class="dom-header">项目名称：伙食补贴费</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput placeholder="填写金额"/>
+            <JInput iconClass="icon-wenjianjiaicon" @clickIcon="compute = true, name='伙食补贴费'" placeholder="计算金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
-            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
             <div class="border-1pxLeft">
               <p class="file-name">文件名：{{Domestic.test.name}}</p>
-              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
             </div>
-            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
           </div>
           <FormItem :width="2" color="black" label="上传附件">
             <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
@@ -195,15 +258,15 @@
         <p class="dom-header">项目名称：市内交通费</p>
         <Form>
           <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
-            <JInput placeholder="计算金额"/>
+            <JInput iconClass="icon-wenjianjiaicon" @clickIcon="compute = true, name='市内交通费'" placeholder="计算金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
-            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
             <div class="border-1pxLeft">
               <p class="file-name">文件名：{{Domestic.test.name}}</p>
-              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
             </div>
-            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
           </div>
           <FormItem :width="2" color="black" label="上传附件">
             <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
@@ -221,12 +284,12 @@
             <JInput placeholder="填写金额"/>
           </FormItem>
           <div class="fileList" v-if="Domestic.test !== null">
-            <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
             <div class="border-1pxLeft">
               <p class="file-name">文件名：{{Domestic.test.name}}</p>
-              <!-- <p class="file-path">文件类型：{{Domestic.test.type}}</p> -->
             </div>
-            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
           </div>
           <FormItem :width="2" color="black" label="上传附件">
             <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
@@ -248,6 +311,187 @@
         <JButton type="primary" round>确定</JButton>
       </div>
     </popup>
+
+    <popup v-model="openAbroad" position="center" title="国外差旅计算器">
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：会议费（培训费）</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="外币报销金额">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :weight="1" color="black" :height="0.3" label="付款日汇率">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <FormItem :width="2" color="black" label="人民币金额">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">--元</div>
+          </FormItem>
+          <FormItem :width="2.5" color="black" label="备注">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">以美元为例，查询付款日RMB中间价为每100美元兑换人民币687.63，付款日汇率应填：6.8763。若为RMB请填写1.0</div>
+          </FormItem>
+        </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：住宿费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :weight="1" color="black" :height="0.3" label="付款日汇率">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <FormItem :width="2" color="black" label="人民币金额">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">--元</div>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：国际交通费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :weight="1" color="black" :height="0.3" label="付款日汇率">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <FormItem :width="2" color="black" label="人民币金额">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">--元</div>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：伙食补贴费</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput iconClass="icon-wenjianjiaicon" @clickIcon="compute = true, name='伙食补贴费'" placeholder="计算金额"/>
+          </FormItem>
+          <FormItem :weight="1" color="black" :height="0.3" label="付款日汇率">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <FormItem :width="2" color="black" label="人民币金额">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">--元</div>
+          </FormItem>
+          <FormItem :width="1.12" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+      <!--  -->
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：公杂费补贴</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput iconClass="icon-wenjianjiaicon" @clickIcon="compute = true, name='市内交通费'" placeholder="计算金额"/>
+          </FormItem>
+          <FormItem :weight="1" color="black" :height="0.3" label="付款日汇率">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <FormItem :width="2" color="black" label="人民币金额">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">--元</div>
+          </FormItem>
+          <FormItem :width="2.49" color="black" label="备注">
+            <div class="canClick">点击查看-查看限额</div>
+          </FormItem>
+        </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：会议费（培训费）</p>
+        <Form>
+          <FormItem :weight="1" color="black" :height="0.3" label="报销金额">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <div class="fileList" v-if="Domestic.test !== null">
+            <File :name="Domestic.test.name" @deleted="deleted('Domestic', 'test')"/>
+            <!-- <iconSvg iconClass="icon-wenjianjiaicon"/>
+            <div class="border-1pxLeft">
+              <p class="file-name">文件名：{{Domestic.test.name}}</p>
+            </div>
+            <iconSvg @click="deleted('Domestic', 'test')" class="border-1pxRight" iconClass="icon-delete"/> -->
+          </div>
+          <FormItem :width="2" color="black" label="上传附件">
+            <upload label="" ref="Domestic.test" @change="openFile($event, 'Domestic', 'test')"/>
+          </FormItem>
+          <FormItem :weight="1" color="black" :height="0.3" label="付款日汇率">
+            <JInput placeholder="填写金额"/>
+          </FormItem>
+          <FormItem :width="2" color="black" label="人民币金额">
+            <div class="canClick gray" style="text-align: left;line-height: .18rem">--元</div>
+          </FormItem>
+        </Form>
+      </div>
+
+      <div class="border-1px chailv">
+        <p class="dom-header">项目名称：差旅费合计</p>
+        <div class="baoxiao">
+          报销金额：20000元
+        </div>
+        <div class="canClick" style="text-align: right;font-size: .13rem">人民币中间价查询</div>
+      </div>
+
+      <div class="buttonq">
+        <JButton type="primary" round>确定</JButton>
+      </div>
+    </popup>
+
+    <popup position="bottom" v-model="selected">
+      <van-picker
+        :item-height="30"
+        :columns="columns"
+        show-toolbar
+        @cancel="selected = false"
+        @confirm="onConfirm" />
+    </popup>
+
+    <popup :overlay="false" position="bottom" v-model="biaozhun">
+      <van-picker
+        :item-height="30"
+        :columns="columns1"
+        show-toolbar
+        @cancel="biaozhun = false"
+        @confirm="onConfirm1" />
+    </popup>
   </div>
 </template>
 
@@ -258,15 +502,25 @@ import FormItem from '@/components/form/FormItem'
 import Popup from '@/components/popup/popup2'
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
+import File from './file'
 export default {
   name: 'InvoiceAmount',
   data () {
     return {
+      fangshi: '',
+      rule: '',
+      biaozhun: false,
+      selected: false,
       username: '',
       clickTab: 0,
       openPop: false,
+      openAbroad: false,
       now: '',
       openDomestic: false,
+      compute: false,
+      name: '',
+      columns: ['现金转账', '银行转账', '支票支付'],
+      columns1: ['自理', '一餐', '两餐'],
       notTavel: {
         project: '',
         fapiaoList: []
@@ -282,7 +536,8 @@ export default {
     FormItem,
     Popup,
     Tab,
-    Tabs
+    Tabs,
+    File
   },
   methods: {
     openFile (e, msg, key) {
@@ -301,6 +556,14 @@ export default {
     openPopup (msg) {
       this.openPop = true
       this.now = msg
+    },
+    onConfirm (value) {
+      this.selected = false
+      this.fangshi = value
+    },
+    onConfirm1 (val) {
+      this.biaozhun = false
+      this.rule = val
     }
   }
 }
@@ -403,40 +666,40 @@ export default {
         margin-bottom .085rem
   .tabs
     margin-top .1rem
-  .fileList
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)
-    border-radius: .04rem
-    font-size 0
-    text-align: left
-    margin-bottom .04rem
-    overflow hidden
-    // padding .14rem 0
-    .svg-icon
-      font-size .1914rem
-      padding .14rem .1rem
-    .border-1pxLeft
-      border-1pxLeft(black)
-      display inline-block
-      height 100%
-      font-size .14rem
-      height .285rem
-      // line-height .285rem
-      margin .095rem 0
-      vertical-align top
-      padding-left .1rem
-      .file-name
-        font-size .14rem
-        line-height .285rem
-      .file-path
-        font-size .12rem
-        line-height .16rem
-    .border-1pxRight
-      font-size .2124rem
-      color white
-      background $blue
-      float right
+  // .fileList
+  //   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)
+  //   border-radius: .04rem
+  //   font-size 0
+  //   text-align: left
+  //   margin-bottom .04rem
+  //   overflow hidden
+  //   // padding .14rem 0
+  //   .svg-icon
+  //     font-size .1914rem
+  //     padding .14rem .1rem
+  //   .border-1pxLeft
+  //     border-1pxLeft(black)
+  //     display inline-block
+  //     height 100%
+  //     font-size .14rem
+  //     height .285rem
+  //     // line-height .285rem
+  //     margin .095rem 0
+  //     vertical-align top
+  //     padding-left .1rem
+  //     .file-name
+  //       font-size .14rem
+  //       line-height .285rem
+  //     .file-path
+  //       font-size .12rem
+  //       line-height .16rem
+  //   .border-1pxRight
+  //     font-size .2124rem
+  //     color white
+  //     background $blue
+  //     float right
   .content
-    height 1.48rem
+    min-height 1.48rem
   .border-1px
     border-1px(#d3d3d3)
   .chailv

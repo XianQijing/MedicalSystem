@@ -5,11 +5,11 @@
       <tab title="事项申请" name="0">
         <ApplicationForMatters/>
       </tab>
-      <tab title="状态查询及打印" name="1">
+      <tab title="状态查询" name="1">
         <StateSearchAndPritin/>
       </tab>
       <tab title="打印申请列表" name="2">
-        <ApplicationForMatters/>
+        <PritinApply/>
       </tab>
       <tab title="已打印列表" name="3">
         <StateSearchAndPritin/>
@@ -22,6 +22,7 @@
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 import ApplicationForMatters from '../components/ApplicationForMatters'
+import PritinApply from '../components/PritinApply'
 import StateSearchAndPritin from '../components/StateSearchAndPritin'
 export default {
   name: 'FundingApproval',
@@ -34,7 +35,8 @@ export default {
     Tab,
     Tabs,
     ApplicationForMatters,
-    StateSearchAndPritin
+    StateSearchAndPritin,
+    PritinApply
   }
 }
 </script>
@@ -44,7 +46,7 @@ export default {
 .FundingApproval >>> .tabs
   .tab-pane
     width calc((100% - .06rem) / 2)
-    font-size 12px
+    font-size .12rem
     &:nth-of-type(n+3)
       margin-top .04rem
 .FundingApproval

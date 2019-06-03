@@ -74,6 +74,7 @@
     <card
       v-for="(item, index) in messageList"
       :key="index"
+      :time="item.time"
       >
       <div slot="time">2018.04.12 14:56</div>
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
@@ -88,7 +89,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 export default {
   name: 'FundsFinalAccountsDetail',
   data () {
@@ -110,9 +110,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Card
   }
 }
 </script>

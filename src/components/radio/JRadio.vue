@@ -38,10 +38,10 @@ export default {
   vertical-align top
   display inline-block
   img
-    width 14px
-    line-height 14px
+    width .14rem
+    line-height .14rem
     vertical-align: middle;
   span
     vertical-align: middle;
-    line-height 14px
+    line-height .14rem
 </style>

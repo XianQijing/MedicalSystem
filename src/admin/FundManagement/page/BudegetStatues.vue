@@ -82,35 +82,35 @@
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td></td>
       </tr>
       <tr class="move">
         <th>设备费</th>
         <td>5</td>
         <td>7</td>
         <td>4</td>
-        <td>4</td>
+        <td @click="openPop = true" class="blue">详情</td>
       </tr>
       <tr class="move">
         <th>会议费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td @click="openPop = true" class="blue">详情</td>
       </tr>
       <tr class="move">
         <th>间接经费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td></td>
       </tr>
       <tr class="move">
         <th>设备费</th>
         <td>5</td>
         <td>7</td>
         <td>2</td>
-        <td>4</td>
+        <td @click="openPop = true" class="blue">详情</td>
       </tr>
       <tr class="move">
         <th style="text-align:left">总计</th>
@@ -123,17 +123,27 @@
         <td colspan="3"></td>
       </tr>
     </table>
+
+    <Popup v-model="openPop" title="详情" position="center">
+      <div class="popContent">
+        <h1>设备费</h1>
+        <h2>设备费用鼠标移上显示说明占位</h2>
+        <p>当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可修改。当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可修改。如需修改必须联系单位或相关科教主管部门退回修改。当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可。</p>
+      </div>
+    </Popup>
   </div>
 </template>
 
 <script>
 import JTable from '@/components/table/table'
+import Popup from '@/components/popup/popup2'
 import JTableColums from '@/components/table/table-colums'
 export default {
   name: 'BudegetStatues',
   data () {
     return {
       clickTab: 0,
+      openPop: false,
       tableList: [
         {
           index: 1,
@@ -164,7 +174,8 @@ export default {
   },
   components: {
     JTable,
-    JTableColums
+    JTableColums,
+    Popup
   }
 }
 </script>
@@ -242,4 +253,21 @@ export default {
         text-align center
         padding-left 5px
         font-weight 400
+      .blue
+        color $blue
+  .popContent
+    padding .1rem
+    h1
+      font-size .14rem
+      line-height .2rem
+      font-weight 700
+      margin-bottom .04rem
+    h2, p
+      font-size .12rem
+      line-height .17rem
+    h2
+      color #999999
+      margin-bottom .07rem
+    p
+      padding 0 .1rem
 </style>

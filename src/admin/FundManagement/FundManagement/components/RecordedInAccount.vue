@@ -46,11 +46,11 @@
     <popup position="center" v-model="show" title="项目审核">
       <div class="popup-form">
         <p class="form-label">经费属性</p>
-        <JInput v-model="form.pass" placeholder="下拉选择" type="select" @click="selected = true"></JInput>
+        <JInput v-model="form.pass" placeholder="下拉选择" type="select" @click="openPop('shuxing')"></JInput>
       </div>
       <div class="popup-form">
         <p class="form-label">经费类别</p>
-        <JInput v-model="form.pass" placeholder="下拉选择" type="select" @click="selected = true"></JInput>
+        <JInput v-model="form.pass" placeholder="下拉选择" type="select" @click="openPop('leibie')"></JInput>
       </div>
       <div class="popup-form">
         <p class="form-label">经费来源</p>
@@ -69,7 +69,7 @@
     <popup position="bottom" :overlay="false" v-model="selected">
       <van-picker
         :item-height="30"
-        :columns="$store.state.columns"
+        :columns="columns"
         show-toolbar
         @cancel="selected = false"
         @confirm="onConfirm" />
@@ -97,6 +97,7 @@ export default {
           num: 123
         }
       ],
+      columns: ['科研课题', '学科建设', '人才培养'],
       form: {
         pass: ''
       }
@@ -111,6 +112,9 @@ export default {
     onConfirm (value) {
       this.form.pass = value
       this.selected = false
+    },
+    openPop (msg) {
+      this.selected = true
     }
   }
 }

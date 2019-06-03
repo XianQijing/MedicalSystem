@@ -11,7 +11,7 @@
         :time="item.time"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <span class="black">申请人-所属单位</span>
+        <span class="black">陈升息－眼科</span>
         <p class="black border-1pxTop">
           项目名称
         </p>

@@ -1,9 +1,9 @@
 // 系统维护
-import SystemMaintenance from '@/admin/SystemMaintenance/SystemMaintenance.vue'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/SystemMaintenance',
-  component: SystemMaintenance,
+  component: Layout,
   children: [
     {
       path: '',
@@ -29,7 +29,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/Privilege/AdminMessage'], resolve),
       meta: {
         title: '信息修改',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -47,7 +48,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/ExpertSetup/ExpertEdit'], resolve),
       meta: {
         title: '修改信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -56,7 +58,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/ExpertSetup/ExpertInformation'], resolve),
       meta: {
         title: '专家设置',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -110,7 +113,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/DailySetup/DailySetting'], resolve),
       meta: {
         title: '日常设置',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -127,7 +131,8 @@ const router = {
       name: 'Quota',
       component: resolve => require(['@/admin/SystemMaintenance/DailySetup/Quota'], resolve),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -145,7 +150,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/DataImport/userMsg'], resolve),
       meta: {
         title: '用户信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -154,7 +160,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/DataImport/WatchData'], resolve),
       meta: {
         title: '用户信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -163,7 +170,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/DataImport/MsgDetail'], resolve),
       meta: {
         title: '信息修改',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -172,7 +180,8 @@ const router = {
       component: resolve => require(['@/admin/SystemMaintenance/DataImport/DataProject'], resolve),
       meta: {
         title: '我的项目',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

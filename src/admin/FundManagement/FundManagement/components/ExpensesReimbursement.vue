@@ -1,60 +1,62 @@
 // 经费报销
 <template>
   <div class="ExpensesReimbursement">
-    <CTitle>基本信息</CTitle>
+    <CTitle>经费报销</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">经费类别:</p>
-        <j-input v-model="test"></j-input>
+        <div class="blue">
+          <IconSvg iconClass="icon-bianjiicon"/>
+          项目经费
+        </div>
       </div>
       <div class="formCell">
         <p class="form-label">经费属性:</p>
-        <j-input></j-input>
+        <div class="blue">
+          <IconSvg iconClass="icon-bianjiicon"/>
+          科研课题
+        </div>
       </div>
       <div class="formCell" @click="open([$store.state.columns[0], $store.state.columns[0], $store.state.columns[0]])">
         <p class="form-label red">申请端口:</p>
-        <j-input v-model="form.apply"></j-input>
+        <div class="blue">
+          <IconSvg iconClass="icon-bianjiicon"/>
+            {{test}}
+        </div>
       </div>
       <div class="formCell">
         <p class="form-label red">用途:</p>
-        <j-input></j-input>
+        <div class="blue">
+          <IconSvg iconClass="icon-bianjiicon"/>
+          用途占位
+        </div>
       </div>
       <div class="formCell">
         <p class="form-label red">报销金额:</p>
-        <j-input></j-input>
+        <div class="blue">
+          <IconSvg iconClass="icon-bianjiicon"/>
+          1928.00
+        </div>
       </div>
       <div class="formCell">
         <p class="form-label red">发票:</p>
-        <p class="blue">上传</p>
+        <div class="blue">
+          <IconSvg iconClass="icon-icon_download"/>
+        </div>
       </div>
       <div class="form-cell">
         <p class="form-label">报销详细说明:</p>
-        <textarea/>
+        <textarea class="blue"/>
       </div>
     </div>
 
     <popup position="bottom" v-model="selected">
-      <div class="formCell">
-        <span>取消</span>
-        <span>确认</span>
-      </div>
-      <div class="content">
-        <van-picker
-          :item-height="30"
-          :columns="$store.state.columns"
-          @change="onChange"
-          />
-        <van-picker
-          :item-height="30"
-          :columns="$store.state.columns"
-          @change="onChange"
-          />
-        <van-picker
-          :item-height="30"
-          :columns="$store.state.columns"
-          @change="onChange"
-          />
-      </div>
+      <van-picker
+        :item-height="30"
+        :show-toolbar="true"
+        :columns="columns"
+        @confirm="confirm"
+      />
     </popup>
 
     <div class="button-cell">
@@ -70,19 +72,34 @@ export default {
   name: 'ExpensesReimbursement',
   data () {
     return {
-      test: 'sf',
-      selected: true,
+      selected: false,
+      test: '间接经费-科研管理费-费用',
       form: {
         apply: ''
-      }
+      },
+      columns: [
+        {
+          values: ['一端口1', '一端口2', '一端口3', '一端口4', '一端口5'],
+          className: 'column1'
+        },
+        {
+          values: ['二端口1', '二端口2', '二端口3', '二端口4', '二端口5'],
+          className: 'column2'
+        },
+        {
+          values: ['三端口1', '三端口2', '三端口3', '三端口4', '三端口5'],
+          className: 'column3'
+        }
+      ]
     }
   },
   components: {
     Popup
   },
   methods: {
-    onChange (picker, value, index) {
-      console.log(arguments)
+    confirm (val) {
+      this.test = val.join('-')
+      this.selected = false
     },
     open (arr) {
       this.selected = true
@@ -93,14 +110,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.ExpensesReimbursement >>> .J-input
+.ExpensesReimbursement >>> .div
   input
     text-align right
     color black
     font-weight 700
 .ExpensesReimbursement
-  .comTitle
-    margin 0
   .form
     .formCell
       background white
@@ -112,14 +127,14 @@ export default {
       margin-bottom 2px
       font-size: 14px;
       color: #333333;
-      box-sizing borderj-input
+      box-sizing borderdiv
       .red
         color red
       .blue
         font-size: 14px;
-        color: #2873FF;
+        color: #2873FF!important
         font-weight 700
-      .J-input
+      .div
         width 50%
         padding 0
         max-width 181px

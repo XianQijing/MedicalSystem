@@ -29,15 +29,15 @@
         </div>
         <div class="form-cell">
           <p class="label">项目来源:</p>
-          <p class="j-input">项目级别</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>项目级别</p>
         </div>
         <div class="form-cell">
           <p class="label">项目编号:</p>
-          <p class="j-input">是否收费</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>是否收费</p>
         </div>
         <div class="form-cell">
           <p class="label">财务编号:</p>
-          <p class="j-input">收费标准</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>收费标准</p>
         </div>
         <div class="form-cell">
           <p class="label">经费总额:</p>
@@ -57,15 +57,15 @@
         </div>
         <div class="form-cell">
           <p class="label">项目周期:</p>
-          <p class="j-input">外省人数</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>外省人数</p>
         </div>
         <div class="form-cell">
           <p class="label">验收时间:</p>
-          <p class="j-input">外院人数</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>外院人数</p>
         </div>
         <div class="form-cell">
           <p class="label">项目状态:</p>
-          <p class="j-input">演讲PPT</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>演讲PPT</p>
         </div>
       </div>
     </div>
@@ -225,6 +225,8 @@ export default {
           text-align right
           font-size 12px
           line-height 26px
+          &.blue
+            color #2873FF
   .content
     margin-top 10px
     .wrapper
@@ -300,6 +302,8 @@ export default {
 .button-cell
   font-size: 14px
   margin-top 10px
+.svg-icon
+  font-size .1652rem
 .ProjectFundsDetail >>> .j-table
     table
       table-layout:fixed;

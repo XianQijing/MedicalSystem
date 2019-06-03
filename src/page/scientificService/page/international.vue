@@ -86,6 +86,7 @@ export default {
 
 <style lang="stylus" scoped>
 .international
+  margin 0 6px
   .ss
     color black
     font-size:13px;

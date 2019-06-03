@@ -112,8 +112,8 @@ export default {
 
 <style lang="stylus" scoped>
 .ExchangeAudit
-  .form
     margin 0 6px
+  .form
     .formCell
       padding 0 10px
       height 30px

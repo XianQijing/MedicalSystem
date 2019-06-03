@@ -1,9 +1,14 @@
 <template>
-  <div class="homePage">
-    <icon-list :icons="list"></icon-list>
-    <!-- <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-zhuanliicon"></use>
-    </svg> -->
+  <div>
+    <div class="homePage">
+      <icon-list :icons="list"></icon-list>
+    </div>
+    <div class="shangBiao">
+      <div>
+        <img src="./icon.png" width="22" alt="">
+        <span>技术支持</span><span>上海润银软件有限公司</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,31 +19,6 @@ export default {
   data () {
     return {
       list: [
-        {
-          title: '系统管理',
-          children: [
-            {
-              name: '领导办公',
-              icon: 'icon-lingdaobangong',
-              path: '/LeadingOffice'
-            },
-            {
-              name: '专家评审',
-              icon: 'icon-yonghuzhongxinicon',
-              path: '/ExpertReview'
-            },
-            {
-              name: '系统维护',
-              icon: 'icon-xitongweihu',
-              path: '/SystemMaintenance'
-            },
-            {
-              name: '系统日志',
-              icon: 'icon-Page2',
-              path: '/'
-            }
-          ]
-        },
         {
           title: '系统用户',
           children: [
@@ -138,6 +118,31 @@ export default {
               path: '/ElectronicArchives'
             }
           ]
+        },
+        {
+          title: '系统管理',
+          children: [
+            {
+              name: '领导办公',
+              icon: 'icon-lingdaobangong',
+              path: '/LeadingOffice'
+            },
+            {
+              name: '专家评审',
+              icon: 'icon-yonghuzhongxinicon',
+              path: '/ExpertReview'
+            },
+            {
+              name: '系统维护',
+              icon: 'icon-xitongweihu',
+              path: '/SystemMaintenance'
+            },
+            {
+              name: '系统日志',
+              icon: 'icon-Page2',
+              path: '/'
+            }
+          ]
         }
       ]
     }
@@ -150,5 +155,24 @@ export default {
 
 <style lang="stylus" scoped>
 .homePage
+  min-height 100vh
   padding-top .1rem
+  box-sizing border-box
+  padding-bottom .8rem
+.shangBiao
+  width 100%
+  position relative
+  bottom 0px
+  margin -50px auto 0 auto
+  clear: both;
+  font-size .16rem
+  div
+    width 80%
+    max-width 4.44rem
+    margin 0 auto
+    span
+      line-height .26rem
+      margin-left 1em
+    img
+      vertical-align text-bottom
 </style>

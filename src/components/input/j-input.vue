@@ -1,5 +1,5 @@
 <template>
-  <div class="J-input">
+  <div class="J-input" :class="{'icon': iconClass}">
     <div class="text ss" v-if="type==='text'">
       <slot></slot>
       <input :type="text"
@@ -36,11 +36,7 @@
         @input="$emit('input', $event.target.value)"
         >
     </div>
-
-      <!-- <popup position="bottom" :overlay='overlay' :toShow="show" @close="open">
-        <slot></slot>
-      </popup> -->
-    <!-- <input type="text" :value="value"> -->
+    <iconSvg v-if="iconClass" @click="clickIcon" :iconClass="iconClass"></iconSvg>
   </div>
 </template>
 
@@ -54,6 +50,7 @@ export default {
   },
   props: {
     value: {},
+    iconClass: '',
     type: {
       type: String,
       default: 'text'
@@ -93,6 +90,9 @@ export default {
     },
     getValue (value) {
       this.$emit('input', value)
+    },
+    clickIcon () {
+      this.$emit('clickIcon')
     }
   }
 }
@@ -101,13 +101,21 @@ export default {
 <style lang="stylus" scoped>
 @import '../../common/style/mixin.styl'
 .J-input
-  padding 0 10px
+  padding 0 .10rem
   height 100%
   display flex
   align-items center
   margin 0
   box-sizing border-box
-  font-size 14px
+  // font-size .14rem
+  &.icon
+      padding-right 0
+    .text
+      width calc(100% - .27rem)
+    .svg-icon
+      color $blue
+      font-size .2rem
+      margin 0 0.06rem 0 0.06rem
   .text
     background none
     width 100%
@@ -128,9 +136,9 @@ export default {
     height 100%
     background none
   .aSelect
-    background-size 12px
+    background-size .12rem
     background-position center right
-    padding 0 12px 0 0
+    padding 0 .12rem 0 0
     bg-image(arrow)
     display flex
     align-items center
@@ -140,6 +148,13 @@ export default {
     .select
       cursor: not-allowed
       pointer-events:none
+  // .icon
+  //   input
+  //     width calc(100% - .27rem)
+  //   .svg-icon
+  //     color $blue
+  //     font-size .15rem
+  //     margin 0 0.06rem 0 0
   .text
     input:focus::-webkit-input-placeholder
       color: transparent;

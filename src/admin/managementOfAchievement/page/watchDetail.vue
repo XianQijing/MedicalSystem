@@ -104,8 +104,8 @@ export default {
 
 <style lang="stylus" scoped>
 .watchDetail
+  margin 0 6px
   .form
-    margin 0 6px
     .formCell
       padding 0 10px
       height 30px

@@ -1,9 +1,9 @@
-import Notic from '@/page/notic/notic'
+import Layout from '@/layout/layout'
 
 const router = {
-  path: '/notic',
+  path: '/Notic',
   // name: 'Notic',
-  component: Notic,
+  component: Layout,
   children: [
     {
       path: '',
@@ -20,7 +20,8 @@ const router = {
       component: resolve => require(['@/admin/notic/addOrEdit'], resolve),
       meta: {
         title: '通知',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

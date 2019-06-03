@@ -1,9 +1,9 @@
-import ScientificResearchTopic from '@/admin/ScientificResearchTopic/ScientificResearchTopic'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ScientificResearchTopic',
   // name: 'ScientificResearchTopic',
-  component: ScientificResearchTopic,
+  component: Layout,
   children: [
     {
       path: '',
@@ -29,7 +29,8 @@ const router = {
       component: resolve => require(['@/admin/ScientificResearchTopic/page/GuideRelease'], resolve),
       meta: {
         title: '指南发布',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -47,7 +48,8 @@ const router = {
       component: resolve => require(['@/admin/ScientificResearchTopic/page/addPlan'], resolve),
       meta: {
         title: '新增发布',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -83,7 +85,8 @@ const router = {
       component: resolve => require(['@/admin/ScientificResearchTopic/page/FileRelease'], resolve),
       meta: {
         title: '文件发布',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

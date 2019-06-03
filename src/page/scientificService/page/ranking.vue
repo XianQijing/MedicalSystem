@@ -40,6 +40,7 @@ export default {
 
 <style lang="stylus" scoped>
 .ranking
+  margin 0 6px
   height 100%
   .wrapper
     min-height 100%
@@ -47,7 +48,7 @@ export default {
     box-sizing border-box
     .second, .third, .fouth
       font-size:12px;
-      margin 0px 6px 10px 6px
+      margin 0px 0px 10px 0px
       button
         width 0.87rem
         height 30px
@@ -62,7 +63,7 @@ export default {
         &:nth-child(1)
           margin-left 0
     .first
-      margin 0px 6px 10px 6px
+      margin 0px 0px 10px 0px
       font-size:12px;
       button
         width 0.69rem

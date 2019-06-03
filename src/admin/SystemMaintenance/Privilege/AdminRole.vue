@@ -6,6 +6,7 @@
         v-for="(item, index) in messageList"
         :key="index"
         :status="item.type"
+        :time="item.time"
         type="selection"
         :data="item"
         >
@@ -79,7 +80,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 import Popup from '@/components/popup/popup2'
 export default {
@@ -110,7 +110,6 @@ export default {
     }
   },
   components: {
-    Card,
     Checkall,
     Popup
   },

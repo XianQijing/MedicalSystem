@@ -1,9 +1,9 @@
-import SecuritySupport from '@/admin/SecuritySupport/SecuritySupport'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/SecuritySupport',
   // name: 'SecuritySupport',
-  component: SecuritySupport,
+  component: Layout,
   children: [
     {
       path: '',
@@ -20,7 +20,8 @@ const router = {
       component: resolve => require(['@/admin/SecuritySupport/page/InformationAudit'], resolve),
       meta: {
         title: '信息审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -38,7 +39,8 @@ const router = {
       component: resolve => require(['@/admin/SecuritySupport/page/KeyDisciplinesExamine'], resolve),
       meta: {
         title: '信息审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -47,7 +49,8 @@ const router = {
       component: resolve => require(['@/admin/SecuritySupport/page/ResearchFunds'], resolve),
       meta: {
         title: '科研经费',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

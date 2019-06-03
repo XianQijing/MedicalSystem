@@ -54,8 +54,8 @@ export default {
   input
     text-align right
 .GuideRelease
+  margin 0 6px
   .form
-    margin 0 6px
     font-size:14px;
     .formCell, .form-Cell
       padding 0 10px
@@ -84,4 +84,5 @@ export default {
   .button-cell
     position fixed
     bottom 0
+    left 0
 </style>

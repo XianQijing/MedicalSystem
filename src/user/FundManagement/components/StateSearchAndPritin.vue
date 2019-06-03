@@ -69,12 +69,12 @@ export default {
   .card
     .did
       border: 1px solid #999999;
-      border-radius: 4px;
-      font-size: 9px!important
+      border-radius: .04rem;
+      font-size: .09rem!important
       color: #999999
-      height 20px
-      width 36px
-      line-height 20px
+      height .20rem
+      width .36rem
+      line-height .20rem
       float right
       text-align center
       &.not

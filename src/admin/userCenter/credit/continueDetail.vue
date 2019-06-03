@@ -38,9 +38,9 @@
     <c-title>学分获取</c-title>
     <card
       aType="通过"
-      :nowType="false"
+      time="2018.04.12 14:56"
     >
-      <p slot="time" style="height:100%">2018.04.12 14:56</p>
+      <!-- <p slot="time" style="height:100%">2018.04.12 14:56</p> -->
       <p class="black">项目名称</p>
       <div class="two">
         <span>分值：12</span>
@@ -64,7 +64,6 @@
 
 <script>
 import Popup from '@/components/popup/popup'
-import Card from '@/components/card/card'
 
 export default {
   name: 'ContinueDetail',
@@ -78,8 +77,7 @@ export default {
     }
   },
   components: {
-    Popup,
-    Card
+    Popup
   },
   methods: {
     // 性别选择
@@ -115,8 +113,8 @@ export default {
     padding 0
 .continueDetail
   // height 100vh
+  margin 0 6px
   .form
-    margin 0 6px
     .formCell
       background white
       height 30px

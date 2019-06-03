@@ -131,8 +131,8 @@ export default {
     padding 0
 .reviewed
   min-height 100%
+  margin 0 6px
   .form
-    margin 0 6px
     .formCell
       background white
       height 30px

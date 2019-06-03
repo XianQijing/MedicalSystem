@@ -7,10 +7,10 @@
         v-for="(item, index) in messageList"
         :key="index"
         :status="item.type"
+        :time="item.time"
         type="selection"
         :data="item"
         >
-        <p class="no border-1pxLeft">NO：{{item.name}}</p>
         <span class="black">申请人-所属单位</span>
         <span>项目类别</span>
         <span>项目类别</span>
@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import Card from '@/components/card/card'
 import Checkall from '@/components/checkbox/checkall'
 import Popup from '@/components/popup/popup2'
 export default {
@@ -57,7 +56,6 @@ export default {
     }
   },
   components: {
-    Card,
     Checkall,
     Popup
   },

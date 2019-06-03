@@ -1,6 +1,6 @@
 <template>
   <div class="AddOrEdit">
-    <CTitlt>{{msg}}通知</CTitlt>
+    <CTitle>{{msg}}通知</CTitle>
     <div class="content">
       <div class="formCell s">
         <p class="form-label">通知标题：</p>
@@ -18,7 +18,7 @@
         <p class="form-label">截止时间：</p>
         <p>2019.09.30</p>
       </div>
-      <div class="formCell">
+      <!-- <div class="formCell">
         <p class="form-label">状态：</p>
         <div class="radio">
           <van-radio v-model="checked" name="显示">
@@ -30,13 +30,12 @@
             隐藏
           </van-radio>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import CTitlt from '@/components/title/title'
 export default {
   name: 'AddOrEdit',
   data () {
@@ -49,9 +48,6 @@ export default {
       }
     }
   },
-  components: {
-    CTitlt
-  },
   created () {
     this.msg = this.$route.query.msg
     this.$store.commit('changeTitle', this.$route.query.msg + '通知')
@@ -60,8 +56,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.content
+.AddOrEdit
   margin 0 6px
+.content
   .formCell, .s
     width 100%
     background white

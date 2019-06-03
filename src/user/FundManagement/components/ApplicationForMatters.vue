@@ -54,6 +54,7 @@
 <script>
 import JRadio from '@/components/radio/JRadio'
 import JRadioGrounp from '@/components/radio/JRadioGrounp'
+import Popup from '@/components/popup/popup2'
 export default {
   namw: 'ApplicationForMatters',
   data () {
@@ -64,7 +65,8 @@ export default {
   },
   components: {
     JRadio,
-    JRadioGrounp
+    JRadioGrounp,
+    Popup
   },
   methods: {
     jump () {
@@ -77,6 +79,8 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl';
 .ApplicationForMatters
+  .JRadio
+    font-size .14rem
   .wrapper
     background: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.50);
@@ -133,6 +137,7 @@ export default {
         padding .06rem .1rem
         box-sizing border-box
         height .80rem
+        font-size .14rem
       .JRadioGrounp
         display inline-block
         position absolute
@@ -150,4 +155,6 @@ export default {
         top .08rem
         &:first-child
           right 1.03rem
+.J-input
+  font-size .14rem
 </style>

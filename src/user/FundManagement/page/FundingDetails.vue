@@ -10,14 +10,14 @@
       :time="item.time"
       >
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
-      <span class="black">申请人-所属单位</span>
+      <span class="black">陈升息－眼科</span>
       <p class="black border-1pxTop">
-        论文题目
+        项目名称
       </p>
       <span>项目类别</span>
       <span>项目计划</span>
       <div style="text-align:center">
-        <JButton type="primary" round @click="jump">详情</JButton>
+        <JButton type="primary" round @click="jump">查看</JButton>
       </div>
     </card>
   </div>

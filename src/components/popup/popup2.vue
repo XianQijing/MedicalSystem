@@ -10,13 +10,15 @@
     </div>
   </transition>
 
-    <transition name="fade"  v-if="position==='bottom'">
-      <transition name="up">
-        <div v-show="value" class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
-          <slot></slot>
-        </div>
-      </transition>
-    </transition>
+    <!-- <transition name="fade"  v-if="position==='bottom'">
+      <div class="popup" :class="{overlay: overlay}" v-show="value" @touchmove.prevent @click="show($event)" :close-on-click-overlay="clickOverlay">
+        <transition name="up">
+          <div v-show="value" class="bottomPop" v-if="position==='bottom'" @click="cancel($event)">
+            <slot></slot>
+          </div>
+        </transition>
+      </div>
+    </transition> -->
 
       <!-- <transition>
         <div class="centerPop warning" v-if="position==='center'" @click="cancel($event)">
@@ -29,16 +31,21 @@
           </div>
         </div>
       </transition> -->
-      <van-popup :value="value" v-if="position==='center'" :overlay="overlay" @click-overlay="show">
+      <van-popup :overlay-style="{'background': 'rgba(51,51,51,0.20)'}" :value="value" v-if="position==='center'" :overlay="overlay" @click-overlay="show">
         <div class="wraning">
           <p class="waring-title border-1px">
             <span class="title">{{title}}</span>
-            <span class="iconfont" @click="show">&#xe6d6;</span>
+            <iconSvg @click="show" iconClass="icon-guanbi"/>
+            <!-- <span class="iconfont" @click="show">&#xe6d6;</span> -->
           </p>
           <div class="height">
             <slot></slot>
           </div>
         </div>
+      </van-popup>
+
+      <van-popup position="bottom" :overlay-style="{'background': 'rgba(51,51,51,0.20)'}" :value="value" v-if="position==='bottom'" :overlay="overlay" @click-overlay="show">
+        <slot/>
       </van-popup>
   </div>
 </template>
@@ -118,24 +125,24 @@ export default {
     z-index 290
 .wraning
   width 3.3rem
-  max-width 300px
   background white
   margin 0 auto
   .waring-title
-    margin 0 10px
-    padding 15px 0
+    margin 0 .10rem
+    padding .15rem 0
     text-align center
-    font-size: 16px;
+    font-size: .16rem;
     color: #333333;
     // font-weight 700
     border-1px(#D3D3D3)
-    .iconfont
+    .svg-icon
       position absolute
       right 0
       color #2873FF
+      font-size .11rem
   .height
     overflow auto
-    max-height 5.9rem
+    max-height 80vh
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .1s;

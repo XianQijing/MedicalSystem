@@ -56,7 +56,7 @@
     <div class="wrapper shuo" style="padding-top: 0">
       <div class="item-wrapper border-1px">
         <p class="item-title">报销详细说明：</p>
-        <textarea></textarea>
+        <textarea placeholder="填写报销详细说明"/>
       </div>
     </div>
 
@@ -141,9 +141,10 @@ export default {
     .J-input
       border: 1px solid #FD4D4D;
       border-radius: .06rem;
-      width 1.12rem
+      width calc(100%/3 - .06rem/3)
       display inline-block
       height .30rem
+      font-size .14rem
     .item-wrapper
       padding 0 .10rem .15rem .10rem
       .item-title
@@ -153,6 +154,7 @@ export default {
         vertical-align top
       textarea
         border: 1px solid #FD4D4D;
+        font-size .14rem
         border-radius: .06rem;
         display block
         width 100%
@@ -204,7 +206,7 @@ export default {
             margin-top .16rem
     .arrow
         margin-top -.20rem
-        width .313rem
+        // width .313rem
       .iconfont
         font-size .25rem
   .button-cell

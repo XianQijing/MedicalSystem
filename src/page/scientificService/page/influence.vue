@@ -145,6 +145,7 @@ export default {
 
 <style lang="stylus" scoped>
 .influence
+  margin 0 6px
   .comTitle
     img
       width 18px

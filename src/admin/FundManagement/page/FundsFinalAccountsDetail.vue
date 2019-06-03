@@ -71,42 +71,237 @@
     </div>
     <tabs v-model="clickTab">
       <tab title="总经费决算" name="0">
-        <JTable :data="tableList">
-          <JTableColums label="项目" prop="index"/>
-          <JTableColums label="预算数" prop="name"/>
-          <JTableColums label="实际数" prop="price"/>
-          <JTableColums label="结余数" prop="index"/>
-          <JTableColums label="备注" prop="price"/>
-        </JTable>
+        <table cellspacing="0">
+          <tr class="bottom">
+            <th>项目</th>
+            <th>项目经费</th>
+            <th>匹配经费</th>
+            <th>其他经费</th>
+            <th>备注</th>
+          </tr>
+          <tr class="move">
+            <th>直接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>4</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>会议费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>间接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">总计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">合计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+        </table>
       </tab>
       <tab title="项目经费决算" name="1">
-        <JTable :data="tableList">
-          <JTableColums label="项目" prop="index"/>
-          <JTableColums label="预算数" prop="name"/>
-          <JTableColums label="实际数" prop="price"/>
-          <JTableColums label="结余数" prop="index"/>
-          <JTableColums label="备注" prop="price"/>
-        </JTable>
+        <table cellspacing="0">
+          <tr class="bottom">
+            <th>项目</th>
+            <th>项目经费</th>
+            <th>匹配经费</th>
+            <th>其他经费</th>
+            <th>备注</th>
+          </tr>
+          <tr class="move">
+            <th>直接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>4</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>会议费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>间接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">总计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">合计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+        </table>
       </tab>
       <tab title="匹配经费决算" name="2">
-        <JTable :data="tableList">
-          <JTableColums label="项目" prop="index"/>
-          <JTableColums label="预算数" prop="name"/>
-          <JTableColums label="实际数" prop="price"/>
-          <JTableColums label="结余数" prop="index"/>
-          <JTableColums label="备注" prop="price"/>
-        </JTable>
+        <table cellspacing="0">
+          <tr class="bottom">
+            <th>项目</th>
+            <th>项目经费</th>
+            <th>匹配经费</th>
+            <th>其他经费</th>
+            <th>备注</th>
+          </tr>
+          <tr class="move">
+            <th>直接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>4</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>会议费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>间接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">总计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">合计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+        </table>
       </tab>
       <tab title="其他经费决算" name="3">
-        <JTable :data="tableList">
-          <JTableColums label="项目" prop="index"/>
-          <JTableColums label="预算数" prop="name"/>
-          <JTableColums label="实际数" prop="price"/>
-          <JTableColums label="结余数" prop="index"/>
-          <JTableColums label="备注" prop="money"/>
-        </JTable>
+        <table cellspacing="0">
+          <tr class="bottom">
+            <th>项目</th>
+            <th>项目经费</th>
+            <th>匹配经费</th>
+            <th>其他经费</th>
+            <th>备注</th>
+          </tr>
+          <tr class="move">
+            <th>直接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>4</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>会议费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th>间接经费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td></td>
+          </tr>
+          <tr class="move">
+            <th>设备费</th>
+            <td>5</td>
+            <td>7</td>
+            <td>2</td>
+            <td @click="openPop = true" class="blue">详情</td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">总计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+          <tr class="move">
+            <th style="text-align:left">合计</th>
+            <td>占位</td>
+            <td colspan="3"></td>
+          </tr>
+        </table>
       </tab>
     </tabs>
+    <Popup v-model="openPop" title="详情" position="center">
+      <div class="popContent">
+        <h1>设备费</h1>
+        <h2>设备费用鼠标移上显示说明占位</h2>
+        <p>当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可修改。当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可修改。如需修改必须联系单位或相关科教主管部门退回修改。当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可。</p>
+      </div>
+    </Popup>
   </div>
 </template>
 
@@ -114,12 +309,14 @@
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
 import JTable from '@/components/table/table'
+import Popup from '@/components/popup/popup2'
 import JTableColums from '@/components/table/table-colums'
 export default {
   name: 'FundsFinalAccountsDetail',
   data () {
     return {
       clickTab: 0,
+      openPop: false,
       tableList: [
         {
           index: 1,
@@ -152,7 +349,8 @@ export default {
     Tab,
     Tabs,
     JTable,
-    JTableColums
+    JTableColums,
+    Popup
   }
 }
 </script>
@@ -205,6 +403,52 @@ export default {
     margin-top 10px
   .j-table
     margin-top 10px
+  .popContent
+    padding .1rem
+    h1
+      font-size .14rem
+      line-height .2rem
+      font-weight 700
+      margin-bottom .04rem
+    h2, p
+      font-size .12rem
+      line-height .17rem
+    h2
+      color #999999
+      margin-bottom .07rem
+    p
+      padding 0 .1rem
+  table
+    width 100%
+    border-collapse:separate
+    text-align center
+    font-size: 14px;
+    font-weight 400
+    margin-top 10px
+    table-layout fixed
+    .bottom
+      background: #003BAA;
+      th
+        padding-bottom 13px
+        padding-top 13px
+        color white
+        font-weight 400
+    .move
+      width 100%
+      td
+        border-bottom 1px solid rgba(0,0,0,0.5)
+        height 26px
+        background: #FFFFFF;
+        color: #999999;
+      th
+        border-bottom 1px solid rgba(0,0,0,0.5)
+        height 26px
+        background: #FFFFFF;
+        text-align center
+        padding-left 5px
+        font-weight 400
+      .blue
+        color $blue
 .FundsFinalAccountsDetail >>> .tabs
   .tab-pane
     width 23.5%

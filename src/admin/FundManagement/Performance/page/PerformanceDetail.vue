@@ -1,11 +1,11 @@
 // 经费审核--详情
 <template>
-  <div class="FundingAuditDetail">
+  <div class="PerformanceDetail.vue">
     <CTitle>审核信息</CTitle>
     <div class="form">
       <div class="formCell">
         <p class="form-label">发票信息:</p>
-        <p class="form-msg blue">预览</p>
+        <p class="form-msg blue"><IconSvg iconClass="icon-icon_preview"/></p>
       </div>
       <div class="formCell">
         <p class="form-label">用途:</p>
@@ -48,7 +48,7 @@
 <script>
 import Popup from '@/components/popup/popup2'
 export default {
-  name: 'FundingAuditDetail',
+  name: 'PerformanceDetail.vue',
   data () {
     return {
       show: false,
@@ -71,73 +71,73 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.FundingAuditDetail
+.PerformanceDetail.vue
+  margin 0 .06rem
   .form
-    margin 0 6px
     .formCell
-      padding 0 10px
-      height 30px
+      padding 0 .10rem
+      height .30rem
       background white
       margin-bottom 2px
       align-items center
       .form-label
-        font-size: 14px;
+        font-size: .14rem;
         color: #333333;
       .form-msg
-        font-size: 14px;
+        font-size: .14rem;
         color: #999999;
       .blue
         color #2873FF
   .btn
     text-align center
-    margin-top 20px
+    margin-top .20rem
     button
       background #2873FF
-      border-radius: 6px;
+      border-radius: .06rem;
       color white
-      width 100px
-      height 30px
+      width 1.00rem
+      height .30rem
 .popup-form
-  padding 0 15px
+  padding 0 .15rem
   display flex
   justify-content space-between
-  margin-top 10px
+  margin-top .10rem
   .form-label
-    font-size: 14px;
+    font-size: .14rem;
     color: #333333
     display inline-block
-    line-height 30px
+    line-height .30rem
   textarea
     border: 1px solid #2873FF;
     width 74%
     box-sizing border-box
-    font-size: 14px
-    padding 5px
+    font-size: .14rem
+    padding .05rem
     border-radius: 4px;
-    height 95px
+    height .95rem
   .J-input
     border-radius: 4px;
-    font-size: 14px
+    font-size: .14rem
     border: 1px solid #2873FF;
-    height 26px
+    height .26rem
     box-sizing border-box
     width 74%
 .button-cell
-  font-size: 14px
-  margin-top 10px
+  font-size: .14rem
+  margin-top .10rem
 .form-Cell
-  padding 0 10px
+  padding 0 .10rem
   background white
-  font-size 14px
-  height 200px
+  font-size .14rem
+  height 2.00rem
   .form-label
-    line-height 30px
+    line-height .30rem
   .main
     color: #999999;
     width 100%
     // height 130px
     word-wrap break-word
-    line-height 18px
+    line-height .18rem
     overflow auto
-    height 165px
+    height 1.65rem
 </style>

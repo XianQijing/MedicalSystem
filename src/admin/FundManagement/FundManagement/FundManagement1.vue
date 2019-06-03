@@ -8,8 +8,14 @@
       <tab title="经费报销" name="1">
         <ExpensesReimbursement/>
       </tab>
-      <tab title="经费审核" name="2">
+      <tab title="审核状态查询" name="2">
+        <SearchType/>
+      </tab>
+      <tab title="经费审核" name="3">
         <FundingAudit/>
+      </tab>
+      <tab title="使用明细" name="4">
+        <Detail/>
       </tab>
     </tabs>
   </div>
@@ -18,9 +24,11 @@
 <script>
 import Tab from '@/components/tab/tab'
 import Tabs from '@/components/tab/tabs'
-import RecordedInAccount from '../components/RecordedInAccount'
-import ExpensesReimbursement from '../components/ExpensesReimbursement'
-import FundingAudit from '../components/FundingAudit'
+import RecordedInAccount from './components/RecordedInAccount'
+import ExpensesReimbursement from './components/ExpensesReimbursement'
+import SearchType from './components/searchType'
+import FundingAudit from './components/FundingAudit'
+import Detail from './components/Detail'
 export default {
   name: 'FundManagement1',
   data () {
@@ -33,7 +41,9 @@ export default {
     Tabs,
     RecordedInAccount,
     FundingAudit,
-    ExpensesReimbursement
+    ExpensesReimbursement,
+    SearchType,
+    Detail
   }
 }
 </script>
@@ -42,9 +52,12 @@ export default {
 @import '../../../common/style/mixin.styl'
 .FundManagement1 >>> .tabs
   .tab-pane
-    width 32.1%
-    font-size 12px
+    width calc(100% / 2 - .04rem)
+    font-size .12rem
+    &:nth-of-type(n+3)
+      width calc(100% / 3 - .16rem / 3)
+      margin-top .04rem
 .FundManagement1
-  margin 0 6px
-  padding 10px 0 10px 0
+  margin 0 .06rem
+  padding .10rem 0 .10rem 0
 </style>

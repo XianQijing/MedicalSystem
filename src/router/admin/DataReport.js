@@ -1,8 +1,8 @@
-import DataReport from '@/page/DataReport/DataReport'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/DataReport',
-  component: DataReport,
+  component: Layout,
   children: [
     {
       path: '',
@@ -37,7 +37,8 @@ const router = {
       component: resolve => require(['@/page/DataReport/HorizontalContrast/HorizontalDetail'], resolve),
       meta: {
         title: '横向对比',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {

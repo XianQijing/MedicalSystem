@@ -1,15 +1,20 @@
 <template>
   <div class="PopupData">
       <p class="title">基本信息</p>
-      <div class="form-cell" v-for="item in list" :key="item.label">
+      <div class="form-cell">
+        <p class="label">时间范围</p>
+        <j-input placeholder="时间范围" @click="open('time')" v-model="form.time" type="select"></j-input>
+      </div>
+      <div class="form-cell" v-show="item.label !== '时间范围'" v-for="item in list" :key="item.label">
         <p class="label">{{item.label}}</p>
-        <j-input :placeholder="`请选择${item.label}`" @click="open('time')" v-model="item.model" type="select"></j-input>
+        <j-input
+          :placeholder="`请选择${item.label}`"
+          @click="open(item.columns, item)"
+          v-model="item.model"
+          type="select"
+        />
       </div>
-      <!-- <div class="form-cell" v-if="filter('时间选择')">
-        <p class="label">时间选择</p>
-        <j-input placeholder="选择时间" @click="open('time')" v-model="form.time" type="select"></j-input>
-      </div>
-      <div class="form-cell" v-if="filter('学分属性')">
+      <!-- <div class="form-cell" v-if="filter('学分属性')">
         <p class="label">学分属性</p>
         <j-input placeholder="省市级" @click="open('belong')" v-model="form.belong" type="select">
         </j-input>
@@ -222,6 +227,7 @@ export default {
       bottomShow: false,
       cellData: null,
       columns: [],
+      select: {},
       form: {
         time: '',
         belong: '',
@@ -237,12 +243,19 @@ export default {
     selectList: {},
     textList: {
       type: Array
+    },
+    keyName: {
+      type: String
     }
   },
   computed: {
     list () {
       return this.textList.map(data => {
-        return {label: data, model: ''}
+        return {
+          label: this.keyName ? data[this.keyName] : data,
+          model: '',
+          columns: data.columns ? data.columns : []
+        }
       })
     }
   },
@@ -253,12 +266,12 @@ export default {
   methods: {
     onConfirm (value, index) {
       this.bottomShow = false
-      this.form[this.cellData] = value
+      this.select.model = value
     },
-    open (value) {
+    open (value, ref) {
       this.openType()
-      // this.cellData = value
-      // this.columns = this.selectList[value]
+      this.columns = value
+      this.select = ref
     },
     openType () {
       this.bottomShow = !this.bottomShow

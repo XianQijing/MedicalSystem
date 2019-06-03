@@ -1,10 +1,10 @@
-import UserCenter from '@/admin/userCenter/userCenter'
+import Layout from '@/layout/layout'
 
 const router = [
   {
     path: '/UserCenter',
     // name: 'UserCenter',
-    component: UserCenter,
+    component: Layout,
     children: [
       {
         path: '',
@@ -21,7 +21,8 @@ const router = [
         component: resolve => require(['@/admin/userCenter/userMessage/editPersonalMessage'], resolve),
         meta: {
           title: '信息修改',
-          requireAuth: true
+          requireAuth: true,
+          hideInMenu: true
         }
       },
       {
@@ -89,7 +90,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/creditDetail'], resolve),
     meta: {
       title: '详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -98,7 +100,8 @@ const router = [
     component: resolve => require(['@/admin/userCenter/credit/continueDetail'], resolve),
     meta: {
       title: '审核详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -106,7 +109,8 @@ const router = [
     name: 'Reviewed',
     component: resolve => require(['@/page/userCenter/reviewed'], resolve),
     meta: {
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
     // meta: '任职审核'
   },
@@ -117,7 +121,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myDeclare'], resolve),
     meta: {
       title: '我的申报',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -126,7 +131,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myProject'], resolve),
     meta: {
       title: '我的项目',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -135,7 +141,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myPaper'], resolve),
     meta: {
       title: '我的论文',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -144,7 +151,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myFunds'], resolve),
     meta: {
       title: '我的经费',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -153,7 +161,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myMeeting'], resolve),
     meta: {
       title: '我的会议',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -162,7 +171,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myPatent'], resolve),
     meta: {
       title: '我的专利',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -180,7 +190,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myReward'], resolve),
     meta: {
       title: '我的奖励',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -189,7 +200,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myWrite'], resolve),
     meta: {
       title: '我的著作',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -198,7 +210,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myServing'], resolve),
     meta: {
       title: '我的任职',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -207,7 +220,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myActivity'], resolve),
     meta: {
       title: '我的活动',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   // 我的申报详情页
@@ -217,7 +231,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/declareDetail'], resolve),
     meta: {
       title: '申报详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   // 我的申请--标书预览||附件预览
@@ -226,7 +241,8 @@ const router = [
     name: 'Preview',
     component: resolve => require(['@/page/userCenter/achievement/preview'], resolve),
     meta: {
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   // 我的经费--详情
@@ -236,7 +252,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/myFundsDetail'], resolve),
     meta: {
       title: '经费详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   // 我的论文--详情
@@ -246,7 +263,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/paperDetail'], resolve),
     meta: {
       title: '论文详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   // 我的会议--详情
@@ -256,7 +274,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/meetingDetail'], resolve),
     meta: {
       title: '会议详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -265,7 +284,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/patentDetail'], resolve),
     meta: {
       title: '专利详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -274,7 +294,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/achievementDetail'], resolve),
     meta: {
       title: '成果详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -283,7 +304,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/rewardDetail'], resolve),
     meta: {
       title: '奖励详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -292,7 +314,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/writingsDetail'], resolve),
     meta: {
       title: '著作详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -301,7 +324,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/servingDetail'], resolve),
     meta: {
       title: '任职详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   {
@@ -310,7 +334,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/achievement/activityDetail'], resolve),
     meta: {
       title: '活动详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   },
   // 简历详情
@@ -320,7 +345,8 @@ const router = [
     component: resolve => require(['@/page/userCenter/resume/resumeDetail'], resolve),
     meta: {
       title: '简历详情',
-      requireAuth: true
+      requireAuth: true,
+      hideInMenu: true
     }
   }
 ]

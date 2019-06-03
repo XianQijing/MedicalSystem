@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import store from '../store/admin'
 import Router from 'vue-router'
 import HomePage from '@/admin/homePage/homePage'
 import UserCenter from '@/router/admin/userCenter'
@@ -118,9 +117,6 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
-    store.commit('changeTitle', to.meta.title)
-  }
   if (to.meta.requireAuth) {
     if (sessionStorage.getItem('token')) {
       next()

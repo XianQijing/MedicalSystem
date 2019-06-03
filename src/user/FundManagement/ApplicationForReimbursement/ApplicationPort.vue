@@ -36,53 +36,9 @@
 
     <InvoiceAmount v-show="active === 1"/>
 
-    <div class="wrapper" v-show="active === 2">
-      <p class="title">审计附件</p>
-      <div class="item-wrapper border-1px">
-        <p class="item-title a">上传附件：</p>
-        <div class="file">
-          <div class="file-item">
-            <img src="../../../common/image/file.png" alt="">
-            <p>文件名</p>
-          </div>
-          <div class="file-item">
-            <img src="../../../common/image/file.png" alt="">
-            <p>文件名</p>
-          </div>
-        </div>
-        <div class="upload">
-          <input type="file" class="tem">
-          <div class="text"><img src="../../../common/image/upload.png" alt="">上传文件</div>
-        </div>
-      </div>
-    </div>
+    <Audit v-show="active === 2"/>
 
-    <div class="wrapper" v-show="active === 3">
-      <p class="title">金额发票</p>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">收款单位：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">纳税人号：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">开户银行：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title">银行账号：</p>
-        <JInput placeholder="下拉选择"/>
-      </div>
-      <div class="item-wrapper border-1px">
-        <p class="item-title a">上传凭证：</p>
-        <div class="upload">
-          <input type="file" class="tem">
-          <div class="text"><img src="../../../common/image/upload.png" alt="">上传文件</div>
-        </div>
-      </div>
-    </div>
+    <Pay v-show="active === 3"/>
   </div>
 </template>
 
@@ -91,10 +47,10 @@ import Upload from '@/components/upload/upload'
 import Form from '@/components/form/Form'
 import FormItem from '@/components/form/FormItem'
 import Popup from '@/components/popup/popup2'
-// import Tab from '@/components/tab/tab'
-// import Tabs from '@/components/tab/tabs'
 import Domestice from './components/domestic'
 import InvoiceAmount from './components/InvoiceAmount'
+import Audit from './components/audit'
+import Pay from './components/pay'
 export default {
   name: 'ApplicationPort',
   data () {
@@ -146,12 +102,13 @@ export default {
   components: {
     // Tab,
     Popup,
-    // Tabs,
+    Audit,
     Form,
     InvoiceAmount,
     FormItem,
     Upload,
-    Domestice
+    Domestice,
+    Pay
   }
 }
 </script>

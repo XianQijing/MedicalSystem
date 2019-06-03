@@ -35,6 +35,7 @@ export default {
 .iconList
   .comTitle
     padding-top 0
+    margin-left .06rem
   .iconWrapper
     border-1px(#D3D3D3)
     margin-bottom .16rem

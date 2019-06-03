@@ -59,8 +59,8 @@ export default {
     width 100%
     padding 0
 .changePassword
+  margin 0 6px
   .form
-    margin 0 6px
     .formCell
       background white
       height 30px

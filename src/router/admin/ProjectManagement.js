@@ -1,8 +1,8 @@
-import ProjectManagement from '@/admin/ProjectManagement/ProjectManagement'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ProjectManagement',
-  component: ProjectManagement,
+  component: Layout,
   children: [
     {
       path: '',
@@ -28,7 +28,8 @@ const router = {
       component: resolve => require(['@/admin/ProjectManagement/page/ContractSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -46,7 +47,8 @@ const router = {
       component: resolve => require(['@/admin/ProjectManagement/page/ChangeApplicationSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -64,7 +66,8 @@ const router = {
       component: resolve => require(['@/admin/ProjectManagement/page/AssessmentSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -82,7 +85,8 @@ const router = {
       component: resolve => require(['@/admin/ProjectManagement/page/WatchNotice'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -91,7 +95,8 @@ const router = {
       component: resolve => require(['@/admin/ProjectManagement/page/EditNotice'], resolve),
       meta: {
         title: '编辑修改',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -100,7 +105,8 @@ const router = {
       component: resolve => require(['@/admin/ProjectManagement/page/InspectionSearch'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {

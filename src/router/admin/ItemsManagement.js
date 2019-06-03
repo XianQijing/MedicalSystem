@@ -1,10 +1,10 @@
 // 事项管理路由文件
-import ItemsManagement from '@/admin/ItemsManagement/ItemsManagement'
+import Layout from '@/layout/layout'
 
 const router = {
   path: '/ItemsManagement',
   // name: 'ItemsManagement',
-  component: ItemsManagement,
+  component: Layout,
   children: [
     {
       path: '',
@@ -21,26 +21,38 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/ExaminMeeting'], resolve),
       meta: {
         title: '会议审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
       path: 'ExaminFund',
       name: 'ExaminFund',
       component: resolve => require(['@/admin/ItemsManagement/page/ExaminFund'], resolve),
-      meta: '经费审核'
+      meta: {
+        title: '经费审核',
+        requireAuth: true,
+        hideInMenu: true
+      }
     },
     {
       path: 'GoAbroad',
       name: 'GoAbroad',
       component: resolve => require(['@/admin/ItemsManagement/page/GoAbroad'], resolve),
-      meta: '出国交流'
+      meta: {
+        title: '出国交流',
+        requireAuth: true
+      }
     },
     {
       path: 'ExchangeAudit',
       name: 'ExchangeAudit',
       component: resolve => require(['@/admin/ItemsManagement/page/ExchangeAudit'], resolve),
-      meta: '出国交流'
+      meta: {
+        title: '出国交流',
+        requireAuth: true,
+        hideInMenu: true
+      }
     },
     {
       path: 'ScientificResearchCooperation',
@@ -57,7 +69,8 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/CooperationAudit'], resolve),
       meta: {
         title: '合作审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -75,7 +88,8 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/UseAudit'], resolve),
       meta: {
         title: '使用审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -93,7 +107,8 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/ConsumablesAudit'], resolve),
       meta: {
         title: '耗材审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -111,7 +126,8 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/PurchaseAudit'], resolve),
       meta: {
         title: '购买审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -129,7 +145,8 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/AProjectMessage'], resolve),
       meta: {
         title: '项目信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -138,7 +155,8 @@ const router = {
       component: resolve => require(['@/admin/ItemsManagement/page/ProjectSearchDetail'], resolve),
       meta: {
         title: '项目信息',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]

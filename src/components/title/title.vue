@@ -21,7 +21,7 @@
       </div>
 
       <popup :toShow="show" @close="close">
-        <popup-data v-if="witchOne === 'default'" :textList="textList" @click="complete"/>
+        <popup-data v-if="witchOne === 'default'" :keyName="keyName" :textList="textList" @click="complete"/>
         <admin-data v-if="witchOne === 'admin'" @click="complete"/>
       </popup>
     </div>
@@ -54,6 +54,9 @@ export default {
     witchOne: {
       type: String,
       default: 'default'
+    },
+    keyName: {
+      type: String
     }
   },
   components: {
@@ -76,8 +79,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../../common/style/mixin.styl'
 .comTitle
-  margin 0 6px
-  padding .1rem 0
+  padding .15rem 0
   height .13rem
   font-size: .13rem;
   .green

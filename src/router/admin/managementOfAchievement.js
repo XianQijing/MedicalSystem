@@ -1,9 +1,9 @@
-import managementOfAchievement from '@/admin/managementOfAchievement/managementOfAchievement'
+import Layout from '@/layout/layout'
 
 const router = {
-  path: '/managementOfAchievement',
+  path: '/ManagementOfAchievement',
   // name: 'ManagementOfAchievement',
-  component: managementOfAchievement,
+  component: Layout,
   children: [
     {
       path: '',
@@ -20,7 +20,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examineAndVerify'], resolve),
       meta: {
         title: '成果审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -38,7 +39,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examinePatent'], resolve),
       meta: {
         title: '专利审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -47,7 +49,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/watchDetail'], resolve),
       meta: {
         title: '查看详情',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -56,7 +59,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examineFunds'], resolve),
       meta: {
         title: '专利审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -74,7 +78,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/auditResults'], resolve),
       meta: {
         title: '',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -83,7 +88,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/SAndTRegistration'], resolve),
       meta: {
         title: '成果审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -92,7 +98,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/SAndTAward'], resolve),
       meta: {
         title: '成果审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -110,7 +117,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examineIntroductoryLetter'], resolve),
       meta: {
         title: '介绍信审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -119,7 +127,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examineExpensesReimbursement'], resolve),
       meta: {
         title: '经费报销审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -137,7 +146,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examinePublication'], resolve),
       meta: {
         title: '著作审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     },
     {
@@ -146,7 +156,8 @@ const router = {
       component: resolve => require(['@/admin/managementOfAchievement/page/examineRegistration'], resolve),
       meta: {
         title: '登记审核',
-        requireAuth: true
+        requireAuth: true,
+        hideInMenu: true
       }
     }
   ]
