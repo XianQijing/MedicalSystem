@@ -9,13 +9,13 @@
       :time="item.time"
       >
       <p class="no border-1pxLeft">NO：{{item.name}}</p>
-      <span class="black">负责人-所属科室</span>
+      <span class="black">陈升息－眼科</span>
       <p class="black border-1pxTop">
         项目名称
       </p>
       <span>项目类别、项目支出名目</span>
       <span>项目计划</span>
-      <span class="resTime">批准日期：2018.09.01 12:00</span>
+      <span class="resTime">项目到款总额：0.00</span>
       <div style="text-align:center">
         <JButton type="primary" round @click="jump">审核</JButton>
       </div>

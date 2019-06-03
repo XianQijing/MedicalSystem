@@ -83,14 +83,13 @@
         <td>4</td>
       </tr>
       <tr class="move">
-        <th style="text-align:left">支出说明：</th>
+        <th colspan="3" style="text-align:left">支出说明：</th>
         <td>占位</td>
-        <td colspan="2"></td>
       </tr>
     </table>
 
     <div class="btn">
-      <button class="butto" @click="show=true">审核</button>
+      <JButton type="primary" round @click="show=true">审核</JButton>
     </div>
     <popup position="center" v-model="show" title="项目审核">
       <div class="popup-form">
@@ -177,7 +176,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
 .FundingApprovalDetail
-  padding 10px 6px
+  padding .10rem .06rem
   .comTitle
     margin 0
   .base-message
@@ -188,91 +187,94 @@ export default {
       // height 166px
     .base-left
       background white
-      padding 10px
+      padding .10rem
       box-sizing border-box
       margin-right 2px
-      flex 1 1 119px
+      flex 1 1 1.19rem
       p
-        margin-bottom 10px
+        margin-bottom .10rem
         text-align center
       .plane
-        font-size 12px
+        font-size .12rem
       .black
         font-weight 700
-        font-size 16px
-        line-height 20px
-        margin-bottom 20px
+        font-size .16rem
+        line-height .20rem
+        margin-bottom .20rem
     .base-right
-      flex 2 1 240px
+      flex 2 1 2.40rem
       .form-cell
-        form-cell-left(12px)
+        form-cell-left(.12rem)
         margin-bottom 2px
+        height .26rem
         &:last-child
           margin 0
         .j-input
           width 50%
           padding 0
-          max-width 181px
+          max-width 1.81rem
           color: #999999;
           height 100%
           text-align right
-          font-size 12px
-          line-height 26px
+          font-size .12rem
+          line-height .26rem
   table
     width 100%
     border-collapse:separate
     text-align center
-    font-size: 14px;
+    font-size: .14rem;
     font-weight 400
-    margin-top 10px
+    margin-top .10rem
     table-layout fixed
     .bottom
       background: #003BAA;
       th
-        padding-bottom 13px
-        padding-top 13px
+        padding-bottom .13rem
+        padding-top .13rem
         color white
         font-weight 400
     .move
       width 100%
       td
         border-bottom 1px solid rgba(0,0,0,0.5)
-        height 26px
+        height .26rem
         background: #FFFFFF;
         color: #999999;
       th
         border-bottom 1px solid rgba(0,0,0,0.5)
-        height 26px
+        height .26rem
         background: #FFFFFF;
         text-align center
-        padding-left 5px
+        padding-left .05rem
         font-weight 400
 .popup-form
-  padding 0 15px
+  padding 0 .15rem
   display flex
   justify-content space-between
-  margin-top 10px
+  margin-top .10rem
   .form-label
-    font-size: 14px;
+    font-size: .14rem;
     color: #333333
     display inline-block
-    line-height 30px
+    line-height .30rem
   textarea
     border: 1px solid #2873FF;
     width 74%
     box-sizing border-box
-    font-size: 14px
-    padding 5px
-    border-radius: 4px;
-    height 95px
+    font-size: .14rem
+    padding .05rem
+    border-radius: .04rem;
+    height .95rem
   .J-input
-    border-radius: 4px;
-    font-size: 14px
+    border-radius: .04rem;
+    font-size: .14rem
     border: 1px solid #2873FF;
-    height 26px
+    height .26rem
     box-sizing border-box
     width 74%
 .button-cell
-  font-size: 14px
-  margin-top 10px
+  font-size: .14rem
+  margin-top .10rem
+.btn
+  margin .2rem 0
 </style>

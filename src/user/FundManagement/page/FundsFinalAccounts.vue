@@ -2,7 +2,7 @@
 <template>
   <div class="FundsFinalAccounts">
     <div>
-      <CTitle :screen="true" :textList="textList">项目列表</CTitle>
+      <CTitle :screen="true" :textList="textList">经费明细列表</CTitle>
 
       <card
         v-for="(item, index) in messageList"

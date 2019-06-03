@@ -19,7 +19,7 @@
         </div>
         <div class="item-wrapper border-1px">
           <p class="item-title">备注：</p>
-          <textarea placeholder="填写计算依据和说明"></textarea>
+          <textarea placeholder="填写计算依据和说明"/>
         </div>
       </div>
       <p class="desc">提交：当申报书所有信息上传无误后，可以提交申报书，申报书提交后不可修改。如需修改必须联系单位或相关科教主管部门退回修改。</p>
@@ -123,6 +123,7 @@ export default {
         box-sizing border-box
         height .80rem
         font-size .14rem
+        height 1.53rem
       .J-input
         border: 1px solid #FD4D4D;
         border-radius: .06rem;
@@ -135,7 +136,7 @@ export default {
         font-size .14rem
   .desc
     margin-top .10rem
-    line-height .16rem
+    line-height .2rem
     font-size: .12rem;
     color: #999999;
     margin 0 .16rem

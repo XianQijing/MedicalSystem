@@ -80,13 +80,15 @@
       :key="index"
       :time="item.time"
       >
-      <div slot="time">2018.04.12 14:56</div>
-      <p class="no border-1pxLeft">NO：{{item.name}}</p>
-      <span class="black">申请人-所属单位</span>
-      <span>项目类别</span>
+      <!-- <div slot="time">2018.04.12 14:56</div> -->
+      <p class="no border-1pxLeft">NO：{{item.no}}</p>
       <div class="formCell">
-        <p>支出金额：200.00</p>
-        <p>经费归属：项目经费</p>
+        <span class="black">支出金额：10.00</span>
+        <span class="black">经费归属：项目经费</span>
+      </div>
+      <span>摘要：直接经费-设备费-购置费-设备费1</span>
+      <div class="formCell">
+        <p>用途说明：用途说明占位</p>
       </div>
     </card>
   </div>
@@ -100,14 +102,14 @@ export default {
       messageList: [
         {
           time: '2018.04.12 14:56',
-          no: '00210',
+          no: '3746',
           name: '用户名占位',
           type: '通过',
           dayin: '未打印'
         },
         {
           time: '2018.04.12 14:56',
-          no: '00210',
+          no: '3746',
           name: '用户名占位',
           type: '通过',
           dayin: '已打印'

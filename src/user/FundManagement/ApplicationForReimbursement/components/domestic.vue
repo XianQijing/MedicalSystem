@@ -19,7 +19,7 @@
     </div>
     <div class="item-wrapper border-1px">
       <p class="item-title a">用途：</p>
-      <textarea></textarea>
+      <textarea placeholder="填写占位"/>
     </div>
 
     <Popup title="经费信息" position="center" v-model="message">
@@ -39,7 +39,7 @@
             <td>2000.00</td>
           </tr>
         </table>
-        <table cellspacing="0">
+        <table cellspacing="0" class="tableTop">
           <tr class="bottom">
             <th>经费总额</th>
             <th>项目经费</th>
@@ -215,8 +215,8 @@ export default {
     font-size: 14px;
     font-weight 400
     table-layout fixed
-    &:last-child
-      margin-top 10px
+    &.tableTop
+      margin-top .1rem
     .bottom
       background: #003BAA;
       th

@@ -136,49 +136,19 @@
             <th>备注</th>
           </tr>
           <tr class="move">
-            <th>直接经费</th>
+            <th>费用合计</th>
             <td>5</td>
             <td>7</td>
             <td>2</td>
             <td></td>
           </tr>
           <tr class="move">
-            <th>设备费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>4</td>
-            <td @click="openPop = true" class="blue">详情</td>
+            <th colspan="4" style="text-align:left">项目负责人（打印、签名）</th>
+            <td>陈阿斌</td>
           </tr>
           <tr class="move">
-            <th>会议费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td @click="openPop = true" class="blue">详情</td>
-          </tr>
-          <tr class="move">
-            <th>间接经费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td></td>
-          </tr>
-          <tr class="move">
-            <th>设备费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td @click="openPop = true" class="blue">详情</td>
-          </tr>
-          <tr class="move">
-            <th style="text-align:left">总计</th>
-            <td>占位</td>
-            <td colspan="3"></td>
-          </tr>
-          <tr class="move">
-            <th style="text-align:left">合计</th>
-            <td>占位</td>
-            <td colspan="3"></td>
+            <th colspan="4" style="text-align:left">财务负责人（打印、签名）</th>
+            <td>陈阿斌</td>
           </tr>
         </table>
       </tab>
@@ -192,49 +162,19 @@
             <th>备注</th>
           </tr>
           <tr class="move">
-            <th>直接经费</th>
+            <th>费用合计</th>
             <td>5</td>
             <td>7</td>
             <td>2</td>
             <td></td>
           </tr>
           <tr class="move">
-            <th>设备费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>4</td>
-            <td @click="openPop = true" class="blue">详情</td>
+            <th colspan="4" style="text-align:left">项目负责人（打印、签名）</th>
+            <td>陈阿斌</td>
           </tr>
           <tr class="move">
-            <th>会议费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td @click="openPop = true" class="blue">详情</td>
-          </tr>
-          <tr class="move">
-            <th>间接经费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td></td>
-          </tr>
-          <tr class="move">
-            <th>设备费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td @click="openPop = true" class="blue">详情</td>
-          </tr>
-          <tr class="move">
-            <th style="text-align:left">总计</th>
-            <td>占位</td>
-            <td colspan="3"></td>
-          </tr>
-          <tr class="move">
-            <th style="text-align:left">合计</th>
-            <td>占位</td>
-            <td colspan="3"></td>
+            <th colspan="4" style="text-align:left">财务负责人（打印、签名）</th>
+            <td>陈阿斌</td>
           </tr>
         </table>
       </tab>
@@ -248,49 +188,19 @@
             <th>备注</th>
           </tr>
           <tr class="move">
-            <th>直接经费</th>
+            <th>费用合计</th>
             <td>5</td>
             <td>7</td>
             <td>2</td>
             <td></td>
           </tr>
           <tr class="move">
-            <th>设备费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>4</td>
-            <td @click="openPop = true" class="blue">详情</td>
+            <th colspan="4" style="text-align:left">项目负责人（打印、签名）</th>
+            <td>陈阿斌</td>
           </tr>
           <tr class="move">
-            <th>会议费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td @click="openPop = true" class="blue">详情</td>
-          </tr>
-          <tr class="move">
-            <th>间接经费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td></td>
-          </tr>
-          <tr class="move">
-            <th>设备费</th>
-            <td>5</td>
-            <td>7</td>
-            <td>2</td>
-            <td @click="openPop = true" class="blue">详情</td>
-          </tr>
-          <tr class="move">
-            <th style="text-align:left">总计</th>
-            <td>占位</td>
-            <td colspan="3"></td>
-          </tr>
-          <tr class="move">
-            <th style="text-align:left">合计</th>
-            <td>占位</td>
-            <td colspan="3"></td>
+            <th colspan="4" style="text-align:left">财务负责人（打印、签名）</th>
+            <td>陈阿斌</td>
           </tr>
         </table>
       </tab>

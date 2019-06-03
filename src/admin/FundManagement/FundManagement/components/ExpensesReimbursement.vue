@@ -46,7 +46,7 @@
       </div>
       <div class="form-cell">
         <p class="form-label">报销详细说明:</p>
-        <textarea class="blue"/>
+        <textarea class="blue" placeholder="报销详细说明占位"/>
       </div>
     </div>
 

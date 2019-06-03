@@ -22,7 +22,7 @@
     <popup position="center" v-model="show" title="项目审核">
       <div class="popup-form">
         <p class="form-label">评审意见</p>
-        <textarea></textarea>
+        <textarea placeholder="报销详细说明占位"/>
       </div>
       <div class="popup-form">
         <p class="form-label">单位意见</p>

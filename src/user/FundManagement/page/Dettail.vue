@@ -1,6 +1,6 @@
-// 经费明细--详情
+
 <template>
-  <div class="FundsFinalAccountsDetail">
+  <div class="Dettail">
     <div class="base-message">
       <div class="base-left">
         <p class="plane">项目名称</p>
@@ -90,7 +90,7 @@
 
 <script>
 export default {
-  name: 'FundsFinalAccountsDetail',
+  name: 'Dettail',
   data () {
     return {
       messageList: [
@@ -116,7 +116,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../../../common/style/mixin.styl'
-.FundsFinalAccountsDetail
+.Dettail
   padding .10rem .06rem 0 .06rem
   .comTitle
     margin 0

@@ -56,10 +56,11 @@ export default {
 @import '../../../common/style/mixin.styl'
 .AmountOfFunds
   margin 0 .06rem
+  height 100%
+  padding-top .1rem
   .blue
     background: #003BAA;
     padding .10rem
-    margin-top .10rem
     color: #FFFFFF;
     .title
       font-size: .16rem;

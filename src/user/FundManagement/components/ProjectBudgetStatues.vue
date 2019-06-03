@@ -11,13 +11,13 @@
         :time="item.time"
         >
         <p class="no border-1pxLeft">NO：{{item.name}}</p>
-        <span class="black">申请人-所属单位</span>
+        <span class="black">负责人-所属科室</span>
         <p class="black border-1pxTop">
-          论文题目
+          项目名称
         </p>
         <span>项目类别</span>
         <span>项目计划</span>
-        <span class="resTime">批准日期：2018.09.01 12:00</span>
+        <span class="resTime">审核日期：2018.09.10</span>
         <div style="text-align:center">
           <JButton type="primary" round @click="jump">查看</JButton>
         </div>

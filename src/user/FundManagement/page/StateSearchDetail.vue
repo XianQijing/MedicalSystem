@@ -72,14 +72,13 @@
 
     <div class="content">
       <div class="formCell">
-        <span>本次审核信息</span>
+        <span>NO：01</span>
         <span>额度：6000.00</span>
       </div>
-      <p class="black">摘要占位</p>
-      <p>用途占位</p>
+      <p class="black">支出名目</p>
       <div class="formCell border-1px">
-        <p>发票预览</p>
-        <p>凭证预览</p>
+        <p>项目余额：900.00</p>
+        <p>支出金额：300.00</p>
       </div>
       <span class="last">支出说明：支出说明占位</span>
     </div>
