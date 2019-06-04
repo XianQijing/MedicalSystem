@@ -99,6 +99,15 @@ const router = {
       }
     },
     {
+      path: 'FundSearch',
+      name: 'FundSearch',
+      component: resolve => require(['@/admin/FundManagement/FundSearch/FundSearch'], resolve),
+      meta: {
+        title: '经费查询',
+        requireAuth: true
+      }
+    },
+    {
       path: 'FundingAuditDetail',
       name: 'FundingAuditDetail',
       component: resolve => require(['@/admin/FundManagement/FundManagement/page/FundingAuditDetail'], resolve),

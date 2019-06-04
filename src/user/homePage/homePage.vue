@@ -154,11 +154,13 @@ export default {
   font-size .16rem
 .icon-wrapper
   min-height 100%
+  padding-bottom .6rem
+  box-sizing border-box
 .shangBiao
   width 100%
   position relative
   bottom 0px
-  margin -60px auto 0 auto
+  margin -.5rem auto 0 auto
   clear: both;
   font-size .16rem
   div

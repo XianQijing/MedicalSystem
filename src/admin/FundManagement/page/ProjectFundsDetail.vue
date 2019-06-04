@@ -25,19 +25,19 @@
         </div>
         <div class="form-cell">
           <p class="label">所属科室:</p>
-          <p class="j-input">全体人员</p>
+          <p class="j-input">参加对象</p>
         </div>
         <div class="form-cell">
           <p class="label">项目来源:</p>
-          <p class="j-input">项目来源</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>项目级别</p>
         </div>
         <div class="form-cell">
           <p class="label">项目编号:</p>
-          <p class="j-input">00902</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>00902</p>
         </div>
         <div class="form-cell">
           <p class="label">财务编号:</p>
-          <p class="j-input">29384</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>2938492</p>
         </div>
         <div class="form-cell">
           <p class="label">经费总额:</p>
@@ -57,15 +57,15 @@
         </div>
         <div class="form-cell">
           <p class="label">项目周期:</p>
-          <p class="j-input">1年</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>1年</p>
         </div>
         <div class="form-cell">
           <p class="label">验收时间:</p>
-          <p class="j-input">2018.10.12</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>2018.10.12</p>
         </div>
         <div class="form-cell">
           <p class="label">项目状态:</p>
-          <p class="j-input">状态1</p>
+          <p class="j-input blue"><IconSvg iconClass="icon-bianjiicon"/>状态1</p>
         </div>
       </div>
     </div>

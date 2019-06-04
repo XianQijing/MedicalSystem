@@ -41,7 +41,7 @@
       <div class="formCell">
         <p class="form-label red">发票:</p>
         <div class="blue">
-          <IconSvg iconClass="icon-icon_download"/>
+          <IconSvg iconClass="icon-icon_upload"/>
         </div>
       </div>
       <div class="form-cell">

@@ -72,7 +72,7 @@
     <CTitle>
       支出详情
       <span slot="float">导出数据</span>
-      <IconSvg slot="float" iconClass="icon-icon_download"/>
+      <IconSvg slot="float" iconClass="icon-Union"/>
     </CTitle>
 
     <card
@@ -184,4 +184,6 @@ export default {
       p
         font-size: 14px;
         color: #333333;
+  .svg-icon
+    margin-left .05rem
 </style>
