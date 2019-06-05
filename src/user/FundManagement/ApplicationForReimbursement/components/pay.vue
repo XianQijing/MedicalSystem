@@ -120,6 +120,7 @@ export default {
         position absolute
         right 0
         top 8px
+        font-size .14rem
     .upload
       border none
       // display inline-block
