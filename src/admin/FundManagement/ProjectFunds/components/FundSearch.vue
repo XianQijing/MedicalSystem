@@ -102,9 +102,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../common/style/mixin.styl'
+@import '../../../../common/style/mixin.styl'
 .FundSearch
-  margin 0 .06rem
+  // margin 0 .06rem
   .formCell
     height .3rem
     background white!important

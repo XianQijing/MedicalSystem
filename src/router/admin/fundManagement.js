@@ -10,7 +10,7 @@ const router = {
     {
       path: '',
       name: 'ProjectFunds',
-      component: resolve => require(['@/admin/FundManagement/page/ProjectFunds'], resolve),
+      component: resolve => require(['@/admin/FundManagement/ProjectFunds/ProjectFunds'], resolve),
       meta: {
         title: '项目经费',
         requireAuth: true
@@ -98,15 +98,15 @@ const router = {
         requireAuth: true
       }
     },
-    {
-      path: 'FundSearch',
-      name: 'FundSearch',
-      component: resolve => require(['@/admin/FundManagement/FundSearch/FundSearch'], resolve),
-      meta: {
-        title: '经费查询',
-        requireAuth: true
-      }
-    },
+    // {
+    //   path: 'FundSearch',
+    //   name: 'FundSearch',
+    //   component: resolve => require(['@/admin/FundManagement/FundSearch/FundSearch'], resolve),
+    //   meta: {
+    //     title: '经费查询',
+    //     requireAuth: true
+    //   }
+    // },
     {
       path: 'FundingAuditDetail',
       name: 'FundingAuditDetail',

@@ -1,7 +1,6 @@
 // 项目经费
 <template>
-  <div class="ProjectFunds">
-    <div>
+  <div class="ProjectFunds1">
       <CTitle :screen="true" :textList="textList">项目列表</CTitle>
 
       <card
@@ -24,12 +23,11 @@
       </card>
     </div>
 
-  </div>
 </template>
 
 <script>
 export default {
-  name: 'ProjectFunds',
+  name: 'ProjectFunds1',
   data () {
     return {
       textList: ['时间范围', '申报类别', '项目类别', '所属科室'],
@@ -53,14 +51,8 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({name: 'ProjectFundsDetail'})
+      this.$router.push({name: 'ProjectFunds1Detail'})
     }
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.ProjectFunds
-  // padding 0 0 10px 0
-  margin 0 .06rem
-</style>
