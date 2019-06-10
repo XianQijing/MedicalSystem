@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <j-input placeholder="请输入账号" type="clearable" v-model="test">
+    <j-input placeholder="请输入账号" type="clearable" v-model="form.username">
       <div class="icon">
         <img width="19" height="19" src="../image/user.png" alt="">
       </div>
@@ -37,14 +37,14 @@ export default {
   name: 'Login',
   data () {
     return {
-      test: '',
       password: false,
       icon: {
         normal: require('../image/closeEyes.png'),
         active: require('../image/openEyes.png')
       },
       form: {
-        password: ''
+        password: '',
+        username: ''
       }
     }
   },
@@ -53,7 +53,7 @@ export default {
       this.password = !this.password
     },
     toLogin () {
-      sessionStorage.setItem('token', '123')
+      this.$store.dispatch('Login', this.form)
       this.$router.push({name: 'HomePage'})
     }
   }
