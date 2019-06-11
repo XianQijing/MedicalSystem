@@ -2,7 +2,7 @@
   <div class="register">
     <div class="cell">
       <span>登陆账号:</span>
-      <j-input placeholder="请填写" type="clearable" v-model="form.phone"></j-input>
+      <j-input placeholder="请填写" type="clearable" v-model="form.username"></j-input>
     </div>
     <!-- <div class="identifying">
       <j-input placeholder="请输入验证码"></j-input>
@@ -27,11 +27,11 @@
     </div>
     <div class="cell">
       <span>确认密码:</span>
-      <j-input placeholder="请填写" text="password"></j-input>
+      <j-input placeholder="请填写" text="password" v-model="form.confirmpwd"></j-input>
     </div>
     <div class="cell">
       <span>真实姓名:</span>
-      <j-input placeholder="请填写" type="clearable" v-model="form.realname"></j-input>
+      <j-input placeholder="请填写" type="clearable" v-model="form.truename"></j-input>
     </div>
     <div class="cell">
       <span>邮箱:</span>
@@ -39,29 +39,29 @@
     </div>
     <div class="cell">
       <span>手机:</span>
-      <j-input placeholder="请填写" type="clearable"></j-input>
+      <j-input placeholder="请填写" type="clearable" v-model="form.mobile"></j-input>
     </div>
     <div class="cell">
       <span>科室:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
+      <j-input placeholder="请选择" @click="open" type="select" v-model="form.subject"></j-input>
     </div>
     <div class="cell">
       <span>职称:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
+      <j-input placeholder="请选择" @click="open" type="select" v-model="form.professional"></j-input>
     </div>
     <div class="cell">
       <span>职称级别:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
+      <j-input placeholder="请选择" @click="open" type="select" v-model="form.postLevel"></j-input>
     </div>
     <div class="cell">
       <span>学历:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
+      <j-input placeholder="请选择" @click="open" type="select" v-model="form.education"></j-input>
     </div>
     <div class="cell">
       <span>学位:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
+      <j-input placeholder="请选择" @click="open" type="select" v-model="form.degree"></j-input>
     </div>
-    <div class="cell">
+    <!-- <div class="cell">
       <span>出生年月:</span>
       <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
     </div>
@@ -70,7 +70,7 @@
         <img src="" alt="验证码">
       </div>
         <j-input placeholder="请输入验证码"></j-input>
-    </div>
+    </div> -->
     <div class="cell">
       <button class="btn">
         重置
@@ -101,11 +101,16 @@ export default {
       },
       form: {
         password: '',
-        phone: '',
         username: '',
-        realname: '',
+        confirmpwd: '',
+        truename: '',
         email: '',
-        select: ''
+        mobile: '',
+        subject: '',
+        professional: '',
+        postLevel: '',
+        education: '',
+        degree: ''
       }
     }
   },

@@ -117,8 +117,9 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  sessionStorage.setItem('path', 'admin')
   if (to.meta.requireAuth) {
-    if (sessionStorage.getItem('token')) {
+    if (localStorage.getItem('adminToken')) {
       next()
     } else {
       next({

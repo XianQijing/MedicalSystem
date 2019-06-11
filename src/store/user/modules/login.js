@@ -7,15 +7,15 @@ const state = {
 const mutations = {
   Login (state, data) {
     state.userMessage = data.member
-    localStorage.setItem('adminToken', data.access_token)
+    localStorage.setItem('userToken', data.access_token)
   }
 }
 const actions = {
   async Login (state, form) {
-    const member = {
-      ...form,
-      auth: '2'
-    }
+    let member = new FormData()
+    member.append('username', form.username)
+    member.append('password', form.password)
+    member.append('auth', '1')
     const user = await login(member)
     state.commit('Login', user)
     return user

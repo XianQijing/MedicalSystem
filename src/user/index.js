@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from '../store/user'
 import HomePage from '@/user/homePage/homePage'
 // import UserCenter from '@/user/userCenter/userCenter'
 import Login from '@/page/login/index'
@@ -28,7 +27,7 @@ const router = new Router({
   routes: [
     // 登录页面
     {
-      path: '/Login',
+      path: '/UserLogin',
       // name: 'Login',
       component: Login,
       children: [
@@ -284,11 +283,9 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  store.commit('changeTitle', to.meta.title)
-  // store.commit('thisMenu', to.name)
-  // console.log(router)
+  sessionStorage.setItem('path', 'user')
   if (to.meta.requireAuth) {
-    if (sessionStorage.getItem('token')) {
+    if (localStorage.getItem('userToken')) {
       next()
     } else {
       next({

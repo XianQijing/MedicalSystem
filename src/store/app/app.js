@@ -1,6 +1,8 @@
+import { dict } from '@/services/app.js'
+
 const state = {
-  title: '登录',
-  columns: ['通过', '不通过', '建议修改']
+  columns: ['通过', '不通过', '建议修改'],
+  selectData: {}
 }
 const mutations = {
   changeTitle (state, title) {
@@ -8,6 +10,9 @@ const mutations = {
   }
 }
 const actions = {
+  async getSelectData (state) {
+    const data = await dict()
+  }
 }
 const getters = {
 }

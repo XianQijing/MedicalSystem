@@ -5,9 +5,11 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'App',
   methods: {
+    ...mapActions(['getSelectData']),
     getChildList () {
       let menu = {}
       const router = this.$router.options.routes
@@ -24,6 +26,7 @@ export default {
   },
   created () {
     this.getChildList()
+    this.getSelectData()
   }
 }
 </script>

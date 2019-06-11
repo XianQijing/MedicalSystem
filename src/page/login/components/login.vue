@@ -16,28 +16,38 @@
         </div>
       </j-input>
       <j-input v-model="form.password" placeholder="请输入密码" text="text" v-show="password === true">
+        <div class="icon">
+          <img width="22" height="19" src="../image/lock.png" alt="">
+        </div>
         <div slot="footer">
           <img width="18" :src="icon.active" @click="watchPassword">
         </div>
       </j-input>
+      <!-- <j-input v-model="form.password" placeholder="请输入密码" text="text" v-show="password === true">
+        <div slot="footer">
+          <img width="18" :src="icon.active" @click="watchPassword">
+        </div>
+      </j-input> -->
     </div>
 
     <button class="btn" @click="toLogin">
       登&nbsp;&nbsp;录
     </button>
     <div class="select">
-      <router-link :to="{name: 'Register'}" tag="span">立即注册</router-link>
+      <router-link v-if="path === 'user'" :to="{name: 'Register'}" tag="span">立即注册</router-link>
       <router-link :to="{name: 'Rorget'}" tag="span">忘记密码?</router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'Login',
   data () {
     return {
       password: false,
+      path: sessionStorage.getItem('path'),
       icon: {
         normal: require('../image/closeEyes.png'),
         active: require('../image/openEyes.png')
@@ -49,12 +59,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['Login']),
     watchPassword () {
       this.password = !this.password
     },
-    toLogin () {
-      this.$store.dispatch('Login', this.form)
+    async toLogin () {
+      await this.Login(this.form)
       this.$router.push({name: 'HomePage'})
+    }
+  },
+  created () {
+    if (sessionStorage.getItem('path') === 'admin') {
+      localStorage.removeItem('adminToken')
+    } else {
+      localStorage.removeItem('userToken')
     }
   }
 }
