@@ -1,9 +1,14 @@
 // 项目经费
 <template>
   <div class="ProjectFunds">
-    <div>
-      <CTitle :screen="true" :textList="textList">到款入账列表</CTitle>
+    <CTitle :screen="true" keyName="label" :textList="textList">到款入账列表</CTitle>
 
+    <van-list
+      v-model="loading"
+      :finished="finished"
+      finished-text="没有更多了"
+      @load="onLoad"
+    >
       <card
         v-for="(item, index) in messageList"
         :key="index"
@@ -22,8 +27,7 @@
           <JButton type="primary" round @click="jump">查看</JButton>
         </div>
       </card>
-    </div>
-
+    </van-list>
   </div>
 </template>
 
@@ -32,7 +36,9 @@ export default {
   name: 'ProjectFunds',
   data () {
     return {
-      textList: ['时间范围', '类别选择', '项目类别', '项目计划'],
+      loading: false,
+      finished: false,
+      textList: ['itemKind', 'cid', 'jid'],
       messageList: [
         {
           time: '2018.04.12 14:56',
@@ -54,6 +60,10 @@ export default {
   methods: {
     jump () {
       this.$router.push({name: 'ProjectFundsDetail'})
+    },
+    // 异步更新数据
+    onLoad () {
+
     }
   }
 }

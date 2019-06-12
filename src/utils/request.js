@@ -24,10 +24,10 @@ const service = axios.create({
 // )
 
 service.interceptors.request.use(function (config) {
-  let token = sessionStorage.getItem('path') === 'admin' ? localStorage.getItem('adminToken') : localStorage.getItem('userToken')
-  if (token) {
-    config.headers.token = token
-  }
+  // let token = sessionStorage.getItem('path') === 'admin' ? localStorage.getItem('adminToken') : localStorage.getItem('userToken')
+  // if (token) {
+  //   config.headers.token = token
+  // }
   config.headers['content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
   // console.log(config)
   return config

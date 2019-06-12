@@ -11,18 +11,20 @@ export function login (params) {
 }
 // 获取下拉列表数据
 export function dict () {
-  const params = 'subject, professional, postLevel, education, degre, sourc, itemStatu, tuitio, itemKind'
+  const params = 'subject,professional,postLevel,education,degree,source,itemStatus,tuition,itemKind'
   return service({
     url: '/api/v1/common/dict',
     method: 'get',
-    params
+    params: {
+      dictField: params
+    }
   })
 }
 // 用户端注册
-// export function register (params) {
-//   return service({
-//     url: '/api/v1/site/register',
-//     method: 'post',
-//     data: qs.stringify(params)
-//   })
-// }
+export function register (params) {
+  return service({
+    url: '/api/v1/site/register',
+    method: 'post',
+    data: qs.stringify(params)
+  })
+}

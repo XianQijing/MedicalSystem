@@ -11,7 +11,7 @@ import IconSvg from '@/components/icon-svg/index.js'
 import JButton from '@/components/button/button.js'
 import Card from '@/components/card/card.js'
 
-import { Picker, Radio, RadioGroup, DatetimePicker, Toast, Popup } from 'vant'
+import { Picker, Radio, RadioGroup, DatetimePicker, Toast, Popup, List } from 'vant'
 
 import '@/common/style/reset.css'
 import '@/common/style/iconfont.css'
@@ -34,6 +34,7 @@ Vue.use(Picker)
   .use(IconSvg)
   .use(JButton)
   .use(Card)
+  .use(List)
 
 /* eslint-disable no-new */
 new Vue({

@@ -2,7 +2,7 @@
   <div class="register">
     <div class="cell">
       <span>登陆账号:</span>
-      <j-input placeholder="请填写" type="clearable" v-model="form.username"></j-input>
+      <j-input placeholder="请填写登陆账号" type="clearable" v-model="form.username"></j-input>
     </div>
     <!-- <div class="identifying">
       <j-input placeholder="请输入验证码"></j-input>
@@ -13,7 +13,7 @@
     <div class="cell">
       <!-- <div class="pass"> -->
         <span>登陆密码:</span>
-        <j-input v-model="form.password" placeholder="请填写" text="password" v-show="password === false">
+        <j-input v-model="form.password" placeholder="请填写登陆密码" text="password" v-show="password === false">
           <!-- <div>
             <img width="18" :src="icon.normal" @click="watchPassword">
           </div> -->
@@ -27,43 +27,43 @@
     </div>
     <div class="cell">
       <span>确认密码:</span>
-      <j-input placeholder="请填写" text="password" v-model="form.confirmpwd"></j-input>
+      <j-input placeholder="请填写确认密码" text="password" v-model="form.confirmpwd"></j-input>
     </div>
     <div class="cell">
       <span>真实姓名:</span>
-      <j-input placeholder="请填写" type="clearable" v-model="form.truename"></j-input>
+      <j-input placeholder="请填写真实姓名" type="clearable" v-model="form.truename"></j-input>
     </div>
     <div class="cell">
       <span>邮箱:</span>
-      <j-input placeholder="请填写" type="clearable" v-model="form.email"></j-input>
+      <j-input placeholder="请填写邮箱" type="clearable" v-model="form.email"></j-input>
     </div>
     <div class="cell">
       <span>手机:</span>
-      <j-input placeholder="请填写" type="clearable" v-model="form.mobile"></j-input>
+      <j-input placeholder="请填写手机" type="clearable" v-model="form.mobile"></j-input>
     </div>
     <div class="cell">
       <span>科室:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.subject"></j-input>
+      <j-input placeholder="请选择科室" @click="open('subject')" type="select" v-model="form.subject.name"></j-input>
     </div>
     <div class="cell">
       <span>职称:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.professional"></j-input>
+      <j-input placeholder="请选择职称" @click="open('professional')" type="select" v-model="form.professional.name"></j-input>
     </div>
     <div class="cell">
       <span>职称级别:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.postLevel"></j-input>
+      <j-input placeholder="请选择职称级别" @click="open('postLevel')" type="select" v-model="form.postLevel.name"></j-input>
     </div>
     <div class="cell">
       <span>学历:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.education"></j-input>
+      <j-input placeholder="请选择学历" @click="open('education')" type="select" v-model="form.education.name"></j-input>
     </div>
     <div class="cell">
       <span>学位:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.degree"></j-input>
+      <j-input placeholder="请选择学位" @click="open('degree')" type="select" v-model="form.degree.name"></j-input>
     </div>
     <!-- <div class="cell">
       <span>出生年月:</span>
-      <j-input placeholder="请选择" @click="open" type="select" v-model="form.select"></j-input>
+      <j-input placeholder="请选择" type="select" v-model="form.select"></j-input>
     </div>
     <div class="cell">
       <div class="identifying-img">
@@ -72,33 +72,43 @@
         <j-input placeholder="请输入验证码"></j-input>
     </div> -->
     <div class="cell">
-      <button class="btn">
+      <button class="btn" @click="reset">
         重置
       </button>
-      <button class="btn">
+      <button class="btn" @click="submit">
         注册
       </button>
     </div>
 
-    <popup position="bottom" :toShow="show" @close="open">
-
+    <popup position="bottom" v-model="show">
+      <van-picker
+        :columns="columns"
+        @confirm="onChange"
+        @cancel="show = false"
+        show-toolbar
+        value-key="name"
+        :item-height="30"
+        />
     </popup>
   </div>
 </template>
 
 <script>
-import Popup from '@/components/popup/popup'
+import Popup from '@/components/popup/popup2'
+import { register } from '@/services/app.js'
+
 export default {
   name: 'Register',
   data () {
     return {
-      test: '',
       password: false,
       show: false,
       icon: {
         normal: require('../image/closeEyes.png'),
         active: require('../image/openEyes.png')
       },
+      columns: [],
+      columnsKey: '',
       form: {
         password: '',
         username: '',
@@ -106,11 +116,11 @@ export default {
         truename: '',
         email: '',
         mobile: '',
-        subject: '',
-        professional: '',
-        postLevel: '',
-        education: '',
-        degree: ''
+        subject: {},
+        professional: {},
+        postLevel: {},
+        education: {},
+        degree: {}
       }
     }
   },
@@ -121,8 +131,33 @@ export default {
     watchPassword () {
       this.password = !this.password
     },
-    open () {
-      this.show = !this.show
+    open (msg) {
+      this.show = true
+      this.columnsKey = msg
+      this.columns = this.$store.state.app.selectData[msg]
+    },
+    onChange (value) {
+      this.form[this.columnsKey] = value
+      this.show = false
+    },
+    reset () {
+      this.form = {
+        password: '',
+        username: '',
+        confirmpwd: '',
+        truename: '',
+        email: '',
+        mobile: '',
+        subject: {},
+        professional: {},
+        postLevel: {},
+        education: {},
+        degree: {}
+      }
+    },
+    async submit () {
+      await register(this.form)
+      this.$router.push({name: 'Login'})
     }
   }
 }

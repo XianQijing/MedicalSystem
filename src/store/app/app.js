@@ -5,13 +5,14 @@ const state = {
   selectData: {}
 }
 const mutations = {
-  changeTitle (state, title) {
-    state.title = title
+  getSelectData (state, data) {
+    state.selectData = data
   }
 }
 const actions = {
   async getSelectData (state) {
     const data = await dict()
+    state.commit('getSelectData', data)
   }
 }
 const getters = {

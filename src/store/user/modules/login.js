@@ -12,10 +12,10 @@ const mutations = {
 }
 const actions = {
   async Login (state, form) {
-    let member = new FormData()
-    member.append('username', form.username)
-    member.append('password', form.password)
-    member.append('auth', '1')
+    const member = {
+      ...form,
+      auth: '1'
+    }
     const user = await login(member)
     state.commit('Login', user)
     return user
